@@ -15,4 +15,4 @@ How to keep track of you answers:
 6) Click on "Filter Questions" to filter the displayed questions.
 
 
-If you think questions are not correct. Or are not relevant you can update the questions or contact me (jeroen.remans@continuum.be)
+If you think questions are not correct. Or are not relevant you can update the questions or contact me.
