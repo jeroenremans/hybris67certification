@@ -1,0 +1,23 @@
+{"questions": [
+    {
+        "uid" : "090101",
+        "category" : "webservices",
+        "subcategory" : "",
+        "difficulty" : "",
+        "question" : "Which of the following are items (items.xml) provided by the cronjob extension?",
+        "answers": [
+            { "option" : "Cronjob", "correct" : true, "explanation": ""},
+            { "option" : "Job", "correct" : true, "explanation": ""},
+            { "option" : "Trigger", "correct" : true, "explanation": ""},
+            { "option" : "JobPerformable", "correct" : false, "explanation": "This is an interface that should be implemented. It is not defined in the items.xml."},
+            { "option" : "None of the above", "correct" : false, "explanation": ""}
+        ],
+        "explanation" : "",
+        "references" : ["https://wiki.hybris.com/display/release4/cronjob+Extension+-+Technical+Guide"]
+    },
+
+
+
+
+
+]}

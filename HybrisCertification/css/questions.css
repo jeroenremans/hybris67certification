@@ -1,0 +1,45 @@
+body {
+	font-size: 8pt;
+}
+
+div.question {
+	border: 1 px black solid;
+	margin-bottom:15px;
+}
+
+div.question div.questionArea{
+	font-family: Arial;
+	font-size: 10pt;
+	background-color: brown;
+	font-weight: bold;
+	color: peachPuff;
+	padding: 5px;
+	border-bottom: 1 px black solid;
+}
+
+
+div.question div.answerArea{
+	font-family: Arial;
+	color: black;
+	padding: 5px;
+	border-bottom: 2 px black solid;
+}
+
+div.question div.answerArea div.shortExplanation{
+	border: 1px brown dashed;
+	padding: 5px;
+	color: brown;
+	background-color: #FFFFB8;
+}
+
+div.question div.answerArea div.answerInfoArea{
+	font-family: Arial;
+	color: grey;
+	padding: 5px;
+}
+div.question div.explanationArea{
+	font-family: Arial;
+	color: brown;
+	padding: 5px;
+	border-bottom: 1 px black solid;
+}

@@ -1,0 +1,33 @@
+
+
+{"questions": [
+        {	
+			"category" : "impex",
+			"subcategory" : "export",
+			"difficulty" : "moderate",
+			"question" : "Which basics ways of triggering an import or export of data for the hybris impex extension exist?",
+			"answers": [
+				{ "option" : "Import Wizard: (HMC using Import Export Wizard)", "correct" : true, "explanation": ""},
+				{ "option" : "Import Cronjob: (Creating an Import CronJob)", "correct" : true, "explanation": ""},
+				{ "option" : "Import via Impex Web: (Using the Admin-pages)", "correct" : true, "explanation": ""},
+				{ "option" : "Using the API: (Java coding)", "correct" : true, "explanation": ""}
+			],
+			"explanation" : "",
+			"references" : ["url1", "url2", "url3"]
+		},
+        {	"question" : "",
+			"category" : "impex",
+			"subcategory" : "export",
+			"difficulty" : "moderate",
+			"answers": [
+				{ "option" : "The anwser", "correct" : true, "explanation": ""},
+				{ "option" : "The anwser", "correct" : true, "explanation": ""},
+				{ "option" : "The anwser", "correct" : true, "explanation": ""},
+				{ "option" : "The anwser", "correct" : true, "explanation": ""},
+				{ "option" : "The anwser", "correct" : true, "explanation": ""}
+			],
+			"explanation" : "",
+			"references" : ["url1", "url2", "url3"]
+		},
+    ]
+}

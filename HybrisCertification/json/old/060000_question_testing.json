@@ -1,0 +1,149 @@
+{"questions": [
+			{	
+				"uid" : "060001",
+				"category" : "testing",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "What should you do when you want to start using/making unittest for the DAO-Classes?",
+				"answers": [
+					{ "option" : "Initialize a new tenant.", "correct" : true, "explanation": ""},
+					{ "option" : "Run the project data settings.", "correct" : false, "explanation": "These are not needed."},
+					{ "option" : "Enable the extensions you want to test for the tenant", "correct" : true, "explanation": ""},
+					{ "option" : "It is not possible or not needed to initialize a tenant using ant.", "correct" : false, "explanation": "Another way of initializing the junit tenant is to run the ant yunitinit target."},
+					{ "option" : "The unittest should extend the class TestCase.", "correct" : false, "explanation": "It should be ServicelayerTransactionalTest"}
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/ImpEx+API#ImpExAPI-ImportAPI"]
+			},
+			{	
+				"uid" : "060002",
+				"category" : "testing",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which are good locations for unit tests?",
+				"answers": [
+					{ "option" : "extensionname/src", "correct" : false, "explanation": ""},
+					{ "option" : "extensionname/testsrc", "correct" : true, "explanation": ""},
+					{ "option" : "extensionname/web/src", "correct" : false, "explanation": ""},
+					{ "option" : "extensionname/web/testsrc", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/Testing+in+the+hybris+Multichannel+Suite"]
+			},
+			{	
+				"uid" : "060003",
+				"category" : "testing",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which are good locations for unit tests?",
+				"answers": [
+					{ "option" : "extensionname/src", "correct" : false, "explanation": ""},
+					{ "option" : "extensionname/testsrc", "correct" : true, "explanation": ""},
+					{ "option" : "extensionname/web/src", "correct" : false, "explanation": ""},
+					{ "option" : "extensionname/web/testsrc", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/Testing+in+the+hybris+Multichannel+Suite"]
+			},
+			{	
+				"uid" : "060004",
+				"category" : "testing",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which statements are correct?",
+				"answers": [
+					{ "option" : "The unit test class should be located in the same package as the class you want to test.", "correct" : true, "explanation": "By convention."},
+					{ "option" : "The unit test class should have the extension 'Test'.", "correct" : true, "explanation": "By convention."},
+					{ "option" : "The term mock refers to: Replacing an heavy-weight object on which an object under test usually depends", "correct" : false, "explanation": "Here is not the term mocking but stubbing explained. Mocking helps to verify if a conversation, for example a sequence of methods calls, between POJO1 and its dependent POJOs is as expected. It is usually done hand-in-hand with stubbing."},
+					{ "option" : "extensionname/web/testsrc", "correct" : true, "explanation": ""},
+					{ "option" : "By default all tests are IntegrationTests.", "correct" : true, "explanation": "As a fallback, all Tests that do not have one of the hybris annotations are treated as @IntegrationTests."}
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/Testing+in+the+hybris+Multichannel+Suite"]
+			},
+			{	
+				"uid" : "060005",
+				"category" : "testing",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "How can you test transactional with isolation of the test. ",
+				"answers": [
+					{ "option" : "The test class has to extend ServiceLayerTransactionalTest.", "correct" : false, "explanation": "This class adds transaction-based isolation logic to your tests by registering the TransactionRunListener. However it is not the only way, it is also possible to use annotations."},
+					{ "option" : "When the correct class is extended, a new transaction will be started just after the @Before annotation.", "correct" : false, "explanation": "Before the @Before method of your test is called, a new transaction is started."},
+					{ "option" : "When the correct class is extended, a new transaction will be rolled back just after the @After annotation.", "correct" : true, "explanation": "After the @After method of your test is called, a transaction rollback is performed."},
+					{ "option" : "You are required to use the @Transactional annotation.", "correct" : false, "explanation": "It is not required, you can also use 'extends ServiceLayerTransactionalTest'. The @Transactional annotation can be specified on a class or method level, so you can enable the transaction support for separate methods."}
+				],
+				"explanation" : "Before the @Before method of your test is called, a new transaction is started. After the @After method of your test is called, a transaction rollback is performed.",
+				"references" : ["https://wiki.hybris.com/display/release4/Testing+in+the+hybris+Multichannel+Suite"]
+			},
+			{	
+				"uid" : "060006",
+				"category" : "testing",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which annotation should be used for tests that do not require a hybris environment in which to run, and are therefore fast.",
+				"answers": [
+					{ "option" : "@IntegrationTest", "correct" : false, "explanation": "Tests that are to be executed inside an application server environment, like Apache Tomcat or WebSphere."},
+					{ "option" : "@DemoTest", "correct" : false, "explanation": "Typically well or self-documented Integration tests for inclusion in hybris Wiki and available to partners."},
+					{ "option" : "@UnitTest", "correct" : true, "explanation": "Tests that do not require a hybris environment in which to run, and are therefore fast. Unless your test needs the hybris environment, for example because of the persistence layer, then you should consider writing a unit test instead with mocked-out dependencies."},
+					{ "option" : "@PerformanceTest", "correct" : false, "explanation": "This annotation is available since hybris 4.4 version. Such a test can be configured to run under different circumstances, for example:6000 times in a row,with 1 mio items,under heavy load "},
+					{ "option" : "@ManualTest", "correct" : false, "explanation": "This annotation is available since hybris 4.4 version. Some tests require external software, for example the CyberSource tests. These tests should not be executed during automated testing."}
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/Testing+in+the+hybris+Multichannel+Suite"]
+			},
+			{	
+				"uid" : "060007",
+				"category" : "testing",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which of the following ant targets do not exist?",
+				"answers": [
+					{ "option" : "ant alltests", "correct" : false, "explanation": ""},
+					{ "option" : "ant unittests", "correct" : false, "explanation": ""},
+					{ "option" : "ant demotests", "correct" : false, "explanation": ""},
+					{ "option" : "ant integrationtests", "correct" : false, "explanation": ""},
+					{ "option" : "ant performancetests", "correct" : false, "explanation": ""},
+					{ "option" : "ant manualtests", "correct" : false, "explanation": ""},
+					{ "option" : "None of above.", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/Testing+in+the+hybris+Multichannel+Suite"]
+			},
+			{	
+				"uid" : "060008",
+				"category" : "testing",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which of the following statements are not true?",
+				"answers": [
+					{ "option" : "Using ant it is possible to run all the unittests in a certain package(s)", "correct" : false, "explanation": "ant unittests -Dtestclasses.packages=de.hybris.platform.payment.*"},
+					{ "option" : "Using ant it is possible to exclude certain packages.", "correct" : true, "explanation": "At least it is not possible from the command line. <br />&lt;testclasses property=\"testlist\" packages_negative=\"de.hybris.platform.*\" /&gt;"},
+					{ "option" : "Using ant it is possible to run all the unittests in a certain extension(s).", "correct" : false, "explanation": "ant unittests -Dtestclasses.extensions=basecommerce,core"},
+					{ "option" : "Using ant it is possible to run all the unittests and manualtest at once.", "correct" : false, "explanation": "ant alltests -Dtestclasses.annotations=unittests,manualtests"},
+					{ "option" : "Using ant it is possible to run only the first 100 of 500 test.", "correct" : false, "explanation": "Assume there are 500 tests: ant alltests -Dtestclassses.split=1-5"},
+					{ "option" : "None of above.", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "Like all other ant properties, these properties are set once and cannot be modified anymore. If you will call ant demotests -Dtestclasses.annotations=unittests, all UnitTests are executed.",
+				"references" : ["https://wiki.hybris.com/display/release4/Testing+in+the+hybris+Multichannel+Suite","https://wiki.hybris.com/display/release4/Customizing+Tests+Execution"]
+			},
+			{	
+				"uid" : "060009",
+				"category" : "testing",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "The buildcallbacks.xml of an extension has callbacks for that will be triggered at the following methods:",
+				"answers": [
+					{ "option" : "Performed right before test execution", "correct" : false, "explanation": "(extension_name)_before_yunit"},
+					{ "option" : "Performed right after test execution, if tests succeed", "correct" : true, "explanation": "(extension_name)_after_yunit"},
+					{ "option" : "Performed right after test execution, if tests fails", "correct" : false, "explanation": ""},
+					{ "option" : "Performed right before the test framework is initialized", "correct" : true, "explanation": "(extension_name)_before_yunitinit"},
+					{ "option" : "Performed right after the test framework has succesfully executed all the tests.", "correct" : false, "explanation": "Performed right after the test framework is initialized; (extension_name)_after_yunitinit"}
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/Testing+in+the+hybris+Multichannel+Suite"]
+			}
+			
+			
+			
+		]}

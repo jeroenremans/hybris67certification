@@ -1,0 +1,346 @@
+<html>
+	<head>
+		<link />
+		<script src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery.snippet.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/jquery.snippet.css" />
+		<link rel="stylesheet" type="text/css" href="css/questions.css" />
+		<style>
+			.snippet-wrap .snippet-num {
+				margin: 0em 0 0em 1em;
+			}
+		
+			body {
+				color: brown;
+				font-family: arial;
+			}
+			li.answerli {
+				margin: 1px 0px;
+				border: 1px white solid;
+			
+			}
+		
+			li.wrongAnswer {
+				border: 1px red solid;
+				margin: 1px 0px;
+				background-color:#FFF0F0;
+			}
+			
+			li.correctAnswer {
+				border: 1px green solid;
+				margin: 1px 0px;
+				background-color:#F0FFF0;
+			}
+			
+			.option-todo {
+			  color: red;
+			}
+			.option-inprogress {
+			  background-color: orange;
+			  color: white;
+			}
+
+			.option-finished {
+			  background-color: green;
+			  color: white;
+			}
+
+		</style>
+		<script>
+		
+var totalcount = 0;
+		
+		$.getJSON("json/new/6080000_data_modeling.json", function(json) {
+		console.log(json);
+			obj = json; 
+			loadquestions();
+		});
+		
+		function loadAllQuestions() {
+			$("#questionsArea").empty();
+			$('#jsonlist option').each(function(index,option) {
+				console.log($(option).val());
+				$.getJSON($(option).val(), function(json) {
+					obj = json; 
+					loadquestions();
+				});
+			});
+		}
+		function loadselectedquestions() {
+			$("#questionsArea").empty();
+			$.getJSON($('#jsonlist').val(), function(json) {
+				obj = json; 
+				loadquestions();
+			});
+		}
+
+		function filterQuestions() {
+			$($('#filterQuestions').val().split('\n')).each(function(dd, data) {
+				var questionId = data.split('\t')[0].trim();
+				var success = data.split('\t')[1].trim();
+				if (success == 'X') {
+					$('#' + questionId).hide();
+				}				
+			});
+		}
+
+		function generateOverview() {
+			$("#questionsArea").empty();
+				
+			$("#jsonlist > option").each(function() {
+				
+				$.ajax({
+					dataType: "json",
+					url: this.value,
+					data: null,
+					async: false, 
+					success: function(data) {
+						obj = data; 
+						loadquestionnames();
+					}
+				});
+			});
+			
+		}
+
+		var quiz = {
+			questions : {},
+			currentIndex : 0,
+			
+			validateQuestion: function(){
+			
+			
+			},
+			printCurrentQuestion: function(){
+				questionTool.printQuestion(this.questions[this.currentIndex]);
+			},
+			printNextQuestion: function(){
+				this.currentIndex++;
+				questionTool.printQuestion(this.questions[this.currentIndex]);
+			},
+			printPreviousQuestion: function(){
+				this.currentIndex--;
+				questionTool.printQuestion(this.questions[this.currentIndex]);
+			}
+			
+		};
+		
+		var questionTool = {
+			questionsCache : [],
+			preloadAllJson: function() {
+				$('#jsonlist option').each(function(index,option) {
+					$.getJSON($(option).val(), function(json) {
+						console.log(json.questions);
+						for (i=0;i<json.questions.length;i++) {
+							//console.log(json.questions[i]);
+							questionTool.questionsCache.push(json.questions[i]);
+						}
+					});
+				});
+				console.log(questionTool.questionsCache);
+			},
+			printQuestion: function (questionJson) {
+			
+				var questionArea = $('<div class="questionArea"></div>');
+				var answerArea = $('<div class="answerArea"></div>');
+				var explanationArea = $('<div class="explanationArea"></div>');
+				var referencesArea = $('<div class="referencesArea"></div>');
+				var buttonsArea = $('<div class="buttonsArea"><button class="hints">Hints</button><button class="answers"> Answers</button></div>');
+							console.log(questionJson.uid);
+				questionArea.append('#' + questionJson.uid + ' : ' + questionJson.question);
+				var validAnwserCount = 0;
+				var answerList = $('<ol></ol>');
+				$(questionJson.answers).each(function(index,answerObj) {
+					var listItem = $('<li class="answerli"></li>');
+					var listItemExplanation = $('<div class="shortExplanation"></div>');
+					
+					listItem.append('<input type="checkbox" correct="' + answerObj.correct + '" /> ');
+
+					if (answerObj.correct) {
+						validAnwserCount++;
+					} 
+					
+					listItem.append(answerObj.option);
+					if (answerObj.explanation != "" && showAnswer) {
+						listItemExplanation.append(answerObj.explanation);
+						listItem.append(listItemExplanation);
+					}
+					answerList.append(listItem);
+				});
+				
+				var answerInfoArea = $('<div class="answerInfoArea">(' + validAnwserCount + ' anwsers is/are valid)</div>');
+				answerArea.append(answerInfoArea);
+				answerArea.append(answerList);
+			
+				if (showAnswer) {
+						explanationArea.append(questionJson.explanation);
+						var refList = $('<ul></ul>');
+						$(questionJson.references).each(function(index,refObj) {
+							var listItem = $('<li></li>');
+							listItem.append('<a href="' + refObj + '" target="_blank">' + refObj + '</a>');
+							refList.append(listItem);
+						});
+						referencesArea.append(refList);
+					}
+				var question = $('<div class="question" id="' + questionJson.uid +'"></div>');
+				question.append(questionArea).append(answerArea).append(explanationArea);
+				question.append(referencesArea);
+				question.append(buttonsArea);
+				$("#questionsArea").append(question);
+				
+				
+			},
+			printQuestionName: function (questionJson) {
+			
+				var questionArea = $('<div class="questionArea"></div>');
+
+				$("#questionsArea").append(questionArea);
+			},
+			printAllQuestion: function (questionsJson) {
+				$(document).ready(function() {
+					$(questionsJson.questions).each(function(index,questionObj) {
+						totalcount++;
+						questionTool.printQuestion(questionObj);
+						
+					});
+					
+					$( ".buttonsArea .hints" ).click(function() {
+						$(this).parent().parent().find('div.answerInfoArea').toggle();
+						$(this).parent().parent().find(".answerCorrection").remove();
+						$(this).parent().parent().find('input[correct]').parent().removeClass('wrongAnswer');
+						$(this).parent().parent().find('input[correct]').parent().removeClass('correctAnswer');
+					});
+					$( ".buttonsArea .answers" ).click(function() {
+						$(this).parent().parent().find('div.answerCorrection').toggle();
+						$(this).parent().parent().find('div.shortExplanation').toggle();
+						$(this).parent().parent().find('div.explanationArea').toggle();
+						$(this).parent().parent().find('div.referencesArea').toggle();
+						validateAnswer($(this).parent().parent());
+					});
+					
+					$("pre.sql").snippet("sql",{style:"peachpuff"});
+					$("pre.java").snippet("java",{style:"peachpuff"});
+					$("pre.xml").snippet("xml",{style:"peachpuff"});
+					
+					$(".answerCorrection").remove();
+					$('input[correct=true]').parent().prepend('<span class="answerCorrection" style="color:green">CORRECT</span>');
+					$('input[correct=false]').parent().prepend('<span class="answerCorrection" style="color:red">INCORRECT</span>');
+					
+					hideAnwsers();
+					console.log("Total amount of questions : " + totalcount);
+				});
+			},
+			printAllQuestionNames: function (questionsJson) {
+				$(document).ready(function() {
+					$(questionsJson.questions).each(function(index,questionObj) {
+						totalcount++;
+						questionTool.printQuestionName(questionObj);
+						
+					});
+				});
+			}
+		}
+		
+		var showAnswer = true;
+		var categories = {};
+		function loadquestions() {
+			$(document).ready(function() {
+				questionTool.printAllQuestion(obj);
+			});
+		}
+		function loadquestionnames() {
+			$(document).ready(function() {
+				questionTool.printAllQuestionNames(obj);
+			});
+		}
+		
+		
+		function showAnwsers() {
+			$('span.answerCorrection').show();
+			$('div.shortExplanation').show();
+			$('div.explanationArea').show();
+			$('div.referencesArea').show();
+			
+		}
+		
+		function hideAnwsers() {
+			$('span.answerCorrection').hide();
+			$('div.shortExplanation').hide();
+			$('div.explanationArea').hide();
+			$('div.referencesArea').hide();
+			
+			hideTip();
+		}
+		
+		function hideTip() {
+			$('div.answerInfoArea').hide();
+		}
+		
+		function showTip() {
+			$('div.answerInfoArea').show();
+		}
+		
+		function validateAnswers() {
+			validateAnswer($('body'));
+		}
+		
+		function validateAnswer(obj) {
+			$.each($(obj).find('input[correct=true]'), function(index, value) { 
+				if (!$(value).is(':checked')) {
+					$(value).parent().addClass('wrongAnswer');
+				} else {
+					$(value).parent().addClass('correctAnswer');
+				}
+			});
+
+			$.each($(obj).find('input[correct=false]'), function(index, value) { 
+				if ($(value).is(':checked')) {
+					$(value).parent().addClass('wrongAnswer');
+				} else {
+					$(value).parent().addClass('correctAnswer');
+				}
+			});
+		}
+		
+		function clearValidateAnswers() {
+			$('input[correct]').parent().removeClass('wrongAnswer');
+			$('input[correct]').parent().removeClass('correctAnswer');
+		}
+
+		</script>
+		
+
+	</head>
+	<body>
+		<div style="position:fixed;background-color:white; right:0px;width:200px;padding:5px; z-index:500">
+			<a target="_blank" href="https://training.sap.com/certification/p_hycd_67-sap-certified-development-professional---sap-commerce-cloud-67-developer-g/">Hybris Certification hycd_67</a><br /><br />
+			<a href="javascript:showTip()" >Show Hints</a> / <a href="javascript:hideTip()" >Hide Hints</a><br />
+			<a href="javascript:validateAnswers()" >Validate Answers</a> / <a href="javascript:clearValidateAnswers()" >Clear Answers</a><br />
+			<a href="javascript:showAnwsers()" >Show Answers</a> / <a href="javascript:hideAnwsers()" >Hide Answers</a><br /><br />
+		</div>
+		<select id="jsonlist" >
+			<option class="option-finished" value="json/6010000_customer_experience.json" >6010000 Customer Experience &gt;12% (IN PROGRESS)</option>
+			<option class="option-finished" value="json/6020000_commerce_and_accelerator.json" >6020000 Commerce and Accelerator &gt;12% (IN PROGRESS)</option>
+			<option class="option-finished" value="json/6030000_orders.json" >6030000 Orders 8%-12% (READY)</option>
+			<option class="option-finished" value="json/6040000_backoffice_cockpits.json" >6040000 Backoffice and Backoffice Cockpits Modifications 8%-12% (READY)</option>
+			<option class="option-finished" value="json/6050000_search_navigation.json" >6050000 Search and Navigation 8%-12% (REVIEWED)</option>
+			<option class="option-finished" value="json/6060000_platform_features.json" >6060000 Platform Features 8%-12% (REVIEWED)</option>
+			<option class="option-finished" value="json/6070000_platform_basics.json" >6070000 Platform Basics 8%-12%(REVIEWED)</option>
+			<option class="option-finished" value="json/6080000_data_modeling.json" >6080000 Data Modeling 8%-12% (REVIEWED)</option>
+			<option class="option-finished" value="json/6090000_pcm_pricing.json" >6090000 PCM Basics and Price Modeling &lt;8% (REVIEWED)</option>
+			<option class="option-finished" value="json/6100000_user_management.json" >6100000 User Management &lt;8% (REVIEWED)</option>
+		</select>
+		<button value="Load" onclick="javascript:loadselectedquestions()">Load</button>
+		<button value="Load" onclick="javascript:generateOverview()">Generate Overview</button>
+		<br />
+		<textarea id="filterQuestions">6100001	O</textarea>
+		<button value="Load" onclick="javascript:filterQuestions()">Filter Questions</button>
+		<br />
+		
+		<div id="questionsArea">
+	
+		</div>
+
+		
+	</body>
+</html>

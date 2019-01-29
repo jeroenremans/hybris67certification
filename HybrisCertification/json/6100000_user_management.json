@@ -1,0 +1,161 @@
+{
+"_comment": "6100000",
+"_comment1": "User Management",
+"_comment2": "- Users in the Hybris Platform OK",
+"_comment3": "- Search restrictions",
+"_comment4": "- Commerce organization",
+
+"_comment5": " https://help.hybris.com/6.7.0/hcd/8b6f8af58669101495a7aa8620585384.html#loio8b6f8af58669101495a7aa8620585384",
+"_comment6": " https://help.hybris.com/6.7.0/hcd/8b4aa00e866910148df2920f69d68b27.html",
+"_comment7": " https://help.hybris.com/6.7.0/hcd/8b2bf31a86691014b302af68c521e0e7.html",
+"questions": [			
+			{	
+				"uid" : "6100001",
+				"category" : "user_management",
+				"subcategory" : "users",
+				"difficulty" : "",
+				"question" : "Which of the following items are a direct child or Principal?",
+				"answers": [
+					{ "option" : "Customer", "correct" : false, "explanation": "extends from User"},
+					{ "option" : "Employee", "correct" : false, "explanation": "extends from User"},
+					{ "option" : "UserGroup", "correct" : false, "explanation": "extends from PrincipalGroup"},
+					{ "option" : "User", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c797311866910149debcebff02be567.html"]
+			},
+			{	
+				"uid" : "6100002",
+				"category" : "user_management",
+				"subcategory" : "users",
+				"difficulty" : "",
+				"question" : "It is not possible to create a usergroup with the name 'anonymous'",
+				"answers": [
+					{ "option" : "Correct", "correct" : true, "explanation": "Is this correct???"},
+					{ "option" : "Incorrect", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "The uid must be globally unique for all types that descend from Principal.",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c797311866910149debcebff02be567.html"]
+			},
+			{	
+				"uid" : "6100003",
+				"category" : "user_management",
+				"subcategory" : "users",
+				"difficulty" : "",
+				"question" : "Which of the following can be deleted?",
+				"answers": [
+					{ "option" : "employee: admin", "correct" : false, "explanation": ""},
+					{ "option" : "customer: anonymous", "correct" : false, "explanation": ""},
+					{ "option" : "usergroup: admingroup", "correct" : false, "explanation": ""},
+					{ "option" : "usergroup: customergroup", "correct" : true, "explanation": ""},
+					{ "option" : "Any group that is linked to the admin user except the admingroup", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c797311866910149debcebff02be567.html"]
+			},
+			{	
+				"uid" : "6100003b",
+				"category" : "user_management",
+				"subcategory" : "users",
+				"difficulty" : "",
+				"question" : "Which of the following are out of the box users or usergroups?",
+				"answers": [
+					{ "option" : "productmanager", "correct" : true, "explanation": "Product manager demouser.Can edit product data from all catalogs."},
+					{ "option" : "marketing", "correct" : true, "explanation": "Marketing demouser.Can edit marketing and promotional data."},
+					{ "option" : "cronuser", "correct" : false, "explanation": ""},
+					{ "option" : "editor", "correct" : true, "explanation": "Intended to manage CMS-related data."},
+					{ "option" : "marketinggroup", "correct" : true, "explanation": ""},
+					{ "option" : "assortmentmanager", "correct" : true, "explanation": "Intended to assign products to XActuell-based publications. Can browse (but not create) catalogs, products. Can create category structures. Can browse (but not edit or create) media. Cannot use classification features. Can manage (but not create) XActuell-based publications. "}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c797311866910149debcebff02be567.html"]
+			},
+			{	
+				"uid" : "6100004",
+				"category" : "user_management",
+				"subcategory" : "users",
+				"difficulty" : "",
+				"question" : "Which methods can be used to determine if a user is a admin user?",
+				"answers": [
+					{ "option" : "boolean isAdmin(UserModel user)", "correct" : true, "explanation": ""},
+					{ "option" : "boolean isAnonymousUser(UserModel user) (inverse)", "correct" : false, "explanation": ""},
+					{ "option" : "boolean isMemberOfGroup(UserModel member, UserGroupModel groupToCheckFor);", "correct" : true, "explanation": ""},
+					{ "option" : "boolean isMemberOfAdminGroup(UserModel user)", "correct" : false, "explanation": "Does not exist"}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c0dc93f866910149803aa4fa6b8ac71.html"]
+			},
+			{	
+				"uid" : "6100005",
+				"category" : "user_management",
+				"subcategory" : "users",
+				"difficulty" : "",
+				"question" : "What should you do to to have a unique id when createing a new customer?",
+				"answers": [
+					{ "option" : "Use the userIDGenerator to generate a unique user ID.", "correct" : false, "explanation": "It is the customerIDGenerator."},
+					{ "option" : "Use a timestamp", "correct" : false, "explanation": "Not guaranteed to be unique"},
+					{ "option" : "You have to do nothing as the customer ID is automatically generated via an inteceptor", "correct" : true, "explanation": "customerIDPrepareInterceptor"}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c0dc93f866910149803aa4fa6b8ac71.html"]
+			},
+			{	
+				"uid" : "6100006",
+				"category" : "user_management",
+				"subcategory" : "users",
+				"difficulty" : "",
+				"question" : "What should you do when you want to deactivate a user?",
+				"answers": [
+					{ "option" : "Remove it.", "correct" : false, "explanation": "SAP recommends that you deactivate user accounts instead of removing them, as it is possible that there are still orders holding the address for the users. Once you have removed a user account, there is no way to link the existing order with the user who placed it."},
+					{ "option" : "Set the flag active to false", "correct" : false, "explanation": ""},
+					{ "option" : "Remove al all usergroups from the user", "correct" : false, "explanation": ""},
+					{ "option" : "Set the flag loginDisabled to false.", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c0dc93f866910149803aa4fa6b8ac71.html"]
+			},
+			{	
+				"uid" : "6100007",
+				"category" : "user_management",
+				"subcategory" : "restrictions",
+				"difficulty" : "",
+				"question" : "Statements",
+				"answers": [
+					{ "option" : "Type access rights affect more than search restrictions", "correct" : false, "explanation": "It only affect the backoffice!"},
+					{ "option" : "Item.getProperty(), LocalizableItem.getLocalizedProperty() are not affected by flexible search", "correct" : true, "explanation": "Item.getProperty(), LocalizableItem.getLocalizedProperty() fetches item references directly via PK - any stored item will be returned no matter if it would have been filtered by a currently active restriction"}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c428f8286691014970ceee87aa01605.html"]
+			},
+			{	
+				"uid" : "6100008",
+				"category" : "user_management",
+				"subcategory" : "Commerce organizatino",
+				"difficulty" : "",
+				"question" : "Statements concerning Commerce Organization",
+				"answers": [
+					{ "option" : "A B2B Customer is not allowed to place orders. A B2B Approver is allowed to place orders.", "correct" : false, "explanation": " Only users with the B2B Customer role are permitted to place orders. B2B Customers can create orders of any value. If the order value is within the user's order threshold, the order is placed immediately. If the order value exceeds the user's order threshold, the order is assigned to an approver for review and approval. If approved, the order is placed. Note that the order may also require approval by the account manager."},
+					{ "option" : "A B2B Manager can assign roles to other people.", "correct" : false, "explanation": "To be able to administer the organization structure a user must have the B2B Administrator role. The B2B Administrator is only permitted to administrate the organization structure equal-to or below the B2B Administrator's position in the hierarchy."},
+					{ "option" : "A B2B Manager can view the reports of the organization's expenditure", "correct" : true, "explanation": "To view the reports of the organization's expenditure, a user must have the B2B Manager role. The B2B Manager is only permitted to view reports for the organization structure equal-to or below the B2B Manager's position in the hierarchy."}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8ac27d4d86691014a47588e9126fdf21.html"]
+			},
+			{	
+				"uid" : "6100009",
+				"category" : "user_management",
+				"subcategory" : "restrictions",
+				"difficulty" : "Commerce organizatino",
+				"question" : "Statements",
+				"answers": [
+					{ "option" : "Budgets are assigned to cost centers so that customers can place orders against the cost center until the limit of the active budget is reached.", "correct" : true, "explanation": "https://help.hybris.com/6.7.0/hcd/3e895493355d4b7b97dd243d6f35667b.html"},
+					{ "option" : "Units are assigned B2B account managers, cost centers, approvers, administrators, managers, and customers. There can only be one root unit but it can have many child units.", "correct" : true, "explanation": ""},
+					{ "option" : "A B2B user is an individual who is able to log in to the B2B Accelerator store. Functionality available to the user depends on the roles assigned to them: B2B Administrator, B2B Manager, B2B Approver, or B2B Customer.", "correct" : true, "explanation": ""},
+					{ "option" : "Order permissions define financial limits. Permissions can be only per-timespan basis.", "correct" : false, "explanation": "Permissions can be on a per-order or per-timespan basis."},
+					{ "option" : "The B2B accelerator provides all B2B functionality, only for the Account summary page you need seperate addon.", "correct" : false, "explanation": "You need the accountsummaryaddon addon for the summary page and the commerceorgaddon for the organization management functionality."}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8abe34d186691014b8e6c4717b12e9a5.html"]
+			}
+			
+		]}

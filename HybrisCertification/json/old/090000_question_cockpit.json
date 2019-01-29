@@ -1,0 +1,99 @@
+{"questions": [
+			{	
+				"uid" : "090001",
+				"category" : "Cockpit",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "How should you create a new cockpit?",
+				"answers": [
+					{ "option" : "ant extgen", "correct" : false, "explanation": ""},
+					{ "option" : "ant extgen ycockpit", "correct" : true, "explanation": ""},
+					{ "option" : "extengen ycockpit", "correct" : false, "explanation": ""},
+					{ "option" : "ant ycockpit", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/ycockpit+Template+-+Technical+Guide","https://wiki.hybris.com/display/tr460/Trail+~+Cockpit+Basics"]
+			},
+			{	
+				"uid" : "090002",
+				"category" : "Cockpit",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "What should you do to be able to login into the cockpit?",
+				"answers": [
+					{ "option" : "Run the essentialdata and projectdata.", "correct" : false, "explanation": ""},
+					{ "option" : "Run the essentialdata.", "correct" : false, "explanation": ""},
+					{ "option" : "Create a new user.", "correct" : true, "explanation": "A new user should be created that is part of the cusergroup cockpitgroup."},
+					{ "option" : "Nothing, you can login with admin.", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/ycockpit+Template+-+Technical+Guide","https://wiki.hybris.com/display/tr460/Trail+~+Cockpit+Basics"]
+			},
+			{	
+				"uid" : "090003",
+				"category" : "Cockpit",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Suppose you want to add area above the history area to display all the catalogs. What would you do?",
+				"answers": [
+					{ "option" : "Create a class that implements 'SectionRenderer'.", "correct" : true, "explanation": "This class contains the logic to display your labels or buttons."},
+					{ "option" : "Create a class that implements 'Section'.", "correct" : false, "explanation": "You probably will not create a new class for this, but just reuse 'NavigationPanelSection' which already implements Section."},
+					{ "option" : "Create a new class that extends 'BaseUICockpitNavigationArea'.", "correct" : false, "explanation": "https://wiki.hybris.com/display/release4/How+To+Implement+a+New+Navigation+Section+-+Tutorial"}
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/ycockpit+Template+-+Technical+Guide","https://wiki.hybris.com/display/tr460/Trail+~+Cockpit+Basics"]
+			},
+			{	
+				"uid" : "090004",
+				"category" : "Cockpit",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which of the following is not one of the 4 areas in the cockpit?",
+				"answers": [
+					{ "option" : "Navigation Area", "correct" : false, "explanation": ""},
+					{ "option" : "Section Area", "correct" : true, "explanation": ""},
+					{ "option" : "Browser Area", "correct" : false, "explanation": ""},
+					{ "option" : "Editor Area", "correct" : false, "explanation": ""},
+					{ "option" : "Overview Area", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "The fourth area is: Popup-editor area.",
+				"references" : ["https://wiki.hybris.com/display/release4/ycockpit+Template+-+Technical+Guide","https://wiki.hybris.com/display/release4/How+To+Register+Perspectives%2C+Areas%2C+and+Sections+-+Tutorial"]
+			},
+			{	
+				"uid" : "090004",
+				"category" : "Cockpit",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which interface implements the that contains the 3 major areas, (browserArea, navigationArea, editorArea)",
+				"answers": [
+					{ "option" : "BaseUICockpitPerspective", "correct" : false, "explanation": "This is not an interface but a class which implements UICockpitPerspective."},
+					{ "option" : "UICockpitPerspective", "correct" : true, "explanation": ""},
+					{ "option" : "UISession", "correct" : false, "explanation": "The UISession does not contain the 3 major areas directly. However it contains the perspectives."},
+					{ "option" : "None of the above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/ycockpit+Template+-+Technical+Guide","https://wiki.hybris.com/display/release4/How+To+Register+Perspectives%2C+Areas%2C+and+Sections+-+Tutorial"]
+			},
+			{	
+				"uid" : "090005",
+				"category" : "Cockpit",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "How can you add a second perspective in the cockpit?",
+				"answers": [
+					{ "option" : "Register a second UICockpiyPerspective and inject in the UICockpitSession.", "correct" : true, "explanation": ""},
+					{ "option" : "Register a second browserarea and inject in the UICockpiyPerspective.", "correct" : false, "explanation": ""},
+					{ "option" : "Register a second browserarea and inject in the UICockpitSession.", "correct" : false, "explanation": ""},
+					{ "option" : "Register a second EditorModel and inject in the UICockpiyPerspective.", "correct" : false, "explanation": ""},
+					{ "option" : "None of the above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/tr460/Trail+~+Cockpit+Basics","https://wiki.hybris.com/display/release4/How+To+Register+Perspectives%2C+Areas%2C+and+Sections+-+Tutorial"]
+			},
+			
+			
+			 
+			
+
+			
+		]}

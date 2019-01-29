@@ -1,0 +1,1105 @@
+{
+"questions": [		
+
+			{	
+				"uid" : "6060001",
+				"category" : "impex",
+				"subcategory" : "export",
+				"difficulty" : "moderate",
+				"question" : "Which basics ways of triggering an import/export of data for the hybris impex extension exist?",
+				"answers": [
+					{ "option" : "Import Wizard: (Backoffice using Import Export Wizard)", "correct" : true, "explanation": ""},
+					{ "option" : "Import Cronjob: (Creating an Import CronJob)", "correct" : true, "explanation": ""},
+					{ "option" : "Import via Impex Web: (Using the Admin-pages)", "correct" : true, "explanation": ""},
+					{ "option" : "Import via webservices: (REST)", "correct" : false, "explanation": ""},
+					{ "option" : "Using the API: (Java coding)", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/2fb5a2a780c94325b4a48ff62b36ab23.html#loio2fb5a2a780c94325b4a48ff62b36ab23"]
+			},
+			{	
+				"uid" : "6060002",
+				"question" : "Hybris offers a way of multithreaded import through the Hybris impex extension out of the box.",
+				"category" : "impex",
+				"subcategory" : "import",
+				"difficulty" : "moderate",
+				"answers": [
+					{ "option" : "TRUE", "correct" : true, "explanation": ""},
+					{ "option" : "FALSE", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "For 4.0 releases, the Multithreaded import was offered with the hybris High Performance Option, which is an additional licensing option. Since the 4.1.0 release this functionality is a part of the hybris Platform and does not need to be licensed separately.<br /><br />Multithreaded import enables you to use as many cores as you like to speed up the import of a given file. You can configure the number of cores for each import job separately.Our tests on 16 core machines have proved almost linear scaling if the database can handle the load.",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/44f79c4e604a4bff8456a852e617d261.html"]
+			},
+			{	
+				"uid" : "6060003",
+				"question" : "Multithreaded import does not guarantee the order of importing.",
+				"category" : "impex",
+				"subcategory" : "import",
+				"difficulty" : "moderate",
+				"answers": [
+					{ "option" : "Correct", "correct" : true, "explanation": ""},
+					{ "option" : "Incorrect", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "There is no such thing. However multithreaded import does exist.",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/44f79c4e604a4bff8456a852e617d261.html"]
+			},
+			{	
+				"uid" : "6060004",
+				"question" : "IMPEX: The Importer class is the central class for processing an import. Which of the following are valid contructors for de.hybris.platform.impex.jalo.Importer",
+				"category" : "impex",
+				"subcategory" : "import",
+				"difficulty" : "moderate",
+				"answers": [
+					{ "option" : "Importer(CSVReader)", "correct" : true, "explanation": ""},
+					{ "option" : "Importer(ImpExImportReader) ", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bee24e986691014b97bcd2c7e6ff732.html"]
+			},
+			{	
+				"uid" : "6060005",
+				"question" : "Which of the following methods (of de.hybris.platform.impex.jalo.Importer) will perform an import (insert, update or remove)?",
+				"category" : "impex",
+				"subcategory" : "import",
+				"difficulty" : "moderate",
+				"answers": [
+					{ "option" : "importer.importNext()", "correct" : true, "explanation": ""},
+					{ "option" : "importer.importAll()(CSVReader)", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/2fb5a2a780c94325b4a48ff62b36ab23.html#loio2fb5a2a780c94325b4a48ff62b36ab23"]
+			},
+			{	
+				"uid" : "6060006",
+				"question" : "How can you define a file to export to in your impex file.",
+				"category" : "impex",
+				"subcategory" : "export",
+				"difficulty" : "moderate",
+				"answers": [
+					{ "option" : "<pre>\"#% impex.setTargetFile( \"\"myLanguage.csv\"\", true, 1, -1 );\"</pre>", "correct" : true, "explanation": ""},
+					{ "option" : "<pre>\"#% impex.setTargetFile( \"\"myDirectory/myLanguage.csv\"\", true, 1, -1 );\"</pre>", "correct" : true, "explanation": ""},
+					{ "option" : "<pre>\"#% impex.setTargetFile( \"\"myLanguage.csv\"\", true);\"</pre>", "correct" : false, "explanation": ""},
+					{ "option" : "<pre>\"#% impex.setTargetFile( \"\"myDirectory/myLanguage.csv\"\", true);\"</pre>", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "This is the method signature: <pre>public void setTargetFile( final String filename, boolean writeHeader, int linesToSkip, int offset )</pre>",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bee24e986691014b97bcd2c7e6ff732.html"]
+			},
+			{	
+				"uid" : "6060007",
+				"question" : "Which of the following statements are true concerning exports using impex.",
+				"category" : "impex",
+				"subcategory" : "export",
+				"difficulty" : "moderate",
+				"answers": [
+					{ "option" : "You cannot restrict subtypes to be exported. For example if you export Customer, also all the MyExtentedCustomer will be exported.", "correct" : true, "explanation": ""},
+					{ "option" : "You can restrict subtypes to be exported only using \"impex.exportItems\" in the impex. ", "correct" : false, "explanation": ""},
+					{ "option" : "It is possible to export (IMPEX) items using a flexible searchquery.", "correct" : true, "explanation": ""}
+					],
+				"explanation" : "<pre>// since 3.1-RC <br /> public void exportItemsFlexibleSearch( String query )<br /> public void exportItemsFlexibleSearch( String query, Map values, List resultClasses, <br />final boolean failOnUnknownFields, final boolean dontNeedTotal, int start, int count )<br />// since 3.1-u6 <br />public void exportItemsFlexibleSearch( String query, int count )</pre>",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bee24e986691014b97bcd2c7e6ff732.html"]
+			},
+			{	
+				"uid" : "6060008",
+				"question" : "It is possible to sort the result of an impex export.",
+				"category" : "impex",
+				"subcategory" : "export",
+				"difficulty" : "moderate",
+				"answers": [
+					{ "option" : "TRUE", "correct" : true, "explanation": ""},
+					{ "option" : "FALSE", "correct" : false, "explanation": ""}
+					],
+				"explanation" : "This can be done by using a flexible searchquery: <pre>example</pre>",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bee24e986691014b97bcd2c7e6ff732.html"]
+			},
+			{	
+				"uid" : "6060009",
+				"question" : "Which of the following are valid attribute-related modifiers in an impex",
+				"category" : "impex",
+				"subcategory" : "export",
+				"difficulty" : "moderate",
+				"answers": [
+					{ "option" : "alias", "correct" : true, "explanation": ""},
+					{ "option" : "path-delimiter", "correct" : true, "explanation": ""},
+					{ "option" : "decorator", "correct" : false, "explanation": ""},
+					{ "option" : "virtual", "correct" : true, "explanation": ""},
+					{ "option" : "multi", "correct" : false, "explanation": ""},
+					{ "option" : "neg", "correct" : false, "explanation": ""},
+					{ "option" : "key2value-delimiter", "correct" : true, "explanation": ""},
+					{ "option" : "default", "correct" : true, "explanation": ""},
+					{ "option" : "batchmode", "correct" : false, "explanation": ""}
+					],
+					
+				"explanation" : "These are all valid: alias, allownull, cellDecorator, collection-delimiter, dateformat, default, forceWrite, ignoreKeyCase, ignorenull, key2value-delimiter, lang, map-delimiter, mode, numberformat, path-delimiter, pos, translator, unique, virtual ",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/1c8f5bebdc6e434782ff0cfdb0ca1847.html"]
+			},
+			{	
+				"uid" : "60600010",
+				"question" : "Which of the following are valid <b>header-related</b> modifiers in an impex",
+				"category" : "impex",
+				"subcategory" : "export",
+				"difficulty" : "moderate",
+				"answers": [
+					{ "option" : "processor ", "correct" : true, "explanation": ""},
+					{ "option" : "path-delimiter", "correct" : false, "explanation": ""},
+					{ "option" : "decorator", "correct" : false, "explanation": ""},
+					{ "option" : "cacheUnique", "correct" : true, "explanation": ""},
+					{ "option" : "pos", "correct" : false, "explanation": ""},
+					{ "option" : "unique", "correct" : false, "explanation": ""},
+					{ "option" : "default", "correct" : false, "explanation": ""},
+					{ "option" : "batchmode", "correct" : true, "explanation": ""},
+					{ "option" : "impex.legacy.mode", "correct" : true, "explanation": "This modifer allows enabling the legacy mode (jalo) per header . "}
+					],
+					
+				"explanation" : "In total there are only 4 header-related modifiers: processor, cacheUnique, batchmode",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/1c8f5bebdc6e434782ff0cfdb0ca1847.html"]
+			},
+			{	
+				"uid" : "6060011",
+				"question" : "Which of the following are valid use of header and attribute modifiers?",
+				"category" : "impex",
+				"subcategory" : "export",
+				"difficulty" : "moderate",
+				"answers": [
+					{ "option" : "<pre>...;attribute(modifier=value);...</pre>", "correct" : false, "explanation": ""},
+					{ "option" : "<pre>...;attribute[modifier=value];...</pre>", "correct" : true, "explanation": ""},
+					{ "option" : "<pre>...;attribute[modifier=value,modifier=value,modifier=value];...</pre>", "correct" : true, "explanation": ""},
+					{ "option" : "<pre>...;attribute(modifier=value,modifier=value,modifier=value);...</pre>", "correct" : false, "explanation": ""},
+					{ "option" : "<pre>...;attribute[modifier=value],[modifier=value],[modifier=value];...</pre>", "correct" : false, "explanation": ""},
+					{ "option" : "<pre>...;attribute[modifier=value][modifier=value][modifier=value];...</pre>", "correct" : true, "explanation": ""},
+					{ "option" : "<pre>...;attribute(modifier=value)(modifier=value)(modifier=value);...</pre>", "correct" : false, "explanation": ""}
+					],
+					
+				"explanation" : "It is only possible to define attribute modifiers using '[]'",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bee24e986691014b97bcd2c7e6ff732.html"]
+			},
+			{	
+				"uid" : "6060011b",
+				"category" : "impex",
+				"subcategory" : "import",
+				"difficulty" : "hard",
+				"question" : "Which of the following impexes is correctly using the batchmode?",
+				"answers": [
+						{ "option" : "REMOVE MyItemType [batchmode=true];itemType(code)[unique=true]<br />;MyItemType;", "correct" : true, "explanation": ""},
+						{ "option" : "REMOVE MyItemType [batchmode=true];pk[unique=true]<br />;;", "correct" : false, "explanation": ""},
+						{ "option" : "UPDATE MyItemType [batchmode=true];itemType(code);active<br />;MyItemType;true", "correct" : false, "explanation": "[unique=true] is missing"},
+						{ "option" : "UPDATE MyItemType [batchmode=true];pk[unique=true];active<br />;;true", "correct" : false, "explanation": ""}
+						
+						],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bee24e986691014b97bcd2c7e6ff732.html"]
+			},
+			{	
+				"uid" : "6060012",
+				"category" : "impex",
+				"subcategory" : "import",
+				"difficulty" : "",
+				"question" : "Which statements about impex by convention are true?",
+				"answers": [
+						{ "option" : "By default all the files in 'extension_name/resources/impex' will be recognized and imported when when project data is checked in the HAC.", "correct" : false, "explanation": ""},
+						{ "option" : "By default all the files in 'extension_name/resources/impex' with the name 'projectData*.impex' will be recognized and imported when when project data is checked in the HAC.", "correct" : false, "explanation": "For project data the platform scans the folders extension_name/resources/impex for files, whose names match the regular expression <b>projectdata*.impex</b> (case-sensitive) and import them during the project data creation."},
+						{ "option" : "By default all the files in 'extension_name/resources/impex' with the name 'essentialdata*.impex' will be recognized and imported when when essential data is checked in the HAC.", "correct" : false, "explanation": "For project data the platform scans the folders extension_name/resources/impex for files, whose names match the regular expression <b>essentialdata *.impex</b> (case-sensitive) and import them during the essential data creation."},
+						{ "option" : "None of above", "correct" : true, "None of the above statements are true.": ""}
+						
+						],
+				"explanation" : "If you wish to have your configuration working in the same way as the default, you can set the pattern to extension_name.essentialdata-impex-pattern=impex/essentialdata*.impex.",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bee24e986691014b97bcd2c7e6ff732.html"]
+			},
+			{	
+				"uid" : "6060013",
+				"category" : "impex",
+				"subcategory" : "import",
+				"difficulty" : "",
+				"question" : "Consider the following property, which statements are true when executing the essential data in the HAC? <br />extension_name.essentialdata-impex-pattern=**/*.csv",
+				"answers": [
+						{ "option" : "'test1.csv' will be imported", "correct" : false, "explanation": ""},
+						{ "option" : "'resources/subfolder/test2.csv' will be imported", "correct" : true, "explanation": ""},
+						{ "option" : "'resources/impex/subfolder/subfolder/test3.csv' will be imported", "correct" : true, "explanation": ""},
+						{ "option" : "None of the files will be imported, because they are not CSV's but impex files.", "correct" : false, "explanation": "The extension of the file doesn't matter. However the content of the file should be a valid impex."},
+						{ "option" : "None of the above statements is true", "correct" : false, "explanation": ""}
+						
+						],
+				"explanation" : "If you wish to have your configuration working in the same way as the default, you can set the pattern to extension_name.essentialdata-impex-pattern=impex/essentialdata*.impex.",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bee24e986691014b97bcd2c7e6ff732.html"]
+			},
+			{	
+				"uid" : "6060014",
+				"category" : "impex",
+				"subcategory" : "import",
+				"difficulty" : "",
+				"question" : "When should you use a 'Document ID' in your impex?",
+				"answers": [
+						{ "option" : "As much as possible", "correct" : false, "explanation": ""},
+						{ "option" : "When importing partOf item values", "correct" : true, "explanation": ""},
+						{ "option" : "When importing a product", "correct" : false, "explanation": ""},
+						{ "option" : "When importing a customer", "correct" : false, "explanation": ""},
+						{ "option" : "When importing a customer with an address", "correct" : true, "explanation": ""}
+						
+						],
+				"explanation" : "'Document ID' is also called Virtual ID.",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/1c8f5bebdc6e434782ff0cfdb0ca1847.html"]
+			},
+			{	
+				"uid" : "6060015",
+				"category" : "impex",
+				"subcategory" : "import",
+				"difficulty" : "",
+				"question" : "Which of the following do you need to import a media?",
+				"answers": [
+						{ "option" : "A filter", "correct" : false, "explanation": ""},
+						{ "option" : "A translator", "correct" : true, "explanation": ""},
+						{ "option" : "A processor", "correct" : false, "explanation": "Unlike a Translator, which handles a certain column of a value line, a Processor handles an entire value line."},
+						{ "option" : "A cronjob", "correct" : false, "explanation": ""},
+						{ "option" : "A hotfolder", "correct" : false, "explanation": ""}
+						
+						],
+				"explanation" : "Impex: @media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator]",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/1c8f5bebdc6e434782ff0cfdb0ca1847.html"]
+			},
+			{	
+				"uid" : "6060016",
+				"category" : "impex",
+				"subcategory" : "import",
+				"difficulty" : "",
+				"question" : "INSERT Address;firstname;owner(code)<br />;Hans;admin<br />;Klaus;ORDER-0001",
+				"answers": [
+						{ "option" : "This impex is likely to be valid", "correct" : false, "explanation": ""},
+						{ "option" : "This impex is likely to fail because you can not assign a order to an address", "correct" : false, "explanation": ""},
+						{ "option" : "This impex is likely to fail because you can not assign a user to an address", "correct" : false, "explanation": ""},
+						{ "option" : "Something else", "correct" : true, "explanation": "See correct impex below."}
+						
+						],
+				"explanation" : "INSERT Address;firstname;owner( Principal.uid | AbstractOrder.code )<br />;Hans;admin<br />;Klaus;ORDER-0001",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/1c8f5bebdc6e434782ff0cfdb0ca1847.html"]
+			},
+			{	
+				"uid" : "6060017",
+				"category" : "impex",
+				"subcategory" : "import",
+				"difficulty" : "",
+				"question" : "Which of the following answers will import a classification attribute with the name attr1?<br /><br />impex.header.replacement.1 = C@(\\w+) @$1[ system='\\$systemName', version='\\$systemVersion', translator='de...ClassificationAttributeTranslator']",
+				"answers": [
+						{ "option" : "$systemName=MySys<br />$systemVersion=1.0<br />INSERT_UPDATE Product; code[unique=true]; C@attr1; C@attr2 ", "correct" : true, "explanation": ""},
+						{ "option" : "INSERT_UPDATE Product; code[unique=true]; C@attr1; C@attr2 ", "correct" : false, "explanation": ""},
+						{ "option" : "$systemName=MySys<br />$systemVersion=1.0<br />INSERT_UPDATE Product; code[unique=true]; @attr1; ", "correct" : false, "explanation": ""}
+						
+						],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/5ec9a47acd894511bc2b3f048398a9b1.html"]
+			},
+			{	
+				"uid" : "6060018",
+				"category" : "impex",
+				"subcategory" : "import",
+				"difficulty" : "",
+				"question" : "insert_update Catalog;id[unique=true];activeCatalogVersion(catalog(id),version);buyer(uid);defaultCatalog;name[lang=de];name[lang=en];previewURLTemplate;supplier(uid);urlPatterns<br />\"#% impex.exportItems(\"\"SELECT {C:pk} FROM {Catalog as C} WHERE {C:id}='$catalog'\"\", Collections.EMPTY_MAP, Collections.singletonList( Item.class ), true, true, -1, -1 );\"",
+				"answers": [
+						{ "option" : "This is a valid impex", "correct" : true, "explanation": ""},
+						{ "option" : "This is a invalid impex", "correct" : false, "explanation": ""}
+						
+						],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bd9a45d86691014b71aa404248b7ee5.html"]
+			},
+			{	
+				"uid" : "6060019",
+				"category" : "impex",
+				"subcategory" : "import",
+				"difficulty" : "",
+				"question" : "It is possible to create a user and usergroup with the same UID",
+				"answers": [
+						{ "option" : "Correct", "correct" : true, "explanation": ""},
+						{ "option" : "Incorrect", "correct" : false, "explanation": ""}
+						
+						],
+				"explanation" : "This is because the check for duplicate uids is not done at the Principal type, but only with the User type. ",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bdfb629866910148dbdea676bd0962c.html"]
+			},
+
+
+
+
+
+
+
+
+
+
+
+
+
+			{	
+				"uid" : "6061001",
+				"category" : "Cronjob",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which of the following are items (items.xml) provided by the cronjob extension?",
+				"answers": [
+					{ "option" : "Cronjob", "correct" : true, "explanation": ""},
+					{ "option" : "Job", "correct" : true, "explanation": ""},
+					{ "option" : "Trigger", "correct" : true, "explanation": ""},
+					{ "option" : "JobPerformable", "correct" : false, "explanation": "This is an interface that should be implemented. It is not defined in the items.xml."}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8b9ce4868669101499b2f0f25ef9395f.html"]
+			},
+			{	
+				"uid" : "6061002",
+				"category" : "Cronjob",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which statements are true?",
+				"answers": [
+					{ "option" : "A CronJob holds the configuration for a single run of a Job", "correct" : true, "explanation": ""},
+					{ "option" : "To provide a custom configuration that is specific for an execution, you need to create a subtype of Job.", "correct" : false, "explanation": "It should be a subtype of CronJob. The Job should not contain any specific configuration for an execution. It should be specified by the execution-related CronJob to keep the Job instance stateless."},
+					{ "option" : "The functionality of a job is in the implementation of JobPerformable.", "correct" : true, "explanation": ""},
+					{ "option" : "A cronjob can be started using ant.", "correct" : true, "explanation": "The hybris Multichannel Suite allows running cron jobs using an Ant target: ant runcronjob<ENTER>. This command starts an instance of the hybris Multichannel Suite in a stand-alone mode and executes the CronJob. For details, see the Ant target help: ant -p<ENTER>."}
+
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8b9ce4868669101499b2f0f25ef9395f.html"]
+			},
+			{	
+				"uid" : "6061003",
+				"category" : "Cronjob",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "The following statement will trigger a job every 5 seconds (assume that the trigger is correctly saved and assigned to a Cronjob): <pre class=\"java\">triggerModel.setCronExpression(\"0/5 * * * * ?\");</pre>",
+				"answers": [
+					{ "option" : "Yes", "correct" : false, "explanation": ""},
+					{ "option" : "No", "correct" : false, "explanation": ""},
+					{ "option" : "Yes, but not with the default Hybris configuration.", "correct" : true, "explanation": "By default triggers are called every 30 seconds. You will have to modify the following property:<br />cronjob.trigger.interval=30"}
+
+				],
+				"explanation" : "The above example uses Cron Expressions. More info can be found on wikipedia.<br /><br /><pre># .---------------- minute (0 - 59)<br /># |   .------------- hour (0 - 23)<br /># |   |   .---------- day of month (1 - 31)<br /># |   |   |   .------- month (1 - 12) OR jan,feb,mar,apr ...<br /># |   |   |   |  .----- day of week (0 - 7) (Sunday=0 or 7)  OR sun,mon,tue,wed,thu,fri,sat<br /># |   |   |   |  |<br /># *   *   *   *  *  command to be executed<br /></pre>",	
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8b9ce4868669101499b2f0f25ef9395f.html"]
+			},
+			{	
+				"uid" : "6061004",
+				"category" : "Cronjob",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which of the following expresison can be used to trigger a job every second Friday of the month at 7:25",
+				"answers": [
+					{ "option" : "7 25 0 L#2 * ?", "correct" : false, "explanation": ""},
+					{ "option" : "0 7 25 6L#2 * ?", "correct" : true, "explanation": ""},
+					{ "option" : "0 7 0/25 6L * ?", "correct" : false, "explanation": ""},
+					{ "option" : "0 7 0/25 5L * ?", "correct" : false, "explanation": ""},
+					{ "option" : "0 7 5/20 5L * ?", "correct" : false, "explanation": ""}
+
+				],
+				"explanation" : "The above example uses Cron Expressions. More info can be found on wikipedia.<br /><br /><pre># .---------------- minute (0 - 59)<br /># |   .------------- hour (0 - 23)<br /># |   |   .---------- day of month (1 - 31)<br /># |   |   |   .------- month (1 - 12) OR jan,feb,mar,apr ...<br /># |   |   |   |  .----- day of week (0 - 7) (Sunday=0 or 7)  OR sun,mon,tue,wed,thu,fri,sat<br /># |   |   |   |  |<br /># *   *   *   *  *  command to be executed<br /></pre>",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8b9ce4868669101499b2f0f25ef9395f.html"]
+			},
+			{	
+				"uid" : "6061003b",
+				"category" : "Cronjob",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which class is used by Hybris to evaluate triggers?",
+				"answers": [
+					{ "option" : "TriggerTask", "correct" : false, "explanation": ""},
+					{ "option" : "TimerTask", "correct" : true, "explanation": ""},
+					{ "option" : "CronJobTask", "correct" : false, "explanation": "" }
+
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8b9ce4868669101499b2f0f25ef9395f.html"]
+			},
+			{	
+				"uid" : "6061004b",
+				"category" : "Cronjob",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which statements are true about:<pre class=\"java\">cronJobService.performCronJob(myCronJobModel, true);</pre>",
+				"answers": [
+					{ "option" : "It will create a new thread and run the job in it.", "correct" : true, "explanation": "The second parameter should be true. Otherwise the the job will be executed synchronizely."},
+					{ "option" : "myCronjobModel should be the JobPerformable", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8b9ce4868669101499b2f0f25ef9395f.html"]
+			},
+			{	
+				"uid" : "6061005",
+				"category" : "Cronjob",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which of the following attributes are configured on the CronJob?",
+				"answers": [
+					{ "option" : "sessionUser", "correct" : true, "explanation": ""},
+					{ "option" : "sessionCountry", "correct" : false, "explanation": ""},
+					{ "option" : "sessionCurrency", "correct" : true, "explanation": ""},
+					{ "option" : "sessionLanguage", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8b9ce4868669101499b2f0f25ef9395f.html"]
+			},
+			{	
+				"uid" : "6061006",
+				"category" : "Cronjob",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "How can you check if a job has finished?",
+				"answers": [
+					{ "option" : "if(\"FINISHED\".equals(myCronJob.getStatus())){ ... }", "correct" : false, "explanation": ""},
+					{ "option" : "if(myCronJob.getStatus()==CronJobStatus.FINISHED){ ... }", "correct" : true, "explanation": ""},
+					{ "option" : "if(cronJobService.isCompleted(myCronJob)){ .. }", "correct" : false, "explanation": ""},
+					{ "option" : "if(cronJobService.isFinished(myCronJob)){ .. }", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8b9ce4868669101499b2f0f25ef9395f.html"]
+			},
+			{	
+				"uid" : "6061007",
+				"category" : "Cronjob",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "A Cronjob is created automatically. Where does this happen?",
+				"answers": [
+					{ "option" : "A Cronjob is created in the CronJobManager", "correct" : false, "explanation": ""},
+					{ "option" : "A Cronjob is created in the CronJobService", "correct" : false, "explanation": ""},
+					{ "option" : "A Cronjob is created in the CronJobFactory", "correct" : true, "explanation": ""},
+					{ "option" : "A Cronjob is created in the CronJobCreator", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "You might want to override the CronJobFactory when there are mandatory fields on the CronJob. When this is the case you can prefill those values your own values.",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8b9ce4868669101499b2f0f25ef9395f.html"]
+			},
+			{	
+				"uid" : "6061008",
+				"category" : "Update Process",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "How can you execute certain code while running the essential and project data for a given extension in the HAC?",
+				"answers": [
+					{ "option" : "Hybris has forseen a specif cronjob for this", "correct" : false, "explanation": ""},
+					{ "option" : "You have to configure your class in a certain property", "correct" : false, "explanation": ""},
+					{ "option" : "You should annotate the class/method.", "correct" : true, "explanation": "@SystemSetup(extension = MyExtension.EXTENSIONNAME, process = Process.INIT, type = Type.ESSENTIAL)"}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8b9ce4868669101499b2f0f25ef9395f.html"]
+			},
+			{	
+				"uid" : "6061009",
+				"category" : "Cronjob",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which of the following keywords are related to sequencing cronjobs?",
+				"answers": [
+					{ "option" : "SequenceCronJob", "correct" : false, "explanation": ""},
+					{ "option" : "GroupCronJob", "correct" : false, "explanation": ""},
+					{ "option" : "CompositeCronJob", "correct" : true, "explanation": ""},
+					{ "option" : "CronJobEntry", "correct" : false, "explanation": ""},
+					{ "option" : "SequenceEntry", "correct" : false, "explanation": ""},
+					{ "option" : "CompositeEntry", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "The CompositeCronJob that is available in the hybris Multichannel Suite defines any number of entries. Every single entry is represented as a CompositeEntry, which can hold either an individual CronJob or Job. When the CompositeCronJob is run, then the individual entries are executed sequentially and independently of one another, in the order specified by the compositeEntries attribute. If one entry has finished the execution, the next entry is executed, whether the finished entry has completed successfully or not.",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8b9ce4868669101499b2f0f25ef9395f.html"]
+			},
+			{	
+				"uid" : "6061010",
+				"category" : "Cronjob",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "How can you restrict a job from accessing the staged catalog version?",
+				"answers": [
+					{ "option" : "Execute the job using the anymous user", "correct" : true, "explanation": ""},
+					{ "option" : "Create a JobSearchRestriction and assign them to the restriction attribute of the Job.", "correct" : true, "explanation": "This functionality is similar to searchrestrictions:<br /> <br /> {code} IS NULL AND {catalogversion}=?session.<b>currentJob</b>.targetversion"},
+					{ "option" : "Use the allowedCatalogVersion attribute of the Job", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8b9ce4868669101499b2f0f25ef9395f.html"]
+			},
+			{	
+				"uid" : "6061011",
+				"category" : "Cronjob",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "What is the meaning of the attribute \"maxAcceptableDelay\" on a trigger?",
+				"answers": [
+					{ "option" : "This attribute is deprecated and shouldn't used anymore.", "correct" : false, "explanation": ""},
+					{ "option" : "If a cronjob takes longer then this time it will be aborted.", "correct" : false, "explanation": ""},
+					{ "option" : "If the server has been down and the job was due to be executed 1 hour ago, the cronjob will not be executed when the value of this attribute is 1800.", "correct" : true, "explanation": ""},
+					{ "option" : "If the value of this attribute is -1, it will always execute the cronjob if it is overdue.", "correct" : true, "explanation": "-1 means unlimited"}
+				],
+				"explanation" : "Using the maxAcceptableDelay attribute of a Trigger, you can set a value in seconds, which defines a threshold of time that is added to an overdue trigger. If the point of time when the hybris Multichannel Suite starts up matches the trigger's execution point of time plus the value of the maxAcceptableDelay attribute, then the trigger is activated.",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8b9ce4868669101499b2f0f25ef9395f.html"]
+			},
+			{	
+				"uid" : "6061012",
+				"category" : "Cronjob",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Since hybris 4.6 version it is possible to use the CleanupCronJobStrategy to cleanup instances of the CronJob. Which of the following conditions should be fullfilled?",
+				"answers": [
+					{ "option" : "The CronJob shouldn't have a trigger", "correct" : true, "explanation": ""},
+					{ "option" : "The CronJob is older than 21 days.", "correct" : false, "explanation": "The job should be older than 14 days."},
+					{ "option" : "The CronJob was succesfully finished", "correct" : true, "explanation": "This can be modified in the spring configuraiton. The property <b>status</b> and <b>result</b> can be used to also remove other jobs."},
+					{ "option" : "The type of the CronJob that should be removed should property cronJobCodes in Spring", "correct" : false, "explanation": "You should not include cronjobs, however you can exclude cronjobs in the spring configuration: &lt;property name=\"excludedCronJobCodes\" &gt;&lt;set/&gt;&lt;/property&gt;"}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8b9ce4868669101499b2f0f25ef9395f.html"]
+			},
+			{	
+				"uid" : "6061013",
+				"category" : "Cronjob",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Imagine the following situation. You have still old user accounts in you database which are inactive from a previous database migration. You want to remove them. This task should only be performed once. Which of the following options is the best solution?",
+				"answers": [
+					{ "option" : "Hybris has forseen a job for this.", "correct" : false, "explanation": ""},
+					{ "option" : "You should use the Hybris maintenance framework and create a new strategy for it.", "correct" : false, "explanation": "This option will work but it is not the best solution."},
+					{ "option" : "You should use the Hybris maintenance framework with a dynamic strategy", "correct" : true, "explanation": "Hybris has foreseen JobPerformable named <b>dynamicallyMaintenancePerformable</b>. This is best solution. You will have to enter a searchCode and a cleanupCode. The value for these attributes are beanshell. If you leave the cleanupCode the default behaviour is that the returned items will be removed."},
+					{ "option" : "You should create a new custom CronJob to do the cleanup.", "correct" : false, "explanation": ""}
+
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8b9ce4868669101499b2f0f25ef9395f.html"]
+			},
+			{	
+				"uid" : "6061014",
+				"category" : "Cronjob",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which of the following statements are true?",
+				"answers": [
+					{ "option" : "The strategy MaintenanceCleanupStrategy should be used to lookup the items that should be processed.", "correct" : true, "explanation": ""},
+					{ "option" : "The strategy MaintenanceCleanupStrategy should be used to process (delete) the items that should be processed.", "correct" : true, "explanation": ""},
+					{ "option" : "The JobPerformable GenericMaintenanceJobPerformable extends from AbstractMaintenanceJobPerformable and should always be extend if you want to use it.", "correct" : false, "explanation": "You can use the bean directly:<br /><pre class=\"xml\">&lt;bean id=\"cleanupDeactivatedUsersPerformable\" parent=\"abstractGenericMaintenanceJobPerformable\" scope=\"tenant\"&gt &lt;property name=\"maintenanceCleanupStrategy\"&gt<br />    &lt;bean class=\"de.hybris.example.impl.CleanupDeactivatedUsersStrategy \" scope=\"tenant\"&gt<br />      &lt;property name=\"loginDisabled\" value=\"true\"/&gt<br />      &lt;property name=\"modelService\" ref=\"modelService\"/&gt<br />    &lt;/bean&gt<br />  &lt;/property&gt<br />&lt;/bean&gt<br /></pre>"},
+					{ "option" : "The strategy MaintenanceCleanupStrategy should be used to process (delete) the items that should be processed.", "correct" : true, "explanation": ""}
+
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8b9ce4868669101499b2f0f25ef9395f.html"]
+			},
+			{	
+				"uid" : "6061015",
+				"category" : "Cronjob",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "What is the meaning of cluster.node.groups=backoffice, frontoffice",
+				"answers": [
+					{ "option" : "On the current node the following extensions are loaded", "correct" : false, "explanation": ""},
+					{ "option" : "It is possible to restrict a cronjob from executing on certain nodes based on these groups", "correct" : true, "explanation": "CronJob.setNodeGroup (“backoffice”)"},
+					{ "option" : "It defines the cluster id of node", "correct" : false, "explanation": ""}
+				
+				],
+				"explanation" : "If you set attributes for both nodeGroup and nodeID for a cron job, nodeID overrules the nodeGroup setting. ",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8b55b41a86691014a150c099a4131a50.html"]
+			},
+			{	
+				"uid" : "6061016",
+				"category" : "Cronjob",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which event is published just after a cronjob is started?",
+				"answers": [
+					{ "option" : "BeforeCronJobStartEvent ", "correct" : false, "explanation": "When a cron job is about to start, the BeforeCronJobStartEvent event is published."},
+					{ "option" : "AfterCronJobFinishedEvent ", "correct" : false, "explanation": ""},
+					{ "option" : "None of the above", "correct" : true, "explanation": ""}
+				
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/2b87307fa7ee448886b78b62fe1bb9bc.html"]
+			},
+			{	
+				"uid" : "6061017",
+				"category" : "Cronjob",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "How can you track the progress of a cronjob?",
+				"answers": [
+					{ "option" : "You can only check the status and last excution date.", "correct" : false, "explanation": ""},
+					{ "option" : "In the hac you can check the progress of a cronjob. ", "correct" : true, "explanation": "You can add a cronjob progress tracker to an existing cronjob by using the CronJobProgressTracker class. "},
+					{ "option" : "None of the above", "correct" : false, "explanation": ""}
+				
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/b8004ccfcbc048faa9558ae40ea7b188.html"]
+			},
+			
+			
+			
+			{	
+				"uid" : "6062001",
+				"category" : "Task engine",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which statement(s) about the taskengine are true?",
+				
+				"answers": [
+					{ "option" : "Both the CronJob extension and the Task extension are able to process scheduled actions on any hybris platform cluster node which is available.", "correct" : false, "explanation": "Cronjobs are not cluster aware."},
+					{ "option" : "The taskengine can be seen as a lightweight scheduling framework.", "correct" : true, "explanation": ""},
+					{ "option" : "The taskengine provides more functionality than the Cronjob extension.", "correct" : false, "explanation": "Compared to the well known CronJob extension the Task extension should be understood as a more light weight scheduling framework offering only a minimal set of functionality but greatly reducing the complexity of implementing actions."}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c6d262b866910149bdadc86225a5657.html"]
+			},
+			{	
+				"uid" : "6062002",
+				"category" : "Task engine",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "How can a Task be scheduled?",
+				"answers": [
+					{ "option" : "Time based.", "correct" : true, "explanation": "The task item holds the execution time at which the action bean, which is also held, is triggered"},
+					{ "option" : "Event based.", "correct" : true, "explanation": "Here the task holds at least one task condition item to specify the events required to be fulfilled before triggering the action"},
+					{ "option" : "Manually triggered in the Backoffice.", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c6d262b866910149bdadc86225a5657.html"]
+			},
+			{	
+				"uid" : "6062003",
+				"category" : "Task engine",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which statements about the taskengine are true?",
+				"answers": [
+				
+					{ "option" : "If a single node in the cluster crashes, the overall processing will still keep working.", "correct" : true, "explanation": "The task item holds the execution time at which the action bean, which is also held, is triggered"},
+					{ "option" : "It is possible to define on which cluster node a specic task should be executed or to exclude certain nodes.", "correct" : true, "explanation": "Property: task.engine.loadonstartup=false will disables tasks on a certain node.  Property: task.processing.enabled is deprecated."},
+					{ "option" : "By default all hybris clusternodes automatically start processing due actions", "correct" : true, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c6d262b866910149bdadc86225a5657.html"]
+			},
+			{	
+				"uid" : "6062004",
+				"category" : "Task engine",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which items are provided by the task extension?",
+				"answers": [
+				
+					{ "option" : "Task", "correct" : true, "explanation": ""},
+					{ "option" : "TaskCondition", "correct" : true, "explanation": ""},
+					{ "option" : "TaskEngine", "correct" : false, "explanation": "This is an interface with the following methods: isRunning(), star(), stop(), repoll(), triggerRepoll(Integer)"},
+					{ "option" : "TaskService", "correct" : false, "explanation": "This is an interface with the following methods: scheduleTask(TaskModel), triggerEvent(String), getEngine()"}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c6d262b866910149bdadc86225a5657.html"]
+			},
+			{	
+				"uid" : "6062005",
+				"category" : "Task engine",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "What do you have to do to create an action?",
+				"answers": [
+				
+					{ "option" : "You should create a spring bean. For example:<pre class=\"xml\">&lt;bean id=\"MyRunner\" class=\"MyTaskRunner\" scope=\"tenant\"&gt;<br />&lt;property .../&gt;<br />&lt;/bean&gt;</pre>", "correct" : true, "explanation": ""},
+					{ "option" : "You should create a class that implements TaskEngine.", "correct" : false, "explanation": "The bean/class should implement the interface: TaskRunner<TaskModel> (with the methods run(...){} and handleError(...){})"},
+					{ "option" : "You should create a new item that extends from \"Task\" in the items.xml.", "correct" : false, "explanation": "In order to create an action only a spring bean should be created, not a new item."}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c6d262b866910149bdadc86225a5657.html"]
+			},
+			{	
+				"uid" : "6062006",
+				"category" : "Task engine",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "How do you schedule a time based actions?",
+				"answers": [
+				
+					{ "option" : "The java code below schedule a action and schedule it to start now:<pre class=\"java\">ModelService modeService = ...<br />TaskService taskService = ...<br /> <br />// create model<br />TaskModel task = modelService.create(TaskModel.class);<br /> <br />// configure it<br />task.setRunnerBean(\"MyRunner\"); // the action bean name<br />task.setExecutionTime( new Date() );  // the execution time - here asap<br /></pre>", "correct" : false, "explanation": "The above code is valid but it misses the trigger to schedule the action:<pre class=\"java\">// schedule<br />taskService.scheduleTask(task);</pre>"},
+					{ "option" : "It is possible to create and trigger a new task using impex.", "correct" : false, "explanation": "It is possible to create a new task using impex. However it will not be triggere automatically."},
+					{ "option" : "None of above", "correct" : true, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c6d262b866910149bdadc86225a5657.html"]
+			},
+			{	
+				"uid" : "6062007",
+				"category" : "Task engine",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "How do you schedule a event based actions?",
+				"answers": [
+				
+					{ "option" : "Event based options are created in the same way as time based actions.", "correct" : true, "explanation": ""},
+					{ "option" : "Unlike time based actions you can not use impex to import the Task and TaskCondition.", "correct" : false, "explanation": "This is possible see the example below: <pre>INSERT_UPDATE Task;runnerBean[unique=true]<br />;myRunner<br /> <br />INSERT_UPDATE TaskCondition;uniqueID[unique=true];task(runnerBean)<br />;myEventArrived;myRunner<br /></pre>"},
+					{ "option" : "The action should be scheduled by calling the following method: taskService.scheduleTask(task);", "correct" : true, "explanation": "On the task you have to set the conditions with one ore more TaskConditionModel"},
+					{ "option" : "You need to fetch the TaskCondition model to trigger an event.", "correct" : false, "explanation": "You do not need to fetch any item: <pre class=\"java\">TaskService taskService = ...<br /> <br />// trigger the event<br />taskService.triggerEvent( \"MyEventArrived\" );</pre>"}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c6d262b866910149bdadc86225a5657.html"]
+			},
+			{	
+				"uid" : "6062008",
+				"category" : "Task engine",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which statements are true?",
+				"answers": [
+				
+					{ "option" : "A Task can have an expirationDate, a Taskcondition can not have an expirationDate.", "correct" : false, "explanation": "Both the items Task and TaskCondition can have an expiration date."},
+					{ "option" : "It is possible to pass an object to the task that will be serialized and stored in the database.", "correct" : true, "explanation": "This is done using the context, for example: <br /><br />At scheduling time: <br />task.setContext( new MyContext(...) );<br /><br />At runtime:<br />UserModel requiredUser = ...</br>task.setContextItem( requiredUser );<br /><br />In the run method of the action:<br />UserModel user = (UserModel)task.getContextItem();"},
+					{ "option" : "A task will remain in the database untill it has been cleaned up manually or by a cronjob.", "correct" : false, "explanation": "Once an action has been performed either successfully or even abnormally the backing task item is removed from the database."},
+					{ "option" : "It might be a good idea to extend the Task item model to store context data.", "correct" : true, "explanation": "However you can use getContextItem on the task, it might be interesting to extend the Task item with your own attributes because this is type safe."}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c6d262b866910149bdadc86225a5657.html"]
+			},
+			{	
+				"uid" : "6062009",
+				"category" : "Task engine",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "What should we do when the action couldn't be completed, for example because a webservice was down?",
+				"answers": [
+				
+					{ "option" : "You should create a new task for the action since the task will be removed from the database", "correct" : false, "explanation": ""},
+					{ "option" : "You should throw the proper exception and configure a delay on the exception", "correct" : true, "explanation":   " <pre class=\"java\"> if ( task.getRetry().intValue() <= MAX_RETRIES ) {<br />        RetryLaterException ex = new RetryLaterException(\"cannot perform\");<br />        ex.setDelay(24 * 60 * 60 * 1000 ); // delay for 24h<br />        throw ex;<br />     } else {<br />        throw new IllegalStateException(\"finally cannot perform after \"+task.getRetry()+\" retries\");<br />     }</pre>"}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c6d262b866910149bdadc86225a5657.html"]
+			},
+			{	
+				"uid" : "6062010",
+				"category" : "Task engine",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which of the following exceptions will be throw (after restarting the node) when a task couldn't be finished due to a system failure?",
+				"answers": [
+				
+					{ "option" : "TaskTimeoutException ", "correct" : false, "explanation": "This exception will be thrown when ExpirationDate has passed."},
+					{ "option" : "InvalidTaskStateError ", "correct" : true, "explanation":  ""},
+					{ "option" : "RetryLaterException  ", "correct" : false, "explanation":  ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c6d262b866910149bdadc86225a5657.html"]
+			},
+			{	
+				"uid" : "6062011",
+				"category" : "Task engine",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "What will happen when we trigger a non existing event (uniqueId)?",
+				"answers": [
+				
+					{ "option" : "An exception will be thrown.", "correct" : false, "explanation": ""},
+					{ "option" : "Nothing will happen. ", "correct" : false, "explanation":  ""},
+					{ "option" : "The event will be stored for an unlimited time and consumed immediatly when a task is scheduled with the uniqueId", "correct" : true, "explanation":  ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c6d262b866910149bdadc86225a5657.html"]
+			},
+			
+
+			
+
+
+
+
+
+
+
+
+
+
+		
+		
+		{	
+				"uid" : "6063001",
+				"category" : "Process Engine",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which statement about the process engine are true?",
+				
+				
+				"answers": [
+					{ "option" : "Processes are configured in an XML", "correct" : true, "explanation": ""},
+					{ "option" : "Processes are runned in a synchronize way.", "correct" : false, "explanation": "Processes are runned in a asynchronous  way."},
+					{ "option" : "It guarantees that actions are performed in the right order and on the right condition.", "correct" : true, "explanation": ""},
+					{ "option" : "The process engine extension has been introduced in version 4.4", "correct" : false, "explanation": "It has been introduced in version 4.1."}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c30e9ae86691014a36ed5fd11e24a1e.html"]
+			},
+			{	
+				"uid" : "6063002",
+				"category" : "Process Engine",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which statements are true about creating a process?",
+				"answers": [
+					{ "option" : "You should create an XML that is valid using processdefinition.xsd.", "correct" : true, "explanation": ""},
+					{ "option" : "In the XML you should define all your actions. Each action is stored in the database.", "correct" : false, "explanation": "An action is a spring bean and should extend \"AbstractSimpleDecisionAction\""},
+					{ "option" : "For each process a ProcessDefinitionResource should be declared in the spring xml.", "correct" : true, "explanation": "<pre class=\"xml\">&lt;bean id=\"placeorderProcessDefinitionResource\"class=\"de.hybris.platform.processengine.definition.ProcessDefinitionResource\"scope=\"tenant\"&gt;<br />    &lt;property name=\"resource\"value=\"classpath:/processdemo/placeorder.xml\"/&gt;<br /> &lt;/bean&gt;</pre>"}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c30e9ae86691014a36ed5fd11e24a1e.html"]
+			},
+			{	
+				"uid" : "6063003",
+				"category" : "Process Engine",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which attributes can/should be configured in the process definition XML?",
+				"answers": [
+					{ "option" : "id", "correct" : false, "explanation": ""},
+					{ "option" : "name", "correct" : true, "explanation": "This attribute tells the process' name."},
+					{ "option" : "start", "correct" : true, "explanation": "This attribute tells the ID of the start node."},
+					{ "option" : "end", "correct" : false, "explanation": ""},
+					{ "option" : "stop", "correct" : false, "explanation": ""},
+					{ "option" : "onError", "correct" : true, "explanation": "This attribute gives the node that will be called when an error occurs."},
+					{ "option" : "onFinished", "correct" : false, "explanation": ""},
+					{ "option" : "processClass", "correct" : true, "explanation": "This attribute refers the class that implements the process context. The normal routine is to extend this class for extra fields in which you can store extra process parameters."},
+					{ "option" : "class", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c30e9ae86691014a36ed5fd11e24a1e.html"]
+			},
+			{	
+				"uid" : "6063004",
+				"category" : "Process Engine",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which attributes can/should be configured in the process definition XML?",
+				"answers": [
+					{ "option" : "id", "correct" : false, "explanation": ""},
+					{ "option" : "name", "correct" : true, "explanation": "This attribute tells the process' name."},
+					{ "option" : "start", "correct" : true, "explanation": "This attribute tells the ID of the start node."},
+					{ "option" : "end", "correct" : false, "explanation": ""}
+
+				],
+				"explanation" : "<pre class=\"xml\">&lt;?xml version=\"1.0\"encoding=\"utf-8\"?><br /> &lt;process xmlns=\"http://www.hybris.de/xsd/processdefinition\" name=\"consignmentFulfilmentSubprocess\" start=\"waitBeforeTransmission\" onError=\"onError\" processClass=\"de.hybris.platform.fulfilment.model.ConsignmentProcessModel\"&gt;<br />... ... <br />&lt;/process&gt;</pre>",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c30e9ae86691014a36ed5fd11e24a1e.html"]
+			},
+			{	
+				"uid" : "6063005",
+				"category" : "Process Engine",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which of the following node types do exist?",
+				"answers": [
+					{ "option" : "Start Node", "correct" : false, "explanation": ""},
+					{ "option" : "Action Node", "correct" : true, "explanation": "Action nodes are the nodes that realize the process logic. "},
+					{ "option" : "Wait Node", "correct" : true, "explanation": "Wait nodes are used to communicate with external environment. When somewhere in the process you need to wait for an external process result use this node. It is also used in waiting for subprocesses to finish their routine."},
+					{ "option" : "Split Node", "correct" : true, "explanation": ""},
+					{ "option" : "Error Node", "correct" : false, "explanation": ""},
+					{ "option" : "Warning Node", "correct" : false, "explanation": ""},
+					{ "option" : "Notify Node", "correct" : true, "explanation": "If there is need to inform a user group or a particular user of state of process, this is the node to do it."},
+					{ "option" : "End Node", "correct" : true, "explanation": "This node ends the process and stores state and message in a process item."},
+					{ "option" : "Complete Node", "correct" : false, "explanation": ""}
+
+				],
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c30e9ae86691014a36ed5fd11e24a1e.html"]
+			},
+			{	
+				"uid" : "6063006",
+				"category" : "Process Engine",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which of the following statements are true?",
+				"answers": [
+					{ "option" : "An action node-tag can have an event-tag.", "correct" : false, "explanation": "An action node can only have a transition-tag. A wait node can have an event-tag for the event it is waiting for."}
+
+				],
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c30e9ae86691014a36ed5fd11e24a1e.html"]
+			},
+			{	
+				"uid" : "6063007",
+				"category" : "Process Engine",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which of the following statements are true?",
+				"answers": [
+					{ "option" : "An action interfaces has 2 methods: <String>getTransitions() and execute(BusinessProcessModel)", "correct" : true, "explanation": ""},
+					{ "option" : "You can/should return ERROR_RETURN_CODE to indicate something went wrong.", "correct" : true, "explanation": ""},
+					{ "option" : "You can/should throw an exception to indicate something went wrong.", "correct" : true, "explanation": "This will have the same effect as returning ERROR_RETURN_CODE."}
+
+				],
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c30e9ae86691014a36ed5fd11e24a1e.html"]
+			},
+			{	
+				"uid" : "6063008",
+				"category" : "Process Engine",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which of the following classes should you extend when the action has only one possible result?",
+				"answers": [
+					{ "option" : "AbstractAction", "correct" : false, "explanation": "Root class for all actions."},
+					{ "option" : "AbstractProceduralAction", "correct" : true, "explanation": "It simply returns OK whatever happens. It is useful to split Process into smaller pieces. Only implementation of execute method is necessary."},
+					{ "option" : "AbstractSimpleDecisionAction", "correct" : false, "explanation": "It returns one of OK or NOK values. It is useful to make a simple decision. Transitions are defined and only execute method must be implemented."},
+					{ "option" : "NoAction", "correct" : false, "explanation": "Empty, do nothing"}
+
+				],
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c30e9ae86691014a36ed5fd11e24a1e.html"]
+			},
+			{	
+				"uid" : "6063009",
+				"category" : "Process Engine",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which methods can be used to create a business process?",
+				"answers": [
+					{ "option" : "getBusinessProcessService().createProcess(String)", "correct" : true, "explanation": "This will create but not start the process."},
+					{ "option" : "getBusinessProcessService().startProcess(BusinessProcessModel)", "correct" : false, "explanation": ""},
+					{ "option" : "getBusinessProcessService().startProcess(id, processName);", "correct" : true, "explanation": "This method will start and create the process if it doesn't exist yet."}
+
+				],
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c30e9ae86691014a36ed5fd11e24a1e.html"]
+			},
+			{	
+				"uid" : "6063010",
+				"category" : "Process Engine",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "What is the best practice for creating new return codes like \"OK\" and \"NOK\" (business process) ",
+				"answers": [
+					{ "option" : "There is no need to define the return codes.", "correct" : false, "explanation": ""},
+					{ "option" : "Define an enumeration inside the action class that defines all possible codes.", "correct" : true, "explanation": ""},
+					{ "option" : "The return codes should be defined in the processdefinition.xsd. This means you can not create custom return codes.", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "<pre class=\"java\">    public enum Transition  { <br />        OK, PARTIAL, CANCEL, ERROR; <br />        public static Set<String> getStringValues() { <br />            final Set<String> res = new HashSet<String>(); <br />  <br />            for (final Transition t : Transition.values()) { <br />                res.add(t.toString()); <br />            } <br />            return res; <br />        } <br />    }<br /><br />    @Override<br />    public Set<String> getTransitions() {<br />        return     Transition.getStringValues();<br />    }</pre>",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c30e9ae86691014a36ed5fd11e24a1e.html"]
+			}
+			
+			
+			,
+			{	
+				"uid" : "6064001",
+				"category" : "cluster",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Statements",
+				"answers": [
+					{ "option" : "Each node runs in a different JVM", "correct" : true, "explanation": ""},
+					{ "option" : "Each node has his own data", "correct" : false, "explanation": "Usually one DB is shared by the different nodes"},
+					{ "option" : "A cluster supports Session failover.", "correct" : true, "explanation": ""},
+					{ "option" : "A cluster is limited to 64  nodes.", "correct" : false, "explanation": ""},
+					{ "option" : "When you have 2 or more nodes, you will always need a load balancer.", "correct" : false, "explanation": "In some configurations, you might want to use two nodes but without load balancing. For example, let's say you have one machine that is a cluster node for your front-end system, and another machine for Backoffice. They both are part of a cluster, which means they do not display invalid data, and you can access them directly by the IP address or hostname."}
+				
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8b7c5c75866910148c329ee71f3a681e.html"]
+			}
+			,
+			{	
+				"uid" : "6064002",
+				"category" : "cluster",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which protocols can be used to setup a cluster?",
+				"answers": [
+					{ "option" : "JGroups", "correct" : true, "explanation": "Within Jgroups you can select between udp (default) communication and tcp communication."},
+					{ "option" : "UDP Multicast", "correct" : true, "explanation": ""},
+					{ "option" : "UDP Unicast", "correct" : true, "explanation": ""},
+					{ "option" : "TCP", "correct" : false, "explanation": ""}
+				
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8b8a706f866910149298ea4ad028653e.html"]
+			}
+			
+			,
+			{	
+				"uid" : "6064003",
+				"category" : "cluster",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Statements about jgroups.",
+				"answers": [
+					{ "option" : "It is Encrypted", "correct" : true, "explanation": ""},
+					{ "option" : "It is slower than UDP only", "correct" : false, "explanation": "JGroups is much faster than using 'pure' UDP or TCP: in our local testing JGroups UDP cluster, sending 10 mln messages took 2 minutes as compared with 3 minutes with UDP Multicast. Cloud testing yielded similar speed improvement. "},
+					{ "option" : "Reliable unicast and multicast message transmission. Lost messages are retransmitted", "correct" : true, "explanation": ""},
+					{ "option" : "Transport protocols: UDP (IP Multicast), TCP, JMS", "correct" : true, "explanation": ""},
+					{ "option" : "The default configuration is TCP", "correct" : false, "explanation": "The defaulf configuration for JGroups is UDP. "}
+				
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/fa88b75d31494e6ebe01e0837629cf2c.html"]
+			}
+			
+			,
+			{	
+				"uid" : "6064003b",
+				"category" : "cluster",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "How can you test UDP Multicast?",
+				"answers": [
+					{ "option" : "ant udpsniff", "correct" : true, "explanation": ""},
+					{ "option" : "Check the backoffice for available nodes", "correct" : false, "explanation": ""},
+					{ "option" : "None of the above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/d21985d3a843479080d5f0b90efcd023.html"]
+			}
+			,
+			{	
+				"uid" : "6064004",
+				"category" : "cluster",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "cluster.1.build.compiler=classic",
+				"answers": [
+					{ "option" : "This property will only be used on node 1", "correct" : false, "explanation": ""},
+					{ "option" : "This property is not valid", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "It is possible to define node specific properties, but they are ignored when during the compilation step.",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c17c61f86691014b15c85ef8f5cfc20.html"]
+			}
+			,
+			{	
+				"uid" : "6064005",
+				"category" : "cluster",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which statements are correct?",
+				"answers": [
+					{ "option" : "The default cluster node is 1", "correct" : false, "explanation": "the default value for the cluster.id is set to 15"},
+					{ "option" : "Hybris allows you to replicate data in multilple locations", "correct" : true, "explanation": "cluster.1.media.replication.dirs=M:\\data;N:\\data"},
+					{ "option" : "Hybris supports rolling updates with a system update", "correct" : true, "explanation": "You will need 2 type systems: Property: db.type.system.name<br />ant createtypesystem -DtypeSystemName=new_type_system <br />ant droptypesystem -DtypeSystemName=USER_DEFINED_TYPE_SYSTEM"},
+					{ "option" : "The property cluster.nodes.autodiscovery=true makes cluster.id obsolete.", "correct" : true, "explanation": "Cluster autodiscovery is a feature that makes deployment less complex and more flexible. All nodes that form a cluster can have an automatically assigned ID number. You don't have to explicitly set the <cluster.id> property on each node. "}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c17c61f86691014b15c85ef8f5cfc20.html", "https://help.hybris.com/6.7.0/hcd/8b43904f86691014ad89d468b234cf91.html"]
+			}
+			,
+			{	
+				"uid" : "6064006",
+				"category" : "cluster",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Statements",
+				"answers": [
+					{ "option" : "SAP Commerce session failover is designed with round-robin load balancing in mind.", "correct" : false, "explanation": "SAP Commerce session failover is designed with sticky-session load balancing in mind."},
+					{ "option" : "A load balancer with configured sticky sessions assigns clients to specific cluster nodes. ", "correct" : true, "explanation": ""},
+					{ "option" : "The server holds the client session in the DB", "correct" : false, "explanation": "The server holds the client session cached in memory. "},
+					{ "option" : "The default cluster node is 1", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/5da5660b2a3f4263ac3095d900d07f88.html"]
+			}
+			,
+			{	
+				"uid" : "6064007",
+				"category" : "cluster",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "What should be done to configure session failover for an extension?",
+				"answers": [
+					{ "option" : "Enable property: spring.session.enabled=true", "correct" : true, "explanation": ""},
+					{ "option" : "Configure operatin mode: spring.session.&lt;extension_name&gt;.save=async", "correct" : true, "explanation": "The async configuration is faster but choosing it can result in session data loss if a node fails before the pending session is saved to the database. "},
+					{ "option" : "Replace the sessionFilter with the filter hybrisSpringSessionFilter", "correct" : false, "explanation": "Enables serialization checking feature on each request. You should not replace but add the hybrisSpringSessionFilter before the sessionFilter is called"},
+					{ "option" : "Set property: session.serialization.check=true", "correct" : false, "explanation": "It is not required to validate it, but perhaps recommended as they are serialized?"}
+				],
+				"explanation" : "The sessions are now stored in hybris. See type StoredHttpSession" ,
+				"references" : ["https://help.hybris.com/6.7.0/hcd/5da5660b2a3f4263ac3095d900d07f88.html#loio5da5660b2a3f4263ac3095d900d07f88"]
+			}
+			
+			
+]}

@@ -1,0 +1,418 @@
+{"questions": [
+			{	
+				"uid" : "030001",
+				"category" : "datamodel",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Statements.",
+				"answers": [
+					{ "option" : "Hybris will recognize every file that matches *-items.xml if they are located in the proper spot.", "correct" : false, "explanation": "/resources/@{extname}-items.xml"}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/tr460/Trail+~+New+Data+Model"]
+			},
+			{	
+				"uid" : "030002",
+				"category" : "datamodel",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Have a look at the following snippet of the items.xml. Which of the following statements are true?.<br /><pre class=\"xml\">    &lt;relations&gt;<br />        &lt;!-- The 1-to-many relationship between Stadium and Match --&gt;<br />        &lt;relation code=\"StadiumMatchRelation\"<br />                localized=\"false\" generate=\"true\" autocreate=\"true\"&gt;   <br />               &lt;sourceElement type=\"Stadium\" qualifier=\"match\" cardinality=\"one\"/&gt;<br />            &lt;targetElement type=\"Match\" qualifier=\"stadium\" cardinality=\"many\"&gt;<br />                &lt;modifiers optional=\"true\"/&gt;<br />            &lt;/targetElement&gt;<br />        &lt;/relation&gt;<br />    &lt;/relations&gt;</pre>",
+				"answers": [
+					{ "option" : "Stadium has an attribute named 'match'.", "correct" : false, "explanation": "It has an attribute 'stadium'."},
+					{ "option" : "Match has an attribute named 'match'.", "correct" : true, "explanation": ""},
+					{ "option" : "Stadium can have multiple Match-objects.", "correct" : true, "explanation": "Be aware that in this example the method for this is named getStadium()!"},
+					{ "option" : "Stadium can have multiple Stadium-bjetcs", "correct" : false, "explanation": ""},
+					{ "option" : "Stadium can have only one Match-object.", "correct" : false, "explanation": ""},
+					{ "option" : "Stadium can have only one Stadium-object.", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/tr460/Trail+~+New+Data+Model"]
+			},
+			{	
+				"uid" : "030003",
+				"category" : "datamodel",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Statements.",
+				"answers": [
+					{ "option" : "On a MySQL database it is possible to 'ant updatesystem' even when the server is already running.", "correct" : true, "explanation": ""},
+					{ "option" : "On a HSQL database it is possible to 'ant updatesystem' even when the server is already running.", "correct" : false, "explanation": "HSQL only supports a single database connection. "}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/tr460/Trail+~+New+Data+Model"]
+			},
+			{	
+				"uid" : "030004",
+				"category" : "datamodel",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Statements.",
+				"answers": [
+					{ "option" : "Every type is a java class. Even a java String is encapsulated in a type", "correct" : true, "explanation": ""},
+					{ "option" : "A type is the equivalent of java class.", "correct" : true, "explanation": ""},
+					{ "option" : "An item is the equivalent of an object or instance", "correct" : true, "explanation": ""},
+					{ "option" : "It is not likely that you as developer will define business related item types.", "correct" : false, "explanation": "The opposite is true. However it is not likely that you will define 'System-related'-related itemtypes like ComposedTypes, MapTypes, ..."},
+					{ "option" : "Every object stored in the hybris Multichannel Suite is typed - it is an instance of a type. Even type definitions are typed as they are stored as instances of the Type type. ", "correct" : true, "explanation": "This means that are two aspects of a type definition: it is an item and, at the same time, it defines other items (read: instances)."}
+	
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/Type+System+Documentation"]
+			},
+			{	
+				"uid" : "030005",
+				"category" : "datamodel",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Statements. Consider the item Product in the items.xml.",
+				"answers": [
+					{ "option" : "The type Product is an instance of the type Item.", "correct" : false, "explanation": ""},
+					{ "option" : "The type Product is a subtype of the type Item.", "correct" : true, "explanation": ""},
+					{ "option" : "The type Item is a instance of the type ComposedType.", "correct" : true, "explanation": ""},
+					{ "option" : "The type ComposedType is a instance of the type ComposedType.", "correct" : true, "explanation": ""},
+					{ "option" : "The type Product is a subtype of the type ComposedType.", "correct" : false, "explanation": "It should be instance of."},
+					{ "option" : "The type Item is a subtype of all types in the hybris multichannel suite.", "correct" : false, "explanation": "It should be supertype."},
+					{ "option" : "Every object that is managed by the platform is an instance of Item or of one of Item's subtypes.", "correct" : true, "explanation": ""}
+	
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/Type+System+Documentation"]
+			},
+			{	
+				"uid" : "030006",
+				"category" : "datamodel",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Statements about getting attribute values.",
+				"answers": [
+					{ "option" : "The method getAttribute( XYZ ) will return the same as getXYZ() ", "correct" : true, "explanation": "getAttribute can also be used for unknow attributes"},
+					{ "option" : "getXYZ() is not automaticly generated by Hybris.", "correct" : false, "explanation": "Every type system attribute with its persistence set to property will have an automatically generated getXYZ() method."},
+					{ "option" : "If you want to get a list of available attributes you should use: getProperty( XYZ ) and getAttributeDescriptors()", "correct" : false, "explanation": "You should use getAttributeDescriptors() and getAttribute( XYZ )."},
+					{ "option" : "getProperty( XYZ ) supports Jalo Attributes.", "correct" : false, "explanation": "JaLo-only attributes exist in memory only by runtime and do not have a database field by their very nature. The getXYZ() approach relies on a custom business logic implementation and therefore works with JaLo-only attributes."},	
+					{ "option" : "getAttribute( XYZ ) is a generic approach which implicitly uses getXYZ() internally.", "correct" : true, "explanation": ""},
+					{ "option" : "It is not recommended to use getAttribute( XYZ ).", "correct" : false, "explanation": "It depends what you need. However it is not recommended to use getProperty( XYZ )."}
+
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/Type+System+Documentation"]
+			},
+			{	
+				"uid" : "030007",
+				"category" : "datamodel",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "It is possible to define types outside the items.xml.",
+				"answers": [
+					{ "option" : "true", "correct" : true, "explanation": ""},
+					{ "option" : "false", "correct" : false, "explanation": ""}
+
+
+				],
+				"explanation" : "They can be defined in the HMC. They are so called Runtime Types. It is not recommended! They are not persistent.",
+				"references" : ["https://wiki.hybris.com/display/release4/Type+System+Documentation"]
+			},
+			{	
+				"uid" : "030008",
+				"category" : "datamodel",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Since Hybris 4.6 it is possible to move item types between extensions. Which are the limitations?",
+				"answers": [
+					{ "option" : "This statemnts is false, you can not move items to another extension.", "correct" : false, "explanation": ""},
+					{ "option" : "You are allowed to change the deployment typecode of the type.", "correct" : false, "explanation": ""},
+					{ "option" : "You can not move a type if it affects a classpath.", "correct" : true, "explanation": ""},
+					{ "option" : "You should remove the generated javaclasses.", "correct" : true, "explanation": ""},
+					{ "option" : "You should change the package name.", "correct" : true, "explanation": ""},
+					{ "option" : "ANT ALL is sufficient for a proper build.", "correct" : false, "explanation": "You should do an ANT CLEAN ALL otherwhise not all classes are removed."}
+
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/Type+System+Documentation"]
+			},
+			{	
+				"uid" : "030009",
+				"category" : "datamodel",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "java.lang.Integer or java.lang.String are represented by which type?",
+				"answers": [
+					{ "option" : "AtomicType", "correct" : true, "explanation": ""},
+					{ "option" : "ItemType", "correct" : false, "explanation": ""}
+
+				],
+				"explanation" : "AtomicTypes are the most basic types available in the hybris Multichannel Suite. They are assigned to java class.",
+				"references" : ["https://wiki.hybris.com/display/release4/Type+System+Documentation"]
+			},
+			{	
+				"uid" : "030010",
+				"category" : "datamodel",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Statements.",
+				"answers": [
+					{ "option" : "When you define an AtomicType yourself, you need to assign a Java class object to it.", "correct" : true, "explanation": ""},
+					{ "option" : "AtomicType definitions does not have a code attribute  to set the unique identifier", "correct" : true, "explanation": "Instead, the AtomicType's class attribute will be used as its reference"},
+					{ "option" : "The hybris Multichannel Suite stores AtomicType instances in the database as strings (VARCHAR) or numbers (NUMBER), if possible.", "correct" : true, "explanation": ""},
+					{ "option" : "If you define AtomicTypes yourself, you need to make sure that those types are serialisable", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "AtomicTypes are the most basic types available in the hybris Multichannel Suite. They are assigned to java class.",
+				"references" : ["https://wiki.hybris.com/display/release4/Type+System+Documentation"]
+			},
+			{	
+				"uid" : "030011",
+				"category" : "datamodel",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Statements.",
+				"answers": [
+					{ "option" : "The use of CollectionTypes is recommended.", "correct" : false, "explanation": "You should use relations."},
+					{ "option" : "A collection is stored as a CSV in the database.", "correct" : true, "explanation": ""},
+					{ "option" : "Hybris 4.6 allows the use of 1-1 relations.", "correct" : false, "explanation": ""},
+					{ "option" : "Many-1 relations do not suffer from a field length limitation since they are not stored as CSV.", "correct" : true, "explanation": "The PK is stored on the target object."},
+					{ "option" : "It is not (never) possible to do a query on the database on collections.", "correct" : false, "explanation": "When a Many-1 relation is used, you can perform a flexible search query."}
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/Type+System+Documentation"]
+			},
+			{	
+				"uid" : "030012",
+				"category" : "datamodel",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Localized values",
+				"answers": [
+					{ "option" : "Localized values are stored in a seperate table.", "correct" : true, "explanation": "Localized values are stored in a separate database table, whose name is composed of the name of the table the type is stored in, plus the suffix lp (short for localized property)."},
+					{ "option" : "'localized:java.lang.String' is an example of maptype.", "correct" : true, "explanation": ""},
+					{ "option" : "It is not possible to create your own maptypes.", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/Type+System+Documentation"]
+			},
+			{	
+				"uid" : "030013",
+				"category" : "datamodel",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Relation Type",
+				"answers": [
+					{ "option" : "RelationTypes are subtype of LinkedItem", "correct" : false, "explanation": "LinkItem"},
+					{ "option" : "2 attributes should be defined: SourceItem and Targetitem", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/Type+System+Documentation"]
+			},
+			{	
+				"uid" : "030014",
+				"category" : "datamodel",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "How create a new instance of an item?",
+				"answers": [
+					{ "option" : "Using the extension manager", "correct" : true, "explanation": "HelloWorldWizardManager.getInstance().createHelloWorldWizardCronJob( params );"},
+					{ "option" : "ComposedType.newInstance()", "correct" : true, "explanation": "ComposedType item = getSession().getTypeManager().getComposedType( \"mySampleItem\" ); return(MySampleItem) item.newInstance( ctx, params ); If you create items that way, pass any critical parameters (such as code or qualifier, catalog versions, etc) directly in the Map."}
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/Type+System+Documentation"]
+			},
+			{	
+				"uid" : "030015",
+				"category" : "datamodel",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which of the following attributes are have the intial modifier=true? (&lt;modifiers initial=\"true\"/&gt;)",
+				"answers": [
+					{ "option" : "PK", "correct" : true, "explanation": ""},
+					{ "option" : "qualifier", "correct" : true, "explanation": ""},
+					{ "option" : "creationtime", "correct" : true, "explanation": ""},
+					{ "option" : "modifiedtime", "correct" : false, "explanation": ""},
+					{ "option" : "catalog version", "correct" : true, "explanation": ""},
+					{ "option" : "code", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "Initial attributes must be set during item creation, non-initial values can be set later on.",
+				"references" : ["https://wiki.hybris.com/display/release4/Type+System+Documentation"]
+			},
+			{	
+				"uid" : "030016",
+				"category" : "datamodel",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "The modifiers optional and inital have the same meaning.",
+				"answers": [
+					{ "option" : "true", "correct" : false, "explanation": ""},
+					{ "option" : "false", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "intial=true => If 'true', the attribute will only be writable during the item creation. Setting this to 'true' is only useful in combination with write='false'. Default is 'false'.",
+				"references" : ["https://wiki.hybris.com/display/release4/Type+System+Documentation"]
+			},
+			{	
+				"uid" : "030017",
+				"category" : "datamodel",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Statements (related to CollectionTypes)",
+				"answers": [
+					{ "option" : "one-many relations scale better than many-one relations", "correct" : false, "explanation": ""},
+					{ "option" : "many-one relations scale better than one-many relations", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "A many to one relation has its entries stored with the items themselves, while the one to many relation stores the entries by itself.",
+				"references" : ["https://wiki.hybris.com/display/release4/Type+System+Documentation"]
+			},
+			{	
+				"uid" : "030018",
+				"category" : "datamodel",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Statements (related to CollectionTypes)",
+				"answers": [
+					{ "option" : "The size of one-many relations are limited in length.", "correct" : true, "explanation": ""},
+					{ "option" : "The size of many-one relations are limited in length.", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "A many to one relation has its entries stored with the items themselves, while the one to many relation stores the entries by itself.",
+				"references" : ["https://wiki.hybris.com/display/release4/Type+System+Documentation"]
+			},
+			{	
+				"uid" : "030018",
+				"category" : "datamodel",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Statements (related to CollectionTypes)",
+				"answers": [
+					{ "option" : "One-many relations are faster when it comes to saving it to the database.", "correct" : true, "explanation": ""},
+					{ "option" : "Many-one relations are faster when it comes to saving it to the database.", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "A many to one relation has its entries stored with the items themselves, while the one to many relation stores the entries by itself.",
+				"references" : ["https://wiki.hybris.com/display/release4/Type+System+Documentation"]
+			},
+			{	
+				"uid" : "030019",
+				"category" : "datamodel",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "A multitenant system can have different itemtypes depending on the tenants.",
+				"answers": [
+					{ "option" : "true", "correct" : true, "explanation": ""},
+					{ "option" : "false", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/Type+System+Documentation"]
+			},
+			{	
+				"uid" : "030020",
+				"category" : "datamodel",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "What is an Orphaned types?",
+				"answers": [
+					{ "option" : "Type definitions in the database that are not backed by an items.xml file definition. ", "correct" : true, "explanation": ""},
+					{ "option" : "It doesn't exist.", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/Type+System+Documentation"]
+			},
+			{	
+				"uid" : "030021",
+				"category" : "datamodel",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "It is possible to encrypt and decrypt attribute values in the items.xml",
+				"answers": [
+					{ "option" : "true", "correct" : true, "explanation": ""},
+					{ "option" : "false", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/Using+encryption+for+attribute+values"]
+			},
+			{	
+				"uid" : "030022",
+				"category" : "datamodel",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Statements",
+				"answers": [
+					{ "option" : "Jalo attributes are persistent.", "correct" : false, "explanation": ""},
+					{ "option" : "You can search for Jalo Attributes using as flexible search query.", "correct" : false, "explanation": ""},
+					{ "option" : "They only exist at runtime.", "correct" : true, "explanation": ""},
+					{ "option" : "They are defined using the tag &lt;persistence ... &gt;", "correct" : true, "explanation": ""},
+					{ "option" : "The getters and setter are automatically generated at compile time", "correct" : false, "explanation": ""},
+					{ "option" : "Jalo attributes can not be indexed by lucene", "correct" : false, "explanation": "You need to set the forceLuceneIndexable property of the JaLo-only attribute's AttributeDescriptor"}
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/Jalo-only+Attributes"]
+			},
+			{	
+				"uid" : "030023",
+				"category" : "datamodel",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which of the following tags is not a child of the <items> tag in the items.xml.",
+				"answers": [
+					{ "option" : "atomictypes", "correct" : false, "explanation": ""},
+					{ "option" : "collectiontypes", "correct" : false, "explanation": ""},
+					{ "option" : "enumtypes", "correct" : false, "explanation": ""},
+					{ "option" : "maptypes", "correct" : false, "explanation": ""},
+					{ "option" : "relationtypes", "correct" : true, "explanation": "it should be 'relations'"},
+					{ "option" : "itemtypes", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/items.xml"]
+			},
+			{	
+				"uid" : "030024",
+				"category" : "datamodel",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "When the following modifier is defined &lt;modifiers read=\"false\" /&gt;",
+				"answers": [
+					{ "option" : "It is not possible to access the attribute", "correct" : true, "explanation": ""},
+					{ "option" : "It is possible to access the propertie using getAttribute(...)", "correct" : false, "explanation": "The getAttribute(...) method internally also relies on the generated getter and will not be operable either."}
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/items.xml"]
+			},
+			{	
+				"uid" : "030025",
+				"category" : "datamodel",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "What can you do with custom implementation of : SameColumnChangeStrategy?",
+				"answers": [
+					{ "option" : "You can make a copy of your column in a seperate table.", "correct" : true, "explanation": "You can implement a custom database column type switching mechanism."},
+					{ "option" : "You can add extra logging which is stored in the DB.", "correct" : true, "explanation": "You can implement a custom database column type switching mechanism."},
+					{ "option" : "You can break your Hybris DB Structrure", "correct" : true, "explanation": "Be careful because you are doing \"open-heart surgery\" on the database structure."}
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/items.xml"]
+			},
+			{	
+				"uid" : "030026",
+				"category" : "datamodel",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which of the following items.xml snippets are not valid?",
+				"answers": [
+					{ "option" : "&lt;attribute qualifier=\"myAttribute\" type=\"java.lang.Boolean\"&gt;", "correct" : false, "explanation": ""},
+					{ "option" : "&lt;attribute qualifier=\"myAttribute\" type=\"localized:java.lang.Boolean\"&gt;", "correct" : false, "explanation": ""},
+					{ "option" : "&lt;attribute qualifier=\"myAttribute\" type=\"boolean\"&gt;", "correct" : false, "explanation": ""},
+					{ "option" : "&lt;attribute qualifier=\"myAttribute\" type=\"Boolean\"&gt;", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/items.xml"]
+			},
+			{	
+				"uid" : "030027",
+				"category" : "datamodel",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Statements",
+				"answers": [
+					{ "option" : "The lenght of a deployment table can have max length of 32 characters.", "correct" : false, "explanation": "It is 24 characters."},
+					{ "option" : "typecode is an optional attribute", "correct" : false, "explanation": "The value of the typecode attribute must be a positive integer between 0 and 32767 (2^15-1) and must be unique throughout the hybris Multichannel Suite as it is part of the PK generation mechanism. Typecode values between 0 and 10000 are reserved for hybris-internal use; typecode values larger than 10000 are free for you to use. BE AWARE that it is not totally true!!"},
+					{ "option" : "Changing the deployment table may result in a loss of data.", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/Specifying+a+Deployment+for+hybris+Platform+Types"]
+			}
+			
+		]}

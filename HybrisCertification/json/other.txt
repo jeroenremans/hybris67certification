@@ -1,0 +1,43 @@
+Other:
+
+{
+"questions": [		
+
+			{	
+				"uid" : "9900001",
+				"category" : "other",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "What is the Data Retention Framework?",
+				"answers": [
+					{ "option" : "It is a framework to handle the removal of files that should kept for a certain amount of time", "correct" : true, "explanation": ""},
+					{ "option" : "It lock items against modification or removal.", "correct" : false, "explanation": "The Item Locking Service enables you to  do that.  For example, you may need to lock some specific instance of the User type - and when it is a customer - their orders, or comments they left about the products they bought. "},
+					{ "option" : "It is a framework used to validate items before saving them.", "correct" : false, "explanation": ""},
+					{ "option" : "It is a framework to search items in the backoffice", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/2268d55f40c94c5e8c43fa47f3b609a4.html"]
+			},
+			
+			
+			{	
+				"uid" : "9900002",
+				"category" : "other",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Statements about auditing.",
+				"answers": [
+					{ "option" : "This property will enable 'audit.employee.enabled=true' auditing for all employees", "correct" : false, "explanation": "First you will need 'auditing.enabled=true' as well. Secondly it will not track all changes on the type Employee, not only the changes made by a employee!"},
+					{ "option" : "Audit logs are stored in the DB", "correct" : true, "explanation": "SAP Commerce provides a JDBC-based implementation of audit storage by default. For each type, a new corresponding table is created during initialization or update. The table name follows the <deploymentName><numericTypeCode>sn naming convention. For example, an audit table for the User type would be called users4sn. "}
+					{ "option" : "The audit payload is stored in json format", "correct" : true, "explanation": ""},
+					{ "option" : "The audit does not keep track of deletions", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/3e2b8491449d43b391eb1ce9c73cbb7f.html"]
+			},
+			
+			TODO https://help.hybris.com/6.7.0/hcd/32a64494449c42338371d9789ec809e4.html
+			
+			
+			
+}

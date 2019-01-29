@@ -1,0 +1,55 @@
+{"questions": [
+			{	
+				"uid" : "103001",
+				"category" : "Dynamic Attributes",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "How do you define an dynamic attribute in the items.xml? (replace XXXXXX) <br /> <pre class=\"xml\">&lt;attribute type=\"int\" qualifier=\"daysHumanReadable\"&gt;<br />    &lt;persistence type=\"<i>XXXXXXXX</i>\" attributeHandler=\"myOwnSpringBeanId\" /&gt;<br />    ...<br />&lt;/attribute&gt;</pre>",
+				"answers": [
+					{ "option" : "property", "correct" : false, "explanation": ""},
+					{ "option" : "jalo", "correct" : false, "explanation": ""},
+					{ "option" : "dynamic", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/Dynamic+Attributes#DynamicAttributes-OverviewofDynamicAttributes"]
+			},
+			{	
+				"uid" : "103002",
+				"category" : "Dynamic Attributes",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which statements concernign dynamic attributes are true.",
+				"answers": [
+					{ "option" : "It is not possible to localize dynamic attributes.", "correct" : false, "explanation": "Since 4.7 it is possible when you implement the interface DynamicLocalizedAttributeHandler."},
+					{ "option" : "It is possible to inject Spring services.", "correct" : true, "explanation": "Dynamic attributes are defined as beans in Spring. This means that it is possible to inject other beans in comparison with Jalo where this isn't possible."},
+					{ "option" : "Dynamic attributes are available since version 4.2", "correct" : false, "explanation": "Since 4.4."},
+					{ "option" : "Dynamic attributes are persisted in the Database.", "correct" : false, "explanation": "They are not stored in the database."},
+					{ "option" : "When using dynamic attributes you are required to define a attributeHandler attribute in the items.xml.", "correct" : false, "explanation": "If the attribute attributeHandler is not defined, Hybris will autogenerate a attributehandler class with the name: [itemtype]_[attributename]AttributeHandler. You still have make a bean of in the Spring context." },
+					{ "option" : "Dynamic attributes will replace Jalo attributes.", "correct" : true, "explanation": "Jalo is deprecated since hybris 4.3.0 version and will be removed completely with the hybris 5.0 version. Since hybris 4.4.0 version, Dynamic Attributes replace Jalo attributes." },
+					{ "option" : "A subtype can overwrite a jalo attribute with a dynamic attribute.", "correct" : true, "explanation": "It is possible to redeclare an dynamic attribute. Do not forget to add the add the attribute redeclare=\"true\". Otherwhise it will not work." }
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/Dynamic+Attributes#DynamicAttributes-OverviewofDynamicAttributes"]
+			},
+			
+			
+			
+			
+			
+			
+			
+			{	
+				"uid" : "103002",
+				"category" : "Update System",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which statements concernign dynamic attributes are true.",
+				"answers": [
+					{ "option" : "It is possible to execute an update running system from the command line", "correct" : true, "explanation": "ant updatesystem -Dtenant=master"}
+					
+					
+					],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/Dynamic+Attributes#DynamicAttributes-OverviewofDynamicAttributes"]
+			}
+]}

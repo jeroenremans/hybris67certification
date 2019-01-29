@@ -1,0 +1,76 @@
+{"questions": [
+			{	
+				"uid" : "070001",
+				"category" : "spring",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which line should be added to the spring.xml so that a bean defined in the spring.xml can take advantage of @Autowired.",
+				"answers": [
+					{ "option" : "&lt;context:annotation-config&gt;", "correct" : true, "explanation": ""},
+					{ "option" : "&lt;context:component-scan base-package=\"de.hybris.platform.cuppytrail\" /&gt;", "correct" : false, "explanation": "This line is needed for beans declared using annotations."},
+					{ "option" : "&lt;context:annotation-config&gt;", "correct" : true, "explanation": ""},
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/tr460/Trail+~+Front+end","http://stackoverflow.com/questions/7414794/difference-between-contextannotation-config-vs-contextcomponent-scan"]
+			},
+			{	
+				"uid" : "070002",
+				"category" : "spring",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "How can you get the product code from the url, assume that it is not a parameter.",
+				"answers": [
+					{ "option" : "@RequestMapping(value = \"/stadiums/{stadiumName}\")<br /> And @PathVariable String stadiumName", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/tr460/Trail+~+Front+end"]
+			},
+			{	
+				"uid" : "070003",
+				"category" : "filters",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which filter should be used when you want to be able to change the tenant based on the url?",
+				"answers": [
+					{ "option" : "TenantActivationFilter", "correct" : false, "explanation": " It takes care only of setting the tenant given by Spring configuration, without cooperation with the current session and switching possibility."},
+					{ "option" : "SimpleCatalogVersionActivationFilter", "correct" : false, "explanation": "It assures that configured names of catalog versions are set as session catalog versions. Mentioned configuration is done through Spring property activeCatalogVersions. See also Configuring Existing Filters section for an example of bean with activeCatalogVersions property."},
+					{ "option" : "SessionFilter", "correct" : false, "explanation": ""},
+					{ "option" : "BreakChainForUrlsFilter", "correct" : false, "explanation": ""},
+					{ "option" : "None of these", "correct" : true, "explanation": "DynamicTenantSwitchingFilter: It uses the session for storing and fetching the tenant ID inside it. It offers also the the switching possibility, using given pattern as URL suffix."}
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/hybris+Platform+Filters"]
+			},	
+			{	
+				"uid" : "070004",
+				"category" : "spring",
+				"subcategory" : "listener",
+				"difficulty" : "",
+				"question" : "How can you access the the JaloSession?",
+				"answers": [
+					{ "option" : "httpRequest.getSession().getAttribute(\"jalosession\")", "correct" : true, "explanation": "THIS NOT RECOMMENDED, but it gives you a better understanding of the place where the jalosession is stored."},
+					{ "option" : "httpRequest.getAttribute(\"jalosession\")", "correct" : false, "explanation": ""},
+					{ "option" : "JaloSession.getCurrentSession()", "correct" : true, "explanation": ""},
+					{ "option" : "httpRequest.getSession()", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/hybris+Platform+Filters"]
+			},
+			{	
+				"uid" : "070005",
+				"category" : "spring",
+				"subcategory" : "listener",
+				"difficulty" : "",
+				"question" : "Where should you add a listener (that adds something on the session) so they will be triggered?",
+				"answers": [
+					{ "option" : "In the web.xml", "correct" : false, "explanation": ""},
+					{ "option" : "In the web.xml with are reference to a Spring bean.", "correct" : false, "explanation": ""},
+					{ "option" : "In a bean which uses PlatformFilterChain", "correct" : true, "explanation": "Every extension that has a web extension module needs to have its own definition of a custom filter chain based on the platformFilterChain Spring bean."},
+					{ "option" : "In a bean which is named HybrisInitFilter", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "Since Hybris 4.5, the HybrisInitFilter has been refactored. Now there is a set of new listers that easily can be overloaded.",
+				"references" : ["https://wiki.hybris.com/display/release4/hybris+Platform+Filters"]
+			},
+			
+			
+		]}

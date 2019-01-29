@@ -1,0 +1,1090 @@
+{
+"questions": [		
+
+			{	
+				"uid" : "6040001",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "",
+				"difficulty" : "cockpits",
+				"question" : "Statements about the MMC.",
+				"answers": [
+					{ "option" : "It is not a cockpit.", "correct" : false, "explanation": ""},
+					{ "option" : "It provides links to all other extensions that are available through the web interface.", "correct" : true, "explanation": "The Item Locking Service enables you to  do that.  For example, you may need to lock some specific instance of the User type - and when it is a customer - their orders, or comments they left about the products they bought. "},
+					{ "option" : "You can add static links through impex.", "correct" : true, "explanation": ""},
+					{ "option" : "You can add dynamic links through impex.", "correct" : true, "explanation": "You do not impex the actual urls, but you impex a script to retrieve the urls"},
+					{ "option" : "SSO does is not available for cockpits", "correct" : false, "explanation": " In SAP Commerce, the default implementation is based on cookies. "}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c0ed4a4866910148ce8da4990e104c0.html"]
+			},
+			
+			{	
+				"uid" : "6040002",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "",
+				"difficulty" : "cockpits",
+				"question" : "Which template should be used to create a new cockpit?",
+				"answers": [
+					{ "option" : "cockpit ", "correct" : false, "explanation": ""},
+					{ "option" : "ycockpit ", "correct" : true, "explanation": ""},
+					{ "option" : "empty ", "correct" : false, "explanation": ""},
+					{ "option" : "yempty", "correct" : false, "explanation": ""},
+					{ "option" : "cockpits", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c91206186691014af34f4c776e8b7b1.html"]
+			},
+			
+			{	
+				"uid" : "6040003",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "",
+				"difficulty" : "cockpits",
+				"question" : "Which bean in the cockpit configuration holds list of all the perspectives of a cockpit?",
+				"answers": [
+					{ "option" : "UICockpitService", "correct" : false, "explanation": ""},
+					{ "option" : "MyCockpitService ", "correct" : false, "explanation": ""},
+					{ "option" : "UICockpitSession ", "correct" : true, "explanation": ""},
+					{ "option" : "UICockpitStrategy", "correct" : false, "explanation": ""},
+					{ "option" : "none of above", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c91206186691014af34f4c776e8b7b1.html"]
+			},
+			{	
+				"uid" : "6040004",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "",
+				"difficulty" : "cockpits",
+				"question" : "What should you do to extend an existing (product)cockpit?",
+				"answers": [
+					{ "option" : "You have to copy classpaths to your web.xml", "correct" : true, "explanation": ""},
+					{ "option" : "You should use the extension (product)cockpit as template for your new extension", "correct" : false, "explanation": ""},
+					{ "option" : "You have to update the extensioninfo.xml to depend on (product)cockpit ", "correct" : true, "explanation": ""},
+					{ "option" : "You will have a different cockpit url unless you make certain modifications", "correct" : true, "explanation": ""},
+					{ "option" : "You have to copy CSS styles and JavaScript", "correct" : true, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c91206186691014af34f4c776e8b7b1.html"]
+			},
+			{	
+				"uid" : "6040005",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "",
+				"difficulty" : "cockpits",
+				"question" : "Statements",
+				"answers": [
+					{ "option" : "A browser area is basically made up of one thing: a ZUL file. ", "correct" : false, "explanation": "A browser area is basically made up of two things: a Java class and a ZUL file. "},
+					{ "option" : "The default browserArea zul is named:  baseSearchBrowserArea.zul", "correct" : true, "explanation": ""},
+					{ "option" : "The browser area requires a main content component of type <borderlayout> without any children to be set ", "correct" : true, "explanation": " "},
+					{ "option" : "In the zul file you can add a click event that will open a messagebox", "correct" : true, "explanation": ""},
+					{ "option" : "Every browser area should implement this empty interface UIBrowserArea ", "correct" : false, "explanation": "You have to implement it, but it is far from empty. About 30 methods."}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bdca4b386691014a2fcd7e14bea451d.html"]
+			},
+			{	
+				"uid" : "6040006",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "",
+				"difficulty" : "cockpits",
+				"question" : "The item CockpitUIComponentConfiguration is used to create cockpit configurations. Statements.",
+				"answers": [
+					{ "option" : "You have to define for which user/group it applies", "correct" : false, "explanation": "principal is optional"},
+					{ "option" : "The field config contains a string with the xml configuration.", "correct" : false, "explanation": "media: The XML configuration. For each component type there is a schema. For details see the following Component Configuration in Detail section. "},
+					{ "option" : "The attribute objectTemplateCode refers to the ItemType (e.g. Product)", "correct" : true, "explanation": ""},
+					{ "option" : "The attribute code is a unique field", "correct" : false, "explanation": " An arbitrary string that you can use to define the context for this configuration . e.g. listViewContentBrowser, advancedSearch , editorArea , base , ... The combination objectTemplateCode and code should be unique."}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8b88d965866910148038d7ae2c8e1d42.html"]
+			},
+			
+			{	
+				"uid" : "6040007",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "",
+				"difficulty" : "cockpits",
+				"question" : "Statements.",
+				"answers": [
+					{ "option" : "If your cockpit configurations are in the correct location with the correct name, they will be imported automatically.", "correct" : true, "explanation": ""},
+					{ "option" : "XML configuration files can only be imported manually", "correct" : false, "explanation": ""},
+					{ "option" : "CockpitImportConfigException will be thrown when the xml is invalid", "correct" : false, "explanation": "Any violations detected in names of files or folders result in the CockpitImportConfigException"}
+				
+				],
+				"explanation" : "The convention requires that in the resources folder of a cockpit extension there exists extensionName -config folder, for example admincockpit-config. It can not be empty.<br />A name of a configuration file consists of contextID _ ObjectTemplateCode, for example advancedSearch_AbstractConstraint.xml.",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bde9c6286691014bd53ac29edd260a4.html"]
+			},
+			
+			{	
+				"uid" : "6041001",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "Statements.",
+				"answers": [
+					{ "option" : "The backoffice is made up of a set of widgets.", "correct" : true, "explanation": " Each widget is a stand-alone UI component for a clearly-defined purpose. "},
+					{ "option" : "The widget developer is bound to using the ZK Framework when implementing custom widgets.", "correct" : false, "explanation": "Backoffice Framework comes with a steadily growing set of very generic and highly customizable widgets. They are all build using the ZK Framework as server-side rendering allows full access to the Spring application context of SAP Commerce. Nevertheless, the widget developer is not bound to using the ZK Framework when implementing custom widgets."},
+					{ "option" : "For every widget instance, the application developer can configure a list of authorities that are required to access this widget instance. ", "correct" : true, "explanation": ""}
+				
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c16efd886691014a4aad71cfb3eb992.html"]
+			},
+			
+			{	
+				"uid" : "6041002",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "Statements about the backoffice",
+				"answers": [
+					{ "option" : "You have full flexibility in using web technologies of your choice if you want to reuse existing widgets, actions, and layouts", "correct" : false, "explanation": "The opposite is true"},
+					{ "option" : "Advanced customization requires does not require good knowledge of the Spring Framework ", "correct" : false, "explanation": ""},
+					{ "option" : "Testability: you can test widgets and other components in isolation from rest of the system ", "correct" : true, "explanation": ""},
+					{ "option" : "All tooling will be available in one application and it will be much easier to reuse UI components and build up customized or new perspectives ", "correct" : true, "explanation": ""},
+					{ "option" : "You can build and add to an application without having to care about authentication, navigation, a role concept, and many other things ", "correct" : true, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c16efd886691014a4aad71cfb3eb992.html"]
+			},
+			{	
+				"uid" : "6041003",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "Which of the following attributes does a Widget have?",
+				"answers": [
+					{ "option" : "id", "correct" : true, "explanation": ""},
+					{ "option" : "name", "correct" : false, "explanation": "Attribute on WidgetDefinition"},
+					{ "option" : "controller", "correct" : false, "explanation": "Attribute on WidgetDefinition"},
+					{ "option" : "viewModel", "correct" : false, "explanation": "Attribute on WidgetDefinition"},
+					{ "option" : "slotId", "correct" : true, "explanation": ""},
+					{ "option" : "viewURI", "correct" : false, "explanation": "Attribute on WidgetDefinition"}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/633a1253bf3844eea4ac13f681c198da.html#loio633a1253bf3844eea4ac13f681c198da"]
+			},
+			
+			{	
+				"uid" : "6041004",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "The event collaboration type of communication means that there is no direct communication between components. Components actually do not know about each other. A component sends out information and all other components receive that information. Only the ones for which the information is valid, process it. A component sends out all pieces of information that might be significant for other components. Simultaneously, it listens to other components to get these pieces of information that are of interest for itself. ",
+				"answers": [
+					{ "option" : "Correct", "correct" : true, "explanation": ""},
+					{ "option" : "Incorrect", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/633a1253bf3844eea4ac13f681c198da.html#loio633a1253bf3844eea4ac13f681c198da"]
+			},
+			{	
+				"uid" : "6041005",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "Statements",
+				"answers": [
+					{ "option" : "A WidgetConnection is the definition of a WidgetSocket ", "correct" : false, "explanation": "A WidgetSocket is the definition of a WidgetConnection"},
+					{ "option" : "A Widget has a attribute widgetchildren which can refer other widgets.", "correct" : true, "explanation": ""},
+					{ "option" : "Incorrect", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/633a1253bf3844eea4ac13f681c198da.html#loio633a1253bf3844eea4ac13f681c198da"]
+			},
+			
+			{	
+				"uid" : "6041006",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "Which of the following widgets are created for testing purposes?",
+				"answers": [
+					{ "option" : "Breadboard Widget", "correct" : true, "explanation": "backoffice.cockpitng.development.mode=true is needed and url  https://localhost:9002/backoffice/?mode=breadboard"},
+					{ "option" : "Code Editor Widget", "correct" : false, "explanation": ""},
+					{ "option" : "Condition Evaluator Widget", "correct" : false, "explanation": ""},
+					{ "option" : "Generic Chart Widget", "correct" : false, "explanation": ""},
+					{ "option" : "InputTestWidget Widget", "correct" : true, "explanation": ""},
+					{ "option" : "Logical NOT Gate Widget", "correct" : false, "explanation": ""},
+					{ "option" : "Script Executor Widget", "correct" : false, "explanation": ""},
+					{ "option" : "ZUL Playground Widget", "correct" : true, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8b5a00a2866910149de6d450109c80d1.html"]
+			},
+			
+			{	
+				"uid" : "6041007",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "What is needed to create a new Widget?",
+				"answers": [
+					{ "option" : "You have to create a new ZUL file", "correct" : true, "explanation": ""},
+					{ "option" : "You have to create a Controller", "correct" : false, "explanation": "The Widget can exist without the Controller, but it is unlikely that you will ever have a Widget withouth."},
+					{ "option" : "You have to create a Service", "correct" : false, "explanation": "The Widget can exist without the Service, but it is unlikely that you will ever have a Widget withouth."},
+					{ "option" : "You have to create a new extension (if you not yet have custom widgets)", "correct" : true, "explanation": ""},
+					{ "option" : "You have to create a labels.properties", "correct" : false, "explanation": "Only needed if you want to localize your Widget"},
+					{ "option" : "You have to implement AbstractWidgetUnitTest", "correct" : false, "explanation": "Only needed if you have to unit test the widget"},
+					{ "option" : "You have to run an update running system.", "correct" : false, "explanation": ""},
+					{ "option" : "None of the above", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bd4366a86691014b818f8dd642790a8.html#loio8bd4366a86691014b818f8dd642790a8"]
+			},
+			
+			{	
+				"uid" : "6041007b",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "Statements",
+				"answers": [
+					{ "option" : "The AbstractWidgetUnitTest will perform some consistancy checks between the test declaration and the implementation on Sockets, Commands, View Events, ... ", "correct" : true, "explanation": ""},
+					{ "option" : "Describes a single input socket of the tested widget: <br />@DeclaredInput(value = \"socketId\", socketType = String.class)", "correct" : true, "explanation": ""},
+					{ "option" : "Describes a single input socket of the tested widget: <br />@DeclaredViewEvent(componentID = \"componentId\", eventName = Events.ON_CLICK)", "correct" : false, "explanation": "Describes a single view event of the tested widget."},
+					{ "option" : "@NullSafeWidget(false) will allow you to pass null values", "correct" : true, "explanation": ""},
+					{ "option" : "Editors can also be tested with AbstractWidgetUnitTest", "correct" : false, "explanation": "AbstractCockpitEditorRendererUnitTest "}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8be493da866910148e4f94bf4b9a6e51.html#loio8be493da866910148e4f94bf4b9a6e51"]
+			},
+			{	
+				"uid" : "6041007c",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "What do you need to add to your definition.xml to create a parameter 'multiline'?",
+				"answers": [
+					{ "option" : "&lt;input id=\"multi\" type=\"java.lang.Boolean\"/&gt;", "correct" : false, "explanation": ""},
+					{ "option" : "&lt;socket id=\"multi\" type=\"java.lang.Boolean\"/&gt;", "correct" : false, "explanation": ""},
+					{ "option" : "&lt;setting key=\"multi\" type=\"Boolean\" default-value=\"false\"/&gt;", "correct" : true, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+
+				],
+				"explanation" : "In the zul file the setting can be accessed like this: <textbox multiline=\"${widgetSettings.multi}\" id=\"msgInput\"/>",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8be21b0286691014abfbfe25ae9696c2.html"]
+			},
+			{	
+				"uid" : "6041008",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "What is a composed widget?",
+				"answers": [
+					{ "option" : "It is the definition of a widget", "correct" : false, "explanation": ""},
+					{ "option" : "It is a widget that extends another widget", "correct" : false, "explanation": ""},
+					{ "option" : "It is a widget that has contentslots", "correct" : true, "explanation": "A widget that can be composed with one or more widgets, A layout widget is an example of a composed widget (as it has contentslots)"},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+
+				],
+				"explanation" : "As an example, you will extend simple chat widget, that you already created by following Passing Data Between Widgets. You will add to this widget a slot, to which you can add additional widget (for example you may want your user to use his chat with additional list of all users or some special widget that displays history of his conversations or both of them). ",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bd5765386691014bb6fb9bdc4c6bfaa.html"]
+			},
+			{	
+				"uid" : "6041009",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "Imagine you want to move the 'Explorer Tree Widget' from the left hand side to the right hand side. Which file(s) should you touch?",
+				"answers": [
+					{ "option" : "&lt;myextension&gt;-backoffice-widgets.xml", "correct" : true, "explanation": ""},
+					{ "option" : "&lt;myextension&gt;-widgets.xml", "correct" : true, "explanation": "Is this not wrong??"},
+					{ "option" : "&lt;myextension&gt;-definitions.xml", "correct" : false, "explanation": ""},
+					{ "option" : "&lt;myextension&gt;-backoffice-config.xml", "correct" : false, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bd76a7f866910149ae8a66ccdd4dc72.html"]
+			},
+			
+			{	
+				"uid" : "6041010",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "Imagine you want to change the icon on the left left of your perspective? Which files should you touch?",
+				"answers": [
+					{ "option" : "definition.xml", "correct" : false, "explanation": ""},
+					{ "option" : "&lt;myextension&gt;-widgets.xml", "correct" : false, "explanation": ""},
+					{ "option" : "&lt;myextension&gt;-backoffice-config.xml", "correct" : false, "explanation": ""},
+					{ "option" : "&lt;myextension&gt;-definitions.xml", "correct" : false, "explanation": ""},
+					{ "option" : "None of above", "correct" : true, "explanation": "This is defined in a scc file: CustomBackoffice.scss"}
+
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bd76a7f866910149ae8a66ccdd4dc72.html"]
+			},
+			
+			{	
+				"uid" : "6041011",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "Imagine you want to extend an existing widget with a new attribute/parameter? Which files should you touch?",
+				"answers": [
+					{ "option" : "definition.xml", "correct" : true, "explanation": ""},
+					{ "option" : "&lt;myextension&gt;-widgets.xml", "correct" : false, "explanation": ""},
+					{ "option" : "&lt;myextension&gt;-definitions.xml", "correct" : false, "explanation": ""},
+					{ "option" : "&lt;myextension&gt;-backoffice-config.xml", "correct" : false, "explanation": ""}
+
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bda5dec866910148593fca2c20f6a0e.html"]
+			},
+			{	
+				"uid" : "6041012",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "Statements about a css file of a widget.",
+				"answers": [
+					{ "option" : "The CSS file can be named default.css", "correct" : true, "explanation": ""},
+					{ "option" : "The CSS filename should match the last part of widget's id", "correct" : true, "explanation": ""},
+					{ "option" : "You can not customize the CSS", "correct" : false, "explanation": ""}
+
+				],
+				"explanation" : "The CSS filename should match the last part of widget's id, in this example it's explorertree.css, or it should be named default.css.",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bda5dec866910148593fca2c20f6a0e.html#loio8bda5dec866910148593fca2c20f6a0e"]
+			},
+			
+			{	
+				"uid" : "6041013",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "Statements about extending a widget.",
+				"answers": [
+					{ "option" : "You can not extend/override the Controller", "correct" : false, "explanation": ""},
+					{ "option" : "You can not change the design", "correct" : false, "explanation": ""},
+					{ "option" : "You can not redefine the Sockets", "correct" : false, "explanation": ""},
+					{ "option" : "You can not add a new an extra Button", "correct" : true, "explanation": "Bear in mind that the view definition cannot be overwritten. This limitation is due to the fact that the future customization of the parent widget might induce error-prone mechanism for all derived widgets. "},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bda5dec866910148593fca2c20f6a0e.html#loio8bda5dec866910148593fca2c20f6a0e"]
+			},
+			
+			{	
+				"uid" : "6041014",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "Statements about reusable widget group.",
+				"answers": [
+					{ "option" : "It is the same as a composed Widget", "correct" : false, "explanation": ""},
+					{ "option" : "You have to create 2 new files: widget.xml and definition.xml", "correct" : true, "explanation": ""},
+					{ "option" : "The root Widget should in the widget.xml should have slotId=\"composedRootSlot\"", "correct" : true, "explanation": ""},
+					{ "option" : "You have to implement a zul file", "correct" : false, "explanation": ""},
+					{ "option" : "You have to implement a controller", "correct" : false, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bd4079186691014900a917a5aef59b1.html"]
+			},
+			{	
+				"uid" : "6041015",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "Positioning Elements in a Widget within Configuration: You can configure a position in the following widgets:",
+				"answers": [
+					{ "option" : "Editor Area widget", "correct" : true, "explanation": "position of tabs, sections, panels, and attributes"},
+					{ "option" : "Advanced Search widget", "correct" : true, "explanation": "position of fields"},
+					{ "option" : "Collection Browser widget", "correct" : true, "explanation": "position of columns."},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8be26f9a86691014a90cfc9d0f34cf43.html"]
+			},
+			{	
+				"uid" : "6041016",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "Consider attributes defined in the editorArea:section<br />Elements defined in the parent context are displayed (visually) before the attributes declared in the child context by default",
+				"answers": [
+					{ "option" : "Correct", "correct" : true, "explanation": ""},
+					{ "option" : "Incorrect", "correct" : false, "explanation": ""}
+
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8be26f9a86691014a90cfc9d0f34cf43.html"]
+			},
+			
+			{	
+				"uid" : "6041017",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "Consider the following code. In which order will the attributes be shown: <br />         <br />&lt;editorArea:attribute qualifier=\"code\"/&gt;        &lt;editorArea:attribute position=\"2\" qualifier=\"name\"/&gt;<br />        &lt;editorArea:attribute position=\"0\" qualifier=\"catalogVersion\"/&gt;<br />        &lt;editorArea:attribute qualifier=\"approvalStatus\"/&gt;<br />&lt;editorArea:attribute position=\"0\" qualifier=\"summary\"/&gt;<br />",
+				"answers": [
+					{ "option" : "code, name, catalogVersion, approvalStatus, summary", "correct" : false, "explanation": ""},
+					{ "option" : "catalogVersion, summary, code, name, approvalStatus", "correct" : true, "explanation": ""},
+					{ "option" : "code, summary, catalogVersion, name, approvalStatus", "correct" : false, "explanation": ""},
+					{ "option" : "approvalStatus, code, catalogVersion, name, summary", "correct" : false, "explanation": ""},
+					{ "option" : "None above", "correct" : false, "explanation": ""}
+
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8be26f9a86691014a90cfc9d0f34cf43.html"]
+			},
+			
+			{	
+				"uid" : "6041018",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "Virtual Sockets:",
+				"answers": [
+					{ "option" : "Functionally, there is no difference between regular widgets sockets and virtual sockets considering the widget external API.", "correct" : true, "explanation": ""},
+					{ "option" : "A virtual socket is declared in the  definition.xml", "correct" : false, "explanation": " A regular socket is defined in widget definition.xml file, whereas a virtual socket can be declared at runtime in the Application Orchestrator mode or created via *-widgets.xml for a specific widget instance. "},
+					{ "option" : "A virtual socket is less flexible than a regular socket", "correct" : false, "explanation": ""},
+					{ "option" : "A virtual socket can be declared at runtime.", "correct" : true, "explanation": ""},
+					{ "option" : "A virtual socket can not be an input", "correct" : false, "explanation": "Cannot have custom logic defined. Are used to control the behavior of template widgets"},
+					{ "option" : "You can define virtual sockets in order to get interaction with widget templates or actions. ", "correct" : true, "explanation": ""},
+					{ "option" : "None above", "correct" : false, "explanation": ""}
+
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8be26f9a86691014a90cfc9d0f34cf43.html"]
+			},
+			{	
+				"uid" : "6041019",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "Statements about Configurable Flow Wizard widget.",
+				"answers": [
+					{ "option" : "You have to pass a java.util.&lt;String&gt;Map", "correct" : false, "explanation": "Just a Map, not restricted to Strings"},
+					{ "option" : "A Configurable Flow Wizard Widget can be addressed from a reference Editor.", "correct" : true, "explanation": ""},
+					{ "option" : "A Configurable Flow Wizard Widget can be addressed from a  custom action or a custom widget.", "correct" : true, "explanation": ""},
+					{ "option" : "You have to create a widget-connection in the widget.xml", "correct" : false, "explanation": "In the widgets.xml"},
+					{ "option" : "None above", "correct" : false, "explanation": ""}
+
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/dc8129e8f44e44bb9100aa53602da995.html#loiodc8129e8f44e44bb9100aa53602da995"]
+			},
+			
+			{	
+				"uid" : "6041020",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "Which of the following actions exist out of the box?",
+				"answers": [
+					{ "option" : "Logo Action", "correct" : true, "explanation": ""},
+					{ "option" : "SAP Action", "correct" : false, "explanation": ""},
+					{ "option" : "Hybris Action", "correct" : false, "explanation": ""},
+					{ "option" : "Run Garbage Collector Action", "correct" : true, "explanation": ""},
+					{ "option" : "Create Action", "correct" : true, "explanation": ""},
+					{ "option" : "Create Audit Report Action", "correct" : true, "explanation": ""}
+
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8b59a81e866910149632d641020d7ccb.html"]
+			},			
+			{	
+				"uid" : "6041021",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "Statements about actions.",
+				"answers": [
+					{ "option" : "An Action requires a definition.xml and widget.xml", "correct" : false, "explanation": "Creating a custom action is similar to creating a widget. Actions require a definition.xml file and typically a Java class implementation. "},
+					{ "option" : "The correct path for a new action is:  <NAME_OF_EXTENSION>/backoffice/resources/widgets/actions/<NAME_OF_ACTION>", "correct" : true, "explanation": ""},
+					{ "option" : "An Action (class) should implement 'Action'", "correct" : false, "explanation": "It should implement CockpitAction"},
+					{ "option" : "You can only inject Hybris Services/Facades via Annotation", "correct" : true, "explanation": "Actions do not have access to the Spring application context. If you need to inject a Spring bean into your action, you can do so using the @Resource annotation."}
+
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bd494db866910149bf29f9ae6ff6823.html#loio8bd494db866910149bf29f9ae6ff6823"]
+			},		
+			{	
+				"uid" : "6041022",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "Imagine you need to save your item after an action has been performed how can you do this?",
+				"answers": [
+					{ "option" : "You need to handle the logic in your action", "correct" : false, "explanation": ""},
+					{ "option" : "You can add the attribute onActionPerformed to your widgets.xml", "correct" : true, "explanation": "<action actionId=\"org.myextension.action.myaction\" onActionPerformed=\"mywidgetController.saveProduct()\" property=\"product\"/>"},
+					{ "option" : "You can implement a method in the widgetController with an annotation.", "correct" : true, "explanation": "@ViewEvent(componentID = \"myAction\", eventName = \"onActionPerformed\")"},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+		
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c79ce7486691014a355f3b39c5491a3.html#loio8c79ce7486691014a355f3b39c5491a3"]
+			},
+			
+			{	
+				"uid" : "6041023",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "Which are valid Action Parameters?",
+				"answers": [
+					{ "option" : "iconUri, iconHoverUri and iconDisabledUri", "correct" : true, "explanation": ""},
+					{ "option" : "iconOnly, iconAndText, textOnly and hidden", "correct" : false, "explanation": "Those are the valid values for viewMode"},
+					{ "option" : "actionStyleClass", "correct" : true, "explanation": ""},
+					{ "option" : "actionName", "correct" : true, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+		
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c79ce7486691014a355f3b39c5491a3.html#loio8c79ce7486691014a355f3b39c5491a3"]
+			},
+			{	
+				"uid" : "6041024",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "Where can you define the icon of an action?",
+				"answers": [
+					{ "option" : "In the definition.xml", "correct" : true, "explanation": ""},
+					{ "option" : "In the zul file", "correct" : true, "explanation": ""},
+					{ "option" : "In the widgets.xml", "correct" : false, "explanation": ""},
+					{ "option" : "In the widget.xml", "correct" : false, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+		
+				],
+				"explanation" : " <y:parameter><br />                    <y:name>iconUri</y:name><br />                    <y:value>cng/images/custom-icon.png</y:value><br />                </y:parameter>",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c79ce7486691014a355f3b39c5491a3.html#loio8c79ce7486691014a355f3b39c5491a3"]
+			},
+			
+			{	
+				"uid" : "6041025",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "Statements about keyboard support actions.",
+				"answers": [
+					{ "option" : "Every action available in Backoffice Framework can define a set of keys on which it is triggered. If an action uses com.hybris.cockpitng.actions.impl.DefaultActionRenderer then the keyboard support is available out of the box. ", "correct" : true, "explanation": ""},
+					{ "option" : "It is possible to configure the keyboard key in the zul file", "correct" : true, "explanation": " <y:action action-id=\"com.hybris.cockpitng.action.delete\" property=\"selectedObjects\" triggerOnKeys=\"#del\"/>"},
+					{ "option" : "It is possible to configure the keyboard key in the definition.xml", "correct" : false, "explanation": " <y:action action-id=\"com.hybris.cockpitng.action.delete\" property=\"selectedObjects\" triggerOnKeys=\"#del\"/>"},
+					{ "option" : "Actions can be triggered if they are visible.", "correct" : false, "explanation": "Action is triggered only if focus is inside the widget on which actions are rendered. "},
+					{ "option" : "It is possible to script an action.", "correct" : true, "explanation": "Zul file:<br /> <y:parameter><br />                        <y:name>scriptUri</y:name><br />                        <y:value>model://approveProduct</y:value><br />                    </y:parameter>"},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+		
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/bf11f9d71fcc405da8b72f4e61d30190.html"]
+			},
+			{	
+				"uid" : "6041026",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "Which of the following syntax will match the key combination ALT-p?",
+				"answers": [
+					{ "option" : "^p", "correct" : false, "explanation": "Control "},
+					{ "option" : "@p", "correct" : true, "explanation": "Alt "},
+					{ "option" : "$p", "correct" : false, "explanation": "Shift "},
+					{ "option" : "%p", "correct" : false, "explanation": "Mac command"},			
+					{ "option" : "^p@p$p%p", "correct" : true, "explanation": ""},			
+					{ "option" : "^#f11", "correct" : false, "explanation": "CTRL+f11"},			
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+		
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/bf11f9d71fcc405da8b72f4e61d30190.html"]
+			},
+			
+			{	
+				"uid" : "6041027",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "How can you change the default behaviour of the Create Action?",
+				"answers": [
+					{ "option" : "Update the parameters of the action in the [myextension]-backoffice-config.xml", "correct" : true, "explanation": "Control "},
+					{ "option" : "Use the Multiplexer Widget", "correct" : true, "explanation": ""},	
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+		
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/fae5c73b66934633a84434f4c507a541.html"]
+			},
+			{	
+				"uid" : "6041028",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "Statements about customizing of editors in the backoffice.",
+				"answers": [
+					{ "option" : "Editors usually require a definition.xml file and a zul file.", "correct" : false, "explanation": "Editors usually require a definition.xml file and a Java class implementation. It is however possible to create a editor with a zul file withouth a renderer class. ( DefaultZulCockpitEditorRenderer will be used by default)"},	
+					{ "option" : "The 'editor class' should extend CockpitEditorRenderer", "correct" : false, "explanation": "It should be implement"},	
+					{ "option" : "Editors do not have access to the Spring application context.", "correct" : true, "explanation": ""},	
+					{ "option" : "If no Renderer class is defined, DefaultZulCockpitEditorRenderer is used by default.", "correct" : true, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+		
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bd4c25286691014b3f9876ca5816926.html#loio8bd4c25286691014b3f9876ca5816926"]
+			},
+			
+			{	
+				"uid" : "6041029",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "Which attributes can be used on an editor (in a widget)?",
+				"answers": [
+					{ "option" : "defaultEditor", "correct" : true, "explanation": "<editor id=\"textEditor\" type=\"java.lang.String\" defaultEditor=\"com.hybris.cockpitng.editor.defaulttext\"/>"},	
+					{ "option" : "property", "correct" : true, "explanation": "in combination with a widget for example"},	
+					{ "option" : "qualifier", "correct" : false, "explanation": ""},	
+					{ "option" : "onValueChanged", "correct" : true, "explanation": "mywidgetController.doThings()"},	
+					{ "option" : "type", "correct" : true, "explanation": "java.lang.String"},	
+					{ "option" : "value", "correct" : true, "explanation": "default value"},	
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+		
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bd4c25286691014b3f9876ca5816926.html#loio8bd4c25286691014b3f9876ca5816926"]
+			},
+			{	
+				"uid" : "6041030",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "Where can you define editor parameters?",
+				"answers": [
+					{ "option" : "cockpit-config.xml", "correct" : true, "explanation": ""},	
+					{ "option" : "zul file (of a widget)", "correct" : true, "explanation": "<custom-attributes is-multiline=\"true\" rows=\"5\"/>"},	
+					{ "option" : "in java code", "correct" : true, "explanation": ""},	
+					{ "option" : "definition.xml ", "correct" : true, "explanation": "Default values <setting key=\"is-multiline\" default-value=\"true\" type=\"Boolean\"/>"},		
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+		
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c7a76f78669101483f9b506fce54305.html"]
+			},
+			
+			{	
+				"uid" : "6041031",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "&lt;editors config='...' group='...' prefix='...' renderer='...'/&gt; in a (editor) zul file. Which attributes are required?",
+				"answers": [
+					{ "option" : "config", "correct" : true, "explanation": "defines the context element configuration for a given element "},	
+					{ "option" : "group", "correct" : false, "explanation": "filters which group gets displayed. If not provided, editors from all groups will be rendered. "},	
+					{ "option" : "prefix", "correct" : false, "explanation": "prefix for a property qualifier. If we set prefix to the currentObject in configuration, we could specify the property qualifier=\"pk\", instead of property qualifier=\"currentObject.pk\""},	
+					{ "option" : "renderer", "correct" : false, "explanation": "CockpitComponentsRenderer responsible for rendering editors "},	
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+		
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/b7d4b1d9e7564f5dae5307e821733fb4.html"]
+			},
+			{	
+				"uid" : "6041032",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "How do you map the following snippet from a cockpit-config.xml to a widget.zul file?<br />&lt;context principal=\"productmanager\"&gt; &lt;context component=\"testeditors\" type=\"ProductDTO\"&gt;",
+				"answers": [
+					{ "option" : "&lt;editors config=\"component=testeditors,type=ProductDTO,principal=productmanager\" .../&gt;", "correct" : true, "explanation": "dnt "},	
+					{ "option" : "&lt;editors principal=\"productmanager\"&gt; &lt;editor component=\"testeditors\" type=\"ProductDTO\"&gt;", "correct" : true, "explanation": "dnt "},	
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+		
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/b7d4b1d9e7564f5dae5307e821733fb4.html"]
+			},
+			{	
+				"uid" : "6041033",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "Which type action grouping exist?",
+				"answers": [
+					{ "option" : "group", "correct" : true, "explanation": ""},	
+					{ "option" : "quick-group", "correct" : false, "explanation": ""},	
+					{ "option" : "extended-group", "correct" : true, "explanation": ""},	
+					{ "option" : "smart-group", "correct" : false, "explanation": ""},	
+					{ "option" : "split-group", "correct" : true, "explanation": ""},	
+					{ "option" : "three-dots-group", "correct" : true, "explanation": ""},	
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+		
+				],
+				"explanation" : " is a possibility to group actions and display them according to the group configuration. ",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/e2b7f076894c4f4cb39da4abe281ed14.html#loioe2b7f076894c4f4cb39da4abe281ed14"]
+			},
+			{	
+				"uid" : "6041034",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "An attribute with type localized:java.lang.Boolean is good example of type that will need a nested editor.",
+				"answers": [
+					{ "option" : "Correct", "correct" : true, "explanation": ""},	
+					{ "option" : "Incorrect", "correct" : false, "explanation": ""},	
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+		
+				],
+				"explanation" : "<editorArea:attribute editor=\"com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.boolean.dropdown)\" qualifier=\"localizedBoolean \"/>",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c163f19866910148f748048c64841eb.html"]
+			},
+			{	
+				"uid" : "6041035",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "Which widgets are you likely to see when you searched and found a product with approval status 'approved' in the backoffice?",
+				"answers": [
+					{ "option" : "explorertree", "correct" : true, "explanation": ""},	
+					{ "option" : "advancedSearch", "correct" : true, "explanation": ""},	
+					{ "option" : "listArea", "correct" : false, "explanation": "hmc2list"},	
+					{ "option" : "detail", "correct" : false, "explanation": "editorArea"},	
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+		
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bd76a7f866910149ae8a66ccdd4dc72.html#loio8bd76a7f866910149ae8a66ccdd4dc72"]
+			},
+			{	
+				"uid" : "6041036",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "Statements.",
+				"answers": [
+					{ "option" : "Custom backoffice extension has a web extension module", "correct" : false, "explanation": "Custom backoffice extension has no web extension module"},	
+					{ "option" : "A new perspective can be added in the demoextension-backoffice-widgets.xml", "correct" : true, "explanation": "Custom backoffice extension has no web extension module"},	
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+		
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c66704f86691014b4fc8ff58c931bf5.html", "https://help.hybris.com/6.7.0/hcd/5879bf3ca2bf4d728028f9195e278151.html"]
+			},
+			{	
+				"uid" : "6041037",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "In which location can you place your web resources that you want to use in your Backoffice application?",
+				"answers": [
+					{ "option" : "resources", "correct" : false, "explanation": "myextension-backoffice-config.xml, myextension-backoffice-widgets.xml, myextension-backoffice-spring.xml"},	
+					{ "option" : "resources/backoffice", "correct" : false, "explanation": "Here you can find a JAR file that keeps compiled extension, including backoffice/src directory. "},	
+					{ "option" : "backoffice/resources/cng", "correct" : true, "explanation": "Here you put all static web resources that you want to use in your Backoffice application. "},	
+					{ "option" : "resources/cockpitng", "correct" : false, "explanation": "Here you can put files that can override standards of the framework, like for example CSS files. For more details read Replacing Styles of Backoffice Application. "},	
+					{ "option" : "resources/schemas", "correct" : false, "explanation": "This directory does not exist by default, but you can create it to keep here all custom schema XSD files for your widget UI configuration. For more details read Creating Custom UI Configuration for a Widget. "},	
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+		
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c66704f86691014b4fc8ff58c931bf5.html"]
+			},
+			{	
+				"uid" : "6041038",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "Image you want to add 2 extra input fields to the backoffice login page. Which file should you touch?",
+				"answers": [
+					{ "option" : "definitions.xml", "correct" : false, "explanation": ""},	
+					{ "option" : "A zul-file", "correct" : false, "explanation": ""},	
+					{ "option" : "myextension-backoffice-spring.xml", "correct" : true, "explanation": "=> defaultLoginInformationHandler"},	
+					{ "option" : "myextension-backoffice-config.xml", "correct" : false, "explanation": ""},	
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+		
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c66704f86691014b4fc8ff58c931bf5.html"]
+			},
+			{	
+				"uid" : "6041039",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "Statements.",
+				"answers": [
+					{ "option" : "The property backoffice.cockpitng.displayAttributeDescriptions=true will enable descriptions configured in the cockpit-config.xml", "correct" : true, "explanation": ""},
+					{ "option" : "Content of config.xml and widgets.xml are stored in regular Medias", "correct" : false, "explanation": "Content of config.xml and widgets.xml are stored in CatalogUnaware Media items: cockpitng-config.xml and cockpitng-widgets-config.xml. If a file doesn't exist, it is assembled from all the modules project files at the first login into Backoffice. "},
+					{ "option" : "Update of Commerce Platform will refresh the config.xml and widgets.xml.", "correct" : false, "explanation": "Update of Commerce Platform doesn't refresh the config, therefore Reset Everything has to be done manually by an admin user. "},
+					{ "option" : "It is possible to have multiple widgets.xml's in single extension.", "correct" : true, "explanation": "<import resource=\"extension-backoffice-widgets/widgets-to-import.xml\" prefix=\"import1\" />"},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+		
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c66704f86691014b4fc8ff58c931bf5.html", "https://help.hybris.com/6.7.0/hcd/5879bf3ca2bf4d728028f9195e278151.html"]
+			},
+			{	
+				"uid" : "6041040",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "What can you configure in the base-tag in the myextension-cockpit-config.xml?",
+				"answers": [
+					{ "option" : "The label of an item", "correct" : true, "explanation": ""},
+					{ "option" : "The shortlabel of an item", "correct" : true, "explanation": ""},
+					{ "option" : "The preview image of an item", "correct" : true, "explanation": " <y:preview urlQualifier=\"thumbnail?:picture\"/>"},
+					{ "option" : "The description of an item", "correct" : false, "explanation": ""},
+					{ "option" : "A bean to generate the label of an item", "correct" : true, "explanation": "<y:labels beanId=\"productLabelProvider\"/>"},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+		
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c166aa386691014b5d3c7e476482cc1.html#loio8c166aa386691014b5d3c7e476482cc1"]
+			},
+			{	
+				"uid" : "6041041",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "How can you improve the performence of the backoffice?",
+				"answers": [
+					{ "option" : "You can disable the startup cache", "correct" : true, "explanation": "fill.typefacade.cache.on.startup=false"},
+					{ "option" : "You can determine which types should be prefetched", "correct" : true, "explanation": "see bean backofficeWarmUpTypeFacadeCaches"},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+		
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c166aa386691014b5d3c7e476482cc1.html#loioe645bd4f0b264ec38a019eeee19813dd"]
+			},
+			
+			{	
+				"uid" : "6041042",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "Statements about Angular JS.",
+				"answers": [
+					{ "option" : "Angular-based widgets are recommended: If you have heavy communication between widgets ", "correct" : false, "explanation": "Angular-based widgets are NOT recommended: "},
+					{ "option" : "Angular-based widgets are recommended: When you want to create read-only UI representation of your data ", "correct" : true, "explanation": ""},
+					{ "option" : "Angular-based widgets are recommended: When your Data model is not dependent on the SAP Commerce Item types ", "correct" : true, "explanation": "The modular architecture and the re-usablitliy of components (widgets) and their configurations will not be possible if you go with AngularJS. "},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+		
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/f1af0130e27c4e3799a3b09c4f2653e8.html"]
+			},
+			{	
+				"uid" : "6041043",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "SASS is an abbreviation for Syntactically Awesome Style Sheets",
+				"answers": [
+					{ "option" : "Correct", "correct" : true, "explanation": ""},
+					{ "option" : "Incorrect", "correct" : false, "explanation": ""}
+		
+				],
+				"explanation" : "Backoffice uses jruby-complete and Sass-gem in order to compile SCSS files. ",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/830f7ed55f804b1980dcfad2f83ce3a7.html"]
+			},
+			{	
+				"uid" : "6041044",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "backoffice",
+				"difficulty" : "",
+				"question" : "Which variable can you use to retrieve the absolute web path in a zul file?",
+				"answers": [
+					{ "option" : "${widgetModel.webPath}", "correct" : false, "explanation": ""},
+					{ "option" : "${wr}", "correct" : true, "explanation": ""},
+					{ "option" : "${widgetSettings.webPath}", "correct" : false, "explanation": ""},
+					{ "option" : "${labels.webPath}", "correct" : false, "explanation": ""},
+					{ "option" : "Incorrect", "correct" : false, "explanation": ""}
+				],
+				"explanation" : " ",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c18483786691014a1e8bebb3f622780.html"]
+			},
+			
+			
+			
+			{	
+				"uid" : "6042001",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "dynamic_forms",
+				"difficulty" : "",
+				"question" : "What is a dynamic form?",
+				"answers": [
+					{ "option" : "It is a form that is configured in the backend. For example to register for a news letter.", "correct" : false, "explanation": ""},
+					{ "option" : "It something to make the backoffice more dynamic", "correct" : true, "explanation": ""},
+					{ "option" : "Incorrect", "correct" : false, "explanation": ""}
+		
+				],
+				"explanation" : " ",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bb48c3e86691014ba23af134a9a1c1b.html#loio8bb48c3e86691014ba23af134a9a1c1b"]
+			},
+			{	
+				"uid" : "6042002",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "dynamic_forms",
+				"difficulty" : "",
+				"question" : "A dynamic attribute will only be triggered after the current attribute changed.",
+				"answers": [
+					{ "option" : "Incorrect", "correct" : true, "explanation": "It is configurable."},
+					{ "option" : "Correct", "correct" : false, "explanation": ""}
+		
+				],
+				"explanation" : "<df:attribute id=\"uniqueId\" triggeredOn=\"*\" qualifier=\"priceQuantity\" disabledIf=\"(minOrderQuantity &gt; 5 || maxOrderQuantity &lt; 15)\" />",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bb48c3e86691014ba23af134a9a1c1b.html#loio8bb48c3e86691014ba23af134a9a1c1b"]
+			},
+			{	
+				"uid" : "6042002b",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "dynamic_forms",
+				"difficulty" : "",
+				"question" : "&lt;context type=\"Product\" component=\"editorAreaDynamicForms\" merge-by=\"module\"&gt;<br />  &lt;df:dynamicForms xmlns:df=\"http://www.hybris.com/cockpitng/component/dynamicForms\"&gt;<br />     &lt;df:section id=\"sectionId\" triggeredOn=\"code\" qualifier=\"hmc.section.catalog_and_validity\" visibleIf=\"code.length() &gt; 5\" /&gt;<br />  </df:dynamicForms><br /></context>",
+				"answers": [
+					{ "option" : "It is a valid example that will show a section with the id 'sectionId' if the code is longer than > 5 characters", "correct" : false, "explanation": "It is configurable."},
+					{ "option" : "The synta is incorrect", "correct" : false, "explanation": ""},
+					{ "option" : "None of above", "correct" : true, "explanation": "The section is named 'hmc.section.catalog_and_validity', not sectionId!"}
+		
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bb48c3e86691014ba23af134a9a1c1b.html#loio8bb48c3e86691014ba23af134a9a1c1b"]
+			},
+			{	
+				"uid" : "6042003",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "dynamic_forms",
+				"difficulty" : "",
+				"question" : "The attributes gotoTabIf and gotoTabId are only relevant in the context of wizards.",
+				"answers": [
+					{ "option" : "Correct", "correct" : false, "explanation": ""},
+					{ "option" : "Incorrect", "correct" : true, "explanation": "The are attributes on a dynamicTab and this is only usable in a EditorArea, not a wizard."},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+		
+				],
+				"explanation" : "<context type=\"Product\" component=\"editorAreaDynamicForms\" merge-by=\"module\"><br />  <df:dynamicForms xmlns:df=\"http://www.hybris.com/cockpitng/component/dynamicForms\"><br />     <df:tab id=\"uniqueId\" triggeredOn=\"code\" gotoTabIf=\"code.length() &gt; 5\" gotoTabId=\"hmc.tab.product.multimedia\"  /><br />  </df:dynamicForms><br /></context>",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bb48c3e86691014ba23af134a9a1c1b.html#loio8bb48c3e86691014ba23af134a9a1c1b"]
+			},
+			
+			{	
+				"uid" : "6042004",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "dynamic_forms",
+				"difficulty" : "",
+				"question" : "It is possible to use Groovy to in a dynamic form.",
+				"answers": [
+					{ "option" : "Correct", "correct" : true, "explanation": "Please note that for the below example of dynamic forms usage, the platformbackoffice extension is required (available separately in the platform-optional-module). "},
+					{ "option" : "Incorrect", "correct" : false, "explanation": ""}
+		
+				],
+				"explanation" : "Changing the computedValue=\"context.approvalStatus\" and computedValueScriptType=\"inline\" will also work!<br /><br /><df:dynamicForms xmlns:df=\"http://www.hybris.com/cockpitng/component/dynamicForms\" modelProperty=\"currentObject\"><br />    <df:attribute id=\"uniqueId\" computedValue=\"model://defaultCatalogOnApprove\" qualifier=\"catalogVersion\" triggeredOn=\"approvalStatus\" ><br />     <df:scriptingConfig computedValueLanguage=\"Groovy\" computedValueScriptType=\"uri\"/><br />    </df:attribute>  </df:dynamicForms>",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bb48c3e86691014ba23af134a9a1c1b.html#loio8bb48c3e86691014ba23af134a9a1c1b"]
+			},
+			{	
+				"uid" : "6042005",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "dynamic_forms",
+				"difficulty" : "",
+				"question" : "&lt;df:scriptingConfig computedValueLanguage=\"Groovy\" computedValueScriptType=\"inline\"/&gt;<br />can be used in combination with <br /><br />&lt;df:attribute  computedValue=\"context.approvalStatus\" /&gt;",
+				"answers": [
+					{ "option" : "Correct", "correct" : false, "explanation": ""},
+					{ "option" : "Incorrect", "correct" : true, "explanation": "computedValueLanguage should change to visibleIfLanguage and computedValueScriptType to visibleIfScriptType "}
+		
+				],
+				"explanation" : "See also disabledIfLanguage and gotoTabIfLanguage",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bb48c3e86691014ba23af134a9a1c1b.html#loio8bb48c3e86691014ba23af134a9a1c1b"]
+			},
+			{	
+				"uid" : "6042005b",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "dynamic_forms",
+				"difficulty" : "",
+				"question" : "Only the dynamic element dynamicAttribute is supported in Wizards",
+				"answers": [
+					{ "option" : "Correct", "correct" : true, "explanation": ""},
+					{ "option" : "Incorrect", "correct" : false, "explanation": ""}
+		
+				],
+				"explanation" : "dynamicSection and dynamicTab are not supported",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bb48c3e86691014ba23af134a9a1c1b.html#loio8bb48c3e86691014ba23af134a9a1c1b"]
+			},
+			{	
+				"uid" : "6042006",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "dynamic_forms",
+				"difficulty" : "",
+				"question" : "&lt;df:attribute id=\"uniqueId\" qualifier=\"name\"  triggeredOn=\"code\" computedValue=\"'(' + code + ') '  \"/&gt;<br />&lt;df:attribute id=\"uniqueId\" qualifier=\"code\"  triggeredOn=\"name\" computedValue=\"'(' + code + ') '  \"/&gt;",
+				"answers": [
+					{ "option" : "A notification is displayed to the user to inform about an error.", "correct" : true, "explanation": ""},
+					{ "option" : "Backoffice will not be accesable", "correct" : false, "explanation": ""},
+					{ "option" : "All buttons will be disable", "correct" : true, "explanation": "all editors and buttons are disabled in the UI and no other visitors are being applied. "},
+					{ "option" : "It will be ignored", "correct" : false, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+		
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bb48c3e86691014ba23af134a9a1c1b.html#loio8bb48c3e86691014ba23af134a9a1c1b"]
+			},			
+			{	
+				"uid" : "6042007",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which constraint group is used by the backoffice to validate.",
+				"answers": [
+					{ "option" : "simpleValidationGroup", "correct" : false, "explanation": ""},
+					{ "option" : "defaultValidationGroup", "correct" : false, "explanation": ""},
+					{ "option" : "defaultBackofficeValidationGroup", "correct" : true, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+		
+				],
+				"explanation" : "You can add others in the defaultBackofficeValidationService bean.",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/cb8edb3b88c94968b5c8c38cdc039829.html#loio4b982f5685564dadb6e2927a35300bbe"]
+			},
+			{	
+				"uid" : "6042008",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Statements about automated tests in the backoffice.",
+				"answers": [
+					{ "option" : "It is not possible since the ID's will never be the same.", "correct" : false, "explanation": "backoffice.cockpit.ytestid.enabled=true => "},
+					{ "option" : "It is not recommended", "correct" : false, "explanation": ""},
+					{ "option" : "The attribute ytestid is available", "correct" : false, "explanation": "ytestid is only available if it is turned on"},
+					{ "option" : "None of above", "correct" : true, "explanation": ""}
+		
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/cb8edb3b88c94968b5c8c38cdc039829.html#loio4b982f5685564dadb6e2927a35300bbe"]
+			},
+			{	
+				"uid" : "6042009",
+				"category" : "backoffice_cockpits",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "@Autowired is a possible way to wire a service in a widget controller.",
+				"answers": [
+					{ "option" : "Correct", "correct" : false, "explanation": ""},
+					{ "option" : "Incorrect", "correct" : true, "explanation": "You can do it using @WireVariable"}
+		
+				],
+				"explanation" : "@Resource should be used inside Editors and Actions",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c85ed80866910149a0a98812a592409.html"]
+			}
+			],
+			
+			"" : "https://help.hybris.com/6.7.0/hcd/8b7eb27986691014a3568a4e74be4fc8.html cokcpits",
+			"" : "https://help.hybris.com/6.7.0/hcd/8c17707686691014b72a8fb745de355a.html backoffice",
+			"" : "https://help.hybris.com/6.7.0/hcd/8bb48c3e86691014ba23af134a9a1c1b.html dynamic forms",
+
+
+			"" : "https://help.hybris.com/6.7.0/hcd/81d8c381151f4c6498e79cdcc6fd7f83.html User manual",
+			"" : "https://help.hybris.com/6.7.0/hcd/8c17194286691014a193a36c8507ba79.html#loio8c17194286691014a193a36c8507ba79 FAQ!!",
+			
+			"" : "TODO https://help.hybris.com/6.7.0/hcd/8bb48c3e86691014ba23af134a9a1c1b.html#loioef3294ea83dc4b7fabfa0a603a4dce3d",
+			"" : "The widget application context is an additional Spring application context with auto-reload possibilities during the application runtime. It is registered as a child to web application context. "
+			
+}

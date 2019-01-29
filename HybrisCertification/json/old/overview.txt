@@ -1,0 +1,67 @@
+6010000
+Customer Experience > 12%
+- Smart Edit
+- WCMS Module
+- CMS2 Data Model Overview
+- Personaliz.based on smartEdit
+- Basecommerce extension
+
+6020000
+Commerce and Accelerator > 12%
+- Commerce
+- Accelerators
+- Hybris Addons
+- Rule Engine
+- International-& Localizatization
+- PaymentExtension
+
+6030000
+Orders 8% - 12%
+- Order Management Overview
+- Orders
+- Assisted Service Module
+- Channel
+
+6040000
+Backoffice and Backoffice Cockpits Modifications 8% - 12%
+- Cockpit framework
+- Backoffice framework
+- Dynamic Forms
+
+6050000
+Search and Navigation 8% - 12%
+- Search And Navigation Module
+- Commerce Search Extension
+
+6060000
+Platform Features 8% - 12%
+- ServiceLayer Architecture
+- Impex API
+- The Cron Job Service
+- Cluster
+
+6070000
+Platform Basics 8% - 12%
+- Platform
+- ServiceLayer
+- Initialization and update
+- Hooks for initialization&update
+
+6080000 => https://help.hybris.com/6.7.0/hcd/2978af7252c4492da6b8a5f1a89c1da5.html BEST PRACTICES
+Data Modeling 8% - 12%
+- Data Modeling
+- Type System
+- FlexibleSearch
+
+6090000
+PCM Basics and Price Modeling < 8%
+- Price factory
+- Media
+- Workflow & Collaboration Module
+- Synchronizing Catalogs
+
+6100000
+User Management
+- Users in the Hybris Platform
+- Search restrictions
+- Commerce organization

@@ -1,0 +1,679 @@
+{"questions": [			
+			{	
+				"uid" : "6090001",
+				"category" : "pcm_pricing",
+				"subcategory" : "pcm_pricing",
+				"difficulty" : "",
+				"question" : "Which statements are correct?",
+				"answers": [
+					{ "option" : "The Europe1 PriceFactory retrieves all prices rows in Euro and Dollar", "correct" : true, "explanation": "It retrieves all prices that can be relevant for the current customer and product(s)"},
+					{ "option" : "Every price row should have at least one user or one usergroup to be valid", "correct" : false, "explanation": "If neither the customer nor a UserPriceGroup is given for a certain PriceRow, the specified price applies to all customers in SAP Commerce. If neither the product nor ProductPriceGroup is given for a certain PriceRow, the specified price applies to all products in SAP Commerce. "},
+					{ "option" : "Every price row should have at least one product or one productpricegroup to be valid", "correct" : false, "explanation": ""},
+					{ "option" : "If there are multiple prices found, the cheapest price wins", "correct" : false, "explanation": "If there are multiple matches there a specific order based the 'best' match."}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/961b19dfdcd34eff8c6659e0fad865b2.html"]
+			},
+				
+			{	
+				"uid" : "6090002",
+				"category" : "pcm_pricing",
+				"subcategory" : "pcm_pricing",
+				"difficulty" : "",
+				"question" : "Which statements are correct?",
+				"answers": [
+					{ "option" : "If a PriceRow is specified in a currency different from the current customer's session, the pricerow will be ignored", "correct" : false, "explanation": "the PriceRow's value is converted automatically based on the conversion rates in SAP Commerce)"},
+					{ "option" : "The unitFactor can be used to define prices in gram. For example 150gr cheese costs : 150 * 0.025EUR", "correct" : true, "explanation": ""},
+					{ "option" : "A Price has only 1 mandatory field: price", "correct" : false, "explanation": "Mandatory fields: currency, giveAwayPrice, minQtd, price, unit, unitFactor"}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/961b19dfdcd34eff8c6659e0fad865b2.html"]
+			},
+				
+			{	
+				"uid" : "6090003",
+				"category" : "pcm_pricing",
+				"subcategory" : "pcm_pricing",
+				"difficulty" : "",
+				"question" : "If you have 3 matching price row, which priceRow will win?",
+				"answers": [
+					{ "option" : "Product matches exactly", "correct" : false, "explanation": ""},
+					{ "option" : "Productgroup matches exactly + Customergroup matches exactly", "correct" : true, "explanation": ""},
+					{ "option" : "Customer matches exactly", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/961b19dfdcd34eff8c6659e0fad865b2.html"]
+			},
+				
+			{	
+				"uid" : "6090004",
+				"category" : "pcm_pricing",
+				"subcategory" : "pcm_pricing",
+				"difficulty" : "",
+				"question" : "Statements",
+				"answers": [
+					{ "option" : "Only 1 taxRow can be applied at the same time", "correct" : false, "explanation": " taxes and discounts accumulate"},
+					{ "option" : "The Europe1 TaxFactory is used to retrieve taxes", "correct" : false, "explanation": "Europe1 PriceFactory is the correct answer"},
+					{ "option" : "A TaxRow can have Customer and a UserTaxGroup (usergroup)", "correct" : true, "explanation": ""},
+					{ "option" : "If there is a TaxRow that has no Product or ProductTaxGroup assigned to it, that TaxRow is applied to all products and is therefore effective by default. ", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/c56815afae7d4302bcb79d60592ad098.html"]
+			},
+				
+			{	
+				"uid" : "6090005",
+				"category" : "pcm_pricing",
+				"subcategory" : "pcm_pricing",
+				"difficulty" : "",
+				"question" : "Statements",
+				"answers": [
+					{ "option" : "Like priceRows, only 1 taxRow can be applied at the same time", "correct" : false, "explanation": " taxes and discounts accumulate"},
+					{ "option" : "The Europe1 TaxFactory is used to retrieve taxes", "correct" : false, "explanation": "Europe1 PriceFactory is the correct answer"},
+					{ "option" : "A taxRow has only 1 mandatory field: tax", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/c56815afae7d4302bcb79d60592ad098.html"]
+			},
+				
+			{	
+				"uid" : "6090006",
+				"category" : "pcm_pricing",
+				"subcategory" : "pcm_pricing",
+				"difficulty" : "",
+				"question" : "Statements",
+				"answers": [
+					{ "option" : "Unlike priceRows, multiple discountRows can be applied at the same time", "correct" : true, "explanation": ""},
+					{ "option" : "A DiscountRow has only 1 mandatory field: discount", "correct" : true, "explanation": ""},
+					{ "option" : "A DiscountRow can only be used to configure percentage discount or fixed discount", "correct" : false, "explanation": "It is also possible to set the flag 'targetprice'. With the flag we will override the basePrice of the product"}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/96a4dcdff87a4ea29da552c5a12acec2.html", "https://help.hybris.com/6.7.0/hcd/44b9bd28a68746b28e235a280a58167c.html"]
+			},
+				
+			{	
+				"uid" : "6090007",
+				"category" : "pcm_pricing",
+				"subcategory" : "pcm_pricing",
+				"difficulty" : "",
+				"question" : "Statements",
+				"answers": [
+					{ "option" : "A DiscountRow extends from PriceDiscountTaxRow", "correct" : true, "explanation": ""},
+					{ "option" : "You can leave the start or end date empty on a PDTRow (e.g. priceRow)", "correct" : false, "explanation": " You need to specify a value for both the start and end date, or leave both fields blank. "}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/15eebf2f6e02447dbcefb35096dfadc5.html"]
+			},
+				
+			{	
+				"uid" : "6090008",
+				"category" : "pcm_pricing",
+				"subcategory" : "pcm_pricing",
+				"difficulty" : "",
+				"question" : "How should you define the userTaxGroup for an anonymous customer if it should be differrent per website?",
+				"answers": [
+					{ "option" : "Create multiple anonymous users and assign the correct userTaxGroup", "correct" : false, "explanation": ""},
+					{ "option" : "Update the session attribute: de.hybris.platform.europe1.constants.Europe1Constants.PARAMS.UTG", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/e7ddab63057646ef80a8821cc533dc90.html"]
+			},
+				
+			{	
+				"uid" : "6090009",
+				"category" : "pcm_pricing",
+				"subcategory" : "pcm_pricing",
+				"difficulty" : "",
+				"question" : "Which extension handles the pricing?",
+				"answers": [
+					{ "option" : "europe", "correct" : false, "explanation": ""},
+					{ "option" : "pricing", "correct" : false, "explanation": ""},
+					{ "option" : "pricingfactory", "correct" : false, "explanation": ""},
+					{ "option" : "None of the above", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "Correct answer is europe1",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bbb162786691014b77c9c31c0aa6b72.html"]
+			},
+				
+			{	
+				"uid" : "6090010",
+				"category" : "pcm_pricing",
+				"subcategory" : "pcm_pricing",
+				"difficulty" : "",
+				"question" : "Which are responsabilities of the (europe1) pricing extension?",
+				"answers": [
+					{ "option" : "The retrieval, storing and matching of discounts", "correct" : true, "explanation": "But not only discounts, also taxes and prices."},
+					{ "option" : "Pricing scales can only be handled by promotions, not by PriceRows (staffelprijzen)", "correct" : false, "explanation": "Scale prices - You may wish to offer reduced prices when the number of units ordered exceeds a predefined threshold. For example, if a customer buys up to 9 bottles of wine, the price is €5 per bottle but above that number the price drops to €4. "},
+					{ "option" : "Multiple units, so that products can be sold in different packages.", "correct" : true, "explanation": ""},
+					{ "option" : "Net/Gross pricing", "correct" : true, "explanation": "It is possible to store both gross and net prices individually, so that they appear more attractive, for example €2,99. If only net or gross is available, prices are converted on-the-fly if the order requires so. "}
+				],
+				"explanation" : "Correct answer is europe1",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bbb162786691014b77c9c31c0aa6b72.html"]
+			},
+				
+			{	
+				"uid" : "6090011",
+				"category" : "pcm_pricing",
+				"subcategory" : "pcm_pricing",
+				"difficulty" : "",
+				"question" : "If you change the price of in the online catalog. The price in the staged catalog will be updated as well.",
+				"answers": [
+					{ "option" : "Correct", "correct" : true, "explanation": "This answer is correct if you reference the prices via PDTRow.productId (reference by product code)"},
+					{ "option" : "Incorrect", "correct" : true, "explanation": "This answer is correct if you reference the prices via PDTRow.product (reference by PK)"}
+				],
+				"explanation" : "PDTRow are catalog independant and therefore both answers can be valid.",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8ba99c3b86691014913da449dde2783a.html"]
+			},
+				
+			{	
+				"uid" : "6090012",
+				"category" : "pcm_pricing",
+				"subcategory" : "pcm_pricing",
+				"difficulty" : "",
+				"question" : "In the backoffice you can manually configure the tax/discount on orderline and/or order, but what is a correct format to do it?",
+				"answers": [
+					{ "option" : "myDiscount : 10% = 0", "correct" : true, "explanation": ""},
+					{ "option" : "myTax : 10€ = 0", "correct" : false, "explanation": ""},
+					{ "option" : "myTax : 10EUR = 0", "correct" : false, "explanation": "It should be 'myTax : 10 EUR = 0'"},
+					{ "option" : "myTax : 10 EUR", "correct" : true, "explanation": ""}
+				],
+				"explanation" : " &lt;code&gt; : &lt;value&gt;(%| &lt;CUR&gt;)[ = &lt;appliedValue&gt;]",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bd8bea186691014ac948d3dfba048ec.html"]
+			},
+				
+			{	
+				"uid" : "6090013",
+				"category" : "pcm_pricing",
+				"subcategory" : "pcm_pricing",
+				"difficulty" : "",
+				"question" : "Imagine that you manually want to update the price of a product for a certain order from 89.99€ to 49.99€ What is the best solution?",
+				"answers": [
+					{ "option" : "You can create a discount to give it a percentage discount. e.g. 'myManualDiscounnt : 10%'", "correct" : false, "explanation": "Perhaps not the best solution."},
+					{ "option" : "You can create a discount to set to a certain target price. e.g. 'myManualDiscounnt : T 49.99 EUR'", "correct" : true, "explanation": "Probably the best solution"},
+					{ "option" : "It is not possible", "correct" : false, "explanation": ""}
+				],
+				"explanation" : " ",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bd8bea186691014ac948d3dfba048ec.html"]
+			},
+				
+			{	
+				"uid" : "6091001",
+				"category" : "pcm_pricing",
+				"subcategory" : "media",
+				"difficulty" : "",
+				"question" : "Which statements are correct concerning medias?",
+				"answers": [
+					{ "option" : "The extension 'medias' is used to serve the media's.", "correct" : false, "explanation": "mediaweb is the correct extension"},
+					{ "option" : "A media is linked to a catalogVersion.", "correct" : true, "explanation": ""},
+					{ "option" : "A media always refers to a file on your local system.", "correct" : false, "explanation": "A file can be stored in SAP Commerce or may be located on a remote server or system."},
+					{ "option" : "A media is a container that can reference multiple files", "correct" : false, "explanation": "A single media item in SAP Commerce references one single file only. What about DerivedMedia?"},
+					{ "option" : "Different medias can refer to the same file", "correct" : true, "explanation": "Different media items can reference the same file, as outlined in the Synchronization of Media Items section. "},
+					{ "option" : "If you update the image of a synchronized MediaModel, it will not affect the related MediaModel", "correct" : true, "explanation": ""}
+				],
+				"explanation" : " ",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c0f64c786691014aa95f9f6b572f248.html", "https://help.hybris.com/6.7.0/hcd/8c6541b286691014ade3bef2435eaefb.html"]
+			},
+				
+			{	
+				"uid" : "6091002",
+				"category" : "pcm_pricing",
+				"subcategory" : "media",
+				"difficulty" : "",
+				"question" : "Statements about a mediaContext",
+				"answers": [
+					{ "option" : "It is the catalogVersion for media's", "correct" : false, "explanation": ""},
+					{ "option" : "It groups mediaFormats", "correct" : true, "explanation": ""},
+					{ "option" : "It defines in which site the media is visible", "correct" : false, "explanation": ""},
+					{ "option" : "It does not exist.", "correct" : false, "explanation": ""}
+				],
+				"explanation" : " ",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c0f64c786691014aa95f9f6b572f248.html"]
+			},
+				
+			{	
+				"uid" : "6091003",
+				"category" : "pcm_pricing",
+				"subcategory" : "media",
+				"difficulty" : "",
+				"question" : "Statements about a mediaContainer",
+				"answers": [
+					{ "option" : "A media item can only be assigned to a Media Container if the media item has a media format set. ", "correct" : true, "explanation": ""},
+					{ "option" : "A media container is only intented for images.", "correct" : false, "explanation": "If you have product data sheets in different versions such as individual layouts for Letter and DIN A4 formats, then a Media Container may be useful. "},
+					{ "option" : "If you assign a mediaFormat to the media, it is automatically resized to the correct format", "correct" : false, "explanation": ""}
+				],
+				"explanation" : " ",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c0f64c786691014aa95f9f6b572f248.html"]
+			},
+				
+			{	
+				"uid" : "6091004",
+				"category" : "pcm_pricing",
+				"subcategory" : "media",
+				"difficulty" : "",
+				"question" : "Statements about a SEO friendly URLs. (URLs withouth context parameter)",
+				"answers": [
+					{ "option" : "You have to set the following property to enable pretty URL: media.legacy.prettyURL=true", "correct" : true, "explanation": ""},
+					{ "option" : "It can be used for local media storage.  ", "correct" : true, "explanation": ""},
+					{ "option" : "It can be used with cloud storage  ", "correct" : false, "explanation": ""}
+				],
+				"explanation" : " ",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c0f64c786691014aa95f9f6b572f248.html"]
+			},
+				
+			{	
+				"uid" : "6091005",
+				"category" : "pcm_pricing",
+				"subcategory" : "media",
+				"difficulty" : "",
+				"question" : "Statements about image resizing",
+				"answers": [
+					{ "option" : "The extension mediaconversion handles the resizing of images with ImageMagic", "correct" : true, "explanation": ""},
+					{ "option" : "The resizing can be done (in the backoffice) by clicking on 'convert missing media' on the media. ", "correct" : false, "explanation": "The button exists on the MediaContainer."},
+					{ "option" : "A mediaContainer needs a Conversion Group de determine which size should be created.", "correct" : true, "explanation": ""}
+				],
+				"explanation" : " ",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c0fe559866910149d53fdd269604a83.html"]
+			},
+				
+			{	
+				"uid" : "6091006",
+				"category" : "pcm_pricing",
+				"subcategory" : "media",
+				"difficulty" : "",
+				"question" : "Statements about MediaFolders",
+				"answers": [
+					{ "option" : "MediaFolders are used for logically grouping medias, it will not change the actual location on the filesystem.", "correct" : false, "explanation": ""},
+					{ "option" : "MediaFolders can be used to secure files", "correct" : true, "explanation": ""},
+					{ "option" : "Each tenant has their own media directory", "correct" : true, "explanation": ""}
+				],
+				"explanation" : " ",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c100fa4866910149d2bdd1cef5efda2.html"]
+			},
+				
+			{	
+				"uid" : "6091007",
+				"category" : "pcm_pricing",
+				"subcategory" : "media",
+				"difficulty" : "",
+				"question" : "Which of the following MediaFolders exist on the filesystem by default?",
+				"answers": [
+					{ "option" : "media/sys_master/root", "correct" : false, "explanation": "The MediaFolder roots exist but it refers to media/sys_master"},
+					{ "option" : "media/sys_master/cronjob", "correct" : true, "explanation": ""},
+					{ "option" : "media/sys_master/impex", "correct" : true, "explanation": ""},
+					{ "option" : "media/sys_master/junit", "correct" : false, "explanation": "media/sys_junit exists for the tenant junit"},
+					{ "option" : "media/sys_master/log", "correct" : false, "explanation": ""}
+				],
+				"explanation" : " ",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c100fa4866910149d2bdd1cef5efda2.html"]
+			},
+				
+			{	
+				"uid" : "6091008",
+				"category" : "pcm_pricing",
+				"subcategory" : "media",
+				"difficulty" : "",
+				"question" : "Who is responsable for CRUD operations of a media?",
+				"answers": [
+					{ "option" : "MediaStorageStrategy", "correct" : true, "explanation": "Performs actions on media data streams, like store, read and delete. "},
+					{ "option" : "MediaURLStrategy", "correct" : false, "explanation": "Renders public web URLs. "},
+					{ "option" : "MediaStorageRegistry", "correct" : false, "explanation": " Aggregates and serves all configured MediaStorageStrategy and MediaURLStrategy objects. "},
+					{ "option" : "MediaStorageConfigService", "correct" : false, "explanation": "Keeps the configuration of each MediaFolder up to date. "},
+					{ "option" : "LocalFileMediaCache", "correct" : false, "explanation": "Caches files locally. "},
+					{ "option" : "MediaStorageInitializer", "correct" : false, "explanation": "Provides method for cleaning out media storage on fresh initialization of SAP Commerce. "}
+				],
+				"explanation" : " ",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c0f906986691014b4c0fc51e280285c.html"]
+			},
+				
+			{	
+				"uid" : "6091008b",
+				"category" : "pcm_pricing",
+				"subcategory" : "media",
+				"difficulty" : "",
+				"question" : "Which of the following Storage strategies exist?",
+				"answers": [
+					{ "option" : "LocalFileMediaStorageStrategy", "correct" : true, "explanation": ""},
+					{ "option" : "AmazonMediaStorageStrategy", "correct" : false, "explanation": "S3MediaStorageStrategy"},
+					{ "option" : "WindowsBlobStorageStrategy", "correct" : false, "explanation": "WindowsAzureBlobStorageStrategy"},
+					{ "option" : "GridFSMediaStorageStrategy", "correct" : true, "explanation": ""},
+					{ "option" : "DefaultMediaStorageStrategy", "correct" : false, "explanation": ""}
+				],
+				"explanation" : " ",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c0f906986691014b4c0fc51e280285c.html"]
+			},
+				
+			{	
+				"uid" : "6091009",
+				"category" : "pcm_pricing",
+				"subcategory" : "media",
+				"difficulty" : "",
+				"question" : "Which properties are needed to configure a mediaFolder 'foo' in a secure S3 location? ",
+				"answers": [
+					{ "option" : "media.folder.foo.storage.strategy=s3MediaStorageStrategy", "correct" : true, "explanation": ""},
+					{ "option" : "media.foo.storage.strategy=s3MediaStorageStrategy", "correct" : false, "explanation": ""},
+					{ "option" : "media.folder.foo.secured=true", "correct" : true, "explanation": ""},
+					{ "option" : "media.globalSettings.s3MediaStorageStrategy.secured=true", "correct" : true, "explanation": "It is also possible to define it on a global level"}
+				],
+				"explanation" : " ",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c0f906986691014b4c0fc51e280285c.html"]
+			},
+				
+			{	
+				"uid" : "6091009b",
+				"category" : "pcm_pricing",
+				"subcategory" : "media",
+				"difficulty" : "",
+				"question" : "The folder 'foo' will be secured.<br /><br />media.folder.foo.secured=false<br />media.folder.foo.hashing.depth=4<br />media.folder.foo.storage.strategy=s3MediaStorageStrategy<br />media.globalSettings.s3MediaStorageStrategy.hashing.depth=3<br />media.globalSettings.s3MediaStorageStrategy.secured=true",
+				"answers": [
+					{ "option" : "Correct", "correct" : false, "explanation": ""},
+					{ "option" : "Incorrect", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "The property media.folder.foo.secured=false has a higher priority than media.globalSettings.s3MediaStorageStrategy.secured=true ",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c0f906986691014b4c0fc51e280285c.html"]
+			},
+				
+			{	
+				"uid" : "6091010",
+				"category" : "pcm_pricing",
+				"subcategory" : "media",
+				"difficulty" : "",
+				"question" : "Which url strategy should  be used for images stored in a s3 bucket?",
+				"answers": [
+					{ "option" : "localMediaWebURLStrategy", "correct" : true, "explanation": ""},
+					{ "option" : "s3MediaStorageStrategy", "correct" : false, "explanation": "Not a url strategy"},
+					{ "option" : "s3MediaWebURLStrategy", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "Keep in mind that localMediaWebURLStrategy is used by default for rendering URLs but data stream is still coming directly from Amazon S3 thanks to S3MediaStorageStrategy.",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c79f86786691014bd22c0377274d396.html"]
+			},
+				
+			{	
+				"uid" : "6091011",
+				"category" : "pcm_pricing",
+				"subcategory" : "media",
+				"difficulty" : "",
+				"question" : "Which of the following extensions can store medias?",
+				"answers": [
+					{ "option" : "s3medias", "correct" : false, "explanation": ""},
+					{ "option" : "gridfsstorage", "correct" : true, "explanation": "Used with MongoDB"},
+					{ "option" : "mongostorage", "correct" : false, "explanation": ""},
+					{ "option" : "amazoncloud", "correct" : true, "explanation": ""},
+					{ "option" : "azurestorage", "correct" : false, "explanation": "Should be azurecloud"},
+					{ "option" : "comments", "correct" : false, "explanation": "This extension is related to workflows."}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c79f86786691014bd22c0377274d396.html"]
+			},
+				
+			{	
+				"uid" : "6091012",
+				"category" : "pcm_pricing",
+				"subcategory" : "media",
+				"difficulty" : "",
+				"question" : "Which is the recommended filter to be used with for secured medias?",
+				"answers": [
+					{ "option" : "SecureMediaFilter", "correct" : false, "explanation": ""},
+					{ "option" : "MediaFilter", "correct" : false, "explanation": ""},
+					{ "option" : "WebAppMediaFilter", "correct" : true, "explanation": "Commerce Platform also provides the WebAppMediaFilter filter that unifies the way media is served. It handles both secure and non-secure types of media as opposed to MediaFilter and SecureMediaFilter. For more information, see WebAppMediaFilter."}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c586b0686691014ad288714ae4e3924.html"]
+			},
+				
+			{	
+				"uid" : "6091013",
+				"category" : "pcm_pricing",
+				"subcategory" : "media",
+				"difficulty" : "",
+				"question" : "It is possible to provide a list of file extensions that are whitelisted (out of the box) to be accessible via the frontend?",
+				"answers": [
+					{ "option" : "Correct", "correct" : true, "explanation": "media.allowed.extensions.for.ClassLoader=jpeg,jpg,gif,bmp,tiff,vcard,templ,tif,csv,eps,pdf,png"},
+					{ "option" : "Incorrect", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/41ee7da07b1940589b29f482af9d2f48.html"]
+			},
+				
+			{	
+				"uid" : "6092001",
+				"category" : "pcm_pricing",
+				"subcategory" : "workflows",
+				"difficulty" : "",
+				"question" : "When would you use a workflow?",
+				"answers": [
+					{ "option" : "To start a product import", "correct" : false, "explanation": ""},
+					{ "option" : "To handle customer complaints", "correct" : true, "explanation": ""},
+					{ "option" : "Create and go live with a website paragraph", "correct" : true, "explanation": ""},
+					{ "option" : "When taking a coffee break", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c87ee2c8669101483b3b29d65be497f.html"]
+			},
+				
+			{	
+				"uid" : "6092002",
+				"category" : "pcm_pricing",
+				"subcategory" : "workflows",
+				"difficulty" : "",
+				"question" : "Statements?",
+				"answers": [
+					{ "option" : "A 'workflow action template' is a defintion of a step in a workflow", "correct" : true, "explanation": ""},
+					{ "option" : "An Option defines an actual choice of a user", "correct" : false, "explanation": "Defines a possible result of a workflow action template, that is, is a template for a decision. It also defines which steps might follow after the current workflow action Template."},
+					{ "option" : "A Workflow Assignee creates actual workflows from a workflow template", "correct" : false, "explanation": "This is the responsability of the workflow manager and a Workflow Modeler/Workflow Designer Sets up and defines workflow templates."},
+					{ "option" : "An item can be linked as attachement to an action", "correct" : true, "explanation": ""},
+					{ "option" : "Actions can only be assigned to users.", "correct" : false, "explanation": "Actions can also be assigned to usergroups"}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c87ee2c8669101483b3b29d65be497f.html"]
+			},
+				
+			{	
+				"uid" : "6092003",
+				"category" : "pcm_pricing",
+				"subcategory" : "workflows",
+				"difficulty" : "",
+				"question" : "Statements?",
+				"answers": [
+					{ "option" : "A workflow can not be changed after copying it from a template", "correct" : true, "explanation": ""},
+					{ "option" : "A workflow action is always in one of the following states: pending, in progress, compled or ended through end of workflow", "correct" : false, "explanation": "Status disabled is missing, although it is a deprecated status."},
+					{ "option" : "Comments are created automatically", "correct" : true, "explanation": " The workflow extension automatically creates comments, for example when a decision has been selected. But users can also manually create comments;"},
+					{ "option" : "A workflow action can also set to send an email", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c87ee2c8669101483b3b29d65be497f.html"]
+			},
+				
+			{	
+				"uid" : "6092004",
+				"category" : "pcm_pricing",
+				"subcategory" : "workflows",
+				"difficulty" : "",
+				"question" : "Which action template types exist",
+				"answers": [
+					{ "option" : "start", "correct" : true, "explanation": ""},
+					{ "option" : "normal", "correct" : true, "explanation": ""},
+					{ "option" : "progress", "correct" : false, "explanation": ""},
+					{ "option" : "finished", "correct" : false, "explanation": "'end' is the correct answer"}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/94b0fcc60cd74bd0b60d5198680f8bf4.html"]
+			},
+
+				
+			{	
+				"uid" : "6092005",
+				"category" : "pcm_pricing",
+				"subcategory" : "workflows",
+				"difficulty" : "",
+				"question" : "Statements?",
+				"answers": [
+					{ "option" : "An Ad-hoc Workflow has no workflow template ", "correct" : false, "explanation": "Ad-hoc workflows are created out of a special workflow template. The default name of this special template is adhoctemplate. "},
+					{ "option" : "A workflow has to be activated manually or via a cronjob.", "correct" : false, "explanation": "A workflow can be configured to be automatically activated when certain criteria are met, for example when a new product is created using the Backoffice and the approval status is set to check."},
+					{ "option" : "Each workflow action has an owner, who is the person or group that should perform the step.", "correct" : true, "explanation": ""},
+					{ "option" : "An automated action should implement the class 'AutomatedWorkflowTemplateJob'", "correct" : true, "explanation": ""},
+					{ "option" : "Technically workflows are cronjobs'", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c878e7286691014b3aaf108edc38cca.html"]
+			},
+
+				
+			{	
+				"uid" : "6092005b",
+				"category" : "pcm_pricing",
+				"subcategory" : "workflows",
+				"difficulty" : "",
+				"question" : "Statements?",
+				"answers": [
+					{ "option" : "It is recommended to use the Hybris Workflow sketcher to start creating a workflow", "correct" : false, "explanation": "That does not exist, but it is recommended to create a sketch in advance"},
+					{ "option" : "In order to use workflows the user needs permissions on WorkflowAction, WorkflowItemAttachment, WorkflowActionStatus, ...", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8be36d438669101497eeed8ff7b712fe.html"]
+			},
+
+				
+			{	
+				"uid" : "6092006",
+				"category" : "pcm_pricing",
+				"subcategory" : "workflows",
+				"difficulty" : "",
+				"question" : "Statements about comments",
+				"answers": [
+					{ "option" : "You can create a comment on a comment.", "correct" : true, "explanation": "You can also define the max depth in the local.properties. Define the maximum level of replies displayed in the comment section of the editor."},
+					{ "option" : "Each comment has a domain for example printcockpit, productcockpit or cmscockpit", "correct" : false, "explanation": "The domain is likely to be 'cockpit' with components 'printcockcpit', 'productcockpit', 'cmscockpit'"},
+					{ "option" : "In the local.properties you can define the width of the columns (as they are shown in the cockpit)", "correct" : false, "explanation": "In the CommentsSectionRenderer bean, you can configure the widths of the columns displayed in the comment section of the editor area."},
+					{ "option" : "The cockpitCommentService provides methods for creating a comment or reply, getting comment, replies, attachments and setting a comment to read.", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8b8176608669101490b0b7841d09c2c8.html"]
+			},
+
+				
+			{	
+				"uid" : "6093001",
+				"category" : "pcm_pricing",
+				"subcategory" : "Synchronization",
+				"difficulty" : "",
+				"question" : "Statements",
+				"answers": [
+					{ "option" : "Catalog versions can be synchronized in a bi-directional way.", "correct" : true, "explanation": "Possible but not recommended. You can apply two synchronizing operations to establish bi-directional update procedures."},
+					{ "option" : "When you synchronize a whole catalog, it always checks the last modification date to determine if the item has changed.", "correct" : false, "explanation": "This logic can be disabled: catalog.synchronization.initialinit.check.timestamps=false. In this case, the status will be evaluated based on the executions of synchronizations as Cronjobs."}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c6a38118669101481bdf1303d70949e.html"]
+			},
+
+				
+			{	
+				"uid" : "6093002",
+				"category" : "pcm_pricing",
+				"subcategory" : "Synchronization",
+				"difficulty" : "",
+				"question" : "How can you explain the following behaviour?<br /><br />  You have synchronized a catalog version, modified the synchronizations, and after launching the synchronizations again, the target catalog version is the same as before running the edited synchronizations. For example, the original synchronization synchronized the product codes, whereas the new synchronization synchronizes the prices. However, the target catalog version still only contains the codes.",
+				"answers": [
+					{ "option" : "It is a bug in Hybris", "correct" : false, "explanation": ""},
+					{ "option" : "It is caused because the timestamp of the item in the online catalog is newer than the items in the staged catalog.", "correct" : true, "explanation": ""},
+					{ "option" : "It is caused because you have 2 synchronization rules. You should never have 2 synchronization rules.", "correct" : false, "explanation": ""},
+					{ "option" : "I have no clue", "correct" : false, "explanation": "Although this answer technically could be correct, you will not pass the exam with this answer ..."}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c6a38118669101481bdf1303d70949e.html"]
+			},
+				
+			{	
+				"uid" : "6093003",
+				"category" : "pcm_pricing",
+				"subcategory" : "Synchronization",
+				"difficulty" : "",
+				"question" : "Statements.",
+				"answers": [
+					{ "option" : "It might be a good idea to schedule the synchronization cronjobs every day dat 9.00 AM.", "correct" : false, "explanation": "The idea behind this is that these synchronizations may cause heavy load on your servers and you should run them at times when the system load is usually low, such as early morning or on Sundays. 9.00 AM is likely to be busy moment and therefore not recommended."}, 
+					{ "option" : "synchronization.legacy.mode=false will enable the jalolayer", "correct" : false, "explanation": "It will disable the service layer"}, 
+					{ "option" : "You define which languages should be synchronized in the Synchronization Rule.", "correct" : true, "explanation": ""}, 
+					{ "option" : "The user that starts the synchronization should have permission on the target catalog.", "correct" : false, "explanation": "The option 'Respect sync. permissions only' would force this behaviour."},
+					{ "option" : "The synchronization can be multi-threaded", "correct" : true, "explanation": ""}
+					],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c6a38118669101481bdf1303d70949e.html", "https://help.hybris.com/6.7.0/hcd/e1d742dac110467c81ce6d6b139879e8.html"]
+			},
+				
+			{	
+				"uid" : "6093004",
+				"category" : "pcm_pricing",
+				"subcategory" : "Synchronization",
+				"difficulty" : "",
+				"question" : "When should you use Dependent Synchronization?",
+				"answers": [
+				{ "option" : "You should use it always when there are at least 2 catalogs.", "correct" : false, "explanation": ""},
+				{ "option" : "You have a product with a media that exists in a different catalog.", "correct" : true, "explanation": ""},
+				{ "option" : "You have a product with a category that exists in a different catalog.", "correct" : true, "explanation": ""},
+				{ "option" : "It does not exist", "correct" : false, "explanation": ""}
+					],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bb01ffc866910148353dc7091caa781.html"]
+			},
+				
+			{	
+				"uid" : "6093005",
+				"category" : "pcm_pricing",
+				"subcategory" : "Synchronization",
+				"difficulty" : "",
+				"question" : "Cross referenced items is good practice",
+				"answers": [
+					{ "option" : "Correct", "correct" : false, "explanation": ""},
+					{ "option" : "Incorrect", "correct" : true, "explanation": "This would mean that you are mixing up staged and online items."}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bb01ffc866910148353dc7091caa781.html"]
+			},
+			
+			{	
+				"uid" : "6093006",
+				"category" : "pcm_pricing",
+				"subcategory" : "Synchronization",
+				"difficulty" : "",
+				"question" : "Which requirements should custom items fullfill to be syncable?",
+				"answers": [
+					{ "option" : "They should extend SyncItem", "correct" : false, "explanation": ""},
+					{ "option" : "They should have a custom property 'uniqueKeyAttributeQualifier'", "correct" : true, "explanation": ""},
+					{ "option" : "They should have an attribute code", "correct" : false, "explanation": ""},
+					{ "option" : "They should have a catalogVersion", "correct" : true, "explanation": "See custom attribute catalogVersionAttributeQualifier"},
+					{ "option" : "They should have a custom property 'catalogItemType=true'", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/d33b41288cf64de0a57abb796b0cbb2c.html"]
+			},
+			
+			{	
+				"uid" : "6093007",
+				"category" : "pcm_pricing",
+				"subcategory" : "Synchronization",
+				"difficulty" : "",
+				"question" : "Only items that are in the 'root types' list will be synchronized.",
+				"answers": [
+					{ "option" : "Correct", "correct" : false, "explanation": ""},
+					{ "option" : "Incorrect", "correct" : true, "explanation": "Using part-of mechanism to create/copy them together with enclosing or referring items"}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/3a2ec429f778405e90c05752ae473621.html"]
+			},
+
+			{	
+				"uid" : "6093008",
+				"category" : "pcm_pricing",
+				"subcategory" : "Synchronization",
+				"difficulty" : "",
+				"question" : "Statements",
+				"answers": [
+					{ "option" : "It is possible to run 2 full sync jobs at the same time", "correct" : false, "explanation": "As long as it are 2 different catalog it is possible?"},
+					{ "option" : "It is possible to run 2 partial sync jobs at the same time", "correct" : false, "explanation": ""},
+					{ "option" : "It is possible to run 2 partial sync jobs at the same time only if the are not synching the same items", "correct" : true, "explanation": ""},
+					{ "option" : "It is possible to run a full and partial sync job at the same time", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/d11d2d7402a741e48765a999968f2d40.html"]
+			}		
+			
+			
+]}

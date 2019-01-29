@@ -1,0 +1,726 @@
+<html>
+	<head>
+		<link />
+		<script src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery.snippet.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/jquery.snippet.css" />
+		<link rel="stylesheet" type="text/css" href="css/questions.css" />
+		<style>
+			.snippet-wrap .snippet-num {
+				margin: 0em 0 0em 1em;
+			}
+		
+			body {
+				color: brown;
+				font-family: arial;
+			}
+		</style>
+		<script>
+		
+		var objFsql = {"questions": [
+			{	
+				"uid" : "101001",
+				"category" : "FlexibleSearch",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which FlexibleSearch-based search mechanisms exist?",
+				"answers": [
+					{ "option" : "FlexibleSeach", "correct" : true, "explanation": ""},
+					{ "option" : "ViewType", "correct" : true, "explanation": ""},
+					{ "option" : "SavedQuery", "correct" : true, "explanation": ""},
+					{ "option" : "SolrFacetSearch", "correct" : false, "explanation": "This is a Lucene-based search mechanism and not a FlexibleSearch-based search mechanism."},
+					{ "option" : "Advanced-SavedQuery", "correct" : true, "explanation": ""},
+					{ "option" : "GenericSearch", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/Search+Mechanisms+Overview#SearchMechanismsOverview-AvailableSearchMechanisms"]
+			},
+			{	
+				"uid" : "101002",
+				"category" : "FlexibleSearch",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which of the following search mechanisms can only be used in the HMC?",
+				"answers": [
+					{ "option" : "FlexibleSeach", "correct" : false, "explanation": "Available via hybris API and the AdminWeb's FlexibleSearch JSP page."},
+					{ "option" : "ViewType", "correct" : false, "explanation": ""},
+					{ "option" : "SavedQuery", "correct" : true, "explanation": "Allows running predefined FlexibleSearch queries with variable parameters. Searches on the hybris Multichannel Suite items. Cannot be used outside the hMC."},
+					{ "option" : "SolrFacetSearch", "correct" : false, "explanation": ""},
+					{ "option" : "Advanced-SavedQuery", "correct" : true, "explanation": "Allows running predefined FlexibleSearch queries with variable parameters. More flexible than SavedQuery: allows specifying empty parameters, for example. Searches on the hybris Multichannel Suite items. "},
+					{ "option" : "GenericSearch", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/Search+Mechanisms+Overview#SearchMechanismsOverview-GroupingofSearchMechanisms"]
+			},
+			{	
+				"uid" : "101003",
+				"category" : "FlexibleSearch",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which of the following search mechanisms can result in runtime errors when there query is wrongly formatted?",
+				"answers": [
+					{ "option" : "FlexibleSeach", "correct" : true, "explanation": ""},
+					{ "option" : "ViewType", "correct" : false, "explanation": ""},
+					{ "option" : "SavedQuery", "correct" : true, "explanation": ""},
+					{ "option" : "SolrFacetSearch", "correct" : false, "explanation": ""},
+					{ "option" : "Advanced-SavedQuery", "correct" : true, "explanation": ""},
+					{ "option" : "GenericSearch", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "In case of a FlexibleSearch the query is translated at runtime. This translation can cause runtime exceptions when the query is not correctly formatted.",
+				"references" : ["https://wiki.hybris.com/display/release4/Search+Mechanisms+Overview#SearchMechanismsOverview-GroupingofSearchMechanisms"]
+			}, 
+			{	
+				"uid" : "101004",
+				"category" : "FlexibleSearch",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which of the following search mechanisms is here described:<br /><br /><i>While hybris FlexibleSearch offers a powerful search API to developers, some of them may prefer the <b>XXX</b> API that is similar to Hibernate Criteria Queries.</i>",
+				"answers": [
+					{ "option" : "FlexibleSeach", "correct" : false, "explanation": ""},
+					{ "option" : "ViewType", "correct" : false, "explanation": ""},
+					{ "option" : "SavedQuery", "correct" : false, "explanation": ""},
+					{ "option" : "SolrFacetSearch", "correct" : false, "explanation": ""},
+					{ "option" : "Advanced-SavedQuery", "correct" : false, "explanation": ""},
+					{ "option" : "GenericSearch", "correct" : true, "explanation": ""}
+				],
+				"explanation" : 'Example of FlexibleSearch: <pre class=\"sql\">Collection result = flexibleSearchService.<CategoryModel> search("SELECT {" + CategoryModel.PK + "} FROM {" + CategoryModel._TYPECODE + "} <br />WHERE {" CategoryModel.ID "}").getResult();</pre><br/>Equivalent in GenericSearch: <pre class=\"java\">final String categoryID = "Foo";<br />final GenericCondition idCondition = GenericCondition.equals(new GenericSearchField(CategoryModel._TYPECODE, CategoryModel.ID ), categoryID);<br />final GenericConditionList gl = GenericCondition.createConditionList(idCondition);<br/>final GenericQuery query = new GenericQuery(CategoryModel._TYPECODE, gl);<br />Collection result = genericSearchService.search(query).getResult();</pre>',
+				"references" : ["https://wiki.hybris.com/display/release4/GenericSearch"]
+			}, 
+			{	
+				"uid" : "101005",
+				"category" : "FlexibleSearch",
+				"subcategory" : "GenericSearch",
+				"difficulty" : "",
+				"question" : "Which of the following statements about GenericSearch are true?",
+				"answers": [
+					{ "option" : "GenericSearch can have a limited number of conditions which is fixed at 255", "correct" : false, "explanation": "GenericSearch can have an unlimited number of conditions"},
+					{ "option" : "It is possible to search for items as well as raw data fields", "correct" : true, "explanation": "(raw data fields: strings like productcode and productname instead of a Item like Product)"},
+					{ "option" : "Inner joins and outer joins between item types are <b>im</b>possible", "correct" : false, "explanation": "They are possible: <pre class=\"sql\">GenericCondition joinCondition = GenericCondition.createJoinCondition(productMediaField, mediaField);</pre>"},
+					{ "option" : "It is possible to use subselects", "correct" : true, "explanation": ""},
+					{ "option" : "GenericSearch can have a limited number of <i>order by</i> clauses which is fixed at 255", "correct" : false, "explanation": "GenericSearch can have an unlimited number of order by clauses."}
+				],
+				"explanation" : '',
+				"references" : ["https://wiki.hybris.com/display/release4/GenericSearch#GenericSearch-GenericSearch"]
+			}, 
+			{	
+				"uid" : "101006",
+				"category" : "FlexibleSearch",
+				"subcategory" : "GenericSearch",
+				"difficulty" : "",
+				"question" : "In which cases is it recommended to use a Generic search?",
+				"answers": [
+					{ "option" : "<i>Find me all products</i>. For example retrieve all the customer whitouth a condition", "correct" : true, "explanation": "It is shorter to retrieve products with a GenericSearch than with a FlexibleSearch when no conditions are being used. <pre class=\"java\">// create a query to find products<br />GenericQuery query = new GenericQuery(ProductModel._TYPECODE);<br />// run the search<br />genericSearchService.search(query).getResult();</pre>"},
+					{ "option" : "In case you want to prevent runtime exception.", "correct" : true, "explanation": ""}, 
+					{ "option" : "When you have a lot of conditions in you query.", "correct" : false, "explanation": "The more conditions you use in your GenericSearch the harder it will be to read/understand the query."} 
+	
+				],
+				"explanation" : '',
+				"references" : ["https://wiki.hybris.com/display/release4/GenericSearch#GenericSearch-GenericSearch"]
+			}, 
+			{	
+				"uid" : "101007",
+				"category" : "FlexibleSearch",
+				"subcategory" : "GenericSearch",
+				"difficulty" : "",
+				"question" : 'Which of the following queries (snippets) will work together with the following java code: <pre class=\"java\">query.addQueryParameter("name", "softlution");</pre>',
+				"answers": [
+					{ "option" : "WHERE {p:code} LIKE '$name'", "correct" : false, "explanation": ""},
+					{ "option" : "WHERE {p:code} LIKE $name", "correct" : false, "explanation": ""},
+					{ "option" : "WHERE {p:code} LIKE '&name'", "correct" : false, "explanation": ""},
+					{ "option" : "WHERE {p:code} LIKE &name", "correct" : false, "explanation": ""},
+					{ "option" : "WHERE {p:code} LIKE '?name'", "correct" : false, "explanation": ""}, 
+					{ "option" : "WHERE {p:code} LIKE ?name", "correct" : true, "explanation": ""},
+					{ "option" : "WHERE {p:code} LIKE '%name'", "correct" : false, "explanation": ""},
+					{ "option" : "WHERE {p:code} LIKE '%name'", "correct" : false, "explanation": ""}
+	
+				],
+				"explanation" : '',
+				"references" : ["https://wiki.hybris.com/display/release4/FlexibleSearch+samples#FlexibleSearchSamples-SELECTStatementsoverSeveralAttributes"]
+			},
+			{	
+				"uid" : "101008",
+				"category" : "FlexibleSearch",
+				"subcategory" : "GenericSearch",
+				"difficulty" : "",
+				"question" : 'As you might know, a query will not return rows when the requested localized fields are not filled in the requested language.<br /><br />For example:<br /><pre class=\"sql\">SELECT {p:code}, {p:name[de]}, {p:name[en]} FROM {Product AS p}</pre><br /><br />How can we retrieve the product name in German and English even when one of both is null?',
+				"answers": [
+					{ "option" : "It is not possible.", "correct" : false, "explanation": ""},
+					{ "option" : "The only way is to create 2 seperate queries and to combine the results in the code: <br /><pre class=\"sql\">SELECT {p:code}, {p:name[de]} FROM {Product AS p}</pre><pre class=\"sql\">SELECT {p:code}, {p:name[en]} FROM {Product AS p}</pre>", "correct" : false, "explanation": "This will work, but is not the best solution."},
+					{ "option" : "You can add \":o\" to the query in the proper place. This will result in an outer join.", "correct" : true, "explanation": ""}
+	
+				],
+				"explanation" : 'The are ":o" are used to force the related table to be outer-joined (in case of localized properties the xxxLP table).<br /><br />The correct query is:<br /><br /><pre class=\"sql\">SELECT {p:code}, {p:name[de:o]}, {p:name[en:o]} FROM {Product AS p}</pre>',
+				"references" : ["https://wiki.hybris.com/display/release4/FlexibleSearch+samples#FlexibleSearchSamples-SELECTStatementsoverSeveralLanguages"]
+			},
+			{	
+				"uid" : "101009",
+				"category" : "FlexibleSearch",
+				"subcategory" : "Subselects",
+				"difficulty" : "",
+				"question" : 'Which is a valid way of subselects in a query?',
+				"answers": [
+					{ "option" : '<br /><pre class=\"sql\">SELECT * FROM ${type} WHERE<br />   ({<br />      SELECT * <br />         FROM ${other_type} <br />         WHERE ${subselect_search_condition} <br />   }) <br />   </pre>', "correct" : false, "explanation": ""},
+					{ "option" : '<br /><pre class=\"sql\">SELECT * FROM ${type} WHERE<br />   {{<br />      SELECT * <br />         FROM ${other_type} <br />         WHERE ${subselect_search_condition} <br />   }} <br />   </pre>', "correct" : true, "explanation": ""},
+					{ "option" : '<br /><pre class=\"sql\">SELECT * FROM ${type} WHERE<br />   {<br />      SELECT * <br />         FROM ${other_type} <br />         WHERE ${subselect_search_condition} <br />   } <br />   </pre>', "correct" : false, "explanation": ""},
+					{ "option" : '<br /><pre class=\"sql\">SELECT * FROM ${type} WHERE<br />   ((<br />      SELECT * <br />         FROM ${other_type} <br />         WHERE ${subselect_search_condition} <br />   )) <br />   </pre>', "correct" : false, "explanation": ""}
+	
+				],
+				"explanation" : '',
+				"references" : ["https://wiki.hybris.com/display/release4/FlexibleSearch+samples#FlexibleSearchSamples-Subselects"]
+			},
+			{	
+				"uid" : "101010",
+				"category" : "FlexibleSearch",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : 'Which statements about FlexibleSearch are true?',
+				"answers": [
+					{ "option" : 'It is not possible to run FlexibleSearch queries on jalo-only attributes', "correct" : true, "explanation": "FlexibleSearch queries are executed on the database directly via SQL statements."},
+					{ "option" : 'The number of searchresults depends on certain restrictions. By default, the user account assigned to a session is admin.', "correct" : false, "explanation": "By default the user account assigned to a session is anonymous."}
+				],
+				"explanation" : '',
+				"references" : ["https://wiki.hybris.com/display/release4/FlexibleSearch#FlexibleSearch-Basics"]
+			},
+			{	
+				"uid" : "101011",
+				"category" : "FlexibleSearch",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : 'Consider the following query: <pre class="sql">SELECT * FROM {Product}<br />WHERE {code} LIKE \'%-ABC-__\'</pre>',
+				"answers": [
+					{ "option" : 'It will result in a runtime exception', "correct" : false, "explanation": ""},
+					{ "option" : 'It will return no products.', "correct" : false, "explanation": ""},
+					{ "option" : 'It is possible that the products with the following codes are returned : "<i>-ABC-12</i>","<i>-ABC-AB</i>","<i>12-ABC-12</i>"', "correct" : true, "explanation": ""},
+					{ "option" : 'It will only return products that have a code that ends with "<i>-ABC-__</i>"', "correct" : true, "explanation": ""}
+				],
+				"explanation" : '',
+				"references" : ["https://wiki.hybris.com/display/release4/FlexibleSearch#FlexibleSearch-Basics"]
+			},
+			{	
+				"uid" : "101012",
+				"category" : "FlexibleSearch",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : 'Which of the following queries can be used to get all products excluding their subtypes like VariantProduct?',
+				"answers": [
+					{ "option" : '<pre class="sql">SELECT {code},{pk} FROM {Product}</pre>', "correct" : false, "explanation": ""},
+					{ "option" : '<pre class="sql">SELECT {code},{pk} FROM {Product!}</pre>', "correct" : true, "explanation": ""},
+					{ "option" : '<pre class="sql">SELECT {code},{pk} FROM {Product?}</pre>', "correct" : false, "explanation": ""},
+					{ "option" : '<pre class="sql">SELECT * FROM {Product AS p JOIN ComposedType AS t ON {p.itemtype}={t.PK} }<br />WHERE {t.code} IN ( \'Product\')</pre>', "correct" : true, "explanation": "This option is preferable when you want to return more than one itemtype."}
+					
+					],
+				"explanation" : '',
+				"references" : ["https://wiki.hybris.com/display/release4/FlexibleSearch#FlexibleSearch-SearchingSubtypes"]
+			},
+			{	
+				"uid" : "101013",
+				"category" : "FlexibleSearch",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : 'Which 2 of the following queries are identical:',
+				"answers": [
+						{ "option" : '<pre class="sql">SELECT {code},{pk} FROM  {Product} ORDER BY {code} DESC</pre>', "correct" : false, "explanation": ""},
+						{ "option" : '<pre class="sql">SELECT {code},{pk} FROM  {Product} ORDER BY {code} ASC</pre>', "correct" : true, "explanation": ""},
+						{ "option" : '<pre class="sql">SELECT {code},{pk} FROM  {Product} ORDER BY {code}</pre>', "correct" : true, "explanation": ""},
+						{ "option" : '<pre class="sql">SELECT {code},{pk} FROM  {Product} ORDER BY {code}, {name}</pre>', "correct" : false, "explanation": ""},
+	
+					],
+				"explanation" : '',
+				"references" : ["https://wiki.hybris.com/display/release4/FlexibleSearch#FlexibleSearch-SearchingSubtypes"]
+			},
+			{	
+				"uid" : "101014",
+				"category" : "FlexibleSearch",
+				"subcategory" : "",
+				"difficulty" : "hard",
+				"question" : 'Which table will be accessed when the following query is being executed?<pre class="sql">SELECT {description} FROM {Product}</pre>',
+				"answers": [
+						{ "option" : 'Table: products', "correct" : false, "explanation": ""},
+						{ "option" : 'Table: productslp', "correct" : true, "explanation": ""},
+						{ "option" : 'Table: itemtype', "correct" : false, "explanation": ""},
+					
+					],
+				"explanation" : 'Because <i>description</i> is a localized attribute, the table <i>productslp</i> will be used. Since no other attributes are requested, the products table is not being joined.<br />This query will be translated into: <pre class="sql">SELECT  lp_t0.p_description   <br />FROM productslp lp_t0<br />   WHERE<br />   (<br />      (lp_t0.LANGPK=?)<br />   )<br />   AND<br />   (lp_t0.ITEMTYPEPK<br />      IN (<br />         23087950835790560 , 23087950835774560 ,<br />         23087950837855968 , 23087950837852464 ,<br />         23087950837859216 , 23087950837848976 ,<br />         23087950837843968 , 23087950835790306 ,<br />         23087950835765569<br />      )<br />   )</pre>',
+				"references" : ["https://wiki.hybris.com/display/release4/FlexibleSearch#FlexibleSearch-PagingofSearchResults"]
+			},
+			{	
+				"uid" : "101015",
+				"category" : "FlexibleSearch",
+				"subcategory" : "SearchRestriction",
+				"difficulty" : "hard",
+				"question" : 'Which of the following keywords are related to SearchRestrictions?',
+				"answers": [
+						{ "option" : 'Batch', "correct" : false, "explanation": ""},
+						{ "option" : 'Enabled', "correct" : false, "explanation": ""},
+						{ "option" : 'Visible', "correct" : false, "explanation": "No such thing. Although \"Active\" exists."},
+						{ "option" : 'Personalization', "correct" : true, "explanation": ""},
+						{ "option" : 'Restricted Type', "correct" : true, "explanation": "The type on which FlexibleSearch queries are to be restricted when executed with the specified principal."},
+					],
+				"explanation" : '',
+				"references" : ["https://wiki.hybris.com/display/release4/Restrictions+-+Creating+Restrictions+4.0+to+4.2.2"]
+			},
+			{	
+				"uid" : "101016",
+				"category" : "FlexibleSearch",
+				"subcategory" : "SearchRestriction",
+				"difficulty" : "hard",
+				"question" : 'How can a SearchRestriction be created.',
+				"answers": [
+						{ "option" : 'Via the hybris Management Console', "correct" : true, "explanation": ""},
+						{ "option" : 'Via the ImpEx extension', "correct" : true, "explanation": ""},
+						{ "option" : 'Via the hybris Multichannel Suite API', "correct" : true, "explanation": ""},
+						],
+				"explanation" : '',
+				"references" : ["https://wiki.hybris.com/display/release4/Restrictions+-+Creating+Restrictions+4.0+to+4.2.2"]
+			},
+			{	
+				"uid" : "101016",
+				"category" : "FlexibleSearch",
+				"subcategory" : "SearchRestriction",
+				"difficulty" : "hard",
+				"question" : 'How can a SearchRestriction be disabled for a user?',
+				"answers": [
+						{ "option" : 'Set the restriction to be inactive. (attribute on the restriction)', "correct" : true, "explanation": ""},
+						{ "option" : 'If the current user is in the admingroup.', "correct" : true, "explanation": ""},
+						{ "option" : 'If the disableRestrictions attribute is set to true.', "correct" : true, "explanation": ""},
+						{ "option" : 'Call the method: searchRestrictionSerive.disableSearchRestrictions()', "correct" : true, "explanation": ""},
+						],
+				"explanation" : '',
+				"references" : ["https://wiki.hybris.com/display/release4/Restrictions+-+Creating+Restrictions+4.0+to+4.2.2"]
+			},
+			{	
+				"uid" : "101017",
+				"category" : "FlexibleSearch",
+				"subcategory" : "SearchRestriction",
+				"difficulty" : "hard",
+				"question" : 'Which statements about SearchRestrictions are true?',
+				"answers": [
+						{ "option" : 'It limits the search results.', "correct" : true, "explanation": "Basicly it is just an extra condition in the where clause."},
+						{ "option" : 'It has the same effect as type access rights.', "correct" : false, "explanation": "Type access rights only affect the HMC. (also vjdbc?, webservices? and cockpits?"},
+						{ "option" : 'It is possible to use the parameter "session" in every query.', "correct" : true, "explanation": "If nothing has been modified, this paramer is always available and it can used as following: {user} = ?session.user or {country} IN (?session.countries)"},
+						],
+				"explanation" : '',
+				"references" : ["https://wiki.hybris.com/display/release4/Restrictions+-+Creating+Restrictions+4.0+to+4.2.2"]
+			},
+			{	
+				"uid" : "101018",
+				"category" : "FlexibleSearch",
+				"subcategory" : "SearchRestriction",
+				"difficulty" : "hard",
+				"question" : 'How is a date formatted using FlexibleSearch?',
+				"answers": [
+						{ "option" : 'to_char({date},\'mm/yyyy\')', "correct" : true, "explanation": "Valid for Oracle databases."},
+						{ "option" : 'DATE_FORMAT({date},\'%M/%Y\')', "correct" : true, "explanation": "Valid for MySQL databases."},
+						{ "option" : '{DATE_FORMAT(date, \'%M/%Y\')}', "correct" : false, "explanation": ""},
+						],
+				"explanation" : '',
+				"references" : ["https://wiki.hybris.com/display/release4/FlexibleSearch+Tips+and+Tricks#FlexibleSearchTipsandTricks-DateFormatting"]
+			},
+			{	
+				"uid" : "101019",
+				"category" : "FlexibleSearch",
+				"subcategory" : "SearchRestriction",
+				"difficulty" : "hard",
+				"question" : 'Which boolean values are advised to be used in queries?',
+				"answers": [
+						{ "option" : '"true" and "false"', "correct" : false, "explanation": "Not al databases recognize true and false."},
+						{ "option" : '"0" and "1"', "correct" : true, "explanation": ""},
+						{ "option" : '"T" and "F"', "correct" : false, "explanation": ""},
+						],
+				"explanation" : '',
+				"references" : ["https://wiki.hybris.com/display/release4/FlexibleSearch+Tips+and+Tricks#FlexibleSearchTipsandTricks-BooleanParametersinQueries"]
+			},
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			{	
+				"uid" : "102001",
+				"category" : "Cache",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : 'Which statements about the Hybris Cache are true?',
+				"answers": [
+						{ "option" : 'The hybris Cache is a part of the hybris persistence layer and enables to reduce the amount of database queries.', "correct" : true, "explanation": ""},
+						{ "option" : 'It improves the performance per a single server node', "correct" : true, "explanation": ""},
+					
+					],
+				"explanation" : '',
+				"references" : ["https://wiki.hybris.com/display/release4/hybris+Platform+Cache"]
+			},
+			{	
+				"uid" : "102002",
+				"category" : "Cache",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : 'What will be stored in the Hybris Cache?',
+				"answers": [
+						{ "option" : 'Item instances, for example a Product', "correct" : true, "explanation": ""},
+						{ "option" : 'All item attributes, that is the result of getAllAttributes() or getAttribute(X) calls.', "correct" : true, "explanation": ""},
+						{ "option" : 'Results of FlexibleSearch queries', "correct" : true, "explanation": ""},
+					
+					],
+				"explanation" : '',
+				"references" : ["https://wiki.hybris.com/display/release4/hybris+Platform+Cache"]
+			},
+			{	
+				"uid" : "102002",
+				"category" : "Cache",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : 'When/how will data be invalidated from the Hybris Cache?',
+				"answers": [
+						{ "option" : 'A method can be called to invalidate the cache.', "correct" : true, "explanation": ""},
+						{ "option" : 'When using multiple cluster nodes, the other nodes can be notified via UDP multicast invalidation packets.', "correct" : true, "explanation": ""},
+						{ "option" : 'When the cache has reached the maximum size, it will invalidate certain items.', "correct" : false, "explanation": "The idea is correct, but it is not named invalidation but <b>displacement</b>."},
+					
+					],
+				"explanation" : '',
+				"references" : ["https://wiki.hybris.com/display/release4/hybris+Platform+Cache#hybrisPlatformCache-WhenDataIsRemovedfromCache"]
+			},
+			{	
+				"uid" : "102003",
+				"category" : "Cache",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : 'Assume we executed the following query:<br /><pre class="sql">SELECT * FROM {product} WHERE {code} = \'00001\'</pre>Hybris will cache our product item. What will happen when we would remove the product with code \'00002\'?',
+				"answers": [
+						{ "option" : 'Product 00001 will be removed from the cache ??????', "correct" : false, "explanation": ""},
+						{ "option" : 'Product 00002 will be removed from the cache ??????', "correct" : true, "explanation": ""},
+						{ "option" : 'When a product is removed, then its item data and the cached FlexibleSearch result for the above query is removed from the cache.???????????', "correct" : true, "explanation": ""},
+					],
+				"explanation" : '',
+				"references" : ["https://wiki.hybris.com/display/release4/hybris+Platform+Cache#hybrisPlatformCache-WhenDataIsCached"]
+			}
+			
+			
+			
+		]};
+		
+		var objDynamicAttributes = {"questions": [
+			{	
+				"uid" : "103001",
+				"category" : "Dynamic Attributes",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "How do you define an dynamic attribute in the items.xml? (replace XXXXXX) <br /> <pre class=\"xml\">&lt;attribute type=\"int\" qualifier=\"daysHumanReadable\"&gt;<br />    &lt;persistence type=\"<i>XXXXXXXX</i>\" attributeHandler=\"myOwnSpringBeanId\" /&gt;<br />    ...<br />&lt;/attribute&gt;</pre>",
+				"answers": [
+					{ "option" : "property", "correct" : false, "explanation": ""},
+					{ "option" : "jalo", "correct" : false, "explanation": ""},
+					{ "option" : "dynamic", "correct" : true, "explanation": ""},
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/Dynamic+Attributes#DynamicAttributes-OverviewofDynamicAttributes"]
+			},
+			{	
+				"uid" : "103002",
+				"category" : "Dynamic Attributes",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which statements concernign dynamic attributes are true.",
+				"answers": [
+					{ "option" : "It is not possible to localize dynamic attributes.", "correct" : false, "explanation": "Since 4.7 it is possible when you implement the interface DynamicLocalizedAttributeHandler."},
+					{ "option" : "It is possible to inject Spring services.", "correct" : true, "explanation": "Dynamic attributes are defined as beans in Spring. This means that it is possible to inject other beans in comparison with Jalo where this isn't possible."},
+					{ "option" : "Dynamic attributes are available since version 4.2", "correct" : false, "explanation": "Since 4.4."},
+					{ "option" : "Dynamic attributes are persisted in the Database.", "correct" : false, "explanation": "They are not stored in the database."},
+					{ "option" : "When using dynamic attributes you are required to define a attributeHandler attribute in the items.xml.", "correct" : false, "explanation": "If the attribute attributeHandler is not defined, Hybris will autogenerate a attributehandler class with the name: [itemtype]_[attributename]AttributeHandler. You still have make a bean of in the Spring context." },
+					{ "option" : "Dynamic attributes will replace Jalo attributes.", "correct" : true, "explanation": "Jalo is deprecated since hybris 4.3.0 version and will be removed completely with the hybris 5.0 version. Since hybris 4.4.0 version, Dynamic Attributes replace Jalo attributes." },
+					{ "option" : "A subtype can overwrite a jalo attribute with a dynamic attribute.", "correct" : true, "explanation": "It is possible to redeclare an dynamic attribute. Do not forget to add the add the attribute redeclare=\"true\". Otherwhise it will not work." },
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/Dynamic+Attributes#DynamicAttributes-OverviewofDynamicAttributes"]
+			},
+			
+			
+			
+			
+			
+			
+			
+			{	
+				"uid" : "103002",
+				"category" : "Update System",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which statements concernign dynamic attributes are true.",
+				"answers": [
+					{ "option" : "It is possible to execute an update running system from the command line", "correct" : true, "explanation": "ant updatesystem -Dtenant=master"}
+					
+					
+					],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/Dynamic+Attributes#DynamicAttributes-OverviewofDynamicAttributes"]
+			},
+		]};
+		
+		var obj = {"questions": [
+			{	
+				"uid" : "100001",
+				"category" : "impex",
+				"subcategory" : "export",
+				"difficulty" : "moderate",
+				"question" : "Which basics ways of triggering an import or export of data for the hybris impex extension exist?",
+				"answers": [
+					{ "option" : "Import Wizard: (HMC using Import Export Wizard)", "correct" : true, "explanation": ""},
+					{ "option" : "Import Cronjob: (Creating an Import CronJob)", "correct" : true, "explanation": ""},
+					{ "option" : "Import via Impex Web: (Using the Admin-pages)", "correct" : true, "explanation": ""},
+					{ "option" : "Import via webservices: (REST)", "correct" : false, "explanation": ""},
+					{ "option" : "Using the API: (Java coding)", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/ImpEx+API#ImpExAPI-ImportAPI"]
+			},
+			{	
+				"uid" : "100002",
+				"question" : "Hybris offers a way of multithreaded import through the Hybris impex extension out of the box.",
+				"category" : "impex",
+				"subcategory" : "import",
+				"difficulty" : "moderate",
+				"answers": [
+					{ "option" : "TRUE", "correct" : true, "explanation": ""},
+					{ "option" : "FALSE", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "For 4.0 releases, the Multithreaded import was offered with the hybris High Performance Option, which is an additional licensing option. Since the 4.1.0 release this functionality is a part of the hybris Platform and does not need to be licensed separately.<br /><br />Multithreaded import enables you to use as many cores as you like to speed up the import of a given file. You can configure the number of cores for each import job separately.Our tests on 16 core machines have proved almost linear scaling if the database can handle the load.",
+				"references" : ["https://wiki.hybris.com/display/release4/ImpEx+-+User+Guide#ImpEx-UserGuide-MultithreadedImport"]
+			},
+			{	
+				"uid" : "100003",
+				"question" : "Hybris offers a way of multithreaded export through the Hybris impex extension out of the box.",
+				"category" : "impex",
+				"subcategory" : "import",
+				"difficulty" : "moderate",
+				"answers": [
+					{ "option" : "FALSE", "correct" : true, "explanation": ""},
+					{ "option" : "TRUE", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "There is no such thing. However multithreaded import does exist.",
+				"references" : ["https://wiki.hybris.com/display/release4/ImpEx+-+User+Guide#ImpEx-UserGuide-MultithreadedImport"]
+			},
+			{	
+				"uid" : "100004",
+				"question" : "IMPEX: The Importer class is the central class for processing an import. Which of the following are valid contructors for de.hybris.platform.impex.jalo.Importer",
+				"category" : "impex",
+				"subcategory" : "import",
+				"difficulty" : "moderate",
+				"answers": [
+					{ "option" : "Importer(CSVReader)", "correct" : true, "explanation": ""},
+					{ "option" : "Importer(ImpExImportReader) ", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/ImpEx+API#ImpExAPI-ImportUsinganImporterInstance","https://download.hybris.com/resources/external/4.7/api/de/hybris/platform/impex/jalo/Importer.html"]
+			},
+			{	
+				"uid" : "100005",
+				"question" : "Which of the following methods (of de.hybris.platform.impex.jalo.Importer) will perform an import (insert, update or remove)?",
+				"category" : "impex",
+				"subcategory" : "import",
+				"difficulty" : "moderate",
+				"answers": [
+					{ "option" : "importer.importNext()", "correct" : true, "explanation": ""},
+					{ "option" : "importer.importAll()(CSVReader)", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/ImpEx+API#ImpExAPI-ImportUsinganImporterInstance","https://download.hybris.com/resources/external/4.7/api/de/hybris/platform/impex/jalo/Importer.html"]
+			},
+			{	
+				"uid" : "100006",
+				"question" : "How can you define a file to export to",
+				"category" : "impex",
+				"subcategory" : "export",
+				"difficulty" : "moderate",
+				"answers": [
+					{ "option" : "<pre>\"#% impex.setTargetFile( \"\"myLanguage.csv\"\", true, 1, -1 );\"</pre>", "correct" : true, "explanation": ""},
+					{ "option" : "<pre>\"#% impex.setTargetFile( \"\"myDirectory/myLanguage.csv\"\", true, 1, -1 );\"</pre>", "correct" : true, "explanation": ""},
+					{ "option" : "<pre>\"#% impex.setTargetFile( \"\"myLanguage.csv\"\", true);\"</pre>", "correct" : false, "explanation": ""},
+					{ "option" : "<pre>\"#% impex.setTargetFile( \"\"myDirectory/myLanguage.csv\"\", true);\"</pre>", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "This is the method signature: <pre>public void setTargetFile( final String filename, boolean writeHeader, int linesToSkip, int offset )</pre>",
+				"references" : ["https://wiki.hybris.com/display/release4/ImpEx+API#ImpExAPI-StructureofanExportScript"]
+			},
+			{	
+				"uid" : "100007",
+				"question" : "Which of the following statements are true concerning exports using impex.",
+				"category" : "impex",
+				"subcategory" : "export",
+				"difficulty" : "moderate",
+				"answers": [
+					{ "option" : "You cannot restrict subtypes to be exported. For example if you export Customer, also all the MyCustomCustomers will be exported.", "correct" : true, "explanation": ""},
+					{ "option" : "You can restrict subtypes to be exported only using \"impex.exportItems\" in the impex. ", "correct" : false, "explanation": ""},
+					{ "option" : "It is possible to export (IMPEX) items using a flexible searchquery.", "correct" : true, "explanation": ""}
+					],
+				"explanation" : "<pre>// since 3.1-RC <br /> public void exportItemsFlexibleSearch( String query )<br /> public void exportItemsFlexibleSearch( String query, Map values, List resultClasses, <br />final boolean failOnUnknownFields, final boolean dontNeedTotal, int start, int count )<br />// since 3.1-u6 <br />public void exportItemsFlexibleSearch( String query, int count )</pre>",
+				"references" : ["https://wiki.hybris.com/display/release4/ImpEx+API#ImpExAPI-StructureofanExportScript"]
+			},
+			{	
+				"uid" : "100008",
+				"question" : "It is possible to sort the result of an impex export.",
+				"category" : "impex",
+				"subcategory" : "export",
+				"difficulty" : "moderate",
+				"answers": [
+					{ "option" : "TRUE", "correct" : true, "explanation": ""},
+					{ "option" : "FALSE", "correct" : false, "explanation": ""}
+					],
+				"explanation" : "This can be done by using a flexible searchquery: <pre>example</pre>",
+				"references" : ["https://wiki.hybris.com/display/release4/ImpEx+API#ImpExAPI-StructureofanExportScript"]
+			},
+			{	
+				"uid" : "100009",
+				"question" : "Which of the following are valid attribute-related modifiers in an impex",
+				"category" : "impex",
+				"subcategory" : "export",
+				"difficulty" : "moderate",
+				"answers": [
+					{ "option" : "alias", "correct" : true, "explanation": ""},
+					{ "option" : "path-delimiter", "correct" : true, "explanation": ""},
+					{ "option" : "decorator", "correct" : false, "explanation": ""},
+					{ "option" : "virtual", "correct" : true, "explanation": ""},
+					{ "option" : "multi", "correct" : false, "explanation": ""},
+					{ "option" : "neg", "correct" : false, "explanation": ""},
+					{ "option" : "key2value-delimiter", "correct" : true, "explanation": ""},
+					{ "option" : "default", "correct" : true, "explanation": ""},
+					{ "option" : "batchmode", "correct" : false, "explanation": ""}
+					],
+					
+				"explanation" : "These are all valid: alias, allownull, cellDecorator, collection-delimiter, dateformat, default, forceWrite, ignoreKeyCase, ignorenull, key2value-delimiter, lang, mode, numberformat, path-delimiter, pos, translator, unique, virtual ",
+				"references" : ["https://wiki.hybris.com/display/release4/ImpEx+Syntax#ImpExSyntax-AttributeRelatedModifiers"]
+			},
+			{	
+				"uid" : "1000010",
+				"question" : "Which of the following are valid <b>header-related</b> modifiers in an impex",
+				"category" : "impex",
+				"subcategory" : "export",
+				"difficulty" : "moderate",
+				"answers": [
+					{ "option" : "processor ", "correct" : true, "explanation": ""},
+					{ "option" : "path-delimiter", "correct" : false, "explanation": ""},
+					{ "option" : "decorator", "correct" : false, "explanation": ""},
+					{ "option" : "cacheUnique", "correct" : true, "explanation": ""},
+					{ "option" : "pos", "correct" : false, "explanation": ""},
+					{ "option" : "unique", "correct" : false, "explanation": ""},
+					{ "option" : "default", "correct" : false, "explanation": ""},
+					{ "option" : "batchmode", "correct" : true, "explanation": ""}
+					],
+					
+				"explanation" : "In total there are only 3 header-related modifiers: processor, cacheUnique, batchmode",
+				"references" : ["https://wiki.hybris.com/display/release4/ImpEx+Syntax#ImpExSyntax-HeaderRelatedModifiers"]
+			},
+			{	
+				"uid" : "100011",
+				"question" : "Which of the following are valid use of header and attribute modifiers?",
+				"category" : "impex",
+				"subcategory" : "export",
+				"difficulty" : "moderate",
+				"answers": [
+					{ "option" : "<pre>...;attribute(modifier=value);...</pre>", "correct" : false, "explanation": ""},
+					{ "option" : "<pre>...;attribute[modifier=value];...</pre>", "correct" : true, "explanation": ""},
+					{ "option" : "<pre>...;attribute[modifier=value,modifier=value,modifier=value];...</pre>", "correct" : true, "explanation": ""},
+					{ "option" : "<pre>...;attribute(modifier=value,modifier=value,modifier=value);...</pre>", "correct" : false, "explanation": ""},
+					{ "option" : "<pre>...;attribute[modifier=value],[modifier=value],[modifier=value];...</pre>", "correct" : false, "explanation": ""},
+					{ "option" : "<pre>...;attribute[modifier=value][modifier=value][modifier=value];...</pre>", "correct" : true, "explanation": ""},
+					{ "option" : "<pre>...;attribute(modifier=value)(modifier=value)(modifier=value);...</pre>", "correct" : false, "explanation": ""},
+					],
+					
+				"explanation" : "It is only possible to define attribute modifiers using '[]'",
+				"references" : ["https://wiki.hybris.com/display/release4/ImpEx+Syntax#ImpExSyntax-HeaderandAttributeModifier"]
+			},
+			{	
+				"uid" : "100011",
+				"category" : "impex",
+				"subcategory" : "import",
+				"difficulty" : "hard",
+				"question" : 'Welke van de volgende impexes maakt correct gebruikt van de batchmode?',
+				"answers": [
+						{ "option" : 'REMOVE MyItemType [batchmode=true];itemType(code)[unique=true]<br />;MyItemType;', "correct" : true, "explanation": ""},
+						{ "option" : 'REMOVE MyItemType [batchmode=true];pk[unique=true]<br />;;', "correct" : false, "explanation": ""},
+						{ "option" : 'UPDATE MyItemType [batchmode=true];itemType(code);active<br />;MyItemType;true', "correct" : false, "explanation": "[unique=true] is missing"},
+						{ "option" : 'UPDATE MyItemType [batchmode=true];pk[unique=true];active<br />;;true', "correct" : false, "explanation": ""},
+						
+						],
+				"explanation" : '',
+				"references" : ["https://wiki.hybris.com/display/release4/Restrictions+-+Creating+Restrictions+4.0+to+4.2.2"]
+			},
+			
+		]};
+		var showAnswer = true;
+		$(document).ready(function() {
+			$(objDynamicAttributes.questions).each(function(index,questionObj) {
+				var questionArea = $('<div class="questionArea"></div>');
+				var answerArea = $('<div class="answerArea"></div>');
+				var explanationArea = $('<div class="explanationArea"></div>');
+				var referencesArea = $('<div class="referencesArea"></div>');
+				
+
+				questionArea.append('#' + questionObj.uid + ' : ' + questionObj.question);
+				var validAnwserCount = 0;
+				var answerList = $('<ol></ol>');
+				$(questionObj.answers).each(function(index,answerObj) {
+					var listItem = $('<li></li>');
+					var listItemExplanation = $('<div class="shortExplanation"></div>');
+					
+					listItem.append('<input type="checkbox" correct="' + answerObj.correct + '" /> ');
+
+
+					if (answerObj.correct) {
+						validAnwserCount++;
+					} 
+					
+					listItem.append(answerObj.option);
+					if (answerObj.explanation != "" && showAnswer) {
+						listItemExplanation.append(answerObj.explanation);
+						listItem.append(listItemExplanation);
+					}
+					answerList.append(listItem);
+				});
+				
+				var answerInfoArea = $('<div class="answerInfoArea">(' + validAnwserCount + ' anwsers is/are valid)</div>');
+				answerArea.append(answerInfoArea);
+				
+				answerArea.append(answerList);
+				
+				if (showAnswer) {
+					explanationArea.append(questionObj.explanation);
+					var refList = $('<ul></ul>');
+					$(questionObj.references).each(function(index,refObj) {
+						var listItem = $('<li></li>');
+						listItem.append('<a href="' + refObj + '" target="_blank">' + refObj + '</a>');
+						refList.append(listItem);
+					});
+					referencesArea.append(refList);
+				}
+				
+				
+				
+				
+				var question = $('<div class="question"></div>');
+				question.append(questionArea).append(answerArea).append(explanationArea);
+				question.append(referencesArea);
+				$("#questionsArea").append(question);
+			});
+			
+			$("pre.sql").snippet("sql",{style:"peachpuff"});
+			$("pre.java").snippet("java",{style:"peachpuff"});
+			$("pre.xml").snippet("xml",{style:"peachpuff"});
+			
+			$('input[correct=true]').parent().prepend('<span style="color:green">CORRECT</span>');
+			$('input[correct=false]').parent().prepend('<span style="color:red">INCORRECT</span>');
+		});
+		</script>
+	</head>
+	<body>
+	
+		<div id="questionsArea">
+	
+		</div>
+
+		
+	</body>
+</html>

@@ -1,0 +1,219 @@
+ {"questions": [
+			{	
+				"uid" : "040001",
+				"category" : "hmc",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "What is the meaning of this property: hmc.structure.db=false",
+				"answers": [
+					{ "option" : "A change in the hmc.xml will be reflected in the HMC directly withouth a restart.", "correct" : false, "explanation": ""},
+					{ "option" : "A change in the hmc.xml will be reflected in the HMC directly after a restart.", "correct" : true, "explanation": ""},
+					{ "option" : "A change in the hmc.xml will be reflected in the HMC directly after a restart when you cleared the hmc settings from the database.", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/tr460/Trail+~+Integration+in+the+hMC"]
+			},
+			{	
+				"uid" : "040002",
+				"category" : "hmc",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Where can you define the localizations for text in the hmc.xml?",
+				"answers": [
+					{ "option" : "resources/localization/locales_en.properties", "correct" : false, "explanation": ""},
+					{ "option" : "hmc/resources/hmc.xml", "correct" : false, "explanation": ""},
+					{ "option" : "hmc/resources/locales_en.properties", "correct" : false, "explanation": ""},
+					{ "option" : "hmc/resources/[extension package]/hmc/ocales_en.properties (but only when hmcmodule is configured in the extensoninfo.xml.)", "correct" : true, "explanation": ""},
+					{ "option" : "None of the above", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/tr460/Trail+~+Integration+in+the+hMC"]
+			},
+			{	
+				"uid" : "040002",
+				"category" : "hmc",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which of the following tags can not be a direct child of &lt;configuratiok&gt;?",
+				"answers": [
+					{ "option" : "action", "correct" : false, "explanation": "They are used to define toolbar actions. may be used multiple times"},
+					{ "option" : "essentials", "correct" : true, "explanation": ""},
+					{ "option" : "defaultattributechips", "correct" : false, "explanation": ""},
+					{ "option" : "defaultmappings", "correct" : false, "explanation": ""},
+					{ "option" : "explorertree", "correct" : false, "explanation": "may be used only once."},
+					{ "option" : "type", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/hmc.xml+Reference"]
+			},
+			{	
+				"uid" : "040003",
+				"category" : "hmc",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "The order of elements (e.g. tab) is defined by:",
+				"answers": [
+					{ "option" : "The attribute position can be used.", "correct" : true, "explanation": ""},
+					{ "option" : "It is undefined", "correct"  : false, "explanation": ""},
+					{ "option" : "The attribute priority can be used.", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "The position attribute is only effective during the exact moment of hMC configuration. If another hMC element with the same value for position is read after the current one, the current one will be moved to the next position. In the code snippet, Properties1 would then end up on position 5.",
+				"references" : ["https://wiki.hybris.com/display/release4/hmc.xml+Reference"]
+			},
+			{	
+				"uid" : "040004",
+				"category" : "hmc",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which of the following are not valid types for action.",
+				"answers": [
+					{ "option" : "toolbar", "correct" : true, "explanation": ""},
+					{ "option" : "item", "correct" : true, "explanation": ""},
+					{ "option" : "new", "correct" : false, "explanation": ""},
+					{ "option" : "save", "correct" : true, "explanation": ""},
+					{ "option" : "organizer", "correct" : false, "explanation": ""},
+					{ "option" : "searchresult", "correct" : true, "explanation": ""}
+					
+				],
+				"explanation" : "type=\"string\" [possible values: toolbar, item, create, save, remove, searchresult] ",
+				"references" : ["https://wiki.hybris.com/display/release4/hmc.xml+Reference"]
+			},
+			{	
+				"uid" : "040005",
+				"category" : "hmc",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which of the following elements can be a parent of the element 'group'.",
+				"answers": [
+					{ "option" : "typeref", "correct" : false, "explanation": "typeref is a chilld of exporertree"},
+					{ "option" : "explorertree", "correct" : true, "explanation": ""},
+					{ "option" : "type", "correct" : false, "explanation": ""},
+					{ "option" : "action", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "type=\"string\" [possible values: toolbar, item, create, save, remove, searchresult] ",
+				"references" : ["https://wiki.hybris.com/display/release4/hmc.xml+Reference"]
+			},
+			{	
+				"uid" : "040006",
+				"category" : "hmc",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "How can you include a JSP as a node?",
+				"answers": [
+					{ "option" : "Use the tag 'staticcontent'", "correct" : true, "explanation": "Can be used to add a .JSP file as a node (while not using a chip class or representing a type)."},
+					{ "option" : "Use the tag 'externalnode'", "correct" : false, "explanation": "Adds a given chip class as a node which does not represent a type ."},
+					{ "option" : "Use the tag 'label'.", "correct" : false, "explanation": ""},
+					{ "option" : "It is not possible.", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : " ",
+				"references" : ["https://wiki.hybris.com/display/release4/hmc.xml+Reference"]
+			},
+			{	
+				"uid" : "040007",
+				"category" : "hmc",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "How can you modify the how an items looks like for example customer on an order?",
+				"answers": [
+					{ "option" : "Use the tag 'staticcontent'", "correct" : false, "explanation": ""},
+					{ "option" : "Use the tag 'externalnode'", "correct" : false, "explanation": ""},
+					{ "option" : "Use the tag 'defaultreference'", "correct" : true, "explanation": ""},
+					{ "option" : "Use the tag 'itemlayout'.", "correct" : false, "explanation": "Lists a number of attributes which are shown when items of this type are referenced in other editors."},
+					{ "option" : "It is not possible.", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/hmc.xml+Reference"]
+			},
+			{	
+				"uid" : "040008",
+				"category" : "hmc",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which of the following elements can be a child of the 'organizer' tag?",
+				"answers": [
+					{ "option" : "Use the tag 'itemlayout'.", "correct" : false, "explanation": ""},
+					{ "option" : "Use the tag 'search'", "correct" : true, "explanation": ""},
+					{ "option" : "Use the tag 'condition'.", "correct" : false, "explanation": "Child of search"},
+					{ "option" : "Use the tag 'result'", "correct" : true, "explanation": "Possible childs: listview, editview, treeview, action"},
+					{ "option" : "Use the tag 'editor'", "correct" : true, "explanation": ""},
+					{ "option" : "Use the tag 'defaultreference'.", "correct" : false, "explanation": ""},
+					{ "option" : "It is not possible.", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/hmc.xml+Reference"]
+			},
+			{	
+				"uid" : "040009",
+				"category" : "hmc",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "How can you hide an attribute in the hmc. For example a custom field on product?",
+				"answers": [
+					{ "option" : "If you do not define it, it will be hidden.", "correct" : false, "explanation": ""},
+					{ "option" : "Use the tag 'remove' to hide the attribute.", "correct" : false, "explanation": ""},
+					{ "option" : "It is not possible, it will always be visible in the hmc.", "correct" : false, "explanation": ""},
+					{ "option" : "Use the tag 'result'", "correct" : false, "explanation": ""},
+					{ "option" : "None of the above", "correct" : true, "explanation": "The 'exclude' and 'exclusion' (child) Tag. Contains the attributes which should be excluded (omitted) in the editor of this type. Be sure you do not explicitly add these attributes in any of the other sections!s"}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/hmc.xml+Reference"]
+			},
+			{	
+				"uid" : "040010",
+				"category" : "hmc",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "How can display certain attributes on every tab of an item? (best solution)",
+				"answers": [
+					{ "option" : "Copy the attributes to every tab.", "correct" : false, "explanation": ""},
+					{ "option" : "Place the attributes in the 'essential' tag.", "correct" : true, "explanation": ""},
+					{ "option" : "Place the attributes in the 'section' tag.", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/hmc.xml+Reference"]
+			},
+			{	
+				"uid" : "040011",
+				"category" : "hmc",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "The admin tab is an example of:",
+				"answers": [
+					{ "option" : "'tab'-tag", "correct" : true, "explanation": ""},
+					{ "option" : "'section'-tag", "correct" : false, "explanation": ""},
+					{ "option" : "'customtab'-tag", "correct" : false, "explanation": "In the core hmc implementation, the \"Access rights\" tab (in a ComposedType editor) is an example of a custom tab."},
+					{ "option" : "'defaulttab'-tag", "correct" : false, "explanation": ""},
+					{ "option" : "'admintab'-tag", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/hmc.xml+Reference"]
+			},
+			{	
+				"uid" : "040012",
+				"category" : "hmc",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which tag can be used to show the unbound attributes?",
+				"answers": [
+					{ "option" : "'customtab'-tag", "correct" : false, "explanation": ""},
+					{ "option" : "'defaultsection'-tag", "correct" : true, "explanation": ""},
+					{ "option" : "'defaulttab'-tag", "correct" : false, "explanation": ""},
+					{ "option" : "'section'-tag", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/hmc.xml+Reference"]
+			}
+			
+		]}

@@ -1,0 +1,2258 @@
+{
+  "questions": [
+    {
+      "uid": "6080001",
+      "category": "datamodeling",
+      "subcategory": "datamodeling",
+      "difficulty": "",
+      "question": "Hybris will recognize every file that matches *-items.xml if they are located in the proper spot (/resources).",
+      "answers": [
+        {
+          "option": "Correct",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "Incorrect",
+          "correct": true,
+          "explanation": "/resources/@{extname}-items.xml"
+        }
+      ],
+      "explanation": "It matches only if the extension name also matches.",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c317a28866910149816b4a652470b16.html"
+      ]
+    },
+    {
+      "uid": "6080002",
+      "category": "datamodeling",
+      "subcategory": "datamodeling",
+      "difficulty": "",
+      "question": "Have a look at the following snippet of the items.xml. Which of the following statements are true?.<br /><pre class=\"xml\">    &lt;relations&gt;<br />        &lt;!-- The 1-to-many relationship between Stadium and Match --&gt;<br />        &lt;relation code=\"StadiumMatchRelation\"<br />                localized=\"false\" generate=\"true\" autocreate=\"true\"&gt;   <br />               &lt;sourceElement type=\"Stadium\" qualifier=\"match\" cardinality=\"one\"/&gt;<br />            &lt;targetElement type=\"Match\" qualifier=\"stadium\" cardinality=\"many\"&gt;<br />                &lt;modifiers optional=\"true\"/&gt;<br />            &lt;/targetElement&gt;<br />        &lt;/relation&gt;<br />    &lt;/relations&gt;</pre>",
+      "answers": [
+        {
+          "option": "Stadium has an attribute named 'match'.",
+          "correct": false,
+          "explanation": "It has an attribute 'stadium'."
+        },
+        {
+          "option": "Match has an attribute named 'match'.",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "Stadium can have multiple Match-objects.",
+          "correct": true,
+          "explanation": "Be aware that in this example the method for this is named getStadium()!"
+        },
+        {
+          "option": "Stadium can have multiple Stadium-objetcs",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "Stadium can only have one Match-object.",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "Stadium can only have one Stadium-object.",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c317a28866910149816b4a652470b16.html"
+      ]
+    },
+    {
+      "uid": "6080003",
+      "category": "datamodeling",
+      "subcategory": "datamodeling",
+      "difficulty": "",
+      "question": "Statements.",
+      "answers": [
+        {
+          "option": "On a MySQL database it is possible to execute 'ant updatesystem' even when the server is already running.",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "On a HSQL database it is possible to execute'ant updatesystem' even when the server is already running.",
+          "correct": false,
+          "explanation": "HSQL only supports a single database connection. "
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c317a28866910149816b4a652470b16.html"
+      ]
+    },
+    {
+      "uid": "6080004",
+      "category": "datamodeling",
+      "subcategory": "datamodeling",
+      "difficulty": "",
+      "question": "Statements.",
+      "answers": [
+        {
+          "option": "Every type is a java class. Even a java String is encapsulated in a type",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "A type is the equivalent of java class.",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "An item is the equivalent of an object or instance",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "It is not likely that you as developer will define business related item types.",
+          "correct": false,
+          "explanation": "The opposite is true. However it is not likely that you will define 'System-related'-related itemtypes like ComposedTypes, MapTypes, Relation, GenericItem ... Product, Discount, PriceRow are examples of Business related types."
+        },
+        {
+          "option": "Every object stored in the hybris Multichannel Suite is typed - it is an instance of a type. Even type definitions are typed as they are stored as instances of the Type type. ",
+          "correct": true,
+          "explanation": "This means that there are two aspects of a type definition: it is an item and, at the same time, it defines other items (read: instances)."
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c755da8866910149c27ec908fc577ef.html"
+      ]
+    },
+    {
+      "uid": "6080005",
+      "category": "datamodeling",
+      "subcategory": "datamodeling",
+      "difficulty": "",
+      "question": "Statements. Consider the item Product in the items.xml.",
+      "answers": [
+        {
+          "option": "The type Product is an instance of the type Item.",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "The type Product is a subtype of the type Item.",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "The type Item is a instance of the type ComposedType.",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "The type ComposedType is a instance of the type ComposedType.",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "The type Product is a subtype of the type ComposedType.",
+          "correct": false,
+          "explanation": "It should be instance of."
+        },
+        {
+          "option": "The type Item is a subtype of all types in the hybris multichannel suite.",
+          "correct": false,
+          "explanation": "It should be supertype."
+        },
+        {
+          "option": "Every object that is managed by the platform is an instance of Item or of one of Item's subtypes.",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c755da8866910149c27ec908fc577ef.html"
+      ]
+    },
+    {
+      "uid": "6080006",
+      "category": "datamodeling",
+      "subcategory": "datamodeling",
+      "difficulty": "",
+      "question": "Statements about getting attribute values.",
+      "answers": [
+        {
+          "option": "The method getAttribute( XYZ ) will return the same as getXYZ() ",
+          "correct": true,
+          "explanation": "getAttribute can also be used for unknow attributes"
+        },
+        {
+          "option": "getXYZ() is not automaticly generated by Hybris.",
+          "correct": false,
+          "explanation": "Every type system attribute with its persistence set to property will have an automatically generated getXYZ() method."
+        },
+        {
+          "option": "If you want to get a list of available attributes you should use: getProperty( XYZ ) and getAttributeDescriptors()",
+          "correct": false,
+          "explanation": "You should use getAttributeDescriptors() and getAttribute( XYZ )."
+        },
+        {
+          "option": "getProperty( XYZ ) supports Jalo Attributes.",
+          "correct": false,
+          "explanation": "JaLo-only attributes exist in memory only by runtime and do not have a database field by their very nature. The getXYZ() approach relies on a custom business logic implementation and therefore works with JaLo-only attributes."
+        },
+        {
+          "option": "getAttribute( XYZ ) is a generic approach which implicitly uses getXYZ() internally.",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "It is not recommended to use getAttribute( XYZ ).",
+          "correct": false,
+          "explanation": "It depends what you need. However it is not recommended to use getProperty( XYZ )."
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8bffa9cc86691014bb70ac2d012708bc.html"
+      ]
+    },
+    {
+      "uid": "6080007",
+      "category": "datamodeling",
+      "subcategory": "datamodeling",
+      "difficulty": "",
+      "question": "It is possible to define types outside the items.xml.",
+      "answers": [
+        {
+          "option": "true",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "false",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "Configured types are persisted. Runtime Types are not. Runtime Types are not configured in the items.xml, they are only configured in the backoffice, but they are not recommended!",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c755da8866910149c27ec908fc577ef.html"
+      ]
+    },
+    {
+      "uid": "6080008",
+      "category": "datamodeling",
+      "subcategory": "datamodeling",
+      "difficulty": "",
+      "question": "Since Hybris 4.6 it is possible to move item types between extensions. Which are the limitations?",
+      "answers": [
+        {
+          "option": "This statement is false, you can not move items to another extension.",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "You are have to change the deployment typecode of the type.",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "You can not move a type if it affects a classpath.",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "You should remove the generated javaclasses.",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "You should change the package name.",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "ANT ALL is sufficient for a proper build.",
+          "correct": false,
+          "explanation": "You should do an ANT CLEAN ALL otherwhise not all classes are removed."
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c755da8866910149c27ec908fc577ef.html"
+      ]
+    },
+    {
+      "uid": "6080009",
+      "category": "datamodeling",
+      "subcategory": "datamodeling",
+      "difficulty": "",
+      "question": "java.lang.Integer or java.lang.String are represented by which type?",
+      "answers": [
+        {
+          "option": "AtomicType",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "ItemType",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "ComposedType",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "AtomicTypes are the most basic types available in the hybris Multichannel Suite. They are assigned to java class.",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c755da8866910149c27ec908fc577ef.html"
+      ]
+    },
+    {
+      "uid": "6080010",
+      "category": "datamodeling",
+      "subcategory": "datamodeling",
+      "difficulty": "",
+      "question": "Statements.",
+      "answers": [
+        {
+          "option": "When you define an AtomicType yourself, you need to assign a Java class object to it.",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "AtomicType definitions do not have a code attribute  to set the unique identifier",
+          "correct": true,
+          "explanation": "Instead, the AtomicType's class attribute will be used as its reference"
+        },
+        {
+          "option": "The hybris Multichannel Suite stores AtomicType instances in the database as strings (VARCHAR) or numbers (NUMBER), if possible.",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "If you define AtomicTypes yourself, you need to make sure that those types are serialisable",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "AtomicTypes are the most basic types available in the hybris Multichannel Suite. They are assigned to java class.",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c755da8866910149c27ec908fc577ef.html"
+      ]
+    },
+    {
+      "uid": "6080011b",
+      "category": "datamodeling",
+      "subcategory": "datamodeling",
+      "difficulty": "",
+      "question": "Have a look at the following snippet of the items.xml. Which of the following statements are true?.<br /><pre class=\"xml\">    &lt;relations&gt;<br />        &lt;!-- The 1-to-many relationship between Country and Region --&gt;<br />        &lt;relation code=\"CountryRegionRelation\"<br />                localized=\"false\" generate=\"true\" autocreate=\"true\"&gt;   <br />               &lt;sourceElement type=\"Country\" qualifier=\"country\" cardinality=\"one\"/&gt;<br />            &lt;targetElement type=\"Region\" qualifier=\"regions\" cardinality=\"many\"&gt;<br />                &lt;modifiers optional=\"true\"/&gt;<br />            &lt;/targetElement&gt;<br />        &lt;/relation&gt;<br />    &lt;/relations&gt;</pre><br /><pre class=\"xml\">    &lt;relations&gt;<br />        &lt;!-- The Many-to-1 relationship between Country and Region --&gt;<br />        &lt;relation code=\"RegionCountryRelation\"<br />                localized=\"false\" generate=\"true\" autocreate=\"true\"&gt;   <br />               &lt;sourceElement type=\"Region\" qualifier=\"regions\" cardinality=\"many\"/&gt;<br />            &lt;targetElement type=\"Country\" qualifier=\"country\" cardinality=\"one\"&gt;<br />                &lt;modifiers optional=\"true\"/&gt;<br />            &lt;/targetElement&gt;<br />        &lt;/relation&gt;<br />    &lt;/relations&gt;</pre>",
+      "answers": [
+        {
+          "option": "The first example can have an unlimited amount of region relations to a single Country",
+          "correct": false,
+          "explanation": "If a collection contains a lot of PKs, the field value may reach the maximum length of field for the database implementation and entries may get truncated. That means that you can only store values of a certain length in that database field and every bit of information beyond that length gets lost."
+        },
+        {
+          "option": "The second example has better performance as the results of FlexibleSearch statements are cached by SAP Commerce",
+          "correct": true,
+          "explanation": "This is because the PK of the country is stored on the region."
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c755da8866910149c27ec908fc577ef.html"
+      ]
+    },
+    {
+      "uid": "6080011",
+      "category": "datamodeling",
+      "subcategory": "datamodeling",
+      "difficulty": "",
+      "question": "Statements.",
+      "answers": [
+        {
+          "option": "The use of CollectionTypes is recommended.",
+          "correct": false,
+          "explanation": "You should use relations."
+        },
+        {
+          "option": "A collection is stored as a CSV in the database.",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "Hybris allows the use of 1-1 relations.",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "Many-one relations do not suffer from a field length limitation since they are not stored as CSV.",
+          "correct": true,
+          "explanation": "The PK is stored on the target object."
+        },
+        {
+          "option": "It is not (never) possible to do a query on the database on collections.",
+          "correct": false,
+          "explanation": "When a Many-1 relation is used, you can easily perform a flexible search query."
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c755da8866910149c27ec908fc577ef.html"
+      ]
+    },
+    {
+      "uid": "6080012",
+      "category": "datamodeling",
+      "subcategory": "datamodeling",
+      "difficulty": "",
+      "question": "Localized values",
+      "answers": [
+        {
+          "option": "Localized values are stored in a seperate table.",
+          "correct": true,
+          "explanation": "Localized values are stored in a separate database table, whose name is composed of the name of the table the type is stored in, plus the suffix lp (short for localized property)."
+        },
+        {
+          "option": "'localized:java.lang.String' is an example of maptype.",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "It is not possible to create your own maptypes.",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c755da8866910149c27ec908fc577ef.html"
+      ]
+    },
+    {
+      "uid": "6080013",
+      "category": "datamodeling",
+      "subcategory": "datamodeling",
+      "difficulty": "",
+      "question": "Relation Type",
+      "answers": [
+        {
+          "option": "RelationTypes are subtypes of LinkedItem",
+          "correct": false,
+          "explanation": "LinkItem"
+        },
+        {
+          "option": "2 attributes should be defined on a new relation: SourceItem and TargetItem",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c755da8866910149c27ec908fc577ef.html"
+      ]
+    },
+    {
+      "uid": "6080014",
+      "category": "datamodeling",
+      "subcategory": "datamodeling",
+      "difficulty": "",
+      "question": "How create a new instance of an item?",
+      "answers": [
+        {
+          "option": "Using the extension manager",
+          "correct": true,
+          "explanation": "HelloWorldWizardManager.getInstance().createHelloWorldWizardCronJob( params );"
+        },
+        {
+          "option": "ComposedType.newInstance()",
+          "correct": true,
+          "explanation": "ComposedType item = getSession().getTypeManager().getComposedType( \"mySampleItem\" ); return(MySampleItem) item.newInstance( ctx, params ); If you create items that way, pass any critical parameters (such as code or qualifier, catalog versions, etc) directly in the Map."
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c755da8866910149c27ec908fc577ef.html"
+      ]
+    },
+    {
+      "uid": "6080015",
+      "category": "datamodeling",
+      "subcategory": "datamodeling",
+      "difficulty": "",
+      "question": "Which of the following attributes are have the intial modifier=true e.g. on a Product? (&lt;modifiers initial=\"true\"/&gt;)",
+      "answers": [
+        {
+          "option": "PK",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "qualifier",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "creationtime",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "modifiedtime",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "catalog version",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "code",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "Initial attributes must be set during item creation, non-initial values can be set later on.",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c755da8866910149c27ec908fc577ef.html"
+      ]
+    },
+    {
+      "uid": "6080016",
+      "category": "datamodeling",
+      "subcategory": "datamodeling",
+      "difficulty": "",
+      "question": "The modifiers optional and inital have the same meaning.",
+      "answers": [
+        {
+          "option": "true",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "false",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "intial=true => If 'true', the attribute will only be writable during the item creation. Setting this to 'true' is only useful in combination with write='false'. Default is 'false'.",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c755da8866910149c27ec908fc577ef.html"
+      ]
+    },
+    {
+      "uid": "6080017",
+      "category": "datamodeling",
+      "subcategory": "datamodeling",
+      "difficulty": "",
+      "question": "Statements (related to CollectionTypes)",
+      "answers": [
+        {
+          "option": "one-many relations scale better than many-one relations",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "many-one relations scale better than one-many relations",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "A many to one relation has its entries stored with the items themselves, while the one to many relation stores the entries by itself.",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c755da8866910149c27ec908fc577ef.html"
+      ]
+    },
+    {
+      "uid": "6080017b",
+      "category": "datamodeling",
+      "subcategory": "datamodeling",
+      "difficulty": "",
+      "question": "Statements (related to CollectionTypes)",
+      "answers": [
+        {
+          "option": "one-to-one is in Hybris always a unidirectional relation.",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "one-to-many is in Hybris a bidirectional",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "many-to-one is in Hybris a bidirectional",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "many-to-many is in Hybris a bidirectional",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": ".",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c755da8866910149c27ec908fc577ef.html"
+      ]
+    },
+    {
+      "uid": "6080018",
+      "category": "datamodeling",
+      "subcategory": "datamodeling",
+      "difficulty": "",
+      "question": "Statements (related to CollectionTypes)",
+      "answers": [
+        {
+          "option": "The size of one-many relations are limited in length.",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "The size of many-one relations are limited in length.",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "A many to one relation has its entries stored with the items themselves, while the one to many relation stores the entries by itself.",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c755da8866910149c27ec908fc577ef.html"
+      ]
+    },
+    {
+      "uid": "6080018b",
+      "category": "datamodeling",
+      "subcategory": "datamodeling",
+      "difficulty": "",
+      "question": "Statements (related to CollectionTypes)",
+      "answers": [
+        {
+          "option": "One-many relations are faster when it comes to saving it to the database.",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "Many-one relations are faster when it comes to saving it to the database.",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "A many to one relation has its entries stored with the items themselves, while the one to many relation stores the entries by itself.",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c755da8866910149c27ec908fc577ef.html"
+      ]
+    },
+    {
+      "uid": "6080019",
+      "category": "datamodeling",
+      "subcategory": "datamodeling",
+      "difficulty": "",
+      "question": "A multitenant system can have different itemtypes depending on the tenants.",
+      "answers": [
+        {
+          "option": "true",
+          "correct": true,
+          "explanation": "See properties: allowed.extensions and forbidden.extensions in tenant_foo.properties"
+        },
+        {
+          "option": "false",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "The SAP Commerce initialization process creates the available types by iterating over all available extensions and creating the types defined in the respective [ items.xml files|items.xml]. As the extensions available to a tenant can be configured, a tenant might have a type system different from the master tenant and other available tenants. In short, the available type system depends on active extensions for a given tenant.",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c755da8866910149c27ec908fc577ef.html"
+      ]
+    },
+    {
+      "uid": "6080020",
+      "category": "datamodeling",
+      "subcategory": "datamodeling",
+      "difficulty": "",
+      "question": "What is an Orphaned types?",
+      "answers": [
+        {
+          "option": "Type definitions in the database that are not backed by an items.xml file definition. ",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "It doesn't exist.",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c755da8866910149c27ec908fc577ef.html"
+      ]
+    },
+    {
+      "uid": "6080021",
+      "category": "datamodeling",
+      "subcategory": "datamodeling",
+      "difficulty": "",
+      "question": "It is possible to encrypt and decrypt attribute values in the items.xml",
+      "answers": [
+        {
+          "option": "true",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "false",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c755da8866910149c27ec908fc577ef.html"
+      ]
+    },
+    {
+      "uid": "6080022",
+      "category": "datamodeling",
+      "subcategory": "datamodeling",
+      "difficulty": "",
+      "question": "Statements",
+      "answers": [
+        {
+          "option": "Jalo attributes are persisted to the DB",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "You can search for Jalo Attributes using as flexible search query.",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "Jalo attributes only exist at runtime.",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "An attribute is defined as Jalo using the tag &lt;persistence ... &gt;",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "The getters and setter are automatically generated at compile time",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "Jalo attributes can not be indexed by lucene",
+          "correct": false,
+          "explanation": "You need to set the forceLuceneIndexable property of the JaLo-only attribute's AttributeDescriptor"
+        },
+        {
+          "option": "Jalo attributes are replaced by Dynamic Attributes",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c003192866910149752ca8cf6b66a5c.html"
+      ]
+    },
+    {
+      "uid": "6080023",
+      "category": "datamodeling",
+      "subcategory": "datamodeling",
+      "difficulty": "",
+      "question": "Which of the following tags is not a child of the &lt;items&gt; tag in the items.xml.",
+      "answers": [
+        {
+          "option": "atomictypes",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "collectiontypes",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "enumtypes",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "maptypes",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "relationtypes",
+          "correct": true,
+          "explanation": "it should be 'relations'"
+        },
+        {
+          "option": "itemtypes",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c755da8866910149c27ec908fc577ef.html"
+      ]
+    },
+    {
+      "uid": "6080024",
+      "category": "datamodeling",
+      "subcategory": "datamodeling",
+      "difficulty": "",
+      "question": "When the following modifier is defined &lt;modifiers read=\"false\" /&gt;",
+      "answers": [
+        {
+          "option": "It is not possible to access the attribute",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "It is possible to access the propertie using getAttribute(...)",
+          "correct": false,
+          "explanation": "The getAttribute(...) method internally also relies on the generated getter and will not be operable either."
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c755da8866910149c27ec908fc577ef.html"
+      ]
+    },
+    {
+      "uid": "6080025",
+      "category": "datamodeling",
+      "subcategory": "datamodeling",
+      "difficulty": "",
+      "question": "What can you do with custom implementation of : SameColumnChangeStrategy?",
+      "answers": [
+        {
+          "option": "You can make a copy of your column in a seperate table.",
+          "correct": true,
+          "explanation": "You can implement a custom database column type switching mechanism."
+        },
+        {
+          "option": "You can add extra logging which is stored in the DB.",
+          "correct": true,
+          "explanation": "You can implement a custom database column type switching mechanism."
+        },
+        {
+          "option": "You can break your Hybris DB Structrure",
+          "correct": true,
+          "explanation": "Be careful because you are doing \"open-heart surgery\" on the database structure."
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c755da8866910149c27ec908fc577ef.html"
+      ]
+    },
+    {
+      "uid": "6080026",
+      "category": "datamodeling",
+      "subcategory": "datamodeling",
+      "difficulty": "",
+      "question": "Which of the following items.xml snippets are not valid?",
+      "answers": [
+        {
+          "option": "&lt;attribute qualifier=\"myAttribute\" type=\"java.lang.Boolean\"&gt;",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "&lt;attribute qualifier=\"myAttribute\" type=\"localized:java.lang.Boolean\"&gt;",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "&lt;attribute qualifier=\"myAttribute\" type=\"boolean\"&gt;",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "&lt;attribute qualifier=\"myAttribute\" type=\"Boolean\"&gt;",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c755da8866910149c27ec908fc577ef.html"
+      ]
+    },
+    {
+      "uid": "6080027",
+      "category": "datamodeling",
+      "subcategory": "datamodeling",
+      "difficulty": "",
+      "question": "Statements",
+      "answers": [
+        {
+          "option": "The lenght of a deployment table can have max length of 32 characters.",
+          "correct": false,
+          "explanation": "It is 24 characters."
+        },
+        {
+          "option": "typecode is an optional attribute",
+          "correct": false,
+          "explanation": "The value of the typecode attribute must be a positive integer between 0 and 32767 (2^15-1) and must be unique throughout the hybris Multichannel Suite as it is part of the PK generation mechanism. Typecode values between 0 and 10000 are reserved for hybris-internal use; typecode values larger than 10000 are free for you to use. BE AWARE that it is not totally true!!"
+        },
+        {
+          "option": "Changing the deployment table may result in a loss of data.",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c755da8866910149c27ec908fc577ef.html"
+      ]
+    },
+    {
+      "uid": "6080028",
+      "category": "datamodeling",
+      "subcategory": "datamodeling",
+      "difficulty": "",
+      "question": "Which statements are true about the custom property 'condition.query' on a relation",
+      "answers": [
+        {
+          "option": "It can only be used in many-2-many relations",
+          "correct": false,
+          "explanation": "The condition query custom property can only be defined in one end of the relation and only for relations of a one-to-many or many-to-one type."
+        },
+        {
+          "option": "It can be defined in the either the source or target element.",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "The attribute is added to the flexible search query.",
+          "correct": true,
+          "explanation": " The condition query is written in FlexibleSearch and must be valid in the context of a given relation query. The condition query shouldn't contain any order by part as it is added at the end of a generated query. "
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c755da8866910149c27ec908fc577ef.html"
+      ]
+    },
+    {
+      "uid": "6080029",
+      "category": "datamodeling",
+      "subcategory": "datamodeling",
+      "difficulty": "",
+      "question": "Statements",
+      "answers": [
+        {
+          "option": "The modifier 'autocreate' on an ItemType will make sure that this ItemType will be created during an URS",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "The modifier 'generate' on an ItemType will make sure that this ItemType will have a generated Jalo class",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "The modifier 'autocreate' on an AttributeDescriptor: If set to true, this Attribute will be created when the Platform creates the type system during initialization.",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "The modifier 'generate' on an AttributeDescriptor: If set to true, this Attribute will be created when the Platform creates the type system during initialization.",
+          "correct": false,
+          "explanation": "The modifier generate does not exist on the AttributeDescriptor"
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c755da8866910149c27ec908fc577ef.html"
+      ]
+    },
+    {
+      "uid": "6080030",
+      "category": "datamodeling",
+      "subcategory": "datamodeling",
+      "difficulty": "",
+      "question": "Statements",
+      "answers": [
+        {
+          "option": "You can use a different encryption mechanism for each attribute",
+          "correct": false,
+          "explanation": "SAP Commerce uses one encryption mechanism at a time for all attributes to be encrypted. You need to specify the encryption mechanism in the project.properties or local.properties file. Please refer to Configuring the Behavior of SAP Commerce for additional information on the local.properties file."
+        },
+        {
+          "option": "The encryption mechanism should be used for user authication",
+          "correct": false,
+          "explanation": "This encryption mechanism is not intended for user authentification or other functionality with SAP Commerce directly. The intention of encrypted values in the database is to block sensitive data when accessing the database. By writing encrypted attribute values only, the encryption mechanism makes it much harder for a database attacker to read out data - no matter whether the attack is run against a running database or whether the attacker has a database dump."
+        },
+        {
+          "option": "You define the that an attribute is encrypted like this: modifiers &lt;optional=\"false\" encrypted=\"true\"/&gt;",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c7aa304866910148bdab9c90efd6a66.html"
+      ]
+    },
+    {
+      "uid": "6080031",
+      "category": "datamodeling",
+      "subcategory": "datamodeling",
+      "difficulty": "",
+      "question": "Have a look at the following snippet of the items.xml. Which of the following statements are true?.<br /><pre class=\"xml\">    &lt;itemtype code=\"SpecialMyType\"<br />extends=\"MyType\"<br />autocreate=\"true\"<br />generate=\"true\" &gt;<br />&lt;/itemtype&gt;<br />&lt;itemtype code=\"MyType\"<br />extends=\"Product\"<br />autocreate=\"true\"<br />generate=\"true\" &gt;<br />&lt;/itemtype&gt;</pre>",
+      "answers": [
+        {
+          "option": "It is valid",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "It will fail",
+          "correct": true,
+          "explanation": "The items.xml file is parsed and evaluated in running order in one single pass. SAP Commerce does not allow multi-pass processing of the items.xml file (like the ImpEx framework does, for example), which would allow defining types in any order. This means that you need to define types in order of inheritance. More abstract types need to be defined more to the beginning of the items.xml file and more concrete types need to be defined more to the end."
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8bffa9cc86691014bb70ac2d012708bc.html"
+      ]
+    },
+    {
+      "uid": "6080032",
+      "category": "datamodeling",
+      "subcategory": "datamodeling",
+      "difficulty": "",
+      "question": "Statements.",
+      "answers": [
+        {
+          "option": "It is not recommend to add attributes to item Product directly.",
+          "correct": true,
+          "explanation": "This manner is not recommended by hybris for these reasons: - You create a direct dependency to an SAP Commerce type. - Jalo Layer: The generated methods for the attributes are written into your extension's manager, but not into the corresponding type class. In essence, this means that you have to address your extension's manager class to set values for these attributes."
+        },
+        {
+          "option": "You can add the following to your own items.xml: &lt;itemtype code=\"Product\" autocreate=\"true\" generate=\"true\"&gt; ",
+          "correct": false,
+          "explanation": "Setting the autocreate modifier to true results in a build failure."
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8bffa9cc86691014bb70ac2d012708bc.html"
+      ]
+    },
+    {
+      "uid": "6080033",
+      "category": "datamodeling",
+      "category": "datamodeling",
+      "difficulty": "",
+      "question": "Statements.",
+      "answers": [
+        {
+          "option": "You can redeclare an attribute to change its behaviour e.g. unique flag, disallow writing, ...",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "You can redeclare an attribute to change its type, to any other type",
+          "correct": false,
+          "explanation": "You can make the type of the attribute more specific (only subtypes can be used here)"
+        },
+        {
+          "option": "You can redeclare a type from jalo to property",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8bffa9cc86691014bb70ac2d012708bc.html"
+      ]
+    },
+    {
+      "uid": "6080034",
+      "category": "datamodeling",
+      "category": "datamodeling",
+      "difficulty": "",
+      "question": "How would you handle the following problem: Hybris defined an attribute 'calculated' as java.lang.Boolean and you want to make sure that getCalculated() never returns null.",
+      "answers": [
+        {
+          "option": "You can redeclare the attribute to 'boolean'",
+          "correct": false,
+          "explanation": "Only subtypes of 'Boolean' would be possible, which makes no sense in this case."
+        },
+        {
+          "option": "You can redeclare the attribute and set the default value to java.lang.Boolean.FALSE",
+          "correct": false,
+          "explanation": "The default value will not garantuee it can not be null."
+        },
+        {
+          "option": "You can redeclare the attribute and define a null decorator.",
+          "correct": true,
+          "explanation": "    &lt;model&gt;<br />        &lt;getter default=\"true\" name=\"calculated\"&gt;<br />            &lt;nullDecorator&gt;Boolean.valueOf(false)&lt;/nullDecorator&gt;<br />        &lt;/getter&gt;<br />    &lt;/model&gt;"
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8bffa9cc86691014bb70ac2d012708bc.html"
+      ]
+    },
+    {
+      "uid": "6080035",
+      "category": "datamodeling",
+      "category": "datamodeling",
+      "difficulty": "",
+      "question": "How would you make sure that with a one-2-many relation the order or your relations is still correct after a multithreaded impex import?",
+      "answers": [
+        {
+          "option": "You can only be sure if you do not use a multithreaded import.",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "You can define a custom property on the sourceElement 'ordering.attribute'",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/d8efaa32ec2a44be98fdf7b460ab34c9.html"
+      ]
+    },
+    {
+      "uid": "6080036",
+      "category": "datamodeling",
+      "category": "datamodeling",
+      "difficulty": "",
+      "question": "Statements",
+      "answers": [
+        {
+          "option": "The build will fail if you do not define a deployment table for a new itemtype that is a direct subtype of GenericItem",
+          "correct": true,
+          "explanation": "You can disable this default check: build.development.mode=false => Used for legacy projects"
+        },
+        {
+          "option": "You can define a custom property on the sourceElement 'ordering.attribute'",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "The deployment of an items can only be 30 characters long.",
+          "correct": false,
+          "explanation": "For Oracle it is 30 characters, but the platform restricts it to 24 characters. But keep in mind that the database tables also can have a prefix!!"
+        },
+        {
+          "option": "It is possible to define a m:n relation witouth a deployment.",
+          "correct": false,
+          "explanation": "Previously it was allowed to define an m:n relation which had no deployment. The relation was then maintained by the Links table."
+        },
+        {
+          "option": "You can not change a deployment of an existing item",
+          "correct": true,
+          "explanation": "Modification of the deployment for type <TYPECODE> from <OLDDEPLOYMENT> to <NEWDEPLOYMENT> will not be performed; be aware that the old deployment will still be used (even though it is not reflected in the code base)."
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c6254f086691014b095a08a61d1efed.html"
+      ]
+    },
+    {
+      "uid": "6080037",
+      "category": "datamodeling",
+      "category": "datamodeling",
+      "difficulty": "",
+      "question": "Statements",
+      "answers": [
+        {
+          "option": "The file core-advanced-deployments.xml contains an overview of the type mappings for each supported DB. e.g. java.lang.Integer => int",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "You can define your own propertytable if you create a extensionname-advanced-deployment.xml in the resource directory.",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c6254f086691014b095a08a61d1efed.html"
+      ]
+    },
+    {
+      "uid": "6080038",
+      "category": "datamodeling",
+      "category": "datamodeling",
+      "difficulty": "",
+      "question": "An orphaned type is a type that is not defined in the items.xml file but still exists in the type system representation held in the database. You can remove them in the SAP Commerce Administration Console.",
+      "answers": [
+        {
+          "option": "Correct",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "Incorrect",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8b7bab2786691014864dbde92aa09bdd.html"
+      ]
+    },
+    {
+      "uid": "6080039",
+      "category": "datamodeling",
+      "subcategory": "dynamic_attributes",
+      "difficulty": "",
+      "question": "How do you define an dynamic attribute in the items.xml? (replace XXXXXX) <br /> <pre class=\"xml\">&lt;attribute type=\"int\" qualifier=\"daysHumanReadable\"&gt;<br />    &lt;persistence type=\"<i>XXXXXXXX</i>\" attributeHandler=\"myOwnSpringBeanId\" /&gt;<br />    ...<br />&lt;/attribute&gt;</pre>",
+      "answers": [
+        {
+          "option": "property",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "jalo",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "dynamic",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8bb46096866910149208fae7c4ec7596.html"
+      ]
+    },
+    {
+      "uid": "6080040",
+      "category": "datamodeling",
+      "subcategory": "dynamic_attributes",
+      "difficulty": "",
+      "question": "Which statements concerning dynamic attributes are true.",
+      "answers": [
+        {
+          "option": "It is not possible to localize dynamic attributes.",
+          "correct": false,
+          "explanation": "Since 4.7 it is possible when you implement the interface DynamicLocalizedAttributeHandler."
+        },
+        {
+          "option": "It is possible to inject Spring services.",
+          "correct": true,
+          "explanation": "Dynamic attributes are defined as beans in Spring. This means that it is possible to inject other beans in comparison with Jalo where this isn't possible."
+        },
+        {
+          "option": "Dynamic attributes are persisted in the Database.",
+          "correct": false,
+          "explanation": "They are not stored in the database."
+        },
+        {
+          "option": "When using dynamic attributes you are required to define a attributeHandler attribute in the items.xml.",
+          "correct": false,
+          "explanation": "If the attribute attributeHandler is not defined, Hybris will autogenerate a attributehandler class with the name: [itemtype]_[attributename]AttributeHandler. You still have make a bean of in the Spring context."
+        },
+        {
+          "option": "Dynamic attributes will replace Jalo attributes.",
+          "correct": true,
+          "explanation": "Jalo is deprecated since hybris 4.3.0 version and will be removed completely with the hybris 5.0 version (Haha, funny that I ever believed this :-D). Since hybris 4.4.0 version, Dynamic Attributes replace Jalo attributes."
+        },
+        {
+          "option": "A subtype can overwrite a jalo attribute with a dynamic attribute.",
+          "correct": true,
+          "explanation": "It is possible to redeclare an dynamic attribute. Do not forget to add the add the attribute redeclare=\"true\". Otherwhise it will not work."
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8bb46096866910149208fae7c4ec7596.html"
+      ]
+    },
+    {
+      "uid": "6080041",
+      "category": "datamodeling",
+      "subcategory": "dynamic_attributes",
+      "difficulty": "",
+      "question": "Which statements concernign dynamic attributes are true.",
+      "answers": [
+        {
+          "option": "It is possible to execute an update running system from the command line",
+          "correct": true,
+          "explanation": "ant updatesystem -Dtenant=master"
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8bb46096866910149208fae7c4ec7596.html"
+      ]
+    },
+    {
+      "uid": "6080042",
+      "category": "datamodeling",
+      "subcategory": "dynamic_attributes",
+      "difficulty": "",
+      "question": "Statements.",
+      "answers": [
+        {
+          "option": "You can define a default value in the items.xml like this: enumerationService.getEnumerationValue(\"enumSampleType\", \"sample2\")",
+          "correct": false,
+          "explanation": "enumerationManager.getEnumerationValue(\"enumSampleType\", \"sample2\") or em().getEnumerationVa..."
+        },
+        {
+          "option": "You can localized a enumeration value like this : type.MyEnumeration.myEnumValue.name",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "You can always add enumerations via impex",
+          "correct": false,
+          "explanation": "Add dynamic=\"true\" to the definition of your enum if you want it to be modifiable. ConsistencyCheckException will be thrown when you try to add an enum via impex and the flag dynamic = false"
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c895989866910148d6a802f06651702.html"
+      ]
+    },
+    {
+      "uid": "6081001",
+      "category": "datamodeling",
+      "subcategory": "flexiblesearch",
+      "difficulty": "",
+      "question": "Which FlexibleSearch-based search mechanisms exist?",
+      "answers": [
+        {
+          "option": "FlexibleSeach",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "ViewType",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "SavedQuery",
+          "correct": true,
+          "explanation": "Can only be used in the HMC and therefore deprecated"
+        },
+        {
+          "option": "SolrFacetSearch",
+          "correct": false,
+          "explanation": "This is a Lucene-based search mechanism and not a FlexibleSearch-based search mechanism."
+        },
+        {
+          "option": "Advanced-SavedQuery",
+          "correct": true,
+          "explanation": "Can only be used in the HMC and therefore deprecated"
+        },
+        {
+          "option": "GenericSearch",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.6.0/hcd/8be9f4e586691014b318d62074b74ab5.html"
+      ]
+    },
+    {
+      "uid": "6081001b",
+      "category": "datamodeling",
+      "subcategory": "flexiblesearch",
+      "difficulty": "",
+      "question": "This (partial) statement will return every item that has in the description 'hybris' no matter in which language => SELECT {pk} FROM {Product} WHERE {p:description[ANY]} LIKE '%hybris%'",
+      "answers": [
+        {
+          "option": "Correct",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "Incorrect",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.6.0/hcd/8bc399c186691014b8fce25e96614547.html"
+      ]
+    },
+    {
+      "uid": "6081003",
+      "category": "datamodeling",
+      "subcategory": "flexiblesearch",
+      "difficulty": "",
+      "question": "Which of the following search mechanisms can result in runtime errors when there query is wrongly formatted?",
+      "answers": [
+        {
+          "option": "FlexibleSeach",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "ViewType",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "SavedQuery",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "SolrFacetSearch",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "Advanced-SavedQuery",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "GenericSearch",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "In case of a FlexibleSearch the query is translated at runtime. This translation can cause runtime exceptions when the query is not correctly formatted.",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8be9f4e586691014b318d62074b74ab5.html"
+      ]
+    },
+    {
+      "uid": "6081004",
+      "category": "datamodeling",
+      "subcategory": "flexiblesearch",
+      "difficulty": "",
+      "question": "Which of the following search mechanisms is here described:<br /><br /><i>While hybris FlexibleSearch offers a powerful search API to developers, some of them may prefer the <b>XXX</b> API that is similar to Hibernate Criteria Queries.</i>",
+      "answers": [
+        {
+          "option": "FlexibleSeach",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "ViewType",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "SavedQuery",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "SolrFacetSearch",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "Advanced-SavedQuery",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "GenericSearch",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "Example of FlexibleSearch: <pre class=\"sql\">Collection result = flexibleSearchService.<CategoryModel> search(\"SELECT {\" + CategoryModel.PK + \"} FROM {\" + CategoryModel._TYPECODE + \"} <br />WHERE {\" CategoryModel.ID \"}\").getResult();</pre><br/>Equivalent in GenericSearch: <pre class=\"java\">final String categoryID = \"Foo\";<br />final GenericCondition idCondition = GenericCondition.equals(new GenericSearchField(CategoryModel._TYPECODE, CategoryModel.ID ), categoryID);<br />final GenericConditionList gl = GenericCondition.createConditionList(idCondition);<br/>final GenericQuery query = new GenericQuery(CategoryModel._TYPECODE, gl);<br />Collection result = genericSearchService.search(query).getResult();</pre>",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8be9f4e586691014b318d62074b74ab5.html"
+      ]
+    },
+    {
+      "uid": "6081005",
+      "category": "datamodeling",
+      "subcategory": "flexiblesearch",
+      "difficulty": "",
+      "question": "Which of the following statements about GenericSearch are true?",
+      "answers": [
+        {
+          "option": "GenericSearch can have a limited number of conditions which is fixed at 255",
+          "correct": false,
+          "explanation": "GenericSearch can have an unlimited number of conditions"
+        },
+        {
+          "option": "It is possible to search for items as well as raw data fields",
+          "correct": true,
+          "explanation": "(raw data fields: strings like productcode and productname instead of a Item like Product)"
+        },
+        {
+          "option": "Inner joins and outer joins between item types are <b>im</b>possible",
+          "correct": false,
+          "explanation": "They are possible: <pre class=\"sql\">GenericCondition joinCondition = GenericCondition.createJoinCondition(productMediaField, mediaField);</pre>"
+        },
+        {
+          "option": "It is possible to use subselects",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "GenericSearch can have a limited number of <i>order by</i> clauses which is fixed at 255",
+          "correct": false,
+          "explanation": "GenericSearch can have an unlimited number of order by clauses."
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8be9f4e586691014b318d62074b74ab5.html"
+      ]
+    },
+    {
+      "uid": "6081006",
+      "category": "datamodeling",
+      "subcategory": "flexiblesearch",
+      "difficulty": "",
+      "question": "In which cases is it recommended to use a Generic search?",
+      "answers": [
+        {
+          "option": "<i>Find me all products</i>. For example retrieve all the customer whitouth a condition",
+          "correct": true,
+          "explanation": "It is shorter to retrieve products with a GenericSearch than with a FlexibleSearch when no conditions are being used. <pre class=\"java\">// create a query to find products<br />GenericQuery query = new GenericQuery(ProductModel._TYPECODE);<br />// run the search<br />genericSearchService.search(query).getResult();</pre>"
+        },
+        {
+          "option": "In case you want to prevent runtime exception.",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "When you have a lot of conditions in you query.",
+          "correct": false,
+          "explanation": "The more conditions you use in your GenericSearch the harder it will be to read/understand the query."
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8be9f4e586691014b318d62074b74ab5.html"
+      ]
+    },
+    {
+      "uid": "6081007",
+      "category": "datamodeling",
+      "subcategory": "flexiblesearch",
+      "difficulty": "",
+      "question": "Which of the following queries (snippets) will work together with the following java code: <pre class=\"java\">query.addQueryParameter(\"name\", \"softlution\");</pre>",
+      "answers": [
+        {
+          "option": "WHERE {p:code} LIKE '$name'",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "WHERE {p:code} LIKE $name",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "WHERE {p:code} LIKE '&name'",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "WHERE {p:code} LIKE &name",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "WHERE {p:code} LIKE '?name'",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "WHERE {p:code} LIKE ?name",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "WHERE {p:code} LIKE '%name'",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "WHERE {p:code} LIKE '%name'",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8be9f4e586691014b318d62074b74ab5.html"
+      ]
+    },
+    {
+      "uid": "6081008",
+      "category": "datamodeling",
+      "subcategory": "flexiblesearch",
+      "difficulty": "",
+      "question": "As you might know, a query will not return rows when the requested localized fields are not filled in the requested language.<br /><br />For example:<br /><pre class=\"sql\">SELECT {p:code}, {p:name[de]}, {p:name[en]} FROM {Product AS p}</pre><br /><br />How can we retrieve the product name in German and English even when one of both is null?",
+      "answers": [
+        {
+          "option": "It is not possible.",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "The only way is to create 2 seperate queries and to combine the results in the code: <br /><pre class=\"sql\">SELECT {p:code}, {p:name[de]} FROM {Product AS p}</pre><pre class=\"sql\">SELECT {p:code}, {p:name[en]} FROM {Product AS p}</pre>",
+          "correct": false,
+          "explanation": "This will work, but is not the best solution."
+        },
+        {
+          "option": "You can add \":o\" to the query in the proper place. This will result in an outer join.",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "The are \":o\" are used to force the related table to be outer-joined (in case of localized properties the xxxLP table).<br /><br />The correct query is:<br /><br /><pre class=\"sql\">SELECT {p:code}, {p:name[de:o]}, {p:name[en:o]} FROM {Product AS p}</pre>",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8be9f4e586691014b318d62074b74ab5.html"
+      ]
+    },
+    {
+      "uid": "6081009",
+      "category": "datamodeling",
+      "subcategory": "flexiblesearch",
+      "difficulty": "",
+      "question": "Which is a valid way of subselects in a query?",
+      "answers": [
+        {
+          "option": "<br /><pre class=\"sql\">SELECT {cat:pk} FROM {Category AS cat} WHERE NOT EXISTS (<br />  {{ SELECT * FROM {CategoryCategoryRelation} WHERE {target}={cat:pk} }} /* Sub-select */<br />)</pre>",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "<br /><pre class=\"sql\">SELECT {cat:pk} FROM {Category AS cat} WHERE NOT EXISTS (<br />  {SELECT * FROM {CategoryCategoryRelation} WHERE {target}={cat:pk} } /* Sub-select */<br />)</pre>",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "<br /><pre class=\"sql\">SELECT {cat:pk} FROM {Category AS cat} WHERE NOT EXISTS (<br />  ( SELECT * FROM {CategoryCategoryRelation} WHERE {target}={cat:pk} ) /* Sub-select */<br />)</pre>",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "<br /><pre class=\"sql\">SELECT {cat:pk} FROM {Category AS cat} WHERE {pk} IN (<br />  {{ SELECT {source} FROM {CategoryCategoryRelation} WHERE {target}={cat:pk} }} /* Sub-select */<br />)</pre>",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8be9f4e586691014b318d62074b74ab5.html"
+      ]
+    },
+    {
+      "uid": "6081010",
+      "category": "datamodeling",
+      "subcategory": "flexiblesearch",
+      "difficulty": "",
+      "question": "Which statements about FlexibleSearch are true?",
+      "answers": [
+        {
+          "option": "It is not possible to run FlexibleSearch queries on jalo-only attributes",
+          "correct": true,
+          "explanation": "FlexibleSearch queries are executed on the database directly via SQL statements."
+        },
+        {
+          "option": "The number of searchresults depends on certain restrictions. By default, the user account assigned to a session is admin.",
+          "correct": false,
+          "explanation": "By default the user account assigned to a session is anonymous."
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8be9f4e586691014b318d62074b74ab5.html"
+      ]
+    },
+    {
+      "uid": "6081011",
+      "category": "datamodeling",
+      "subcategory": "flexiblesearch",
+      "difficulty": "",
+      "question": "Consider the following query: <pre class=\"sql\">SELECT * FROM {Product}<br />WHERE {code} LIKE '%-ABC-__'</pre>",
+      "answers": [
+        {
+          "option": "It will result in a runtime exception",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "It will return no products.",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "It is possible that the products with the following codes are returned : \"<i>-ABC-12</i>\",\"<i>-ABC-AB</i>\",\"<i>12-ABC-12</i>\"",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "It will return products that have a code that ends with \"<i>-ABC-__</i>\"",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8be9f4e586691014b318d62074b74ab5.html"
+      ]
+    },
+    {
+      "uid": "6081012",
+      "category": "datamodeling",
+      "subcategory": "flexiblesearch",
+      "difficulty": "",
+      "question": "Which of the following queries can be used to get all products excluding their subtypes like VariantProduct?",
+      "answers": [
+        {
+          "option": "<pre class=\"sql\">SELECT {code},{pk} FROM {Product}</pre>",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "<pre class=\"sql\">SELECT {code},{pk} FROM {Product!}</pre>",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "<pre class=\"sql\">SELECT {code},{pk} FROM {Product?}</pre>",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "<pre class=\"sql\">SELECT * FROM {Product AS p JOIN ComposedType AS t ON {p.itemtype}={t.PK} }<br />WHERE {t.code} IN ( 'Product')</pre>",
+          "correct": true,
+          "explanation": "This option is preferable when you want to return more than one itemtype."
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8be9f4e586691014b318d62074b74ab5.html"
+      ]
+    },
+    {
+      "uid": "6081013",
+      "category": "datamodeling",
+      "subcategory": "flexiblesearch",
+      "difficulty": "",
+      "question": "Which 2 of the following queries are identical:",
+      "answers": [
+        {
+          "option": "<pre class=\"sql\">SELECT {code},{pk} FROM  {Product} ORDER BY {code} DESC</pre>",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "<pre class=\"sql\">SELECT {code},{pk} FROM  {Product} ORDER BY {code} ASC</pre>",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "<pre class=\"sql\">SELECT {code},{pk} FROM  {Product} ORDER BY {code}</pre>",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "<pre class=\"sql\">SELECT {code},{pk} FROM  {Product} ORDER BY {code}, {name}</pre>",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8be9f4e586691014b318d62074b74ab5.html"
+      ]
+    },
+    {
+      "uid": "6081014",
+      "category": "datamodeling",
+      "subcategory": "flexiblesearch",
+      "difficulty": "hard",
+      "question": "Which table will be accessed when the following query is being executed?<pre class=<\"sql\">SELECT {description} FROM {Product}</pre>",
+      "answers": [
+        {
+          "option": "Table: products",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "Table: productslp",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "Table: itemtype",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "Because <i>description</i> is a localized attribute, the table <i>productslp</i> will be used. Since no other attributes are requested, the products table is not being joined.<br />This query will be translated into: <pre class=\"sql\">SELECT  lp_t0.p_description   <br />FROM productslp lp_t0<br />   WHERE<br />   (<br />      (lp_t0.LANGPK=?)<br />   )<br />   AND<br />   (lp_t0.ITEMTYPEPK<br />      IN (<br />         23087950835790560 , 23087950835774560 ,<br />         23087950837855968 , 23087950837852464 ,<br />         23087950837859216 , 23087950837848976 ,<br />         23087950837843968 , 23087950835790306 ,<br />         23087950835765569<br />      )<br />   )</pre>",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8be9f4e586691014b318d62074b74ab5.html"
+      ]
+    },
+    {
+      "uid": "6081015",
+      "category": "datamodeling",
+      "subcategory": "flexiblesearch",
+      "difficulty": "hard",
+      "question": "Which of the following keywords are related to SearchRestrictions?",
+      "answers": [
+        {
+          "option": "Batch",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "Enabled",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "Visible",
+          "correct": false,
+          "explanation": "No such thing. Although \"Active\" exists."
+        },
+        {
+          "option": "Personalization",
+          "correct": true,
+          "explanation": "They are also called Personalization Rules"
+        },
+        {
+          "option": "Restricted Type",
+          "correct": true,
+          "explanation": "The type on which FlexibleSearch queries are to be restricted when executed with the specified principal."
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8be9f4e586691014b318d62074b74ab5.html"
+      ]
+    },
+    {
+      "uid": "6081016",
+      "category": "datamodeling",
+      "subcategory": "flexiblesearch",
+      "difficulty": "hard",
+      "question": "How can a SearchRestriction be created.",
+      "answers": [
+        {
+          "option": "Via the backoffice",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "Via the ImpEx extension",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "Via the hybris Multichannel Suite API",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8be9f4e586691014b318d62074b74ab5.html"
+      ]
+    },
+    {
+      "uid": "6081017",
+      "category": "datamodeling",
+      "subcategory": "flexiblesearch",
+      "difficulty": "hard",
+      "question": "How can SearchRestrictions be disabled for a user?",
+      "answers": [
+        {
+          "option": "Set the restriction to be inactive. (attribute on the restriction)",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "If the current user is in the admingroup.",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "If the disableRestrictions attribute in the session is set to true.",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "Call the method: searchRestrictionSerive.disableSearchRestrictions()",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8be9f4e586691014b318d62074b74ab5.html"
+      ]
+    },
+    {
+      "uid": "6081018",
+      "category": "datamodeling",
+      "subcategory": "flexiblesearch",
+      "difficulty": "hard",
+      "question": "Which statements about SearchRestrictions are true?",
+      "answers": [
+        {
+          "option": "It limits the search results.",
+          "correct": true,
+          "explanation": "Basicly it is just an extra condition in the where clause."
+        },
+        {
+          "option": "It has the same effect as type access rights.",
+          "correct": false,
+          "explanation": "Type access rights only affect the HMC. (also vjdbc?, webservices? and cockpits?"
+        },
+        {
+          "option": "It is possible to use the parameter \"session\" in every query.",
+          "correct": true,
+          "explanation": "If nothing has been modified, this paramer is always available and it can used as following: {user} = ?session.user or {country} IN (?session.countries)"
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8be9f4e586691014b318d62074b74ab5.html"
+      ]
+    },
+    {
+      "uid": "6081019",
+      "category": "datamodeling",
+      "subcategory": "flexiblesearch",
+      "difficulty": "hard",
+      "question": "How is a date formatted using FlexibleSearch?",
+      "answers": [
+        {
+          "option": "to_char({date},'mm/yyyy)'",
+          "correct": true,
+          "explanation": "Valid for Oracle databases."
+        },
+        {
+          "option": "DATE_FORMAT({date},'%M/%Y')",
+          "correct": true,
+          "explanation": "Valid for MySQL databases."
+        },
+        {
+          "option": "{DATE_FORMAT(date, '%M/%Y')}",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8be9f4e586691014b318d62074b74ab5.html"
+      ]
+    },
+    {
+      "uid": "6081020",
+      "category": "datamodeling",
+      "subcategory": "flexiblesearch",
+      "difficulty": "hard",
+      "question": "Which boolean values are advised to be used in queries?",
+      "answers": [
+        {
+          "option": "\"true\" and \"false\"",
+          "correct": false,
+          "explanation": "Not all databases recognize true and false."
+        },
+        {
+          "option": "\"0\" and \"1\"",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "\"T\" and \"F\"",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8be9f4e586691014b318d62074b74ab5.html"
+      ]
+    },
+    {
+      "uid": "6081021",
+      "category": "datamodeling",
+      "subcategory": "flexiblesearch",
+      "difficulty": "hard",
+      "question": "Statements",
+      "answers": [
+        {
+          "option": "When you retrieve an item from your searchresult. SearchResult.getResult() can result in an error if an items was removed.",
+          "correct": true,
+          "explanation": "The Collection returned by SearchResult.getResult() uses the lazy translation approach. At first access to a collection element, the element is translated to an item. In case the item was removed between gathering of the search result and translation of the specific element, the returned collection has a null value at this position."
+        },
+        {
+          "option": "All the results will always be returned with a flexible search",
+          "correct": false,
+          "explanation": "You can also use paging."
+        },
+        {
+          "option": "The parameter map for a flexible search can never be null.",
+          "correct": false,
+          "explanation": "If you have no parameters it can be null."
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8be9f4e586691014b318d62074b74ab5.html"
+      ]
+    },
+    {
+      "uid": "6081022",
+      "category": "datamodeling",
+      "subcategory": "flexiblesearch",
+      "difficulty": "hard",
+      "question": "Statements",
+      "answers": [
+        {
+          "option": "A ViewType  is a representation of a database view.",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "A ViewType  is called a Report Definition in the backoffice",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8be9f4e586691014b318d62074b74ab5.html"
+      ]
+    },
+    {
+      "uid": "6081023",
+      "category": "datamodeling",
+      "subcategory": "flexiblesearch",
+      "difficulty": "hard",
+      "question": "In order to use paging with your FlexibleSearchQuery, you have to do the following:",
+      "answers": [
+        {
+          "option": "FlexibleSearchQuery.setNeedTotal(true); ",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "FlexibleSearchQuery.setMaxResults(50);",
+          "correct": false,
+          "explanation": "FlexibleSearchQuery.setCount(50);"
+        },
+        {
+          "option": "FlexibleSearchQuery.setTotalCount(50);",
+          "correct": false,
+          "explanation": "FlexibleSearchQuery.setCount(50);  searchResult.getTotalCount(); also exists."
+        },
+        {
+          "option": "FlexibleSearchQuery.setStart(0);",
+          "correct": false,
+          "explanation": "FlexibleSearchQuery.setStart(50) is only used to go to the next or previous page."
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8bc399c186691014b8fce25e96614547.html"
+      ]
+    },
+    {
+      "uid": "6081024",
+      "category": "datamodeling",
+      "subcategory": "flexiblesearch",
+      "difficulty": "hard",
+      "question": "Statements. About a FlexibleSearchQuery with paging.",
+      "answers": [
+        {
+          "option": "When you go to the next 'page' a new query is executed",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "When you go to the previous 'page' NO new query is executed",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "When you go to the next 'page', then back the previous 'page'. The same page can have different results",
+          "correct": true,
+          "explanation": "When a FlexibleSearch query is run for the first time, the search results correspond to the dataset in the database by execution time. As every navigation through paged search results runs a new database query, the FlexibleSearch statement always receives a list of search results which correspond to the point of time when the statement is executed. This means, however, that the list of search results does not necessarily match the list of search results which were found when the FlexibleSearch query was initially executed. Items referenced in the initial query may have been updated, created, or removed in the meantime."
+        }
+      ],
+      "explanation": "It is also recommended to use 'order by' with paging to be sure the DB is always given the same results.",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8bc399c186691014b8fce25e96614547.html"
+      ]
+    },
+    {
+      "uid": "6081025",
+      "category": "datamodeling",
+      "subcategory": "flexiblesearch",
+      "difficulty": "hard",
+      "question": "Statements.",
+      "answers": [
+        {
+          "option": "Search restrictions require code adjusments in the business layer",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "Search restrictions affect External Search Engines like solr.",
+          "correct": false,
+          "explanation": "Search results supplied by third-party search engines are not affected by restrictions. To get third-party search engine search results affected by restrictions, you will need to filter these search results by running a FlexibleSearch statement over them."
+        },
+        {
+          "option": "Search restrictions do not affect Item.getProperty() or LocalizableItem.getLocalizedProperty() when they directly reference a PK.",
+          "correct": true,
+          "explanation": "Item.getProperty(), LocalizableItem.getLocalizedProperty() fetches item references directly via PK - any stored item will be returned no matter if it would have been filtered by a currently active restriction"
+        },
+        {
+          "option": "Search restrictions can not have parameters",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c428f8286691014970ceee87aa01605.html"
+      ]
+    },
+    {
+      "uid": "6081026",
+      "category": "datamodeling",
+      "subcategory": "flexiblesearch",
+      "difficulty": "hard",
+      "question": "Statements.",
+      "answers": [
+        {
+          "option": "Hybris foresees 2 types of hints: QueryHint and PreparedStatementHint",
+          "correct": true,
+          "explanation": "Platform provides one implementation of the QueryHint interface for use in the SAP HANA database. The HanaHints class acts as a factory builder for any hints SAP HANA supports."
+        },
+        {
+          "option": "You can add hints to the FlexibleSearchQuery",
+          "correct": true,
+          "explanation": "FlexibleSearchQuery.addHints(hints);"
+        },
+        {
+          "option": "Hints are added to the session of the query",
+          "correct": false,
+          "explanation": "You can see the hints in the translated SQL: SELECT  item_t0.PK  FROM users item_t0 WHERE (item_t0.TypePkString IN  (?,?,?,?) ) WITH HINT(IGNORE_PLAN_CACHE,USE_OLAP_PLAN);"
+        }
+      ],
+      "explanation": "HanaHints hints = HanaHints.create(\"IGNORE_PLAN_CACHE\"); // will add IGNORE_PLAN_CACHE to the query",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/bb10e24bdddb4c02aa2cf9abfc023e74.html"
+      ]
+    },
+    {
+      "uid": "6081027",
+      "category": "datamodeling",
+      "subcategory": "datamodeling",
+      "difficulty": "hard",
+      "question": "Look at the following snippet. Which of the statements are valid according to Hybris best practices? <pre class=\"xml\">&lt;itemtype code=\"MyCatalogType\" extends=\"Catalog\" autocreate=\"true\" generate=\"true\" &gt;<br />     &lt;deployment table=\"MyCatalogType\" typecode=\"8541\"/&gt;<br />     &lt;custom-properties&gt;<br />         &lt;property name=\"catalogItemType\"&gt;<br />             &lt;value&gt;java.lang.Boolean.TRUE&lt;/value&gt;<br />         &lt;/property&gt;<br />         &lt;property name=\"catalogVersionAttributeQualifier\"&gt;<br />             &lt;value&gt;\"catalogVersion\"&lt;/value&gt;<br />         &lt;/property&gt;<br />         &lt;property name=\"uniqueKeyAttributeQualifier\"&gt;<br />             &lt;value&gt;\"uid\"&lt;/value&gt;<br />         &lt;/property&gt;<br />     &lt;/custom-properties&gt;<br />     &lt;attributes&gt;<br />         &lt;attribute qualifier=\"uid\" generate=\"true\" autocreate=\"true\" type=\"java.lang.String\"&gt;<br />             &lt;persistence type=\"property\"/&gt;<br />             &lt;modifiers optional=\"false\" unique=\"false\"/&gt;<br />         &lt;/attribute&gt;<br />         &lt;attribute qualifier=\"catalogVersion\" type=\"CatalogVersion\"&gt;<br />             &lt;modifiers optional=\"false\" unique=\"true\"/&gt;<br />             &lt;persistence type=\"property\"/&gt;<br />         &lt;/attribute&gt;<br />         &lt;attribute qualifier=\"description99\" type=\"java.lang.String\"&gt;<br />             &lt;modifiers optional=\"false\" unique=\"false\"/&gt;<br />             &lt;persistence type=\"cmp\"/&gt;<br />         &lt;/attribute&gt;<br />     &lt;/attributes&gt;<br /> &lt;/itemtype&gt;<br /> <br /></pre> ",
+      "answers": [
+        {
+          "option": "It has a valid typecode ",
+          "correct": false,
+          "explanation": "Deployment type codes must be greater than 10000."
+        },
+        {
+          "option": "It is missing a Jalo Class",
+          "correct": true,
+          "explanation": "Do not define a Jalo class if you are adding to an existing type. In this example you define a subtype and therefore a Jalo Class should be defined."
+        },
+        {
+          "option": "It has a valid deployment (according to hybris best practices)",
+          "correct": false,
+          "explanation": "Do not define a deployment table for any Item Types that already have a deployment inherited from a super type."
+        },
+        {
+          "option": "The property uniqueKeyAttributeQualifier is valid  (according to hybris best practices)",
+          "correct": false,
+          "explanation": "All catalog Items should have it as this makes it unique within the catalog. However the attribute uid should be marked unique=true"
+        },
+        {
+          "option": "The property catalogVersion is valid  (according to hybris best practices)",
+          "correct": false,
+          "explanation": "Ensure mandatory fields (where optional='false') have either initial set to true or a default value defined. However this seems not a good idead for catalog version,?!"
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/bb10e24bdddb4c02aa2cf9abfc023e74.html"
+      ]
+    },
+    {
+      "uid": "6081028",
+      "category": "datamodeling",
+      "subcategory": "datamodeling",
+      "difficulty": "hard",
+      "question": "Which are valid best practices of Hybris?",
+      "answers": [
+        {
+          "option": "Define Boolean attributes as mandatory.",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "Start qualifier names in relations with a uppercase letter.",
+          "correct": false,
+          "explanation": "It should be lowercase"
+        },
+        {
+          "option": "Avoid setting ordered='true' on any side of a relation that has cardinality='many' unless absolutely necessary.",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "Define types alphabetically in the items.xml",
+          "correct": false,
+          "explanation": "Define types in order of inheritance."
+        },
+        {
+          "option": "Do not change deployment code or table names unless absolutely necessary.",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "Define a database index on the lookup value of reference types.",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8ecae959b9bd46b8b426fa8dbde5cac4.html#loio8ecae959b9bd46b8b426fa8dbde5cac4"
+      ]
+    }
+  ]
+}

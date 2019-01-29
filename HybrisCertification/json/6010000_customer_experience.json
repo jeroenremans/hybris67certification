@@ -1,0 +1,824 @@
+{"questions": [
+			{	
+				"uid" : "6010001",
+				"category" : "customer_experience",
+				"subcategory" : "smart_edit",
+				"difficulty" : "",
+				"question" : "Statements.",
+				"answers": [
+					{ "option" : "Smart Edit replaces the existing WCMS capabilities ", "correct" : false, "explanation": "SmartEdit is an addon to the existing WCMS capabilities that makes the creation, layout, and management of highly personalized online and mobile sites much more intuitive and user-friendly through a completely re-designed UI."},
+					{ "option" : "SmartEdit Supports Staged and Online Catalog Versions Only", "correct" : true, "explanation": "This is a know  issue."},
+					{ "option" : "In SmartEdit you can edit unapproved pages", "correct" : false, "explanation": "This is a know  issue."},
+					{ "option" : "SmartEdit has a filter to prevent XSS Vulnerabilities", "correct" : false, "explanation": "SmartEdit allows you to use special characters, such as the colon (,), the apostrophe ('), and quotation marks (\"), when you create or edit a component. You can add the special characters in the content of paragraph and link components, or in the links of the target destination for many component types. The use of special characters makes it possible to inject JavaScript code. You should be aware that the use of special characters can increase the vulnerability of SmartEdit to XSS attacks. To minimize security risks, SmartEdit automatically adds two backslashes (\\) in front of all special characters. For example, it automatically changes (test) to \\(test\\)."},
+					{ "option" : "SmartEdit: In the page view you can sort on all fields", "correct" : false, "explanation": " Sorting by Sync status is not supported because it would be require too many resources to fetch the Sync status of all pages within the content catalog."}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/dc259a9f232a469ca8da3cf22f34839c.html", "https://help.hybris.com/6.7.0/hcd/d1493aa101f04a7a98202a1407a7c379.html"]
+			},
+			{	
+				"uid" : "6010002",
+				"category" : "customer_experience",
+				"subcategory" : "smart_edit",
+				"difficulty" : "",
+				"question" : "What can be done with Smart Edit?",
+				"answers": [
+					{ "option" : "Create a catalog.", "correct" : false, "explanation": "It can be done with the WCMS cockpit."},
+					{ "option" : "Create a homepage ", "correct" : false, "explanation": "As of 1808 it is possible, but not in 6.7"},
+					{ "option" : "Clone a page", "correct" : true, "explanation": ""},
+					{ "option" : "Restore deleted page", "correct" : false, "explanation": "As of 1808 it is possible, but not in 6.7"},
+					{ "option" : "Assign a restriction to a page", "correct" : true, "explanation": ""},
+					{ "option" : "Synchronize non-shared, shared slots", "correct" : true, "explanation": "It is not possible in the WCMS cockpit."},
+					{ "option" : "Edit product information", "correct" : false, "explanation": "Possible in live edit."}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/c554253f5c8b4ead95f3fe76882003b6.html"]
+			},
+			{	
+				"uid" : "6010003",
+				"category" : "customer_experience",
+				"subcategory" : "smart_edit",
+				"difficulty" : "",
+				"question" : "Statements",
+				"answers": [
+					{ "option" : "Smart Edit can only be used in combination with Accelerator.", "correct" : false, "explanation": " The SmartEdit framework is designed to work on any storefront, SAP Commerce Accelerator or third party, that implements the SmartEdit Contract. If you use an SAP Accelerator storefront, the smarteditaddon AddOn implements the conditions of the contract so you don't have to."},
+					{ "option" : "Smart Edit uses the React JS framework.", "correct" : false, "explanation": "Angular JS"},
+					{ "option" : "You can only edit your storefront with SmartEdit if they are on the same origin", "correct" : false, "explanation": "By default this statement is true, but you can change it: &lt;script id=\"smartedit-injector\" src=\"some/location/webApplicationInjector.js\" data-smartedit-allow-origin=\"domain1, domain2\"&gt;&lt;/script&gt;<br />"},
+					{ "option" : "Assign a restriction to a page", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/622cebcb444b42e18de2147775430b9d.html#loio622cebcb444b42e18de2147775430b9d"]
+			},
+			{	
+				"uid" : "6010004",
+				"category" : "customer_experience",
+				"subcategory" : "smart_edit",
+				"difficulty" : "",
+				"question" : "What is part of a valid Smart Edit contract?",
+				"answers": [
+					{ "option" : "webApplicationInjector.js JavaScript file, to be included in each page that you want to edit with SmartEdit", "correct" : true, "explanation": ""},
+					{ "option" : "A preview ticket API mechanism", "correct" : true, "explanation": ""},
+					{ "option" : "An HTML markup contract for content slots and components", "correct" : true, "explanation": ""},
+					{ "option" : "smartEditBackend.css CSS file, to be included in each page that you want to edit with SmartEdit", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/622cebcb444b42e18de2147775430b9d.html#loio622cebcb444b42e18de2147775430b9d"]
+			},
+			{	
+				"uid" : "6010005",
+				"category" : "customer_experience",
+				"subcategory" : "smart_edit",
+				"difficulty" : "",
+				"question" : "Which of the following extensions are related to the smartedit frontend?",
+				"answers": [
+					{ "option" : "smarteditwebservices", "correct" : false, "explanation": ""},
+					{ "option" : "smartedit", "correct" : true, "explanation": "This extensions is written in JavaScript using the AngularJS framework."},
+					{ "option" : "cmssmartedit", "correct" : true, "explanation": "This extensions is written in JavaScript using the AngularJS framework."},
+					{ "option" : "cmswebservices", "correct" : false, "explanation": ""},
+					{ "option" : "cmssmarteditwebservices", "correct" : false, "explanation": ""},
+					{ "option" : "cmsfacades", "correct" : false, "explanation": ""},
+					{ "option" : "cms2", "correct" : false, "explanation": ""},
+					{ "option" : "cms2lib", "correct" : false, "explanation": ""},
+					{ "option" : "npmancillary", "correct" : true, "explanation": "SmartEdit uses the npmancillary extension to store and organize the required libraries."}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/4b239c875acc4a19abd559a62eb73c91.html"]
+			},
+			{	
+				"uid" : "6010006",
+				"category" : "customer_experience",
+				"subcategory" : "smart_edit",
+				"difficulty" : "",
+				"question" : "Statements",
+				"answers": [
+					{ "option" : "The extensions smarteditwebservices, cmswebservices and cmssmarteditwebservices are called via REST calls", "correct" : true, "explanation": ""},
+					{ "option" : "The extensions smarteditwebservices, cmswebservices and cmssmarteditwebservices all depend on cmsfacades", "correct" : true, "explanation": ""},
+					{ "option" : "The extension cmswebservices provides translatable keys and their translations", "correct" : false, "explanation": "No the correct extension is smarteditwebservices"},
+					{ "option" : "The extension smarteditaddon make sure that any storefront fullfils the smartedit contract.", "correct" : false, "explanation": "The smarteditaddon is an AddOn that is responsible for making coreaccelerator-based storefronts ready to be edited using the SmartEdit web application. "},
+					{ "option" : "The extension cmssmartedit provides REST services for functionality like adding components to a slot, manage page-level restricitons, ...", "correct" : false, "explanation": "It is a frontend extension and does not provide these REST services. It uses them. The actual services are in the extension cmssmarteditwebservices "},
+					{ "option" : "The extension ycmssmartedit is deprecated", "correct" : true, "explanation": "SAP has deprecated the ycmssmartedit template extension. You should now use the ysmarteditmodule template to create a customized extension. With the refactoring of the CMS Structure API, SAP has deprecated the cmssmartedit Structure API. As such the cmssmartedit Structure API will be removed in the Q1 2019 release of SAP Commerce. SAP recommends that you use the CMS Structure API."},
+					{ "option" : "The extension npmancillary contains all the necessary NPM modules.", "correct" : false, "explanation": "You have to run ant npminstall to download all the modules to that extension."}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/4b239c875acc4a19abd559a62eb73c91.html"]
+			},
+			{	
+				"uid" : "6010006b",
+				"category" : "customer_experience",
+				"subcategory" : "smart_edit",
+				"difficulty" : "",
+				"question" : "What is typescript?",
+				"answers": [
+					{ "option" : "It is a new font introduced in Hybris 6.7.", "correct" : false, "explanation": ""},
+					{ "option" : "It replaces jquery in Hybris 6.7.", "correct" : false, "explanation": ""},
+					{ "option" : "It is an alternative for groovy in Hybris 6.7.", "correct" : false, "explanation": ""},
+					{ "option" : "It is an alternative for javascript", "correct" : true, "explanation": "The modifications introduced with the ysmarteditmodule template extension now make it possible for you to use TypeScript in your SmartEdit development work. But this doesn't mean that you have to switch to coding in TypeScript. You can continue to code in JavaScript. You can also start using TypeScript and keep your existing JavaScript code as is. The SmartEdit build system can compile extensions that have both JavaScript and TypeScript in their source files. For more information, see the ysmarteditmodule documentation."}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/4b7a878b3d0a400590803aafaa5e44c6.html"]
+			},
+			{	
+				"uid" : "6010006c",
+				"category" : "customer_experience",
+				"subcategory" : "smart_edit",
+				"difficulty" : "",
+				"question" : "You can use a recipe to setup smart edit. But which extensions (below) should you add to the localextension.xml when you do it manually?",
+				"answers": [
+					{ "option" : "cmsbackoffice", "correct" : true, "explanation": ""},
+					{ "option" : "cmsfacades", "correct" : false, "explanation": ""},
+					{ "option" : "cmswebservices", "correct" : true, "explanation": ""},
+					{ "option" : "permissionswebservices", "correct" : true, "explanation": ""},
+					{ "option" : "cmscockpit", "correct" : false, "explanation": ""},
+					{ "option" : "previewwebservices", "correct" : true, "explanation": ""},
+					{ "option" : "smarteditaddon", "correct" : true, "explanation": ""},
+					{ "option" : "smarteditaccelerator", "correct" : false, "explanation": ""},
+					{ "option" : "ysmarteditmodule ", "correct" : true, "explanation": "(if you want to extend the SAP Commerce framework or CMS functionality)"}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/0955af7dd5154a8db28dfce327d8dae5.html"]
+			},
+			{	
+				"uid" : "6010007",
+				"category" : "customer_experience",
+				"subcategory" : "smart_edit",
+				"difficulty" : "",
+				"question" : "You can use a recipe to setup a SmartEdit with Multi-Country Site Support with Sample Data?",
+				"answers": [
+					{ "option" : "correct", "correct" : false, "explanation": ""},
+					{ "option" : "incorrect", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "You can use a recipe to setup smartedit, but not with multicountry. This has to be done manually. You should use the addon multicountrysampledataaddon",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/0955af7dd5154a8db28dfce327d8dae5.html"]
+			},
+			{	
+				"uid" : "6010008",
+				"category" : "customer_experience",
+				"subcategory" : "smart_edit",
+				"difficulty" : "",
+				"question" : " To enable full build and test capabilities on these extensions and AddOns, you must download the required libraries through npm.",
+				"answers": [
+					{ "option" : "correct", "correct" : true, "explanation": "ant npminstall"},
+					{ "option" : "incorrect", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/3008955c98bf4860a1fdeacaa26c09e5.html"]
+			},
+			{	
+				"uid" : "6010009",
+				"category" : "customer_experience",
+				"subcategory" : "smart_edit",
+				"difficulty" : "",
+				"question" : "Whih is here described: AngularJS module that contains a directive and a HTML template:",
+				"answers": [
+					{ "option" : "Gateway", "correct" : false, "explanation": ""},
+					{ "option" : "SmartEdit loader", "correct" : false, "explanation": "A short-lived AngularJS web application that configures and loads the SmartEdit container"},
+					{ "option" : "Decorator", "correct" : true, "explanation": ""},
+					{ "option" : "Web Application Injector", "correct" : false, "explanation": " A JavaScript library that pushes the SmartEdit application and other resources into the website within the SmartEdit container's iframe. "},
+					{ "option" : "SmartEdit container", "correct" : false, "explanation": "An AngularJS web application that configures and loads the SmartEdit application and a website into an iframe "},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/b13701dcd2d44e5c97a36732167405a0.html#loiob13701dcd2d44e5c97a36732167405a0"]
+			},
+			{	
+				"uid" : "6010010",
+				"category" : "customer_experience",
+				"subcategory" : "smart_edit",
+				"difficulty" : "",
+				"question" : "Statements.",
+				"answers": [
+					{ "option" : "The SmartEdit application is injected and bootstrapped into a page in the SmartEdit container's iframe by the Web Application Injector.", "correct" : true, "explanation": ""},
+					{ "option" : "The Web Application Injector is a JavaScript library that must be included in all pages so that they can be edited using the SmartEdit web application.", "correct" : true, "explanation": ""},
+					{ "option" : "A SmartEdit module is a set of HTML/CSS/JavaScript fragments that follow a specific set of restrictions and can be plugged into SmartEdit to extend its functionality. ", "correct" : true, "explanation": ""},
+					{ "option" : "The renderService loads storefronts into the iframe so that the storefronts can be edited using the SmartEdit web application", "correct" : false, "explanation": "Not renderservice but iFrameManager"},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/b13701dcd2d44e5c97a36732167405a0.html#loiob13701dcd2d44e5c97a36732167405a0"]
+			},
+			{	
+				"uid" : "6010011",
+				"category" : "customer_experience",
+				"subcategory" : "smart_edit",
+				"difficulty" : "",
+				"question" : "Before you want to use smartedit you should:",
+				"answers": [
+					{ "option" : "Add an addon to the storefront where you want to use smartedit.", "correct" : true, "explanation": "smarteditaddon"},
+					{ "option" : "You have to include 'ysmarteditmodule'", "correct" : false, "explanation": ""},
+					{ "option" : "You have to include 'permissionswebservices'", "correct" : true, "explanation": ""},
+					{ "option" : "You have to include 'previewwebservices'", "correct" : true, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/6d55d5fba206425b9acecda9f2311483.html"]
+			},
+			{	
+				"uid" : "6010012",
+				"category" : "customer_experience",
+				"subcategory" : "smart_edit",
+				"difficulty" : "",
+				"question" : "Statements.",
+				"answers": [
+					{ "option" : "A SmartEdit module can have multiple AngularJS modules", "correct" : true, "explanation": "You can design the modules to be exposed to either the SmartEdit application, the SmartEdit container, or both. You must add the modules to the web/features directory structure. Each folder within this directory is considered to be an individual module. "},
+					{ "option" : "SmartEdit also uses Protractor to execute end-2-end tests.", "correct" : true, "explanation": "Protractor is a Node.js program that is based on WebDriver and uses Jasmine v1.3, a behavior-driven development framework, for test syntax."},
+					{ "option" : "Run Execute grunt verify in the platform directory to run the e2e tests.", "correct" : false, "explanation": "Open your command terminal and navigate to the root of your extension directory (it should contain a Gruntfile.js file). "},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/6d55d5fba206425b9acecda9f2311483.html"]
+			},
+			{	
+				"uid" : "6010013",
+				"category" : "customer_experience",
+				"subcategory" : "smart_edit",
+				"difficulty" : "",
+				"question" : "Statements",
+				"answers": [
+					{ "option" : "A contextual menu is a built-in SmartEdit decorator that contains a set of menu items, each of which performs a different function. ", "correct" : true, "explanation": ""},
+					{ "option" : "The SmartEdit application contains one toolbar", "correct" : false, "explanation": "The SmartEdit application contains two toolbars. As a module developer, you can add actions to the toolbar through the toolbar service that is exposed by SmartEdit, that is, it is exposed by the inner application, the SmartEdit application, and the outer application, the SmartEdit container. "},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/3a271343c3de4987be796bdb7bb27d16.html"]
+			},
+			{	
+				"uid" : "6010015",
+				"category" : "customer_experience",
+				"subcategory" : "smart_edit",
+				"difficulty" : "",
+				"question" : "Which 4 default modes in the smartedit are provided by SAP?",
+				"answers": [
+					{ "option" : "Default", "correct" : false, "explanation": ""},
+					{ "option" : "Simple", "correct" : false, "explanation": ""},
+					{ "option" : "Preview", "correct" : true, "explanation": ""},
+					{ "option" : "Basic Edit", "correct" : true, "explanation": ""},
+					{ "option" : "Quick", "correct" : false, "explanation": ""},
+					{ "option" : "Advanced Edit", "correct" : true, "explanation": ""},
+					{ "option" : "Personalization", "correct" : true, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/a357fe30a88b425bb2e3719bca71ccce.html"]
+			},
+			{	
+				"uid" : "6010016",
+				"category" : "customer_experience",
+				"subcategory" : "smart_edit",
+				"difficulty" : "",
+				"question" : "In which mode(s) can you: View content slot names",
+				"answers": [
+					{ "option" : "Preview", "correct" : false, "explanation": ""},
+					{ "option" : "Basic Edit", "correct" : false, "explanation": ""},
+					{ "option" : "Advanced Edit", "correct" : true, "explanation": ""},
+					{ "option" : "Personalization", "correct" : false, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/a357fe30a88b425bb2e3719bca71ccce.html"]
+			},
+			{	
+				"uid" : "6010017",
+				"category" : "customer_experience",
+				"subcategory" : "smart_edit",
+				"difficulty" : "",
+				"question" : "In which mode can you: View which content slots are shared",
+				"answers": [
+					{ "option" : "Preview", "correct" : false, "explanation": ""},
+					{ "option" : "Basic Edit", "correct" : true, "explanation": ""},
+					{ "option" : "Advanced Edit", "correct" : true, "explanation": ""},
+					{ "option" : "Personalization", "correct" : false, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/a357fe30a88b425bb2e3719bca71ccce.html"]
+			},
+			{	
+				"uid" : "6010017b",
+				"category" : "customer_experience",
+				"subcategory" : "smart_edit",
+				"difficulty" : "",
+				"question" : "In which mode can you: Edit the content of shared content slots",
+				"answers": [
+					{ "option" : "Preview", "correct" : false, "explanation": ""},
+					{ "option" : "Basic Edit", "correct" : false, "explanation": ""},
+					{ "option" : "Advanced Edit", "correct" : true, "explanation": ""},
+					{ "option" : "Personalization", "correct" : false, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/a357fe30a88b425bb2e3719bca71ccce.html"]
+			},
+			{	
+				"uid" : "6010018",
+				"category" : "customer_experience",
+				"subcategory" : "smart_edit",
+				"difficulty" : "",
+				"question" : "In which mode can you: Clone pages",
+				"answers": [
+					{ "option" : "Preview", "correct" : false, "explanation": ""},
+					{ "option" : "Basic Edit", "correct" : true, "explanation": ""},
+					{ "option" : "Advanced Edit", "correct" : true, "explanation": ""},
+					{ "option" : "Personalization", "correct" : false, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/a357fe30a88b425bb2e3719bca71ccce.html"]
+			},
+			{	
+				"uid" : "6010019",
+				"category" : "customer_experience",
+				"subcategory" : "smart_edit",
+				"difficulty" : "",
+				"question" : "In which mode can you: Synchronize pages",
+				"answers": [
+					{ "option" : "Preview", "correct" : false, "explanation": ""},
+					{ "option" : "Basic Edit", "correct" : false, "explanation": "=> Synchronize page and non-shared content slots"},
+					{ "option" : "Advanced Edit", "correct" : true, "explanation": ""},
+					{ "option" : "Personalization", "correct" : false, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/a357fe30a88b425bb2e3719bca71ccce.html"]
+			},
+			{	
+				"uid" : "6010020",
+				"category" : "customer_experience",
+				"subcategory" : "smart_edit",
+				"difficulty" : "",
+				"question" : "Statements about a custom CMS item in smartedit.",
+				"answers": [
+					{ "option" : "You should create an items that extends SimpleCMSComponent", "correct" : true, "explanation": ""},
+					{ "option" : "By default all new attributes are hidden in smartedit", "correct" : false, "explanation": "You have to explicitely blacklist it.   <br /><bean depends-on=\"defaultCmsStructureTypeBlacklistAttributeMap\" parent=\"mapMergeDirective\">      <property name=\"key\" value=\"TrainingComponent\"/>      <property name=\"value\" value=\"blacklistedMessage\"/>   </bean>"},
+					{ "option" : "Create jsp file in /WEB-INF/views/responsive/cms/ directory", "correct" : true, "explanation": ""},
+					{ "option" : "You must/can now extend the Component Type Group to define where the component can be added.", "correct" : true, "explanation": ""},
+					{ "option" : "You must implement a converter for the component", "correct" : false, "explanation": "It is optional"},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/6c036ecad0de4e269fb50f2a41de1271.html"]
+			} ,
+			{	
+				"uid" : "6010021",
+				"category" : "customer_experience",
+				"subcategory" : "smart_edit",
+				"difficulty" : "",
+				"question" : "Statements",
+				"answers": [
+				
+					{ "option" : "A decorator can not call the backend API", "correct" : false, "explanation": ""},
+					{ "option" : "A decorator is a feature that adds rendering and behavior to components.", "correct" : true, "explanation": ""},
+					{ "option" : "A decorator usually consists of a Angular JS file and a HTML template file.", "correct" : true, "explanation": ""},
+					{ "option" : "The name of the AngularJS module of a decorator must always end with Decorator ", "correct" : true, "explanation": ""},
+					{ "option" : "The name of the template of a decorator must always end with Template.html.", "correct" : true, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/7cebd4f5dc2a430fbe878f88baf2bd9c.html"]
+			} ,
+			{	
+				"uid" : "6010022",
+				"category" : "customer_experience",
+				"subcategory" : "smart_edit",
+				"difficulty" : "",
+				"question" : "Statements",
+				"answers": [
+				
+					{ "option" : "A context menu can be different based on the type", "correct" : true, "explanation": "It is possible to use regex to match a menu item"},
+					{ "option" : "A contextual menu is a core decorator that wraps around a component.", "correct" : true, "explanation": ""},
+					{ "option" : "The module decoratorServiceModule is used to add a new menu item.", "correct" : false, "explanation": "=> contextualMenuServiceModule"},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/1c7f5da860174b59b4bd45c210da42f2.html"]
+			} ,
+			{	
+				"uid" : "6010023",
+				"category" : "customer_experience",
+				"subcategory" : "personalization",
+				"difficulty" : "",
+				"question" : "Is a Target Group and Variation the same thing?",
+				"answers": [
+					{ "option" : "Correct", "correct" : true, "explanation": "Yes. They both mean the same - target group is used as a label business purposes (for example in the UI and our user guides), whereas variation is used for the technical aspects (for example in the data model). "},
+					{ "option" : "Incorrect", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/b1d706b18cdb46929811bfa678458c83.html"]
+			} ,
+			{	
+				"uid" : "6010025",
+				"category" : "customer_experience",
+				"subcategory" : "personalization",
+				"difficulty" : "",
+				"question" : "What is a segment?",
+				"answers": [
+					{ "option" : "It is a fragment similar similar to tag files.", "correct" : false, "explanation": ""},
+					{ "option" : "A group of users sharing some common characteristics", "correct" : true, "explanation": "A segment is a homogenous customer group or a cohort selected for a specific business purpose, so a group of users sharing some common characteristics such as age, gender, habits. "},
+					{ "option" : "It is a term to describe how pages are divided into sections.", "correct" : false, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/b1d706b18cdb46929811bfa678458c83.html"]
+			},
+			{	
+				"uid" : "6010026",
+				"category" : "customer_experience",
+				"subcategory" : "personalization",
+				"difficulty" : "",
+				"question" : "What is a Commerce Customization?",
+				"answers": [
+				
+					{ "option" : "It refers to non-cms actions", "correct" : true, "explanation": "The term commerce customization refers to non-cms actions that are performed when a a specific target group/variation is active. An example here can be a promotion available for the customer who is in a particular segment."},
+					{ "option" : "It refers to customization of Accelerator.", "correct" : false, "explanation": ""},
+					{ "option" : "It refers to changing the Product Structure.", "correct" : false, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/b1d706b18cdb46929811bfa678458c83.html"]
+			},
+			{	
+				"uid" : "6010027",
+				"category" : "customer_experience",
+				"subcategory" : "personalization",
+				"difficulty" : "",
+				"question" : "Which permissions give you access to the personalization mode?",
+				"answers": [
+				
+					{ "option" : "cmsmanagergroup", "correct" : false, "explanation": ""},
+					{ "option" : "cxmanagergroup", "correct" : true, "explanation": ""},
+					{ "option" : "cxreadonly", "correct" : true, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/b1d706b18cdb46929811bfa678458c83.html"]
+			},
+			{	
+				"uid" : "6010028",
+				"category" : "customer_experience",
+				"subcategory" : "personalization",
+				"difficulty" : "",
+				"question" : "Statements.",
+				"answers": [
+				
+					{ "option" : "A user can belong to max 1 segment.", "correct" : false, "explanation": "A user can belong to multiple segments and also segments can hold multiple users. "},
+					{ "option" : "The relation between User and Segment is represented by CxSegment type", "correct" : false, "explanation": "The relation between User and Segment is represented by CxUserToSegment type"},
+					{ "option" : "To use the Context-Driven Services Foundation data to update your segments you will need to implement the interface  UpdateUserSegmentStrategy", "correct" : true, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/9e261e32ce1740b19dab55c6ce0700c0.html"]
+			},
+			{	
+				"uid" : "6010029",
+				"category" : "customer_experience",
+				"subcategory" : "personalization",
+				"difficulty" : "",
+				"question" : "Statements.",
+				"answers": [
+				
+					{ "option" : "Only one variation per customization can be active for a user at a given time. ", "correct" : true, "explanation": ""},
+					{ "option" : "Variations inside of an customization have no priority", "correct" : false, "explanation": "Variations inside of an customization are sorted by priority. "},
+					{ "option" : "A variation can be linked to multiple actions. (CxAbstractAction Type)", "correct" : true, "explanation": ""},
+					{ "option" : "Technically, the CxAbstractAction extends the AbstractAction, which is a part of the processing extension. ", "correct" : true, "explanation": ""},
+					{ "option" : "The default trigger is used for triggering a variation for all users, regardless of the segment they are in. ", "correct" : false, "explanation": "The default trigger used for triggering a variation for all users, regardless of the segment they are in. "},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/9e261e32ce1740b19dab55c6ce0700c0.html"]
+			},
+			{	
+				"uid" : "6010030",
+				"category" : "customer_experience",
+				"subcategory" : "personalization",
+				"difficulty" : "",
+				"question" : "Which extensions are are part of the Core Personalization.",
+				"answers": [
+				
+					{ "option" : "personalizationservices and pesonalizationfacades", "correct" : true, "explanation": ""},
+					{ "option" : "personalizationcms, personalizationpromotions, personalizationpromotionssmartedit , personalizationsmartedit ", "correct" : false, "explanation": "Content and Commerce"},
+					{ "option" : "personalizationintegration and personalizationyprofile", "correct" : false, "explanation": "Integration"},
+					{ "option" : "personalizationservicesbackoffice, personalizationintegrationbackoffice", "correct" : false, "explanation": "Personalization Backoffice"},
+					{ "option" : "personalizationwebservices, personalizationpromotionsweb, previewpersonalizationweb", "correct" : false, "explanation": "Personalization Webservices"}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/030f1ac874c3482584f3d0045f715123.html"]
+			},
+			{	
+				"uid" : "6010031",
+				"category" : "customer_experience",
+				"subcategory" : "personalization",
+				"difficulty" : "",
+				"question" : "Imagine you have a Winter Sale. The winter sales consist of specific articles for men and women. How would you describe the winter sale best?",
+				"answers": [
+					{ "option" : "CxVariation", "correct" : false, "explanation": "Summer Sale Young, Summer Sale Adult, representing variations within customization for desired customer groups. "},
+					{ "option" : "CxSegment", "correct" : false, "explanation": "This describes the usergroup men vs women"},
+					{ "option" : "CxCustomization", "correct" : true, "explanation": "a Summer Sale, which can be the personalization plan for the summer sale period. "},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/030f1ac874c3482584f3d0045f715123.html"]
+			},
+			{	
+				"uid" : "6010032",
+				"category" : "customer_experience",
+				"subcategory" : "personalization",
+				"difficulty" : "",
+				"question" : "Which RecalculateAction matches: Starts a process to update user segments and calculate customization results to be stored in the database.",
+				"answers": [
+					{ "option" : "RECALCULATE", "correct" : false, "explanation": "calculates customization results and store them in the session. "},
+					{ "option" : "UPDATE", "correct" : false, "explanation": "updates information about the user segments. "},
+					{ "option" : "ASYNC_PROCESS", "correct" : true, "explanation": ""},
+					{ "option" : "LOAD", "correct" : false, "explanation": "loads customization results stored in database as a result of asynchronous calculation process. "}
+				
+				],
+				"explanation" : "The configuration is stored in database in the CxConfigurationModel. Such a configuration may be applied to one or many base sites.",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/5b559f1940d14a86a2d27d38031fe0c4.html#loiod5cdec94fa8e4a559fa68e64a6de2b63"]
+			},
+			{	
+				"uid" : "6010033",
+				"category" : "customer_experience",
+				"subcategory" : "personalization",
+				"difficulty" : "",
+				"question" : "Statements.",
+				"answers": [
+					{ "option" : "A CxSegmentTrigger uses json to store the configuration", "correct" : false, "explanation": "=> CxSegmentToExpressionTrigger"},
+					{ "option" : "By default the business process defaultPersonalizationCalculationProcess is used to update the user segments and calculate the experience in an asynchronous way.  ", "correct" : true, "explanation": "The CxService service provides a method called startPersonalizationCalculationProcess. Out of the box, this method starts a new process to update the user segments and calculate the experience in an asynchronous way. "},
+					{ "option" : "The voter mechanism allows determining when and how a recalculation is triggered.", "correct" : true, "explanation": ""},
+					{ "option" : "The logic of handling votes is located in the CxPersonalizationFilter", "correct" : true, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/5b559f1940d14a86a2d27d38031fe0c4.html#loiod5cdec94fa8e4a559fa68e64a6de2b63"]
+			},
+			{	
+				"uid" : "6010034",
+				"category" : "customer_experience",
+				"subcategory" : "personalization",
+				"difficulty" : "",
+				"question" : "Personalization calculation results (CxResultsModel) are stored in the DB, how should the be cleaned up?",
+				"answers": [
+					{ "option" : "They are not stored in the DB, so no cleanup is needed.", "correct" : false, "explanation": ""},
+					{ "option" : "Use the cronjob CxResultsCleaningCronJob", "correct" : true, "explanation": ""},
+					{ "option" : "There exists task to do the cleanup.", "correct" : true, "explanation": "cleanCxSessionResultsTaskRunner and cxRegisteredUserSessionCloseTaskRunner are triggered by listener cxBeforeSessionCloseListener"},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/5b559f1940d14a86a2d27d38031fe0c4.html#loiod5cdec94fa8e4a559fa68e64a6de2b63"]
+			},
+			{	
+				"uid" : "6010035",
+				"category" : "customer_experience",
+				"subcategory" : "personalization",
+				"difficulty" : "",
+				"question" : "Statements concerning Context-Driven Services",
+				"answers": [
+					{ "option" : "You can use Groovy to map data to a segment", "correct" : true, "explanation": ""},
+					{ "option" : "All mappers can be disabled by setting the following properties in the local.properties ", "correct" : true, "explanation": "personalizationyprofile.mapper.product.enabled=false"},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/fca1fb2cc1704d2dae2ecc393f676200.html#loioe51af2b1637d42b1bbf0c196cb24afd2"]
+			},
+			{	
+				"uid" : "6010036",
+				"category" : "customer_experience",
+				"subcategory" : "personalization",
+				"difficulty" : "",
+				"question" : "Steps for a custom trigger:",
+				"answers": [
+					{ "option" : "Create a new type which extends from CxAbstractTrigger", "correct" : true, "explanation": ""},
+					{ "option" : "Implement generic AbstractCxDao", "correct" : true, "explanation": ""},
+					{ "option" : "Update the spring.xml", "correct" : true, "explanation": "add bean for Dao."},
+					{ "option" : "If you want use in smartedit, you also have to implement/configure a DTO, Populator, converter, Mapper, Validator", "correct" : true, "explanation": "It needs to be accesable via a webservice => personalizationwebservices "},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/a1902c80cfd444559b47f672c0a515a3.html#loioa1902c80cfd444559b47f672c0a515a3", "https://help.hybris.com/6.7.0/hcd/0522e2aaf1854322a5a6b13ca793f1b1.html#loio0522e2aaf1854322a5a6b13ca793f1b1"]
+			},
+			{	
+				"uid" : "6010037",
+				"category" : "customer_experience",
+				"subcategory" : "personalization",
+				"difficulty" : "",
+				"question" : "Statements about creating a custom action.",
+				"answers": [
+					{ "option" : "The custom action should extend the item CxAbstractAction", "correct" : true, "explanation": ""},
+					{ "option" : "You have to implement the interface CxCmsAction", "correct" : false, "explanation": "CxCmsActionPerformable "},
+					{ "option" : "You usually have to create 2 DTOs", "correct" : true, "explanation": "CxCmsActionResult and CxCmsActionData (Webservices)"},
+					{ "option" : "There are different layers of the system that you need to extend in order to create a fully configurable new type of action", "correct" : true, "explanation": "Service and Webservice layer"},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/eeee502626e24828aa4891de21370d24.html#loioeeee502626e24828aa4891de21370d24"]
+			},
+			{	
+				"uid" : "6010038",
+				"category" : "customer_experience",
+				"subcategory" : "personalization",
+				"difficulty" : "",
+				"question" : "Statements about personalization and retention.",
+				"answers": [
+					{ "option" : "If no consent template is set for a given base site, the personalized content is calculated for each user, as if the user agreed to all the consent templates that were necessary. ", "correct" : true, "explanation": " If you wish to disable personalized content when there is no consent template specified, set the following property to false: personalizationservices.consent.ignoreConsentCheckWhenNoConsentTemplate=false"},
+					{ "option" : "The consent templates used in Personalization ensure that the customer gives consent to user data processing", "correct" : true, "explanation": ""},
+					{ "option" : "You can easily define the consent templates in the Backoffice Administration Cockpit ", "correct" : true, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/fab9f7adb8cd40469cd92357c961a1b9.html"]
+			},
+			{	
+				"uid" : "6010039",
+				"category" : "customer_experience",
+				"subcategory" : "personalization",
+				"difficulty" : "",
+				"question" : "Statements.",
+				"answers": [
+					{ "option" : "It is highly recommended to use the SmartEdit as a supplementary tool and to define the customizations in Backoffice Administration Cockpit. ", "correct" : false, "explanation": "It is highly recommended to use the Backoffice Administration Cockpit as a supplementary tool and to define the customizations in SmartEdit. "},
+					{ "option" : "Both the Backoffice Administration Cockpit and SmartEdit give you the opportunity to use the intuitive and user-friendly UI to define and manage segments, variations and customizations", "correct" : true, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/9f6b44e2d4eb45d991b912fa8a2add69.html"]
+			},
+			{	
+				"uid" : "6010040",
+				"category" : "customer_experience",
+				"subcategory" : "personalization",
+				"difficulty" : "",
+				"question" : "On which item do you configure the calculation process to start for asynchronous calculation.",
+				"answers": [
+					{ "option" : "BaseStore", "correct" : false, "explanation": ""},
+					{ "option" : "BaseSite", "correct" : false, "explanation": ""},
+					{ "option" : "Consent", "correct" : false, "explanation": ""},
+					{ "option" : "CxConfig", "correct" : true, "explanation": "CxConfig.calculationProcess"},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/c1507e3b0a6c44379653d2c4dac11260.html"]
+			},
+			{	
+				"uid" : "6010041",
+				"category" : "customer_experience",
+				"subcategory" : "personalization",
+				"difficulty" : "",
+				"question" : "To which item can you assign a consent template?",
+				"answers": [
+					{ "option" : "BaseStore", "correct" : false, "explanation": ""},
+					{ "option" : "BaseSite", "correct" : false, "explanation": ""},
+					{ "option" : "Consent", "correct" : true, "explanation": ""},
+					{ "option" : "CxConfig", "correct" : true, "explanation": "Consent templates the end-user must accept to have personalized content calculated. You can select only consent templates which have the flag exposed set to true. "},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/c1507e3b0a6c44379653d2c4dac11260.html"]
+			},
+			{	
+				"uid" : "6010043",
+				"category" : "customer_experience",
+				"subcategory" : "personalization",
+				"difficulty" : "",
+				"question" : "Statements",
+				"answers": [
+					{ "option" : "The field 'User Links' on a segment shows you the user that are linked to the segment", "correct" : true, "explanation": ""},
+					{ "option" : "A segment has a list of Triggers which point to a variation", "correct" : true, "explanation": ""},
+					{ "option" : "Each user linked to the segment also has a field 'priority'", "correct" : false, "explanation": "The field is named 'affinity' and can be between 0 and 1."},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/a741c967205d4a58a1606595766030b6.html"]
+			},
+			{	
+				"uid" : "6010044",
+				"category" : "customer_experience",
+				"subcategory" : "personalization",
+				"difficulty" : "",
+				"question" : "Which action types exists.",
+				"answers": [
+					{ "option" : "Anonymous Action", "correct" : false, "explanation": ""},
+					{ "option" : "Quick Action", "correct" : false, "explanation": ""},
+					{ "option" : "CMS Action", "correct" : true, "explanation": ""},
+					{ "option" : "Promotion Action", "correct" : true, "explanation": ""},
+					{ "option" : "Search Profile Action", "correct" : true, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/5aa90bb311724460a001de95188cfef6.html"]
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+			,
+			{	
+				"uid" : "6011001",
+				"category" : "customer_experience",
+				"subcategory" : "cms2",
+				"difficulty" : "",
+				"question" : "Statements",
+				"answers": [
+					{ "option" : "Every page in the frontend is represented by a page. There are different types of pages", "correct" : true, "explanation": ""},
+					{ "option" : "The ContentSlotName provide information about their position on the page ", "correct" : false, "explanation": "the ContentSlotNames do not provide any information about their position on the page and the PageTemplate does not contain any layout or design information. "},
+					{ "option" : "A store can also be used to represent traditional stores (offline)", "correct" : true, "explanation": ""},
+					{ "option" : "A website can contain one or more stores", "correct" : true, "explanation": ""},
+					{ "option" : "A CMSSite must be assigned to at least one BaseStore", "correct" : true, "explanation": ""},
+					{ "option" : "All CMS types extend the CMSItem type.", "correct" : false, "explanation": "All CMS types extend the CMSItem or CMSRelation type."},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8b7cdc55866910149b09c285e4c2b1ed.html"]
+			}
+			,
+			{	
+				"uid" : "6011002",
+				"category" : "customer_experience",
+				"subcategory" : "cms2",
+				"difficulty" : "",
+				"question" : "Statements",
+				"answers": [
+					{ "option" : "A ContentSlotForPage can be assigned to a PageTemplate", "correct" : false, "explanation": "ContentSlotForTemplate"},
+					{ "option" : "SAP Commerce WCMS Module provides a multi-channel publishing system that allows you to only manage non-transactional parts of sites. ", "correct" : false, "explanation": "SAP Commerce WCMS Module provides a multi-channel publishing system that allows you to easily maintain websites, both the transactional and non-transactional parts of sites. "},
+					{ "option" : "The liveeditaddon AddOn is the recommended way to integrate CMS", "correct" : false, "explanation": "It is deprecated. Use SmartEdit."},
+					{ "option" : "None of above", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8b7cdc55866910149b09c285e4c2b1ed.html", "https://help.hybris.com/6.7.0/hcd/8c82617c86691014abcda90cb5da8465.html"]
+			}
+			,
+			{	
+				"uid" : "6011003",
+				"category" : "customer_experience",
+				"subcategory" : "cms2",
+				"difficulty" : "",
+				"question" : "Which of the following is similar to a contentslot?",
+				"answers": [
+					{ "option" : "SimpleCMSComponent", "correct" : false, "explanation": ""},
+					{ "option" : "CMSImageComponent", "correct" : false, "explanation": ""},
+					{ "option" : "AbstractCMSComponentContainer", "correct" : true, "explanation": "Is a container for CMS components, similar to a content slot. However, unlike a content slot, a component container can be added to a content slot. A component container also contains an additional rule that determines which components should be returned. "},
+					{ "option" : "AbstractCMSComponent", "correct" : false, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8b7cdc55866910149b09c285e4c2b1ed.html"]
+			},
+			{	
+				"uid" : "6011004",
+				"category" : "customer_experience",
+				"subcategory" : "cms2",
+				"difficulty" : "",
+				"question" : "Which of the following restrictions is applicable on a Category Page?",
+				"answers": [
+					{ "option" : "Campaign Restriction", "correct" : true, "explanation": ""},
+					{ "option" : "Catalog Restriction", "correct" : true, "explanation": ""},
+					{ "option" : "User Restriction", "correct" : true, "explanation": ""},
+					{ "option" : "Product Restriction", "correct" : false, "explanation": ""},
+					{ "option" : "Time Restriction", "correct" : true, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8b7cdc55866910149b09c285e4c2b1ed.html"]
+			},
+			{	
+				"uid" : "6012001",
+				"category" : "customer_experience",
+				"subcategory" : "wcms",
+				"difficulty" : "",
+				"question" : "Which of the following permissions are exposed by the permissionswebservices extension?",
+				"answers": [
+					{ "option" : "global permissions", "correct" : true, "explanation": ""},
+					{ "option" : "types permissions", "correct" : true, "explanation": ""},
+					{ "option" : "attributes permissions", "correct" : true, "explanation": ""},
+					{ "option" : "file permissions", "correct" : false, "explanation": ""},
+					{ "option" : "catalog permissions", "correct" : true, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8b7cdc55866910149b09c285e4c2b1ed.html"]
+			},
+			{	
+				"uid" : "6012002",
+				"category" : "customer_experience",
+				"subcategory" : "wcms",
+				"difficulty" : "",
+				"question" : "Statements",
+				"answers": [
+					{ "option" : "SmartEdit uses the extension previewwebservices", "correct" : true, "explanation": ""},
+					{ "option" : "The previewwebservices extension is generated based on the ywebservices template and therefore already has support for OAuth2 authentication", "correct" : true, "explanation": ""},
+					{ "option" : "The CmsPreviewTicket is not used by SmartEdit anymore.", "correct" : false, "explanation": ""},
+					{ "option" : "The CmsPreviewTicket contains the following data: Catalog Version, Language, Time/Date, user and UserGroup", "correct" : true, "explanation": ""},
+					{ "option" : "A user has to be admin or in the cmsmanagergroup to access the REST webservice", "correct" : false, "explanation": "Only the users belonging to the previewmanagergroup or admin users can access this endpoint."},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/a5da6baa063e419089d6afc1c62978f3.html"]
+			}
+			
+			
+]}

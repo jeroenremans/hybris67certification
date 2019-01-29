@@ -1,0 +1,497 @@
+{
+"questions": [		
+
+			{	
+				"uid" : "6050001",
+				"category" : "search_navigation",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Statements about adaptive search.",
+				"answers": [
+					{ "option" : "It is a layer on top of the Commerce Search Module", "correct" : false, "explanation": ""},
+					{ "option" : "It replaces the Commerce Search Module", "correct" : true, "explanation": ""},
+					{ "option" : "It has a better performance than to Commerce Search", "correct" : true, "explanation": ""},
+					{ "option" : "It is a good idea to use Commerce Search and Adaptive Search at the same time", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/5eee30bb686f46549331823e4f16fc9d.html"]
+			},
+			
+			{	
+				"uid" : "6050002",
+				"category" : "search_navigation",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Statements about adaptive search.",
+				"answers": [
+					{ "option" : "It is possible to promote products (hero products)", "correct" : true, "explanation": ""},
+					{ "option" : "It is possible to promote facets ", "correct" : true, "explanation": "The promoted facet will be visible on top of the facet list. (No matter the sorting)"},
+					{ "option" : "It is possible to promote facet values ", "correct" : true, "explanation": "The promoted facet value will be visible on top of the facet values list. (No matter the sorting)"},
+					{ "option" : "It is possible to exclude facet values ", "correct" : true, "explanation": "The excluded facet value will be removed from the result"},
+					{ "option" : "It is possible to show different promoted items on top, dependent on the choosen search", "correct" : false, "explanation": "It is only possible to determine if promoted products are shown on top per sort"}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/5eee30bb686f46549331823e4f16fc9d.html"]
+			},
+			{	
+				"uid" : "6050003",
+				"category" : "search_navigation",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Statements about Search Profile.",
+				"answers": [
+					{ "option" : "Search profiles is a concept of the search and navigatin module", "correct" : false, "explanation": "It is a concept of the Adaptive Search module"},
+					{ "option" : "It is usefull to create a unique user experience", "correct" : true, "explanation": "The module personalizationsearch is responsable for this"},
+					{ "option" : "Adaptive Search functionality is built around the Search Profiles", "correct" : true, "explanation": ""},
+					{ "option" : "You can only use one search profile at a time", "correct" : false, "explanation": "It is possible to merge them."},
+					{ "option" : "Search Profiles are catalog aware. This means that you also have to synchronize them.", "correct" : true, "explanation": "Be aware that in some cases the Index Type is not catalog aware. In those cases leave the catalog version empty."},
+					{ "option" : "There exists only one Search Profile type.", "correct" : false, "explanation": "Simple Search Pofile and Category Aware Search Profile"}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/f5d544edf7bf4e12a0587d7fc227704c.html"]
+			},
+			{	
+				"uid" : "6050004",
+				"category" : "search_navigation",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Statements about the module personalizationsearch.",
+				"answers": [
+					{ "option" : "It uses SmartEdit features", "correct" : true, "explanation": ""},
+					{ "option" : "It has only one extension: Personalizationsearch", "correct" : false, "explanation": "Personalizationsearch, Personalizationsearchsmartedit, Personalizationsearchsamplesaddon, Personalizationsearchbackoffice, Personalizationssearchweb "},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/24c56e450fd4412d83723aff473b58c3.html"]
+			},
+			{	
+				"uid" : "6050005",
+				"category" : "search_navigation",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "A category that has 2 parents (2 different paths) can have 2 different Category Search Profiles.",
+				"answers": [
+					{ "option" : "Correct", "correct" : false, "explanation": ""},
+					{ "option" : "Incorrect", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "At this moment, the merging path is chosen by the system. To avoid confusion, the search profile configuration for a specific category is at this point always the same even if it has more than one parent. For example for Sunglasses the merging path is always Start of the navigation pathGlobal Next navigation step Collections Next navigation step Categories Next navigation step Clothes Next navigation step SunglassesEnd of the navigation path no matter, which category path is selected by the user in the Categories area. ",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/ff1b90c6b2d64c61a5476965e41d3c76.html"]
+			},
+			{	
+				"uid" : "6050006",
+				"category" : "search_navigation",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which of valid merging options for boost rules?",
+				"answers": [
+					{ "option" : "ADD_AFTER", "correct" : false, "explanation": "Only valid for 'Facets, Boost Items and Sorts': the configuration is added after all of the parent configurations. "},
+					{ "option" : "ADD_BEFORE", "correct" : false, "explanation": "Only valid for 'Facets, Boost Items and Sorts': the configuration is merged before all of the parent configurations. "},
+					{ "option" : "REPLACE", "correct" : true, "explanation": " the configuration replaces all the parent configurations."},
+					{ "option" : "ADD", "correct" : true, "explanation": "current items are added to parent configuration. (Not valid for 'Facets, Boost Items and Sorts')"}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/bec02b9bd55f4f2d9d95effda2ceb876.html"]
+			},
+			{	
+				"uid" : "6050007",
+				"category" : "search_navigation",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which provider can influence the facet value shown in the frontend?",
+				"answers": [
+					{ "option" : "Facet Values Sort Provider", "correct" : false, "explanation": "defines how the facets values should be sorted, for example by displayed name or by numeric value. "},
+					{ "option" : "Facet Values Display Name Provider", "correct" : true, "explanation": "defines how the facet names should be displayed. If the display name provider is not selected the code will be displayed. "},
+					{ "option" : "Facet Top Values Provider", "correct" : false, "explanation": "selects the top facet values to be displayed. "},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/06d65c14c1754ee6925061c2a1361030.html"]
+			},
+			{	
+				"uid" : "6050008",
+				"category" : "search_navigation",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "You can define a different sort for each category.",
+				"answers": [
+					{ "option" : "Correct", "correct" : true, "explanation": ""},
+					{ "option" : "Incorrect", "correct" : false, "explanation": ""}
+	
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/b2531b4fc4744f42a50d2bae2ec76c12.html#loiob2531b4fc4744f42a50d2bae2ec76c12"]
+			},
+			{	
+				"uid" : "6050009",
+				"category" : "search_navigation",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "A newly created Search Profile is active by default and visible in the frontend.",
+				"answers": [
+					{ "option" : "Correct", "correct" : false, "explanation": ""},
+					{ "option" : "Incorrect", "correct" : true, "explanation": ""}
+	
+				],
+				"explanation" : "Newly created search profiles are not active by default, which means you cannot see your settings on the storefront. To allow your search profiles to work and merge you need to create an activation list.",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/da84bbe038074695a22e3263ce1fe8a7.html"]
+			},
+			{	
+				"uid" : "6050010",
+				"category" : "search_navigation",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "It is possible to activate a different search profile based on the user/usergroup and or search query.",
+				"answers": [
+					{ "option" : "Correct", "correct" : true, "explanation": ""},
+					{ "option" : "Incorrect", "correct" : false, "explanation": ""}
+	
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/c5dce60a49334c8f927c239a37116012.html"]
+			},
+			{	
+				"uid" : "6050011",
+				"category" : "search_navigation",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "What is a Search Profile Action?",
+				"answers": [
+					{ "option" : "It is a redirect for search keyword.", "correct" : false, "explanation": ""},
+					{ "option" : "It is a customization to activate a different SearchProfile", "correct" : true, "explanation": ""},
+					{ "option" : "It is a kind of a promotion.", "correct" : false, "explanation": ""}
+	
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/16166a29541d4c4fa4e5224be63700d8.html"]
+			},
+			{	
+				"uid" : "6050012",
+				"category" : "search_navigation",
+				"subcategory" : "adaptive_search",
+				"difficulty" : "",
+				"question" : "The type SolrFacetReconfiguration is not used anymore by the Adaptive Search Module.",
+				"answers": [
+					{ "option" : "Correct", "correct" : true, "explanation": ""},
+					{ "option" : "Incorrect", "correct" : false, "explanation": ""}
+	
+				],
+				"explanation" : "Mapping of types:<br />GlobalSolrSearchProfile > AsCategoryAwareSearchConfiguration<br />CategorySolrSearchProfile > AsCategoryAwareSearchConfiguration<br />SolrFacetReconfiguration > AsFacet or AsExcludedFacet<br />SolrHeroProductDefinition > AsPromotedItem<br />SolrBoostRule > AsBoostRule",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/0dd7e302de0c4d5480336816386e1f40.html#loio0dd7e302de0c4d5480336816386e1f40"]
+			},
+			
+			{	
+				"uid" : "6051001",
+				"category" : "search_navigation",
+				"subcategory" : "search_navigation",
+				"difficulty" : "",
+				"question" : "Which extensions are part of the module Search And Navigation?",
+				"answers": [
+					{ "option" : "commercesearch ", "correct" : false, "explanation": ""},
+					{ "option" : "solrfacetsearch ", "correct" : true, "explanation": ""},
+					{ "option" : "solrserver  ", "correct" : true, "explanation": ""},
+					{ "option" : "search", "correct" : false, "explanation": ""}
+	
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8b300c4a866910149b55ef7c323ece04.html"]
+			},
+			
+			{	
+				"uid" : "6051002",
+				"category" : "search_navigation",
+				"subcategory" : "search_navigation",
+				"difficulty" : "",
+				"question" : "Starting from 6.7, the Commerce Search Module will be deprecated.",
+				"answers": [
+					{ "option" : "Correct", "correct" : true, "explanation": ""},
+					{ "option" : "Incorrect", "correct" : false, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+	
+				],
+				"explanation" : "Starting from 6.7, the Commerce Search Module will be deprecated, with the functionality it offered fully covered by Adaptive Search. We have been recommending to use Adaptive Search since 6.4 as a business tool to manage search configurations. ",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8a0d0a5d8d3243b28aa8c34b26db57e4.html#loio8a0d0a5d8d3243b28aa8c34b26db57e4"]
+			},
+			{	
+				"uid" : "6051003",
+				"category" : "search_navigation",
+				"subcategory" : "search_navigation",
+				"difficulty" : "",
+				"question" : "What is a good reason to use a clustered solr environment?",
+				"answers": [
+					{ "option" : "you have a high system load caused by searches and you want to balance the load among several servers", "correct" : true, "explanation": ""},
+					{ "option" : "indexing consumes a lot of resources, so you need to separate indexing and searching. ", "correct" : true, "explanation": ""},
+					{ "option" : "Solr can only run with at least 2 nodes", "correct" : false, "explanation": ""}
+	
+				],
+				"explanation" : "Starting from 6.7, the Commerce Search Module will be deprecated, with the functionality it offered fully covered by Adaptive Search. We have been recommending to use Adaptive Search since 6.4 as a business tool to manage search configurations. ",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/f64b31a2c8274d3eae8a53abf206f247.html"]
+			},
+			{	
+				"uid" : "6051003b",
+				"category" : "search_navigation",
+				"subcategory" : "search_navigation",
+				"difficulty" : "",
+				"question" : "Statements concerning indexing in a clustered environment.",
+				"answers": [
+					{ "option" : "It is not possible to run a full index when the slave is down", "correct" : true, "explanation": ""},
+					{ "option" : "It is not possible to update the solr index when the slave is down", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "The full indexing operation will not work until the slave server is up. However, the server downtime is not an issue during querying or index updates. In such situations, it only decrements the overall capacity of the clustered Solr setup. If your slave Solr instance is down during updates, your master Solr instance will get indexed and serve the incoming queries. ",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/f64b31a2c8274d3eae8a53abf206f247.html"]
+			},
+			{	
+				"uid" : "6051004",
+				"category" : "search_navigation",
+				"subcategory" : "search_navigation",
+				"difficulty" : "",
+				"question" : "What should be done to setup a standalone solr server.",
+				"answers": [
+					{ "option" : "Nothing, it is the default setup.", "correct" : false, "explanation": ""},
+					{ "option" : "Set the mode to 'cloud' in the Backoffice", "correct" : false, "explanation": "It should be standalone"},
+					{ "option" : "Configure the endpoints in the Backoffice", "correct" : true, "explanation": ""},
+					{ "option" : "Enable the extension solrserver in the localextensions.ml", "correct" : true, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/f64b31a2c8274d3eae8a53abf206f247.html"]
+			},
+			{	
+				"uid" : "6051005",
+				"category" : "search_navigation",
+				"subcategory" : "search_navigation",
+				"difficulty" : "",
+				"question" : "What is zookeeper?",
+				"answers": [
+					{ "option" : "It is a tool that will restart Hybris if the system is not responsive anymore", "correct" : false, "explanation": ""},
+					{ "option" : "It is a tool to store passwords securely", "correct" : false, "explanation": ""},
+					{ "option" : "It is used by the solr cloud setup.", "correct" : true, "explanation": ""}
+					
+				],
+				"explanation" : "SolrCloud is flexible distributed search and indexing, without a master node to allocate nodes, shards and replicas. Instead, Solr uses ZooKeeper to manage these locations, depending on configuration files and schemas. Queries and updates can be sent to any server. Solr uses the information in the ZooKeeper database to figure out which servers need to handle the request. ",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/f64b31a2c8274d3eae8a53abf206f247.html"]
+			},
+			{	
+				"uid" : "6051006",
+				"category" : "search_navigation",
+				"subcategory" : "search_navigation",
+				"difficulty" : "",
+				"question" : "Keyword redirects can be done based on ...",
+				"answers": [
+					{ "option" : "EXACT", "correct" : true, "explanation": ""},
+					{ "option" : "STARTS_WITH", "correct" : true, "explanation": ""},
+					{ "option" : "ENDS_WITH", "correct" : true, "explanation": ""},
+					{ "option" : "CONTAINS", "correct" : true, "explanation": ""},
+					{ "option" : "REGEX", "correct" : true, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c6009dd86691014b808e77b0fde95f3.html"]
+			},
+			{	
+				"uid" : "6051007",
+				"category" : "search_navigation",
+				"subcategory" : "search_navigation",
+				"difficulty" : "",
+				"question" : "Statements.",
+				"answers": [
+					{ "option" : "The SolrConfiguration is cached in the region cache", "correct" : true, "explanation": ""},
+					{ "option" : "If you update a CatalogVersion the SolrConfiguration cache will be invalidated.", "correct" : true, "explanation": "See bean defaultFacetSearchConfigInvalidationTypeSet"},
+					{ "option" : "No cache is used.", "correct" : false, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8b4363f786691014bdfe81fc420cfabe.html"]
+			},
+			{	
+				"uid" : "6051008",
+				"category" : "search_navigation",
+				"subcategory" : "search_navigation",
+				"difficulty" : "",
+				"question" : "Statements.",
+				"answers": [
+					{ "option" : "The listener solrQueryDebuggingListener  logs information about the parsed query", "correct" : true, "explanation": ""},
+					{ "option" : "If you update a CatalogVersion the SolrConfiguration cache will be invalidated.", "correct" : true,  "explanation": "See bean defaultFacetSearchConfigInvalidationTypeSet"},
+					{ "option" : "If the option TWO_PHASE is used, the index is performed directly on the live index", "correct" : false, "explanation": "DIRECT"},
+					{ "option" : "PARTIAL_UPDATE  is faster than UPDATE", "correct" : true, "explanation": "It is faster (as it does not index all fields), but there are limitations! e.g. localized fields(requires stored=true in the schema.xml), spelchecking/suggestions."},
+					{ "option" : "SolrIndexerCronJob does not support PARTIAL_UPDATE", "correct" : true, "explanation": "You should use the job SolrExtIndexerCronJob "}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c047dc886691014a329b6f067241e1e.html"]
+			},
+			{	
+				"uid" : "6051009",
+				"category" : "search_navigation",
+				"subcategory" : "search_navigation",
+				"difficulty" : "",
+				"question" : "Which of the following contexts is used during an indexer query.",
+				"answers": [
+					{ "option" : "IndexerQueryContext (together with IndexerQueryContextFactory)", "correct" : true, "explanation": "Represents a context valid for the duration of an indexer query; "},
+					{ "option" : "IndexerContext (together with IndexerContextFactory)", "correct" : false, "explanation": "Represents a context valid for the duration of an indexer index operation, however it is not valid inside an indexer batch (an indexer batch may run on a different thread or even on a different machine); "},
+					{ "option" : "IndexerBatchContext (together with IndexerBatchContextFactory)", "correct" : false, "explanation": "Represents a context valid for the duration of an indexer batch. Each batch runs on a separate thread and this context is only valid for the corresponding thread. "},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bf44e1b8669101491d0e9f1d50c5eed.html"]
+			},
+			{	
+				"uid" : "6051010",
+				"category" : "search_navigation",
+				"subcategory" : "search_navigation",
+				"difficulty" : "",
+				"question" : "What should you do to implement a custom provider?",
+				"answers": [
+					{ "option" : "You have to extend from QualifierProvider ", "correct" : false, "explanation": "You can extend from QualifierProvider or implement ValueResolver "},
+					{ "option" : "You have to implement the method addFieldValues when using the AbstractValueResolver", "correct" : true, "explanation": ""},
+					{ "option" : "You have to implement the method loadData when using the AbstractValueResolver", "correct" : false, "explanation": "It is optional"},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c7dea5386691014aceaa6b5ab3e31b9.html#loio312309e3385548df905914da48794293"]
+			},
+			{	
+				"uid" : "6051011",
+				"category" : "search_navigation",
+				"subcategory" : "search_navigation",
+				"difficulty" : "",
+				"question" : "With ModelAttributesValueResolver it is possible to index multivalue fields.",
+				"answers": [
+					{ "option" : "Correct", "correct" : true, "explanation": "You can use the attribute split and splitRegex to split a string into a list of values."},
+					{ "option" : "Incorrect", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c7dea5386691014aceaa6b5ab3e31b9.html#loio312309e3385548df905914da48794293"]
+			},
+			{	
+				"uid" : "6051012",
+				"category" : "search_navigation",
+				"subcategory" : "search_navigation",
+				"difficulty" : "",
+				"question" : "With ModelAttributesValueResolver it is possible to index multivalue fields.",
+				"answers": [
+					{ "option" : "Correct", "correct" : true, "explanation": ""},
+					{ "option" : "Incorrect", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bb31c8986691014becfce2be9c5b799.html"]
+			},
+			{	
+				"uid" : "6051013",
+				"category" : "search_navigation",
+				"subcategory" : "search_navigation",
+				"difficulty" : "",
+				"question" : "What are the benefits of using Search Query Templates?",
+				"answers": [
+					{ "option" : "Performance: thanks to customized and templates you can generate less internet traffic.", "correct" : true, "explanation": ""},
+					{ "option" : "Cost: having different queries per IndexedType leads to reducing the implementation overhead. ", "correct" : true, "explanation": ""},
+					{ "option" : "Scalable: the use of templates allows you to use more nodes.", "correct" : false, "explanation": ""},
+					{ "option" : "Conversion: allows better results tuning so it may have a conversion impact.", "correct" : true, "explanation": " An example here might be changing of faceting in the mobile channel to promote mobile devices. "},
+					{ "option" : "Customization: searches are now customizable not only for the different channels but even for different storefront parts. ", "correct" : true, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/6efba08befa04ec3b0b07f22e739098b.html"]
+			},
+			
+			{	
+				"uid" : "6051014",
+				"category" : "search_navigation",
+				"subcategory" : "search_navigation",
+				"difficulty" : "",
+				"question" : "Statements about Search Query Templates",
+				"answers": [
+					{ "option" : "Search query templates facilitate the option to have more than one configuration for free text search queries", "correct" : true, "explanation": ""},
+					{ "option" : "It is used by the Backoffice Administration Cockpit", "correct" : true, "explanation": ""},
+					{ "option" : "It contains a setting to group items in the result (e.g. variants)", "correct" : true, "explanation": ""},
+					{ "option" : "It contains a setting to determine the page size", "correct" : true, "explanation": ""},
+					{ "option" : "It might be a good idea to create a new Search Query Context CATEGORY next to DEFAULT for your category pages.", "correct" : true, "explanation": "This way you can have different settings for category pages like pageSize, grouping of results, showFacets, sorting, ..."},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}	
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/cac34797e1d0460c9966adbbb3be7812.html"]
+			},
+			
+			{	
+				"uid" : "6051015",
+				"category" : "search_navigation",
+				"subcategory" : "search_navigation",
+				"difficulty" : "",
+				"question" : "The solrserver extension includes a standalone Solr server",
+				"answers": [
+		
+					{ "option" : "Correct", "correct" : true, "explanation": ""},
+					{ "option" : "Incorrect", "correct" : false, "explanation": ""}	
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c60bc2e866910149815ef4312ef454e.html#loio8c60bc2e866910149815ef4312ef454e"]
+			},
+			
+			{	
+				"uid" : "6051015b",
+				"category" : "search_navigation",
+				"subcategory" : "search_navigation",
+				"difficulty" : "",
+				"question" : "It is possible to create/delete or update a solr instance via ant",
+				"answers": [
+		
+					{ "option" : "Correct", "correct" : true, "explanation": ""},
+					{ "option" : "Incorrect", "correct" : false, "explanation": ""}	
+				],
+				"explanation" : "e.g. ant createSolrInstance -Dinstance.name",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c60bc2e866910149815ef4312ef454e.html#loio8c60bc2e866910149815ef4312ef454e"]
+			},
+			
+			{	
+				"uid" : "6051016",
+				"category" : "search_navigation",
+				"subcategory" : "search_navigation",
+				"difficulty" : "",
+				"question" : "Image you have a product with no name in the language NL, but the language EN is filled. If NL has as fallbacklanguage EN, the English product name will be used when indexing the product by default.",
+				"answers": [
+		
+					{ "option" : "Correct", "correct" : false, "explanation": ""},
+					{ "option" : "Incorrect", "correct" : true, "explanation": ""}	
+				],
+				"explanation" : "You have to enable 'language fallback  mechanism' on the FacetSearchConfiguration",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8b45a680866910148c27a03805449284.html"]
+			},
+	
+			{	
+				"uid" : "6051017",
+				"category" : "search_navigation",
+				"subcategory" : "search_navigation",
+				"difficulty" : "",
+				"question" : "If you have a synonym, let's say A to B, you will most likely get the same results when you search for A from when you search for B.",
+				"answers": [
+		
+					{ "option" : "Correct", "correct" : false, "explanation": ""},
+					{ "option" : "Incorrect", "correct" : true, "explanation": ""}	
+				],
+				"explanation" : " This is due to the fact that synonyms cannot be used for some types of queries (for example wildcard and fuzzy queries). For more information, see Understanding Analyzers, Tokenizers, and FiltersInformation published on non-SAP site. ",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8b462c51866910149a83c1d336b372ef.html"]
+			},	
+			{	
+				"uid" : "6051018",
+				"category" : "search_navigation",
+				"subcategory" : "search_navigation",
+				"difficulty" : "",
+				"question" : "Statements about Solr Security.",
+				"answers": [
+		
+					{ "option" : "You should always use solr in a DMZ", "correct" : true, "explanation": ""},
+					{ "option" : "You should only index sensitive data if you are using SSL.", "correct" : false, "explanation": ""},
+					{ "option" : "The solr solrver should not run as root", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/Chunk964166991.html#loio21f689cf7c71485c9a45df03c74064e6"]
+			}
+			
+			
+			
+]}

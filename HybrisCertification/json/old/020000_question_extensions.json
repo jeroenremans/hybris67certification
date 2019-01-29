@@ -1,0 +1,50 @@
+{"questions": [
+			{	
+				"uid" : "020001",
+				"category" : "extensions",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Statements.",
+				"answers": [
+					{ "option" : "Hybris provides 5 extension templates: springmvcstore, soapspring, flexstore, storetemplate and yempty", "correct" : false, "explanation": "Hybris provides more than 5 extensions."},
+					{ "option" : "Extension templates should be defined in the localextensions.xml", "correct" : true, "explanation": "They located under ${HYBRIS_BIN_DIR}/ext-template/"},
+					{ "option" : "The following command can be used to create a new extension: ant genext", "correct" : false, "explanation": "it should be ant extgen"},
+					{ "option" : "An extension can contain upper case characters", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/tr460/Trail+~+New+Extension","https://wiki.hybris.com/display/release4/Creating+a+New+Extension"]
+			},
+			{	
+				"uid" : "020002",
+				"category" : "extensions",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "When a the command \"ant extgen\" is executed by default the directory \"custom\" will be used. How can this be changed?",
+				"answers": [
+					{ "option" : "It can not be changed.", "correct" : false, "explanation": ""},
+					{ "option" : "The project.properties in extgen can be updated.", "correct" : false, "explanation": "Property:extgen.extension.path. This property can be overloaded in the local.properties."},
+					{ "option" : "The local.properties should be modified.", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/Creating+a+New+Extension"]
+			},
+			{	
+				"uid" : "020003",
+				"category" : "extensions",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Statements.",
+				"answers": [
+					{ "option" : "The webroot of an extension is configured in the project.properties", "correct" : false, "explanation": "In the extensioninfo.xml."},
+					{ "option" : "The manager class can be defined in the extensioninfo.xml", "correct" : true, "explanation": ""},
+					{ "option" : "The location of the items.xml can be configured in the extensioninfo.xml", "correct" : false, "explanation": ""},
+					{ "option" : "The package root of an extension can be configured in the extensioninfo.xml", "correct" : true, "explanation": ""},
+					{ "option" : "The package root of an extension can be configured in the project.properties", "correct" : true, "explanation": "It is kept in 2 places. ${extensionname}.webroot=/${path}"},
+					{ "option" : "The prefix of generated classes can be defined in the project.properties.", "correct" : false, "explanation": "It can be configured in the extensioninfo.xml. By default it is \"Generated\""},
+					{ "option" : "Precompilcation of the JSP's can be configured in the extensioninfo.xml", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/extensioninfo.xml#type_webmoduleType"]
+			}
+			
+		]}

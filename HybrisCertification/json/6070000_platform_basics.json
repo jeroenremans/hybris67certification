@@ -1,0 +1,2088 @@
+{
+  "_comment": "6100000",
+  "_comment1": "User Management",
+  "_comment2": "- Platform",
+  "_comment3": "- ServiceLayer",
+  "_comment4": "- Initialization and update",
+  "_comment55": "- Hooks for initialization and update",
+  "_comment5": " https://help.hybris.com/6.7.0/hcd/8c29ad3f8669101485378214f6a7e2b6.html",
+  "_comment6": " https://help.hybris.com/6.7.0/hcd/8c5a6a5986691014a65ee480c04c7b28.html",
+  "_comment7": " https://help.hybris.com/6.7.0/hcd/8bf4f76d86691014a29cf03f0616bdb7.html",
+  "_comment8": " https://help.hybris.com/6.7.0/hcd/8bcb3edb86691014af58b7162c06e1d5.html",
+  "questions": [
+    {
+      "uid": "6070001",
+      "category": "platform_basics",
+      "subcategory": "initialization",
+      "difficulty": "",
+      "question": "Statements",
+      "answers": [
+        {
+          "option": "During an initialization all old tables will be removed",
+          "correct": false,
+          "explanation": "During the initialization process, the system only removes those tables that are declared in its current items.xml files. Old tables - orphaned data - stay intact."
+        },
+        {
+          "option": "ant initialize -Dtenant=junit will initialize the junit tenant",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "ant updatesystem -DdryRun=true will create a sql script that is not executed",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "ant updatesystem -DconfigFile=path/to/my/config.properties is a valid command",
+          "correct": false,
+          "explanation": "The config should be json file and it determines which essential data/project data will be executed."
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/3cef5be0d1c24b54a115d2f84a720bbf.html"
+      ]
+    },
+    {
+      "uid": "6070002",
+      "category": "platform_basics",
+      "subcategory": "initialization",
+      "difficulty": "",
+      "question": "Statements",
+      "answers": [
+        {
+          "option": "Update (System) preserves the table name, to which a type was mapped, even if it was changed in items.xml",
+          "correct": true,
+          "explanation": " "
+        },
+        {
+          "option": "Update (System) preserves the column name, to which an attribute was mapped, even if it was changed in items.xml",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "Update (System) preserves the column type for an attribute, even if it was changed in items.xml",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "Update (System) will drop tables if they are removed from the items.xml",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "Update (System) can delete item data, including type instances and type system data (composed types etc.)",
+          "correct": false,
+          "explanation": "Update does not delete any item data, including type instances and type system data (composed types etc.)"
+        },
+        {
+          "option": "Update (System) drops and recreate indices, if they are added or changed in items.xml",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "Update (System) does NOT change the attribute from mandatory to optional, even if it was changed in items.xml",
+          "correct": false,
+          "explanation": "Update does NOT change the attribute from optional to mandatory, even if it was changed in items.xml"
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/08c89599782a4d589a2d5651899d02f1.html"
+      ]
+    },
+    {
+      "uid": "6070003",
+      "category": "platform_basics",
+      "subcategory": "initialization",
+      "difficulty": "",
+      "question": "It is possible to change an attribute from unique to non-unique in the items.xml",
+      "answers": [
+        {
+          "option": "Correct",
+          "correct": true,
+          "explanation": "But keep in mind: change from non-unique to unique is not performed (because existing data may conflict)"
+        },
+        {
+          "option": "Incorrect",
+          "correct": false,
+          "explanation": " "
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/08c89599782a4d589a2d5651899d02f1.html"
+      ]
+    },
+    {
+      "uid": "6070004",
+      "category": "platform_basics",
+      "subcategory": "initialization",
+      "difficulty": "",
+      "question": "Statements concerning initialization of the system.",
+      "answers": [
+        {
+          "option": "A class with the following annotation will never be executed @SystemSetup(extension = \"\")",
+          "correct": true,
+          "explanation": "The extension is missing."
+        },
+        {
+          "option": "You can only have one method that is annotated with @SystemSetup in a class",
+          "correct": false,
+          "explanation": "Multiple methods can be annotated."
+        },
+        {
+          "option": "The annotation @SystemSetupParameterMethod can only be used within a clas that is annotated with @SystemSetup in a class",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8bcb3edb86691014af58b7162c06e1d5.html"
+      ]
+    },
+    {
+      "uid": "6070005",
+      "category": "platform_basics",
+      "subcategory": "initialization",
+      "difficulty": "",
+      "question": "Which are valid attributes for @SystemSetup?",
+      "answers": [
+        {
+          "option": "patch",
+          "correct": true,
+          "explanation": " "
+        },
+        {
+          "option": "optional",
+          "correct": false,
+          "explanation": " "
+        },
+        {
+          "option": "required",
+          "correct": true,
+          "explanation": " "
+        },
+        {
+          "option": "code",
+          "correct": false,
+          "explanation": "name is valid"
+        },
+        {
+          "option": "description",
+          "correct": true,
+          "explanation": " "
+        },
+        {
+          "option": "type and process",
+          "correct": true,
+          "explanation": " "
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8bcb3edb86691014af58b7162c06e1d5.html"
+      ]
+    },
+    {
+      "uid": "6070006",
+      "category": "platform_basics",
+      "subcategory": "initialization",
+      "difficulty": "",
+      "question": "How can you track executed patches?",
+      "answers": [
+        {
+          "option": "It is not possible",
+          "correct": false,
+          "explanation": " "
+        },
+        {
+          "option": "You have to check the logfiles.",
+          "correct": false,
+          "explanation": " "
+        },
+        {
+          "option": "The history is tracked in the item UpdateSystemAudit",
+          "correct": false,
+          "explanation": " "
+        },
+        {
+          "option": "None of the above",
+          "correct": true,
+          "explanation": "The history is tracked in the item(s) SystemSetupAudit"
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8bcb3edb86691014af58b7162c06e1d5.html"
+      ]
+    },
+    {
+      "uid": "6071001",
+      "category": "platform_basics",
+      "subcategory": "servicelayer",
+      "difficulty": "",
+      "question": "The I18NService is an example of ...",
+      "answers": [
+        {
+          "option": "Business Service",
+          "correct": false,
+          "explanation": "implement business use cases, such as cart handling or back order."
+        },
+        {
+          "option": "Infrastructure  Service",
+          "correct": true,
+          "explanation": "provide the underlying technical foundation, such as internationalization, import, export, and so on."
+        },
+        {
+          "option": "System  Service",
+          "correct": false,
+          "explanation": " provide functionality required by the ServiceLayer, such as model handling and session handling."
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c59b23586691014a903dc21e06413c4.html"
+      ]
+    },
+    {
+      "uid": "6071002",
+      "category": "platform_basics",
+      "subcategory": "servicelayer",
+      "difficulty": "",
+      "question": "What is the meaning of the property: servicelayer.prefetch",
+      "answers": [
+        {
+          "option": "It does not exist",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "The recommended setting is 'all'",
+          "correct": false,
+          "explanation": "It is not recommended to set the loading mechanism to All to avoid loading too much data or, in case of circular dependencies, stack overflow exceptions."
+        },
+        {
+          "option": "The recommended setting is 'literal'",
+          "correct": true,
+          "explanation": "This is the default setting. 'literal' behavior means pre-fetching only atomic attribute values and not pre-fetching reference attribute values."
+        }
+      ],
+      "explanation": "When a Model is loaded, no Model values are loaded right away. The Model consists only of a blank Java object instance with no values set. All Model values are only loaded when any value of the Model is retrieved. This mechanism increases performance during Model initialization.\n\nTo change the loading mechanism, set the servicelayer.prefetch property in your local.properties file to all or literal.",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c146aa686691014bbf6fe76a708ece2.html"
+      ]
+    },
+    {
+      "uid": "6071003",
+      "category": "platform_basics",
+      "subcategory": "servicelayer",
+      "difficulty": "",
+      "question": "ProductModel p1 = new ProductModel() <br /><br />Will behave the same way as:<br /><br />ProductModel p1 = modelService.create(ProductModel.class)",
+      "answers": [
+        {
+          "option": "It does not exist",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "Correct",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "Incorrect",
+          "correct": true,
+          "explanation": "If you create a Model by using its constructor, note that the Model is not attached to the Model context. You can attach it with modelService.attach(model). Also default values are not filled: modelService.initDefaults(model);"
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c146aa686691014bbf6fe76a708ece2.html"
+      ]
+    },
+    {
+      "uid": "6071004",
+      "category": "platform_basics",
+      "subcategory": "servicelayer",
+      "difficulty": "",
+      "question": "Consider to following code:<br /><br />ProductModel exampleProduct = modelService.create(ProductModel.class);<br />exampleProduct.setCode(\"test\");<br />ProductModel foundProduct = flexibleSearchService.getModelByExample(exampleProduct);",
+      "answers": [
+        {
+          "option": "It will find every product with the code 'test'",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "It will thrown an exception",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "It might not find every product with the code 'test'",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "If you create an example Model using the modelService.create() method, the Init Defaults Interceptor of this Model is called. As a consequence, default values of the Model are set and used as search parameters",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c146aa686691014bbf6fe76a708ece2.html"
+      ]
+    },
+    {
+      "uid": "6071005",
+      "category": "platform_basics",
+      "subcategory": "servicelayer",
+      "difficulty": "",
+      "question": "Which of the following interceptors is triggered before an item is saved?",
+      "answers": [
+        {
+          "option": "Load Interceptor",
+          "correct": false,
+          "explanation": "The Load Interceptor is called whenever a model is loaded from the database. You may want to use this interceptor if you want to change values of the model after load. An exception raised during execution prevents the model from being loaded."
+        },
+        {
+          "option": "Init Defaults Interceptor",
+          "correct": false,
+          "explanation": "The Init Defaults Interceptor is called when a model is filled with its default values. This happens either when it is created via the modelService.create method or when the modelService.initDefaults method is called. "
+        },
+        {
+          "option": "Prepare Interceptor",
+          "correct": true,
+          "explanation": "The Prepare Interceptor is called before a model is saved to the database before it is validated by Validate interceptors, see below. Use this to add values to the model or modify existing ones before they are saved. An exception raised during execution prevents the model from being saved."
+        },
+        {
+          "option": "Validate Interceptor",
+          "correct": true,
+          "explanation": "The Validate Interceptor is called before a model is saved to the database after is been prepared by the Prepare interceptors, above. You can use Validate Interceptors to validate values of the model and raise an InterceptorException if any values are not valid."
+        },
+        {
+          "option": "Remove Interceptor",
+          "correct": false,
+          "explanation": "The Remove Interceptor is called before a model is removed from the database"
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c146aa686691014bbf6fe76a708ece2.html"
+      ]
+    },
+    {
+      "uid": "6071006",
+      "category": "platform_basics",
+      "subcategory": "servicelayer",
+      "difficulty": "",
+      "question": "The Remove Interceptor is called after the items is removed.",
+      "answers": [
+        {
+          "option": "Correct",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "Incorrect",
+          "correct": true,
+          "explanation": "You should use the AfterSaveListener"
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8bfbf43e8669101480d0f060d79b1baa.html"
+      ]
+    },
+    {
+      "uid": "6071007",
+      "category": "platform_basics",
+      "subcategory": "servicelayer",
+      "difficulty": "",
+      "question": "You can only replace existing interceptors by overriding them with the same bean ID.",
+      "answers": [
+        {
+          "option": "Correct",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "Incorrect",
+          "correct": true,
+          "explanation": "You can use the attribute replacedInterceptors to use another bean id"
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8bfbf43e8669101480d0f060d79b1baa.html"
+      ]
+    },
+    {
+      "uid": "6071008",
+      "category": "platform_basics",
+      "subcategory": "servicelayer",
+      "difficulty": "",
+      "question": "A prepare interceptor can register items for removal.",
+      "answers": [
+        {
+          "option": "Correct",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "Incorrect",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "Interceptors used to be limited to the scenario in which they were executed. For example, PrepareInterceptor could only register new models to be saved, and RemoveInterceptor could only register new models to be removed.<br /><br />Currently the Prepare and the Remove interceptors can both register models and specify a PersistenceOperation to be performed with these models. PersistenceOperation is an enumeration with the following values",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8bfbf43e8669101480d0f060d79b1baa.html"
+      ]
+    },
+    {
+      "uid": "6071009",
+      "category": "platform_basics",
+      "subcategory": "servicelayer",
+      "difficulty": "",
+      "question": "You can disable a specific interceptor in an impex file",
+      "answers": [
+        {
+          "option": "Correct",
+          "correct": true,
+          "explanation": "e.g. INSERT_UPDATE Currency[disable.interceptor.beans='validateCurrencyDataInterceptor'];isocode[unique=true];symbol;digits;<br /><br />INSERT_UPDATE Currency[disable.UniqueAttributesValidator.for.types='Currency'];isocode[unique=true];symbol;digits;"
+        },
+        {
+          "option": "Incorrect",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/9ce1b60e12714a7dba6ea7e66b4f7acd.html"
+      ]
+    },
+    {
+      "uid": "6071010",
+      "category": "platform_basics",
+      "subcategory": "servicelayer",
+      "difficulty": "",
+      "question": "Statements.",
+      "answers": [
+        {
+          "option": "Events are always published on the same node.",
+          "correct": false,
+          "explanation": " Events can either be published locally or across cluster nodes."
+        },
+        {
+          "option": "To implement an event listener, extend from the abstract class AbstractEventListener",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "By default event publishing happens asynchronious",
+          "correct": false,
+          "explanation": "Note that, by default, event publishing is synchronous on the same SAP Commerce Multichannel Suite instance."
+        },
+        {
+          "option": "A custom event has to extend from ClusterAwareEvent",
+          "correct": false,
+          "explanation": "It should extend from AbstractEvent. ClusterAwareEvent is an interface."
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8bbbc04e866910149e93ca9faad254eb.html"
+      ]
+    },
+    {
+      "uid": "6071011",
+      "category": "platform_basics",
+      "subcategory": "servicelayer",
+      "difficulty": "",
+      "question": "How can you publish an event to a certain node?",
+      "answers": [
+        {
+          "option": "The event should implement TransactionAwareEvent",
+          "correct": false,
+          "explanation": "It should be ClusterAwareEvent. The TransactionAwareEvent: This is useful when you want to publish an events that notifies of model changes. Without a transaction aware the event would be published on each attribute change. But you probably only want it to be published once. You then implement a getId method that returns the item PK of the model."
+        },
+        {
+          "option": "You have to call a specific method in the service EventService",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "You have to implement the method  public boolean publish(int sourceNodeId, int targetNodeId) in your custom Event class.",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "It is not yet possible (See 18.08 release)",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8bbbc04e866910149e93ca9faad254eb.html"
+      ]
+    },
+    {
+      "uid": "6071012",
+      "category": "platform_basics",
+      "subcategory": "servicelayer",
+      "difficulty": "",
+      "question": "Which are valid bean scopes?",
+      "answers": [
+        {
+          "option": "tenant",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "yrequest ",
+          "correct": true,
+          "explanation": "The yrequest scope may be used for binding beans to the application context for a single request. This is similar to a standard Spring request scope but is used outside of a web application context."
+        },
+        {
+          "option": "request",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "ytenant",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c63621986691014a7e0a18695d7d410.html"
+      ]
+    },
+    {
+      "uid": "6071013",
+      "category": "platform_basics",
+      "subcategory": "spring",
+      "difficulty": "",
+      "question": "Which line should be added to the spring.xml so that a bean defined in the spring.xml can take advantage of @Autowired.",
+      "answers": [
+        {
+          "option": "&lt;context:annotation-config&gt;",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "&lt;context:component-scan base-package=\"de.hybris.platform.cuppytrail\" /&gt;",
+          "correct": false,
+          "explanation": "This line is needed for beans declared using annotations."
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://wiki.hybris.com/display/tr460/Trail+~+Front+end",
+        "http://stackoverflow.com/questions/7414794/difference-between-contextannotation-config-vs-contextcomponent-scan"
+      ]
+    },
+    {
+      "uid": "6071014",
+      "category": "platform_basics",
+      "subcategory": "spring",
+      "difficulty": "",
+      "question": "Can you get the product code from the url with the following code:<br /><br />@RequestMapping(value = \"/stadiums/{stadiumName}\")<br /> And @PathVariable String stadiumName",
+      "answers": [
+        {
+          "option": "Correct",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "Incorrect",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://wiki.hybris.com/display/tr460/Trail+~+Front+end"
+      ]
+    },
+    {
+      "uid": "6071015",
+      "category": "platform_basics",
+      "subcategory": "filters",
+      "difficulty": "",
+      "question": "Which filter should be used when you want to be able to change the tenant based on the url? (Still valid??)",
+      "answers": [
+        {
+          "option": "TenantActivationFilter",
+          "correct": false,
+          "explanation": " It takes care only of setting the tenant given by Spring configuration, without cooperation with the current session and switching possibility."
+        },
+        {
+          "option": "SimpleCatalogVersionActivationFilter",
+          "correct": false,
+          "explanation": "It assures that configured names of catalog versions are set as session catalog versions. Mentioned configuration is done through Spring property activeCatalogVersions. See also Configuring Existing Filters section for an example of bean with activeCatalogVersions property."
+        },
+        {
+          "option": "SessionFilter",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "BreakChainForUrlsFilter",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "None of these",
+          "correct": true,
+          "explanation": "DynamicTenantSwitchingFilter: It uses the session for storing and fetching the tenant ID inside it. It offers also the the switching possibility, using given pattern as URL suffix."
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8be9c15b866910149c1bcbec75a42bbf.htmls"
+      ]
+    },
+    {
+      "uid": "6071016",
+      "category": "platform_basics",
+      "subcategory": "listener",
+      "difficulty": "",
+      "question": "How can you access the the JaloSession?",
+      "answers": [
+        {
+          "option": "httpRequest.getSession().getAttribute(\"jalosession\")",
+          "correct": true,
+          "explanation": "THIS NOT RECOMMENDED, but it gives you a better understanding of the place where the jalosession is stored."
+        },
+        {
+          "option": "httpRequest.getAttribute(\"jalosession\")",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "JaloSession.getCurrentSession()",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "httpRequest.getSession()",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8be9c15b866910149c1bcbec75a42bbf.html"
+      ]
+    },
+    {
+      "uid": "6071017",
+      "category": "platform_basics",
+      "subcategory": "listener",
+      "difficulty": "",
+      "question": "Where should you add a filter (that adds something on the session) so they will be triggered?",
+      "answers": [
+        {
+          "option": "In the web.xml",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "In the web.xml with are reference to a Spring bean.",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "In a bean which uses PlatformFilterChain",
+          "correct": true,
+          "explanation": "Every extension that has a web extension module needs to have its own definition of a custom filter chain based on the platformFilterChain Spring bean."
+        },
+        {
+          "option": "In a bean which is named HybrisInitFilter",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "Since Hybris 4.5, the HybrisInitFilter has been refactored. Now there is a set of new listers that easily can be overloaded.",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8be9c15b866910149c1bcbec75a42bbf.html"
+      ]
+    },
+    {
+      "uid": "6071018",
+      "category": "platform_basics",
+      "subcategory": "pk",
+      "difficulty": "",
+      "question": "Which information is stored in a PK?",
+      "answers": [
+        {
+          "option": "TypeCode",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "Last modification Date",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "Creation Date",
+          "correct": false,
+          "explanation": "The counter based PK is used as default, and the UUID PK is deprecated. That means that there is no information for the creation time included in the PK (be aware that getCreationTime() returns the counter for new PKs and the date for old PKs)."
+        },
+        {
+          "option": "tenant",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "cluster node",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c2d4abd866910149207b2f33deaf652.html"
+      ]
+    },
+    {
+      "uid": "6071019",
+      "category": "platform_basics",
+      "subcategory": "",
+      "difficulty": "",
+      "question": "What is ServiceLayer Direct?",
+      "answers": [
+        {
+          "option": "An extension with extra Service Layer functionality?",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "An alternative for the JaloLayer",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "The new marketing name from SAP for the Jalo Layer",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "None of the above",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/d4dc444c9cbb46f78c78ff3d8a26539b.html"
+      ]
+    },
+    {
+      "uid": "6071019b",
+      "category": "platform_basics",
+      "subcategory": "",
+      "difficulty": "",
+      "question": "What is the meaning of build.strict.compilation.mode=true",
+      "answers": [
+        {
+          "option": "All extensions are compiled using only their declared dependencies, not using one huge Platform-wide classpath.",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "It will always peform a clean before a build",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "The is a stricter compilation e.g. boolean a = new Boolean(true) will fail",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "None of the above",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c29826686691014a766a2b7ac54ee05.html"
+      ]
+    },
+    {
+      "uid": "6071020",
+      "category": "platform_basics",
+      "subcategory": "cache",
+      "difficulty": "",
+      "question": "Which statements about the Hybris Cache are true?",
+      "answers": [
+        {
+          "option": "The hybris Cache is a part of the hybris persistence layer and enables to reduce the amount of database queries.",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "It improves the performance per single server node",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8be98ee4866910149df8be0aab4d0b62.html"
+      ]
+    },
+    {
+      "uid": "6071021",
+      "category": "platform_basics",
+      "subcategory": "cache",
+      "difficulty": "",
+      "question": "What will be stored in the Hybris Cache?",
+      "answers": [
+        {
+          "option": "Item instances, for example a Product",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "All item attributes, that is the result of getAllAttributes() or getAttribute(X) calls.",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "Results of FlexibleSearch queries",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8be98ee4866910149df8be0aab4d0b62.html"
+      ]
+    },
+    {
+      "uid": "6071022",
+      "category": "platform_basics",
+      "subcategory": "cache",
+      "difficulty": "",
+      "question": "When/how will data be invalidated from the Hybris Cache?",
+      "answers": [
+        {
+          "option": "A method can be called to invalidate the cache.",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "When using multiple cluster nodes, the other nodes can be notified via UDP multicast invalidation packets.",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "When the cache has reached the maximum size, it will invalidate certain items.",
+          "correct": false,
+          "explanation": "The idea is correct, but it is not named invalidation but <b>displacement</b>."
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8be98ee4866910149df8be0aab4d0b62.html"
+      ]
+    },
+    {
+      "uid": "6071023",
+      "category": "platform_basics",
+      "subcategory": "cache",
+      "difficulty": "",
+      "question": "Assume we executed the following query:<br /><pre class=\"sql\">SELECT * FROM {product} WHERE {code} = \"00001\"</pre>Hybris will cache our product item. What will happen when we would remove the product with code \"00002\"?",
+      "answers": [
+        {
+          "option": "Product 00001 will be removed from the cache ??????",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "Product 00002 will be removed from the cache ??????",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "When a product is removed, then its item data and the cached FlexibleSearch result for the above query is removed from the cache.???????????",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8be98ee4866910149df8be0aab4d0b62.html"
+      ]
+    },
+    {
+      "uid": "6071024",
+      "category": "platform_basics",
+      "subcategory": "cache",
+      "difficulty": "",
+      "question": "When happens displacement of the cache?",
+      "answers": [
+        {
+          "option": "When using multiple cluster nodes. One node can notify other nodes via TCP or UDP invalidation packets to displace their cache.",
+          "correct": false,
+          "explanation": "This is cache invalidation."
+        },
+        {
+          "option": "Inside a single VM, the cache invalidation is done by a method call.",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "The cache is full and removes an items to replace it with a new item.",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "The cache framework detects that the cache entry is no longer valid and does not represent the correct database content. It is called invalidation.",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8be98ee4866910149df8be0aab4d0b62.html"
+      ]
+    },
+    {
+      "uid": "6071025",
+      "category": "platform_basics",
+      "subcategory": "cache",
+      "difficulty": "",
+      "question": "Statements about region cache.",
+      "answers": [
+        {
+          "option": "It is difficult to monitor",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "It has the possibility to use distributed cache.",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "It has the possibility to plug in other 3rd party cache frameworks, such as Coherence, Gigaspaces, Hazelcast, ...",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "The region cache always uses the eviction stategy: Least Recently Used (LRU)",
+          "correct": false,
+          "explanation": "Least Recently Used (LRU), Least Frequently Used (LFU) and First In, First Out (FIFO) are supported"
+        },
+        {
+          "option": "The type system region has an unlimited size",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c392bd686691014ae1bf4af383a81d5.html"
+      ]
+    },
+    {
+      "uid": "6071026",
+      "category": "platform_basics",
+      "subcategory": "cache",
+      "difficulty": "",
+      "question": "Which cache regions are standard configured?",
+      "answers": [
+        {
+          "option": "Type system region",
+          "correct": true,
+          "explanation": "For storing entities of type system items"
+        },
+        {
+          "option": "Product region",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "Entity region",
+          "correct": true,
+          "explanation": "For storing entities of all types except type system ones "
+        },
+        {
+          "option": "Query results region",
+          "correct": true,
+          "explanation": "For storing all query results"
+        },
+        {
+          "option": "Media items region",
+          "correct": true,
+          "explanation": "For storing all media items"
+        },
+        {
+          "option": "Log region",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c392bd686691014ae1bf4af383a81d5.html"
+      ]
+    },
+    {
+      "uid": "6071027",
+      "category": "platform_basics",
+      "subcategory": "cache",
+      "difficulty": "",
+      "question": "How do you add a new cache region for caching custom POJOs? ",
+      "answers": [
+        {
+          "option": "It is not possible.",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "Update the local.properties to create a new region",
+          "correct": false,
+          "explanation": "Of course you can set some configurations in the local.properties, but the region itself is created in the spring configuration."
+        },
+        {
+          "option": "Create a spring bean ",
+          "correct": true,
+          "explanation": "e.g. class de.hybris.platform.regioncache.region.impl.EHCacheRegion"
+        },
+        {
+          "option": "It is not possible to use region cache for something else that Hybris Items.",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c392bd686691014ae1bf4af383a81d5.html"
+      ]
+    },
+    {
+      "uid": "6071028",
+      "category": "platform_basics",
+      "subcategory": "cache",
+      "difficulty": "",
+      "question": "How can you manually clear the region cache?",
+      "answers": [
+        {
+          "option": "In the HAC",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "With a groovy script: CacheController controller = [Lookup bean cacheController] ; <br />controller.clearCache(); ",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "With a groovy script: CacheService cacheService = [Lookup bean cacheService] ; <br />cacheService.clearCache(); ",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c392bd686691014ae1bf4af383a81d5.html"
+      ]
+    },
+    {
+      "uid": "6071029",
+      "category": "platform_basics",
+      "subcategory": "cache",
+      "difficulty": "",
+      "question": "What is the preferred cluster strategy in a local network with two hosts connected by a switch only?",
+      "answers": [
+        {
+          "option": "Unicast",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "Broadcast",
+          "correct": true,
+          "explanation": "This refers to UDP, which is fast but gives no guarantees and therefore you will need a stable network."
+        },
+        {
+          "option": "Multicast",
+          "correct": false,
+          "explanation": "This refers to TCP, which is not as fast"
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c74877b866910148cc9ba5f39a2fd28.html"
+      ]
+    },
+    {
+      "uid": "6071030",
+      "category": "platform_basics",
+      "subcategory": "",
+      "difficulty": "",
+      "question": "What are savedValues?",
+      "answers": [
+        {
+          "option": "It is an item used for caching",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "It is an item used for optimization the performance",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "It is an item used for tracking changes",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c535eff86691014b7dccb3539092813.html"
+      ]
+    },
+    {
+      "uid": "6071030b",
+      "category": "platform_basics",
+      "subcategory": "scripting",
+      "difficulty": "",
+      "question": "Which scripting languages are supported out of the box",
+      "answers": [
+        {
+          "option": "Groovy",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "Ruby",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "BeanShell",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "PHP",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "JavaScript",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8bec04a386691014938a9996a977d07f.html"
+      ]
+    },
+    {
+      "uid": "6071031",
+      "category": "platform_basics",
+      "subcategory": "scripting",
+      "difficulty": "",
+      "question": "How can you create/excute a script (like Groovy)?",
+      "answers": [
+        {
+          "option": "programmatically",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "using SAP Commerce Administration Console",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "using Backoffice",
+          "correct": true,
+          "explanation": "See e.g. scripted cronjobs"
+        },
+        {
+          "option": "using HMC",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8bec04a386691014938a9996a977d07f.html"
+      ]
+    },
+    {
+      "uid": "6071032",
+      "category": "platform_basics",
+      "subcategory": "scripting",
+      "difficulty": "",
+      "question": "Which of the following are valid ways of registering a Event Listener with scripting?",
+      "answers": [
+        {
+          "option": "scriptingEventService.registerScriptingEventListener('model://myEventListenerScript')",
+          "correct": true,
+          "explanation": "First you create a Script in the backoffice, next you refer to it with 'model'. Of course you can also refer to a file or classpath instead of model."
+        },
+        {
+          "option": "scriptingEventService.registerEventListener('model://myEventListenerScript')",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "scriptingEventService.registerGroovyEventListener('model://myEventListenerScript')",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "scriptingEventService.registerScriptedEventListener('model://myEventListenerScript')",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8c53e973866910149f7f95676060d3de.html"
+      ]
+    },
+    {
+      "uid": "6071033",
+      "category": "platform_basics",
+      "subcategory": "scripting",
+      "difficulty": "",
+      "question": "In which context supports Hybris the use of scripts?",
+      "answers": [
+        {
+          "option": "Event Listeners",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "Cronjobs",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "Tasks",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "Process Engina",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "Impex",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "items.xml",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "Dynamic forms",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/8bec04a386691014938a9996a977d07f.html"
+      ]
+    },
+    {
+      "uid": "6072001",
+      "category": "extensions",
+      "subcategory": "",
+      "difficulty": "",
+      "question": "Statements.",
+      "answers": [
+        {
+          "option": "Hybris provides only 5 extension templates: springmvcstore, soapspring, flexstore, storetemplate and yempty",
+          "correct": false,
+          "explanation": "Hybris provides more than 5 extensions."
+        },
+        {
+          "option": "Extension templates should be defined in the localextensions.xml when you want to generate a new extension from a template.",
+          "correct": true,
+          "explanation": "They located under ${HYBRIS_BIN_DIR}/ext-template/"
+        },
+        {
+          "option": "The following command can be used to create a new extension: ant genext",
+          "correct": false,
+          "explanation": "it should be ant extgen"
+        },
+        {
+          "option": "An extension name can contain upper case characters",
+          "correct": true,
+          "explanation": "But the extension 'folder' will always be in lowercase!"
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/3f73841839ac4b3682fa6beb9e759abd.html"
+      ]
+    },
+    {
+      "uid": "6072002",
+      "category": "extensions",
+      "subcategory": "",
+      "difficulty": "",
+      "question": "When a the command \"ant extgen\" is executed by default the extension will be placed in the directory \"custom\". How can this be changed?",
+      "answers": [
+        {
+          "option": "It can not be changed.",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "The project.properties in extgen configuration can be updated.",
+          "correct": false,
+          "explanation": "Property:extgen.extension.path. This property can be overloaded in the local.properties."
+        },
+        {
+          "option": "The local.properties should be modified.",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/3f73841839ac4b3682fa6beb9e759abd.html"
+      ]
+    },
+    {
+      "uid": "6072003",
+      "category": "extensions",
+      "subcategory": "",
+      "difficulty": "",
+      "question": "Statements.",
+      "answers": [
+        {
+          "option": "The webroot (e.g. '/myfrontend') of an extension is configured in the project.properties",
+          "correct": true,
+          "explanation": "In the extensioninfo.xml."
+        },
+        {
+          "option": "The webroot (e.g. '/myfrontend') of an extension is configured in the extensioninfo.xml",
+          "correct": true,
+          "explanation": "It is kept in 2 places. ${extensionname}.webroot=/${path}"
+        },
+        {
+          "option": "The manager class that should be used can be defined in the extensioninfo.xml",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "The location of the items.xml can be configured in the extensioninfo.xml",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "The package root of an extension can be configured in the extensioninfo.xml",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "The prefix of generated classes can be defined in the project.properties.",
+          "correct": false,
+          "explanation": "It can be configured in the extensioninfo.xml. By default it is \"Generated\""
+        },
+        {
+          "option": "Precompilcation of the JSP's can be configured in the extensioninfo.xml",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://help.hybris.com/6.7.0/hcd/3f73841839ac4b3682fa6beb9e759abd.html"
+      ]
+    },
+    {
+      "uid": "6073003",
+      "category": "setup system",
+      "subcategory": "",
+      "difficulty": "",
+      "question": "Which of the following environment variables do not exist?",
+      "answers": [
+        {
+          "option": "HYBRIS_BIN_DIR",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "HYBRIS_TEMPORARY_DIR",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "HYBRIS_PLATFORM_DIR",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "HYBRIS_CONFIG_DIR",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "HYBRIS_LOG_DIR",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "HYBRIS_ANT_DIR",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "HYBRIS_DATA_DIR",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://wiki.hybris.com/display/release4/hybris+Environment+Variables"
+      ]
+    },
+    {
+      "uid": "6073004",
+      "category": "setup system",
+      "subcategory": "",
+      "difficulty": "",
+      "question": "How can you change the \"HYBRIS_CONFIG_DIR\" environment variable which defines the path to the config folder that should be used?",
+      "answers": [
+        {
+          "option": "ant all -DHYBRIS_CONFIG_DIR=C:/hybris/config_test",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "C:/hybris/bin/platform>set HYBRIS_CONFIG_DIR=C:/hybris/config_test",
+          "correct": true,
+          "explanation": "Windows"
+        },
+        {
+          "option": "phoenix@phoenix ~ $ export HYBRIS_CONFIG_DIR=/config_test",
+          "correct": true,
+          "explanation": "Linux"
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://wiki.hybris.com/display/release4/hybris+Environment+Variables"
+      ]
+    },
+    {
+      "uid": "6073006",
+      "category": "setup system",
+      "subcategory": "",
+      "difficulty": "",
+      "question": "Which of the following statements are true about properties?",
+      "answers": [
+        {
+          "option": "The parsing mechanism for reading properties removes all blanks and spaces at the end of lines (not beginning). ???",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "this.activate=true # this property is activated <br />=> This a valid way to add a comment to a property",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "myproperty=contains a hash \\#<br />=> This a valid way to add a hash to a property",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "to represent a tab character in a property file, use the syntax {tab}, the common \t syntax will be ignored by the hybris Multichannel Suite.",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://wiki.hybris.com/display/release4/Configuring+the+Behavior+of+the+hybris+Multichannel+Suite"
+      ]
+    },
+    {
+      "uid": "6073007",
+      "category": "setup system",
+      "subcategory": "",
+      "difficulty": "",
+      "question": "Statements:",
+      "answers": [
+        {
+          "option": "local.properties has a higher priority than project.properties in the extensions.",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "Extension-specific project.properties files also are processed in a non-deterministic order. (Create extension dependencies.)",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "The default value: getString( String propertyName, String defaultValue ) has a lower priority than project.properties in the platform  direcoty.",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "It is not possible to overload properties in local.properties, since it has the highest priority.",
+          "correct": false,
+          "explanation": "You can override them via the command line and on the fly in the HAC"
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://wiki.hybris.com/display/release4/Configuring+the+Behavior+of+the+hybris+Multichannel+Suite"
+      ]
+    },
+    {
+      "uid": "6073008",
+      "category": "setup system",
+      "subcategory": "",
+      "difficulty": "",
+      "question": "How can you access properties in spring?",
+      "answers": [
+        {
+          "option": "&lt;bean class=\"Foo\"&gt&lt;property name=\"bar\" value=\"${key_of_property}\"/&gt&lt;/bean&gt",
+          "correct": true,
+          "explanation": "Since version 4.4, the hybris properties are provided in the global ApplicationContext of the hybris Multichannel Suite. "
+        },
+        {
+          "option": "&lt;bean class=\"Foo\"&gt&lt;property name=\"bar\" value=\"&{key_of_property}\"/&gt&lt;/bean&gt",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "&lt;bean class=\"Foo\"&gt&lt;property name=\"bar\" value=\"#{key_of_property}\"/&gt&lt;/bean&gt",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "&lt;bean class=\"Foo\"&gt&lt;property name=\"bar\" value=\"#{ configurationService.getConfiguration().getString('diva.webservice.url') }\"/&gt&lt;/bean&gt&lt;br /&gt&lt;constructor-arg value=\"#{ configurationService.getConfiguration().getString('diva.webservice.url') }\"/&gt",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "The properties are provided by PropertyPlaceholderConfigurer with hybrisPropertiesConfigurer id, which gets the hybrisProperties bean injected. This bean fulfills the java.util.Properties class and holds all properties. You can use this bean in other scenarios too, especially if you want to use the hybris properties in your WebApplicationContext, having the global ApplicationContext as a parent.",
+      "references": [
+        "https://wiki.hybris.com/display/release4/Configuring+the+Behavior+of+the+hybris+Multichannel+Suite#ConfiguringtheBehaviorofthehybrisMultichannelSuite-ReadingConfigurationValues"
+      ]
+    },
+    {
+      "uid": "6073009",
+      "category": "setup system",
+      "subcategory": "",
+      "difficulty": "",
+      "question": "How can you configure cluster specific properties?",
+      "answers": [
+        {
+          "option": "A cluster node-specific property setting is prefixed by cluster.cluster_number",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "You can use a different config directory for each node to differentiate the properties.",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "you can configure the Apache Tomcat start-up settings via node-specific property values",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "you can specify node-specific build framework properties, such as a fictitious cluster.1.build.compiler=classic.",
+          "correct": false,
+          "explanation": "Properties used at compile time can not be cluster specific."
+        },
+        {
+          "option": "If no specific value for cluster.id is defined in local.properties file, the default value for the cluster.id is set to 15. ",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://wiki.hybris.com/display/release4/Configuring+the+Behavior+of+the+hybris+Multichannel+Suite#ConfiguringtheBehaviorofthehybrisMultichannelSuite-ReadingConfigurationValues"
+      ]
+    },
+    {
+      "uid": "6073010",
+      "category": "setup system",
+      "subcategory": "",
+      "difficulty": "",
+      "question": "How can you set properties:",
+      "answers": [
+        {
+          "option": "On the fly in the hac",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "Property file",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "Via command line ; java -Dfoo=\"some string\" SomeClass",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://wiki.hybris.com/display/release4/Configuring+the+Behavior+of+the+hybris+Multichannel+Suite#ConfiguringtheBehaviorofthehybrisMultichannelSuite-ReadingConfigurationValues"
+      ]
+    },
+    {
+      "uid": "6073011",
+      "category": "setup system",
+      "subcategory": "",
+      "difficulty": "",
+      "question": "How can you use local_myversion.properties in the config directory?",
+      "answers": [
+        {
+          "option": "ant -Duseconfig=myconfig localmyconfig.properties",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "Not possible",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "None of the above.",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://wiki.hybris.com/display/release4/Configuring+the+Behavior+of+the+hybris+Multichannel+Suite"
+      ]
+    },
+    {
+      "uid": "6073011b",
+      "category": "setup system",
+      "subcategory": "",
+      "difficulty": "",
+      "question": "The server can not startup if the localextensions.xml is missing:",
+      "answers": [
+        {
+          "option": "true",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "false",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "The ${HYBRIS_CONFIG_DIR}/localextensions.xml file overrides the ${HYBRIS_BIN_DIR}/extensions.xml file. The two files are mutually exclusive, the localextensions.xml file is a \"hard override\" for the extensions.xml file: if a localextensions.xml file exists, the extensions.xml file is not even read in during a hybris Multichannel Suite build. ",
+      "references": [
+        "https://wiki.hybris.com/display/release4/Configuring+the+Behavior+of+the+hybris+Multichannel+Suite"
+      ]
+    },
+    {
+      "uid": "6073012",
+      "category": "setup system",
+      "subcategory": "",
+      "difficulty": "",
+      "question": "What does autoload mean in the localextensions.xml? <extensions autoload=\"false\">",
+      "answers": [
+        {
+          "option": "It doesn't exist, since you always have to add your extensions manually.",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "It will automatically load all the extensions in the ${HYBRIS_BIN_DIR}/platform/ext directory.",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "It will automatically load all the extensions that have have autoloadenabled=\"true\" in the extensioninfo.xml",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://wiki.hybris.com/display/release4/Configuring+the+Behavior+of+the+hybris+Multichannel+Suite"
+      ]
+    },
+    {
+      "uid": "6073014",
+      "category": "setup system",
+      "subcategory": "",
+      "difficulty": "",
+      "question": "Which files are generated when you create a new item?",
+      "answers": [
+        {
+          "option": "MyClassModel.java - a representation of the new Data Model in the service layer",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "MyClass(s)Resource.java and MyClass(s)DTO.java - support for CRUD via the hybris RESTful webservice",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "GeneratedMyClass.java (persistance layer)",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "MyClass.java (persistance layer) not regenerated if it already exists",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://wiki.hybris.com/display/release4/Configuring+the+Behavior+of+the+hybris+Multichannel+Suite"
+      ]
+    },
+    {
+      "uid": "6073015",
+      "category": "setup system",
+      "subcategory": "",
+      "difficulty": "",
+      "question": "What can you do to speed up development?",
+      "answers": [
+        {
+          "option": "Build you code using multiple cores: build.parallel=true",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "Very little performance gain",
+      "references": [
+        "https://wiki.hybris.com/display/release4/Configuring+the+Behavior+of+the+hybris+Multichannel+Suite"
+      ]
+    },
+    {
+      "uid": "6074001",
+      "category": "testing",
+      "subcategory": "",
+      "difficulty": "",
+      "question": "What should you do when you want to start using/making unittest for the DAO-Classes?",
+      "answers": [
+        {
+          "option": "Initialize a new tenant.",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "Run the project data settings.",
+          "correct": false,
+          "explanation": "These are not needed."
+        },
+        {
+          "option": "Enable the extensions you want to test for the tenant",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "It is not possible or not needed to initialize a tenant using ant.",
+          "correct": false,
+          "explanation": "Another way of initializing the junit tenant is to run the ant yunitinit target."
+        },
+        {
+          "option": "An integration test should extend the class TestCase.",
+          "correct": false,
+          "explanation": "It should be ServicelayerTransactionalTest"
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://wiki.hybris.com/display/release4/ImpEx+API#ImpExAPI-ImportAPI"
+      ]
+    },
+    {
+      "uid": "6074002",
+      "category": "testing",
+      "subcategory": "",
+      "difficulty": "",
+      "question": "Which are good locations for unit tests?",
+      "answers": [
+        {
+          "option": "extensionname/src",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "extensionname/testsrc",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "option": "extensionname/web/src",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "extensionname/web/testsrc",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://wiki.hybris.com/display/release4/Testing+in+the+hybris+Multichannel+Suite"
+      ]
+    },
+    {
+      "uid": "6074004",
+      "category": "testing",
+      "subcategory": "",
+      "difficulty": "",
+      "question": "Which statements are correct?",
+      "answers": [
+        {
+          "option": "The unit test class should be located in the same package as the class you want to test.",
+          "correct": true,
+          "explanation": "By convention."
+        },
+        {
+          "option": "The unit test class should have the extension 'Test'.",
+          "correct": true,
+          "explanation": "By convention."
+        },
+        {
+          "option": "The term mock refers to: Replacing an heavy-weight object on which an object under test usually depends",
+          "correct": false,
+          "explanation": "Here is not the term mocking but stubbing explained. Mocking helps to verify if a conversation, for example a sequence of methods calls, between POJO1 and its dependent POJOs is as expected. It is usually done hand-in-hand with stubbing."
+        },
+        {
+          "option": "By default all tests are IntegrationTests.",
+          "correct": true,
+          "explanation": "As a fallback, all Tests that do not have one of the hybris annotations are treated as @IntegrationTests."
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://wiki.hybris.com/display/release4/Testing+in+the+hybris+Multichannel+Suite"
+      ]
+    },
+    {
+      "uid": "6074005",
+      "category": "testing",
+      "subcategory": "",
+      "difficulty": "",
+      "question": "How can you test transactional with isolation of the test. ",
+      "answers": [
+        {
+          "option": "The test class has to extend ServiceLayerTransactionalTest.",
+          "correct": false,
+          "explanation": "This class adds transaction-based isolation logic to your tests by registering the TransactionRunListener. However it is not the only way, it is also possible to use annotations."
+        },
+        {
+          "option": "When the correct class is extended, a new transaction will be started just after the @Before annotation.",
+          "correct": false,
+          "explanation": "Before the @Before method of your test is called, a new transaction is started."
+        },
+        {
+          "option": "When the correct class is extended, a new transaction will be rolled back just after the @After annotation.",
+          "correct": true,
+          "explanation": "After the @After method of your test is called, a transaction rollback is performed."
+        },
+        {
+          "option": "You are required to use the @Transactional annotation.",
+          "correct": false,
+          "explanation": "It is not required, you can also use 'extends ServiceLayerTransactionalTest'. The @Transactional annotation can be specified on a class or method level, so you can enable the transaction support for separate methods."
+        }
+      ],
+      "explanation": "Before the @Before method of your test is called, a new transaction is started. After the @After method of your test is called, a transaction rollback is performed.",
+      "references": [
+        "https://wiki.hybris.com/display/release4/Testing+in+the+hybris+Multichannel+Suite"
+      ]
+    },
+    {
+      "uid": "6074006",
+      "category": "testing",
+      "subcategory": "",
+      "difficulty": "",
+      "question": "Which annotation should be used for tests that do not require a hybris environment in which to run, and are therefore fast.",
+      "answers": [
+        {
+          "option": "@IntegrationTest",
+          "correct": false,
+          "explanation": "Tests that are to be executed inside an application server environment, like Apache Tomcat or WebSphere."
+        },
+        {
+          "option": "@DemoTest",
+          "correct": false,
+          "explanation": "Typically well or self-documented Integration tests for inclusion in hybris Wiki and available to partners."
+        },
+        {
+          "option": "@UnitTest",
+          "correct": true,
+          "explanation": "Tests that do not require a hybris environment in which to run, and are therefore fast. Unless your test needs the hybris environment, for example because of the persistence layer, then you should consider writing a unit test instead with mocked-out dependencies."
+        },
+        {
+          "option": "@PerformanceTest",
+          "correct": false,
+          "explanation": "This annotation is available since hybris 4.4 version. Such a test can be configured to run under different circumstances, for example:6000 times in a row,with 1 mio items,under heavy load "
+        },
+        {
+          "option": "@ManualTest",
+          "correct": false,
+          "explanation": "This annotation is available since hybris 4.4 version. Some tests require external software, for example the CyberSource tests. These tests should not be executed during automated testing."
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://wiki.hybris.com/display/release4/Testing+in+the+hybris+Multichannel+Suite"
+      ]
+    },
+    {
+      "uid": "6074007",
+      "category": "testing",
+      "subcategory": "",
+      "difficulty": "",
+      "question": "Which of the following ant targets do not exist?",
+      "answers": [
+        {
+          "option": "ant alltests",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "ant unittests",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "ant demotests",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "ant integrationtests",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "ant performancetests",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "ant manualtests",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "None of above.",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://wiki.hybris.com/display/release4/Testing+in+the+hybris+Multichannel+Suite"
+      ]
+    },
+    {
+      "uid": "6074008",
+      "category": "testing",
+      "subcategory": "",
+      "difficulty": "",
+      "question": "Which of the following statements are not true?",
+      "answers": [
+        {
+          "option": "Using ant it is possible to run all the unittests in a certain package(s)",
+          "correct": false,
+          "explanation": "ant unittests -Dtestclasses.packages=de.hybris.platform.payment.*"
+        },
+        {
+          "option": "Using ant it is possible to exclude certain packages.",
+          "correct": true,
+          "explanation": "At least it is not possible from the command line. <br />&lt;testclasses property=\"testlist\" packages_negative=\"de.hybris.platform.*\" /&gt;"
+        },
+        {
+          "option": "Using ant it is possible to run all the unittests in a certain extension(s).",
+          "correct": false,
+          "explanation": "ant unittests -Dtestclasses.extensions=basecommerce,core"
+        },
+        {
+          "option": "Using ant it is possible to run all the unittests and manualtest at once.",
+          "correct": false,
+          "explanation": "ant alltests -Dtestclasses.annotations=unittests,manualtests"
+        },
+        {
+          "option": "Using ant it is possible to run only the first 100 of 500 test.",
+          "correct": false,
+          "explanation": "Assume there are 500 tests: ant alltests -Dtestclassses.split=1-5"
+        },
+        {
+          "option": "None of above.",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "Like all other ant properties, these properties are set once and cannot be modified anymore. If you will call ant demotests -Dtestclasses.annotations=unittests, all UnitTests are executed.",
+      "references": [
+        "https://wiki.hybris.com/display/release4/Testing+in+the+hybris+Multichannel+Suite",
+        "https://wiki.hybris.com/display/release4/Customizing+Tests+Execution"
+      ]
+    },
+    {
+      "uid": "6074009",
+      "category": "testing",
+      "subcategory": "",
+      "difficulty": "",
+      "question": "The buildcallbacks.xml of an extension has callbacks for that will be triggered at the following methods:",
+      "answers": [
+        {
+          "option": "Performed right before test execution",
+          "correct": true,
+          "explanation": "(extension_name)_before_yunit"
+        },
+        {
+          "option": "Performed right after test execution, if tests succeed",
+          "correct": true,
+          "explanation": "(extension_name)_after_yunit"
+        },
+        {
+          "option": "Performed right after test execution, if tests fails",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "option": "Performed right before the test framework is initialized",
+          "correct": true,
+          "explanation": "(extension_name)_before_yunitinit"
+        },
+        {
+          "option": "Performed right after the test framework has succesfully executed all the tests.",
+          "correct": false,
+          "explanation": "Performed right after the test framework is initialized; (extension_name)_after_yunitinit"
+        }
+      ],
+      "explanation": "",
+      "references": [
+        "https://wiki.hybris.com/display/release4/Testing+in+the+hybris+Multichannel+Suite"
+      ]
+    }
+  ]
+}

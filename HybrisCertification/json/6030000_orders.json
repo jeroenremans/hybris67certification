@@ -1,0 +1,442 @@
+{
+"questions": [		
+			{	
+				"uid" : "6030007",
+				"category" : "orders",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Statements",
+				"answers": [
+					{ "option" : "OMS can be used in a docker container with the recipe b2c_oms_dockerized ", "correct" : true, "explanation": ""},
+					{ "option" : "OMS can not be used for order splitting", "correct" : false, "explanation": ""},
+					{ "option" : "OMS can not be used to create users", "correct" : true, "explanation": ""},
+					{ "option" : "OMS allows you to view fraud reports", "correct" : true, "explanation": ""},
+					{ "option" : "OMS has one perspective in the backoffice", "correct" : false, "explanation": "Order Management has two user interfaces (perspectives) in the Backoffice for customer support and warehouse employees. "},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c25c3b9866910148d04b69636983d89.html"]
+			},			
+			{	
+				"uid" : "6030008",
+				"category" : "orders",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "What is the meaning of sourcing?",
+				"answers": [
+					{ "option" : "It is a term used by developers", "correct" : false, "explanation": ""},
+					{ "option" : "It is actually just the picking of the order", "correct" : false, "explanation": ""},
+					{ "option" : "It is actually just the shipping of the order", "correct" : false, "explanation": ""},
+					{ "option" : "It is the action of grouping order items into consignments ", "correct" : false, "explanation": "Allocation is the action of grouping order items into consignments (that is, determining which items of an order will be shipped from a single location in a single box or package). "},
+					{ "option" : "None of above", "correct" : true, "explanation": "Sourcing is the action of determining which physical location (or locations) will supply all items for an order."}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c25c3b9866910148d04b69636983d89.html"]
+			},	
+			{	
+				"uid" : "6030009",
+				"category" : "orders",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "What document contains a list of items that should be put in a box? (choose most correct one)",
+				"answers": [
+					{ "option" : "pick list", "correct" : false, "explanation": "lists the item(s) that need to be collected from the store or warehouse shelf."},
+					{ "option" : "pack slip", "correct" : true, "explanation": " indicates all the items that need to be packed in a single shipping box or package"},
+					{ "option" : "label ", "correct" : false, "explanation": "displays the customer's shipping address. Details vary depending on the shipping carrier"},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8b446d01866910149e6aab9a9051a4a8.html"]
+			},
+			{	
+				"uid" : "6030010",
+				"category" : "orders",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which feature is supported by the Backoffice Order Fulfillment Cockpit?",
+				"answers": [
+					{ "option" : "Perform refunds.", "correct" : false, "explanation": "Backoffice Customer Support Cockpit "},
+					{ "option" : "Decline a partial or whole consignment.", "correct" : true, "explanation": ""},
+					{ "option" : "Perform customer support operations.", "correct" : false, "explanation": "Backoffice Customer Support Cockpit "},
+					{ "option" : "View and manage inventory.", "correct" : true, "explanation": ""},
+					{ "option" : "View and manage customer orders, such as print pick slips, pack slips, and shipping labels, as well as review and edit package and shipping information. ", "correct" : true, "explanation": ""},
+					{ "option" : "Cancel an item or an order.", "correct" : false, "explanation": "Backoffice Customer Support Cockpit "},
+				
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "Consigments, POS, Warehouses, Stock (adjust)... can be maintained",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8b446d01866910149e6aab9a9051a4a8.html"]
+			},
+			
+			{	
+				"uid" : "6030011",
+				"category" : "orders",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Statements about Backoffice Order Fulfillment Cockpit",
+				"answers": [
+					{ "option" : "Inbox: By default, the system will assign a assignment to a group. ", "correct" : false, "explanation": "By default, the system will choose the employee with the lowest workload (lowest number of assigned tasks) to assign the consignment to. "},
+					{ "option" : "A Pick slip can be printed from this perspective", "correct" : true, "explanation": ""},
+					{ "option" : "When you confirm an assigment, the status will change to shipped.", "correct" : true, "explanation": "Confirming a consignment indicates that the consignment has been picked, packed, and shipped"},
+					{ "option" : "Changing the stock requires a reason", "correct" : true, "explanation": "A reason code can only be used once!"},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/f561896b67f9474b89857d23460e39e1.html"]
+			},
+			
+			{	
+				"uid" : "6030012",
+				"category" : "orders",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "What is ASN?",
+				"answers": [
+					{ "option" : "It does not exist", "correct" : false, "explanation": ""},
+					{ "option" : "feature that provides a mechanism for automatic stock level updates", "correct" : true, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "The Advanced Shipping Notice (ASN) feature provides a mechanism for automatic stock level updates. ",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/b7259eff65df45ea9ca8c991876763a5.html"]
+			},
+			{	
+				"uid" : "6030013",
+				"category" : "orders",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Statements about ASN.",
+				"answers": [
+					{ "option" : "The type AdvancedShippingNotice has the following attributes: productCode, quantity, asn and stockLevels ", "correct" : false, "explanation": "The item AdvancedShippingNoticeEntry is described here."},
+					{ "option" : "AdvancedShippingNotice is for a specific warehouse and pointOfService ", "correct" : true, "explanation": ""},
+					{ "option" : "BinSelectionStrategy is a strategy to remove stock.", "correct" : false, "explanation": "Strategy used to select a bin and product quantity to be associated with a stock level. "},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : " ",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/b7259eff65df45ea9ca8c991876763a5.html"]
+			},
+			{	
+				"uid" : "6030014",
+				"category" : "orders",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Statements.",
+				"answers": [
+					{ "option" : "Allocation Service is part of the order extension", "correct" : false, "explanation": "warehouse extension"},
+					{ "option" : "The allocation service can create the consignments ", "correct" : true, "explanation": ""},
+					{ "option" : "The allocation service determines which warehouse should be used", "correct" : false, "explanation": "It calls the sourcing service to do that"},
+					{ "option" : "It is possible reallocate items manually and automatically", "correct" : true, "explanation": "The allocation service can take items that were assigned to a particular warehouse and reassign them to another warehouse; this is called reallocation. The allocation service supports both manual and auto reallocation. "},
+					
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : " ",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8b520321866910149a409fb6f7bdd6c9.html"]
+			},
+			{	
+				"uid" : "6030015",
+				"category" : "orders",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Statements about ATP.",
+				"answers": [
+					{ "option" : "ATP stands for 'availability to promise'", "correct" : true, "explanation": ""},
+					{ "option" : "ATP is part of the warehouse extension", "correct" : false, "explanation": "commerceservices extension, but the ATP Formula Service is found in the warehousing extension. "},
+					{ "option" : "The sum of the stocklevels is the actual available stock in Hybris", "correct" : false, "explanation": "See also InventoryEvent item"},
+					{ "option" : "Each BaseStore can have a different ATP formule", "correct" : true, "explanation": "See item AtpFormula, which defines whether reservation ect should be used to determine the stock."},
+					{ "option" : "The values WastageInventoryEvent are normally negative.", "correct" : false, "explanation": "The map defaultAtpFormulaVar2ArithmeticOperatorMap in the spring config determines whether it should subtracted or added."},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : " ",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8b579aab8669101485e5bb1803f397b9.html"]
+			},
+			{	
+				"uid" : "6030016",
+				"category" : "orders",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "An InventoryEvent has the following subtypes. Which of them is used to reservate stock",
+				"answers": [
+					{ "option" : "ShrinkageEvent", "correct" : false, "explanation": ""},
+					{ "option" : "WastageEvent", "correct" : false, "explanation": ""},
+					{ "option" : "IncreaseEvent", "correct" : false, "explanation": ""},
+					{ "option" : "CancellationEvent", "correct" : false, "explanation": ""},
+					{ "option" : "AllocationEvent", "correct" : false, "explanation": ""},
+					{ "option" : "None of above", "correct" : true, "explanation": "ReservationEvent"}
+					
+				],
+				"explanation" : " ",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/f627cfb7a31944d28bf98fbfe747c8b0.html"]
+			},
+			{	
+				"uid" : "6030017",
+				"category" : "orders",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "This is the default ATP formule, it is possible to turn on and off all the parameters:<br /><br />AVAILABLE - ALLOCATED + CANCELLED + INCREASE - RESERVED - SHRINKAGE - WASTAGE + EXTERNAL",
+				"answers": [
+					{ "option" : "Correct", "correct" : false, "explanation": ""},
+					{ "option" : "Incorrect", "correct" : true, "explanation": "AVAILABLE can not be switched off"}
+					
+				],
+				"explanation" : " ",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/f627cfb7a31944d28bf98fbfe747c8b0.html"]
+			},
+			{	
+				"uid" : "6030018",
+				"category" : "orders",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "DeliveryTrackingIdStrategy allows you to define the delivery tracking ID for the order.",
+				"answers": [
+					{ "option" : "Correct", "correct" : false, "explanation": ""},
+					{ "option" : "Incorrect", "correct" : true, "explanation": "DeliveryTrackingIdStrategy allows you to define the delivery tracking ID for the consignment."}
+					
+				],
+				"explanation" : " ",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/881668501ad945cdae1f951876b7f046.html"]
+			},
+			{	
+				"uid" : "6030019",
+				"category" : "orders",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "If a consigment for an external warehouse is created, there is no need to create an InventoryEvent.",
+				"answers": [
+					{ "option" : "Correct", "correct" : true, "explanation": "Every time a consignment is created by the Order Management system, it creates a related inventory event internally in order to handle the inventory management. Now, when a consignment gets assigned to an external warehouse, the registration of this event is not required and needs to be handled by the external warehouse. By default, the InventoryEventService prevents you from creating any kind of event for an external warehouse. The default behavior of the Order Management system is simply to skip the event creation for external warehouses. "},
+					{ "option" : "Incorrect", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "A warehouse has a flag 'external'. The ATP formula has a new AtpFormulaVariable called External that will aggregate the availability on all the stock levels belonging to external warehouses. ",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/881668501ad945cdae1f951876b7f046.html"]
+			},
+			{	
+				"uid" : "6030020",
+				"category" : "orders",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "What are possible outcomes of the waiting step (waitForShipConsignment/waitForPickupConsignment) for the consignment process? ",
+				"answers": [
+					{ "option" : "shipped", "correct" : false, "explanation": ""},
+					{ "option" : "reallocated", "correct" : true, "explanation": ""},
+					{ "option" : "complete", "correct" : false, "explanation": ""},
+					{ "option" : "cancelled", "correct" : true, "explanation": ""},
+					{ "option" : "confirmed", "correct" : true, "explanation": ""},
+					{ "option" : "pick/pack", "correct" : true, "explanation": ""},
+					{ "option" : "Incorrect", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/671fb7ca926e4628b9beeb7831e5f57d.html"]
+			},
+			
+			{	
+				"uid" : "6030021",
+				"category" : "orders",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which of the following strategies is mapped to the decline reason 'TOOBUSY'? ",
+				"answers": [
+					{ "option" : "DefaultDamagedStockDeclineStrategy", "correct" : false, "explanation": "DAMAGED"},
+					{ "option" : "DefaultTimedBanDeclineStrategy", "correct" : true, "explanation": "OTHER, TOOBUSY, and STORECLOSED"},
+					{ "option" : "DefaultOutOfStockDeclineStrategy", "correct" : false, "explanation": "OUTOFSTOCK "},
+					{ "option" : "Incorrect", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/671fb7ca926e4628b9beeb7831e5f57d.html"]
+			},
+			{	
+				"uid" : "6030022",
+				"category" : "orders",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "The choosen Sourcing Stragegy is based on the items in the order.",
+				"answers": [
+					{ "option" : "Correct", "correct" : false, "explanation": ""},
+					{ "option" : "Incorrect", "correct" : false, "explanation": ""},
+					{ "option" : "None of above", "correct" : true, "explanation": "An order entry is to be picked up in the store --> Recommend pickup strategy.<br />An item in the order is oversized --> Recommend oversized strategy.<br />The customer wishes to get their items as soon as they are ready --> Recommend early shipping strategy."}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c61d3ed86691014b797e0ac305f1f8c.html"]
+			},
+			
+			{	
+				"uid" : "6030023",
+				"category" : "orders",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "What is the meaning of the The fitness evaluation?",
+				"answers": [
+					{ "option" : "The fitness evaluation performs calculations to determine the optimal sourcing locations or consignment configurations to source orders. ", "correct" : true, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "A fitness function is a function that can evaluate the fitness of an individual sourcing location and allow us to compare sourcing locations to determine which one is best suited to source a given order. There are many ways to determine which individual sourcing location is better suited to source a given order, and we will use a weighted fitness function. In order to compute the weighted fitness of each sourcing location, it firstly calculates the individual factor fitness for each singular factor at each sourcing location. ",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bc256d786691014aa36c405064ca91a.html"]
+			},
+			{	
+				"uid" : "6030025",
+				"category" : "orders",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which will use the ReverseNormalizer?",
+				"answers": [
+					{ "option" : "AllocationFitnessEvaluator", "correct" : true, "explanation": "The AllocationFitnessEvaluator determines how good a certain location is at fulfilling an order. In other words, it determines the unassigned quantity. The lower the unassigned quantity, the better the location is at fulfilling the order. It goes through the order entries and finds out if there exists available quantities and if those available quantities are enough to fulfill the order/order-entries. The evaluator will return a fitness value of 0 if it is able to fulfill the whole order. If the available quantities are not enough to fulfill the order/order-entries then the amount left unassigned will be the fitness value. "},
+					{ "option" : "DistanceEvaluator", "correct" : true, "explanation": "The DistanceEvaluator determines the distance between the location being evaluated and the delivery address. The lower the distance, the better the location is to source the order. "},
+					{ "option" : "PriorityEvaluator ", "correct" : true, "explanation": "The PriorityEvaluator determines the priority of the location being evaluated. A priority of 1 for a location means it is more important than another location having a priority of 3. "},
+					{ "option" : "ScoreEvaluator", "correct" : false, "explanation": "The ScoreEvaluator determines the score of the location being evaluated. A score of 3 for a location means it handles orders better than another location having a score of a 1. "},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bc256d786691014aa36c405064ca91a.html"]
+			},
+			{	
+				"uid" : "6030026",
+				"category" : "orders",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Each baseStore has 1 SourcingConfig with the fields scoreWeightFactor, priorityWeightFactor, allocationWeightFactor and distanceWeightFactor to determine how important each factor is.",
+				"answers": [
+					{ "option" : "Correct", "correct" : true, "explanation": ""},
+					{ "option" : "Incorrect", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c614fe386691014b75ddc5045bbfbae.html"]
+			},
+			{	
+				"uid" : "6030027",
+				"category" : "orders",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "The Stock Availability Location Filter is usually the first one that is executed.",
+				"answers": [
+					{ "option" : "Correct", "correct" : false, "explanation": ""},
+					{ "option" : "Incorrect", "correct" : true, "explanation": "The ATS location filter will return a set of locations where the product is in stock and can be used as the sourcing location. For performance reasons, it is not recommended to use the ATS filter as the first in the chain of filters. In common cases, the ATS filter is used with an AND filtered result operator in order to restrict the result set to locations where the order can be sourced from, and thus locations where the product is in stock. "}
+				],
+				"explanation" : "Filters: 'Delivery Countries Location Filter', 'Pickup Location Filter', ... => used to find list of possible stock locations to work with.",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c617a6486691014b445db7baf841dae.html"]
+			},
+			{	
+				"uid" : "6030028",
+				"category" : "orders",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "If you you add extra Sourcing Filters, the possible stock location can increase.",
+				"answers": [
+					{ "option" : "Correct", "correct" : true, "explanation": "See operators OR, AND, NOT"},
+					{ "option" : "Incorrect", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c617a6486691014b445db7baf841dae.html"]
+			},
+			{	
+				"uid" : "6030029",
+				"category" : "orders",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "The first step in sourcing an order is the grouping of order entries.",
+				"answers": [
+					{ "option" : "Correct", "correct" : false, "explanation": ""},
+					{ "option" : "Incorrect", "correct" : true, "explanation": "First step is filtering. "}
+				],
+				"explanation" : "The interface OrderEntryMatcher should implemented. This will match 2 orderEntries. e.g. same Pickup Address.",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c1fde8186691014bef2a8c5accf3118.html"]
+			},
+			{	
+				"uid" : "6030030",
+				"category" : "orders",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which strategy can result in multiple consignments?",
+				"answers": [
+					{ "option" : "No splitting strategy", "correct" : false, "explanation": "This strategy evaluates which locations can fulfill the order as a single consignment. "},
+					{ "option" : "Pickup strategy", "correct" : false, "explanation": "This strategy evaluates if the specified pickup location can fulfill the order as a single consignment. "},
+					{ "option" : "No restrictions strategy", "correct" : true, "explanation": "This strategy evaluates which locations can fulfill the order by splitting the order entries into many consignments and source them at different locations. "}
+				],
+				"explanation" : "The pickup strategy does not allow a given order entries to be split into multiple consignments. The given order entries must be sourced from the specified pickup location. ",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c1fde8186691014bef2a8c5accf3118.html"]
+			},
+			{	
+				"uid" : "6030031",
+				"category" : "orders",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "The Declined Warehouses Filter is an example of a Sourcing filter.",
+				"answers": [
+					{ "option" : "Correct", "correct" : false, "explanation": "This filter excludes the warehouses which have been banned. "},
+					{ "option" : "Incorrect", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "It does not take the actual order into account to filter the warehouses.",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/5a8764a4d66e45dcaa6602c9103d0253.html"]
+			},
+			{	
+				"uid" : "6030032",
+				"category" : "orders",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which actions does exist? (External Consignment Fulfillment Framework)",
+				"answers": [
+					{ "option" : "RedirectConsignmentFulfillmentProcessAction", "correct" : true, "explanation": "The Redirect Action decides if the process engine execution will go through the external fulfillment route (depends if a consignment has the FulFillmentSystemConfig set) otherwise it will just go to the normal internal fulfillment route that existed prior to 6.5. "},
+					{ "option" : "ProcessConsignmentPreFulfillmentAction", "correct" : true, "explanation": "This is the step where 0 or multiple strategies will get executed. This is very useful in cases where one or multiple steps of preparation is needed before the consignment is ready to be sent. "},
+					{ "option" : "SendConsignmentToExternalFulfillmentSystemAction", "correct" : true, "explanation": "This is the step where we hand over the prepared consignment to the external system. "},
+					{ "option" : "GeocodeShippingAddressAction", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/583979ec3c3a4919a76cd8867abdd735.html"]
+			},
+			{	
+				"uid" : "6031001",
+				"category" : "channels",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which module is intended for call centers?",
+				"answers": [
+					{ "option" : "Customer Service Module", "correct" : true, "explanation": "The SAP Commerce Customer Service module provides a dedicated solution for call-center environments. "},
+					{ "option" : "Customer Support Module", "correct" : true, "explanation": "Backoffice Customer Support Cockpit, is an application designed for the call-center environment, which complements the vision that we have started with previous releases. Backoffice Customer Support Cockpit cockpit offers the functionality that was previously available in Customer Service Cockpit, and allows you to benefit from extensibility and scalability of Backoffice Framework. "},
+					{ "option" : "Callcenter Service Module", "correct" : false, "explanation": ""},
+					{ "option" : "Callcenter Support Module", "correct" : false, "explanation": ""},
+					{ "option" : "Mobile Module", "correct" : false, "explanation": "The SAP Commerce Mobile Module enables you to add the mobile channel to your cross-channel strategy. "},
+					{ "option" : "Instore Module", "correct" : false, "explanation": "The SAP Commerce InStore Module enables you to provide information about product availability using tablet devices."}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/9165075aeb274c2891433e10bf6d707f.html"]
+			},
+			{	
+				"uid" : "6031002",
+				"category" : "channels",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "In which extension can you find methods like 'isBot()', 'isDesktop()', ... ?",
+				"answers": [
+				{ "option" : "platform", "correct" : false, "explanation": ""},
+				{ "option" : "mobileservices", "correct" : true, "explanation": "It also has services to create barcodes"},
+				{ "option" : "instore", "correct" : false, "explanation": ""},
+				{ "option" : "callcenter", "correct" : false, "explanation": ""},
+				{ "option" : "NOne of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c13b99486691014b9269f4ae456d0d7.html"]
+			},
+			{	
+				"uid" : "6031003",
+				"category" : "channels",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "The InStore module is based on the backoffice framework.",
+				"answers": [
+				{ "option" : "Correct", "correct" : true, "explanation": ""},
+				{ "option" : "Incorrect", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "The SAP Commerce InStore solution is a purpose-built application that runs on tablet devices. It enables retailers to identify products, display detailed product information, and check stock levels. <br /><br />The Instore application is recommended to use by the retailer who purchases goods or products in the store. While handing the tablet device the retailer is able to give a quick response for customer query. Brief reference of the product availability in the store the retailer can recommend in which store the item can be picked up. Moreover, the retailer can access the product specification information as well the list of suggested products similar to the given one. ",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bf92d3086691014b43f8f55b9a32d2d.html"]
+			}
+			
+]}

@@ -1,0 +1,314 @@
+{"questions": [
+			{	
+				"uid" : "101001",
+				"category" : "FlexibleSearch",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which FlexibleSearch-based search mechanisms exist?",
+				"answers": [
+					{ "option" : "FlexibleSeach", "correct" : true, "explanation": ""},
+					{ "option" : "ViewType", "correct" : true, "explanation": ""},
+					{ "option" : "SavedQuery", "correct" : true, "explanation": ""},
+					{ "option" : "SolrFacetSearch", "correct" : false, "explanation": "This is a Lucene-based search mechanism and not a FlexibleSearch-based search mechanism."},
+					{ "option" : "Advanced-SavedQuery", "correct" : true, "explanation": ""},
+					{ "option" : "GenericSearch", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/Search+Mechanisms+Overview#SearchMechanismsOverview-AvailableSearchMechanisms"]
+			},
+			{	
+				"uid" : "101002",
+				"category" : "FlexibleSearch",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which of the following search mechanisms can only be used in the HMC?",
+				"answers": [
+					{ "option" : "FlexibleSeach", "correct" : false, "explanation": "Available via hybris API and the AdminWeb's FlexibleSearch JSP page."},
+					{ "option" : "ViewType", "correct" : false, "explanation": ""},
+					{ "option" : "SavedQuery", "correct" : true, "explanation": "Allows running predefined FlexibleSearch queries with variable parameters. Searches on the hybris Multichannel Suite items. Cannot be used outside the hMC."},
+					{ "option" : "SolrFacetSearch", "correct" : false, "explanation": ""},
+					{ "option" : "Advanced-SavedQuery", "correct" : true, "explanation": "Allows running predefined FlexibleSearch queries with variable parameters. More flexible than SavedQuery: allows specifying empty parameters, for example. Searches on the hybris Multichannel Suite items. "},
+					{ "option" : "GenericSearch", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/Search+Mechanisms+Overview#SearchMechanismsOverview-GroupingofSearchMechanisms"]
+			},
+			{	
+				"uid" : "101003",
+				"category" : "FlexibleSearch",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which of the following search mechanisms can result in runtime errors when there query is wrongly formatted?",
+				"answers": [
+					{ "option" : "FlexibleSeach", "correct" : true, "explanation": ""},
+					{ "option" : "ViewType", "correct" : false, "explanation": ""},
+					{ "option" : "SavedQuery", "correct" : true, "explanation": ""},
+					{ "option" : "SolrFacetSearch", "correct" : false, "explanation": ""},
+					{ "option" : "Advanced-SavedQuery", "correct" : true, "explanation": ""},
+					{ "option" : "GenericSearch", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "In case of a FlexibleSearch the query is translated at runtime. This translation can cause runtime exceptions when the query is not correctly formatted.",
+				"references" : ["https://wiki.hybris.com/display/release4/Search+Mechanisms+Overview#SearchMechanismsOverview-GroupingofSearchMechanisms"]
+			}, 
+			{	
+				"uid" : "101004",
+				"category" : "FlexibleSearch",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which of the following search mechanisms is here described:<br /><br /><i>While hybris FlexibleSearch offers a powerful search API to developers, some of them may prefer the <b>XXX</b> API that is similar to Hibernate Criteria Queries.</i>",
+				"answers": [
+					{ "option" : "FlexibleSeach", "correct" : false, "explanation": ""},
+					{ "option" : "ViewType", "correct" : false, "explanation": ""},
+					{ "option" : "SavedQuery", "correct" : false, "explanation": ""},
+					{ "option" : "SolrFacetSearch", "correct" : false, "explanation": ""},
+					{ "option" : "Advanced-SavedQuery", "correct" : false, "explanation": ""},
+					{ "option" : "GenericSearch", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "Example of FlexibleSearch: <pre class=\"sql\">Collection result = flexibleSearchService.<CategoryModel> search(\"SELECT {\" + CategoryModel.PK + \"} FROM {\" + CategoryModel._TYPECODE + \"} <br />WHERE {\" CategoryModel.ID \"}\").getResult();</pre><br/>Equivalent in GenericSearch: <pre class=\"java\">final String categoryID = \"Foo\";<br />final GenericCondition idCondition = GenericCondition.equals(new GenericSearchField(CategoryModel._TYPECODE, CategoryModel.ID ), categoryID);<br />final GenericConditionList gl = GenericCondition.createConditionList(idCondition);<br/>final GenericQuery query = new GenericQuery(CategoryModel._TYPECODE, gl);<br />Collection result = genericSearchService.search(query).getResult();</pre>",
+				"references" : ["https://wiki.hybris.com/display/release4/GenericSearch"]
+			}, 
+			{	
+				"uid" : "101005",
+				"category" : "FlexibleSearch",
+				"subcategory" : "GenericSearch",
+				"difficulty" : "",
+				"question" : "Which of the following statements about GenericSearch are true?",
+				"answers": [
+					{ "option" : "GenericSearch can have a limited number of conditions which is fixed at 255", "correct" : false, "explanation": "GenericSearch can have an unlimited number of conditions"},
+					{ "option" : "It is possible to search for items as well as raw data fields", "correct" : true, "explanation": "(raw data fields: strings like productcode and productname instead of a Item like Product)"},
+					{ "option" : "Inner joins and outer joins between item types are <b>im</b>possible", "correct" : false, "explanation": "They are possible: <pre class=\"sql\">GenericCondition joinCondition = GenericCondition.createJoinCondition(productMediaField, mediaField);</pre>"},
+					{ "option" : "It is possible to use subselects", "correct" : true, "explanation": ""},
+					{ "option" : "GenericSearch can have a limited number of <i>order by</i> clauses which is fixed at 255", "correct" : false, "explanation": "GenericSearch can have an unlimited number of order by clauses."}
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/GenericSearch#GenericSearch-GenericSearch"]
+			}, 
+			{	
+				"uid" : "101006",
+				"category" : "FlexibleSearch",
+				"subcategory" : "GenericSearch",
+				"difficulty" : "",
+				"question" : "In which cases is it recommended to use a Generic search?",
+				"answers": [
+					{ "option" : "<i>Find me all products</i>. For example retrieve all the customer whitouth a condition", "correct" : true, "explanation": "It is shorter to retrieve products with a GenericSearch than with a FlexibleSearch when no conditions are being used. <pre class=\"java\">// create a query to find products<br />GenericQuery query = new GenericQuery(ProductModel._TYPECODE);<br />// run the search<br />genericSearchService.search(query).getResult();</pre>"},
+					{ "option" : "In case you want to prevent runtime exception.", "correct" : true, "explanation": ""}, 
+					{ "option" : "When you have a lot of conditions in you query.", "correct" : false, "explanation": "The more conditions you use in your GenericSearch the harder it will be to read/understand the query."} 
+	
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/GenericSearch#GenericSearch-GenericSearch"]
+			}, 
+			{	
+				"uid" : "101007",
+				"category" : "FlexibleSearch",
+				"subcategory" : "GenericSearch",
+				"difficulty" : "",
+				"question" : "Which of the following queries (snippets) will work together with the following java code: <pre class=\"java\">query.addQueryParameter(\"name\", \"softlution\");</pre>",
+				"answers": [
+					{ "option" : "WHERE {p:code} LIKE '$name'", "correct" : false, "explanation": ""},
+					{ "option" : "WHERE {p:code} LIKE $name", "correct" : false, "explanation": ""},
+					{ "option" : "WHERE {p:code} LIKE '&name'", "correct" : false, "explanation": ""},
+					{ "option" : "WHERE {p:code} LIKE &name", "correct" : false, "explanation": ""},
+					{ "option" : "WHERE {p:code} LIKE '?name'", "correct" : false, "explanation": ""}, 
+					{ "option" : "WHERE {p:code} LIKE ?name", "correct" : true, "explanation": ""},
+					{ "option" : "WHERE {p:code} LIKE '%name'", "correct" : false, "explanation": ""},
+					{ "option" : "WHERE {p:code} LIKE '%name'", "correct" : false, "explanation": ""}
+	
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/FlexibleSearch+samples#FlexibleSearchSamples-SELECTStatementsoverSeveralAttributes"]
+			},
+			{	
+				"uid" : "101008",
+				"category" : "FlexibleSearch",
+				"subcategory" : "GenericSearch",
+				"difficulty" : "",
+				"question" : "As you might know, a query will not return rows when the requested localized fields are not filled in the requested language.<br /><br />For example:<br /><pre class=\"sql\">SELECT {p:code}, {p:name[de]}, {p:name[en]} FROM {Product AS p}</pre><br /><br />How can we retrieve the product name in German and English even when one of both is null?",
+				"answers": [
+					{ "option" : "It is not possible.", "correct" : false, "explanation": ""},
+					{ "option" : "The only way is to create 2 seperate queries and to combine the results in the code: <br /><pre class=\"sql\">SELECT {p:code}, {p:name[de]} FROM {Product AS p}</pre><pre class=\"sql\">SELECT {p:code}, {p:name[en]} FROM {Product AS p}</pre>", "correct" : false, "explanation": "This will work, but is not the best solution."},
+					{ "option" : "You can add \":o\" to the query in the proper place. This will result in an outer join.", "correct" : true, "explanation": ""}
+	
+				],
+				"explanation" : "The are \":o\" are used to force the related table to be outer-joined (in case of localized properties the xxxLP table).<br /><br />The correct query is:<br /><br /><pre class=\"sql\">SELECT {p:code}, {p:name[de:o]}, {p:name[en:o]} FROM {Product AS p}</pre>",
+				"references" : ["https://wiki.hybris.com/display/release4/FlexibleSearch+samples#FlexibleSearchSamples-SELECTStatementsoverSeveralLanguages"]
+			},
+			{	
+				"uid" : "101009",
+				"category" : "FlexibleSearch",
+				"subcategory" : "Subselects",
+				"difficulty" : "",
+				"question" : "Which is a valid way of subselects in a query?",
+				"answers": [
+					{ "option" : "<br /><pre class=\"sql\">SELECT * FROM ${type} WHERE<br />   ({<br />      SELECT * <br />         FROM ${other_type} <br />         WHERE ${subselect_search_condition} <br />   }) <br />   </pre>", "correct" : false, "explanation": ""},
+					{ "option" : "<br /><pre class=\"sql\">SELECT * FROM ${type} WHERE<br />   {{<br />      SELECT * <br />         FROM ${other_type} <br />         WHERE ${subselect_search_condition} <br />   }} <br />   </pre>", "correct" : true, "explanation": ""},
+					{ "option" : "<br /><pre class=\"sql\">SELECT * FROM ${type} WHERE<br />   {<br />      SELECT * <br />         FROM ${other_type} <br />         WHERE ${subselect_search_condition} <br />   } <br />   </pre>", "correct" : false, "explanation": ""},
+					{ "option" : "<br /><pre class=\"sql\">SELECT * FROM ${type} WHERE<br />   ((<br />      SELECT * <br />         FROM ${other_type} <br />         WHERE ${subselect_search_condition} <br />   )) <br />   </pre>", "correct" : false, "explanation": ""}
+	
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/FlexibleSearch+samples#FlexibleSearchSamples-Subselects"]
+			},
+			{	
+				"uid" : "101010",
+				"category" : "FlexibleSearch",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which statements about FlexibleSearch are true?",
+				"answers": [
+					{ "option" : "It is not possible to run FlexibleSearch queries on jalo-only attributes", "correct" : true, "explanation": "FlexibleSearch queries are executed on the database directly via SQL statements."},
+					{ "option" : "The number of searchresults depends on certain restrictions. By default, the user account assigned to a session is admin.", "correct" : false, "explanation": "By default the user account assigned to a session is anonymous."}
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/FlexibleSearch#FlexibleSearch-Basics"]
+			},
+			{	
+				"uid" : "101011",
+				"category" : "FlexibleSearch",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Consider the following query: <pre class=\"sql\">SELECT * FROM {Product}<br />WHERE {code} LIKE '%-ABC-__'</pre>",
+				"answers": [
+					{ "option" : "It will result in a runtime exception", "correct" : false, "explanation": ""},
+					{ "option" : "It will return no products.", "correct" : false, "explanation": ""},
+					{ "option" : "It is possible that the products with the following codes are returned : \"<i>-ABC-12</i>\",\"<i>-ABC-AB</i>\",\"<i>12-ABC-12</i>\"", "correct" : true, "explanation": ""},
+					{ "option" : "It will only return products that have a code that ends with \"<i>-ABC-__</i>\"", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/FlexibleSearch#FlexibleSearch-Basics"]
+			},
+			{	
+				"uid" : "101012",
+				"category" : "FlexibleSearch",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which of the following queries can be used to get all products excluding their subtypes like VariantProduct?"f,
+				"answers": [
+					{ "option" : "<pre class=\"sql\">SELECT {code},{pk} FROM {Product}</pre>", "correct" : false, "explanation": ""},
+					{ "option" : "<pre class=\"sql\">SELECT {code},{pk} FROM {Product!}</pre>", "correct" : true, "explanation": ""},
+					{ "option" : "<pre class=\"sql\">SELECT {code},{pk} FROM {Product?}</pre>", "correct" : false, "explanation": ""},
+					{ "option" : "<pre class=\"sql\">SELECT * FROM {Product AS p JOIN ComposedType AS t ON {p.itemtype}={t.PK} }<br />WHERE {t.code} IN ( 'Product')</pre>", "correct" : true, "explanation": "This option is preferable when you want to return more than one itemtype."}
+					
+					],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/FlexibleSearch#FlexibleSearch-SearchingSubtypes"]
+			},
+			{	
+				"uid" : "101013",
+				"category" : "FlexibleSearch",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which 2 of the following queries are identical:",
+				"answers": [
+						{ "option" : "<pre class=\"sql\">SELECT {code},{pk} FROM  {Product} ORDER BY {code} DESC</pre>", "correct" : false, "explanation": ""},
+						{ "option" : "<pre class=\"sql\">SELECT {code},{pk} FROM  {Product} ORDER BY {code} ASC</pre>", "correct" : true, "explanation": ""},
+						{ "option" : "<pre class=\"sql\">SELECT {code},{pk} FROM  {Product} ORDER BY {code}</pre>", "correct" : true, "explanation": ""},
+						{ "option" : "<pre class=\"sql\">SELECT {code},{pk} FROM  {Product} ORDER BY {code}, {name}</pre>", "correct" : false, "explanation": ""}
+	
+					],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/FlexibleSearch#FlexibleSearch-SearchingSubtypes"]
+			},
+			{	
+				"uid" : "101014",
+				"category" : "FlexibleSearch",
+				"subcategory" : "",
+				"difficulty" : "hard",
+				"question" : "Which table will be accessed when the following query is being executed?<pre class=<"sql\">SELECT {description} FROM {Product}</pre>",
+				"answers": [
+						{ "option" : "Table: products", "correct" : false, "explanation": ""},
+						{ "option" : "Table: productslp", "correct" : true, "explanation": ""},
+						{ "option" : "Table: itemtype", "correct" : false, "explanation": ""}
+					
+					],
+				"explanation" : "Because <i>description</i> is a localized attribute, the table <i>productslp</i> will be used. Since no other attributes are requested, the products table is not being joined.<br />This query will be translated into: <pre class=\"sql\">SELECT  lp_t0.p_description   <br />FROM productslp lp_t0<br />   WHERE<br />   (<br />      (lp_t0.LANGPK=?)<br />   )<br />   AND<br />   (lp_t0.ITEMTYPEPK<br />      IN (<br />         23087950835790560 , 23087950835774560 ,<br />         23087950837855968 , 23087950837852464 ,<br />         23087950837859216 , 23087950837848976 ,<br />         23087950837843968 , 23087950835790306 ,<br />         23087950835765569<br />      )<br />   )</pre>"
+				"references" : ["https://wiki.hybris.com/display/release4/FlexibleSearch#FlexibleSearch-PagingofSearchResults"]
+			},
+			{	
+				"uid" : "101015",
+				"category" : "FlexibleSearch",
+				"subcategory" : "SearchRestriction",
+				"difficulty" : "hard",
+				"question" : "Which of the following keywords are related to SearchRestrictions?",
+				"answers": [
+						{ "option" : "Batch", "correct" : false, "explanation": ""},
+						{ "option" : "Enabled", "correct" : false, "explanation": ""},
+						{ "option" : "Visible", "correct" : false, "explanation": "No such thing. Although \"Active\" exists."},
+						{ "option" : "Personalization", "correct" : true, "explanation": ""},
+						{ "option" : "Restricted Type", "correct" : true, "explanation": "The type on which FlexibleSearch queries are to be restricted when executed with the specified principal."}
+					],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/Restrictions+-+Creating+Restrictions+4.0+to+4.2.2"]
+			},
+			{	
+				"uid" : "101016",
+				"category" : "FlexibleSearch",
+				"subcategory" : "SearchRestriction",
+				"difficulty" : "hard",
+				"question" : "How can a SearchRestriction be created.",
+				"answers": [
+						{ "option" : "Via the hybris Management Console", "correct" : true, "explanation": ""},
+						{ "option" : "Via the ImpEx extension", "correct" : true, "explanation": ""},
+						{ "option" : "Via the hybris Multichannel Suite API", "correct" : true, "explanation": ""}
+						],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/Restrictions+-+Creating+Restrictions+4.0+to+4.2.2"]
+			},
+			{	
+				"uid" : "101016",
+				"category" : "FlexibleSearch",
+				"subcategory" : "SearchRestriction",
+				"difficulty" : "hard",
+				"question" : "How can a SearchRestriction be disabled for a user?",
+				"answers": [
+						{ "option" : "Set the restriction to be inactive. (attribute on the restriction)", "correct" : true, "explanation": ""},
+						{ "option" : "If the current user is in the admingroup.", "correct" : true, "explanation": ""},
+						{ "option" : "If the disableRestrictions attribute is set to true.", "correct" : true, "explanation": ""},
+						{ "option" : "Call the method: searchRestrictionSerive.disableSearchRestrictions()", "correct" : true, "explanation": ""}
+						],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/Restrictions+-+Creating+Restrictions+4.0+to+4.2.2"]
+			},
+			{	
+				"uid" : "101017",
+				"category" : "FlexibleSearch",
+				"subcategory" : "SearchRestriction",
+				"difficulty" : "hard",
+				"question" : "Which statements about SearchRestrictions are true?",
+				"answers": [
+						{ "option" : "It limits the search results.", "correct" : true, "explanation": "Basicly it is just an extra condition in the where clause."},
+						{ "option" : "It has the same effect as type access rights.", "correct" : false, "explanation": "Type access rights only affect the HMC. (also vjdbc?, webservices? and cockpits?"},
+						{ "option" : "It is possible to use the parameter \"session\" in every query.", "correct" : true, "explanation": "If nothing has been modified, this paramer is always available and it can used as following: {user} = ?session.user or {country} IN (?session.countries)"}
+						],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/Restrictions+-+Creating+Restrictions+4.0+to+4.2.2"]
+			},
+			{	
+				"uid" : "101018",
+				"category" : "FlexibleSearch",
+				"subcategory" : "SearchRestriction",
+				"difficulty" : "hard",
+				"question" : "How is a date formatted using FlexibleSearch?",
+				"answers": [
+						{ "option" : "to_char({date},'mm/yyyy\")', "correct" : true, "explanation": "Valid for Oracle databases."},
+						{ "option" : "DATE_FORMAT({date},'%M/%Y')", "correct" : true, "explanation": "Valid for MySQL databases."},
+						{ "option" : "{DATE_FORMAT(date, '%M/%Y')}", "correct" : false, "explanation": ""}
+						],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/FlexibleSearch+Tips+and+Tricks#FlexibleSearchTipsandTricks-DateFormatting"]
+			},
+			{	
+				"uid" : "101019",
+				"category" : "FlexibleSearch",
+				"subcategory" : "SearchRestriction",
+				"difficulty" : "hard",
+				"question" : "Which boolean values are advised to be used in queries?",
+				"answers": [
+						{ "option" : ""true" and "false"", "correct" : false, "explanation": "Not all databases recognize true and false."},
+						{ "option" : ""0" and "1"", "correct" : true, "explanation": ""},
+						{ "option" : ""T" and "F"", "correct" : false, "explanation": ""}
+						],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/FlexibleSearch+Tips+and+Tricks#FlexibleSearchTipsandTricks-BooleanParametersinQueries"]
+			}
+		]}	

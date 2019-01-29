@@ -1,0 +1,214 @@
+{"questions": [
+			{	
+				"uid" : "104001",
+				"category" : "Task engine",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which statement about the taskengine is true?",
+				
+				
+				"answers": [
+					{ "option" : "Both the CronJob extension and the Task extension are able to process scheduled actions on any hybris platform cluster node which is available.", "correct" : false, "explanation": "Cronjobs are not cluster aware."},
+					{ "option" : "The taskengine can be seen as a lightweight scheduling framework.", "correct" : true, "explanation": ""},
+					{ "option" : "The taskengine provides more functionality than the Cronjob extension.", "correct" : false, "explanation": "Compared to the well known CronJob extension the Task extension should be understood as a more light weight scheduling framework offering only a minimal set of functionality but greatly reducing the complexity of implementing actions."}
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/task+Extension+-+Technical+Guide"]
+			},
+			{	
+				"uid" : "104002",
+				"category" : "Task engine",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "How can a Task be scheduled?",
+				"answers": [
+					{ "option" : "Time based.", "correct" : true, "explanation": "The task item holds the execution time at which the action bean, which is also held, is triggered"},
+					{ "option" : "Event based.", "correct" : true, "explanation": "Here the task holds at least one task condition item to specify the events required to be fulfilled before triggering the action"},
+					{ "option" : "Manually triggered in the HMC.", "correct" : false, "explanation": ""},
+					{ "option" : "", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/task+Extension+-+Technical+Guide"]
+			},
+			{	
+				"uid" : "104003",
+				"category" : "Task engine",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which statements about the taskengine are true?",
+				"answers": [
+				
+					{ "option" : "If a single node in the cluster crashes, the overall processing will still keep working.", "correct" : true, "explanation": "The task item holds the execution time at which the action bean, which is also held, is triggered"},
+					{ "option" : "It is possible to define on which cluster node a specic task should be executed or to exclude certain nodes.", "correct" : true, "explanation": "Currently it is not well implemented by Hybris. It can be done for all processes using the property: task.excluded.cluster.ids<br />https://jira.hybris.com/browse/PLA-12948"},
+					{ "option" : "By default all hybris clusternodes automatically start processing due actions", "correct" : true, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/task+Extension+-+Technical+Guide"]
+			},
+			{	
+				"uid" : "104004",
+				"category" : "Task engine",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which statements about the taskengine are true?",
+				"answers": [
+				
+					{ "option" : "If a single node in the cluster crashes, the overall processing will still keep working.", "correct" : true, "explanation": "The task item holds the execution time at which the action bean, which is also held, is triggered"},
+					{ "option" : "It is possible to define on which cluster node a specic task should be executed or to exclude certain nodes.", "correct" : true, "explanation": ""},
+					{ "option" : "By default all hybris clusternodes automatically start processing due actions", "correct" : true, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/task+Extension+-+Technical+Guide"]
+			},
+			{	
+				"uid" : "104004",
+				"category" : "Task engine",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which items are provided by the task extension?",
+				"answers": [
+				
+					{ "option" : "Task", "correct" : true, "explanation": ""},
+					{ "option" : "TaskCondition", "correct" : true, "explanation": ""},
+					{ "option" : "TaskEngine", "correct" : false, "explanation": "This is an interface with the following methods: isRunning(), star(), stop(), repoll(), triggerRepoll(Integer)"},
+					{ "option" : "TaskService", "correct" : false, "explanation": "This is an interface with the following methods: scheduleTask(TaskModel), triggerEvent(String), getEngine()"}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/task+Extension+-+Technical+Guide"]
+			},
+			{	
+				"uid" : "104005",
+				"category" : "Task engine",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "What do you have to do to create an action?",
+				"answers": [
+				
+					{ "option" : "You schould create a spring bean. For example:<pre class=\"xml\">&lt;bean id=\"MyRunner\" class=\"MyTaskRunner\" scope=\"tenant\"&gt;<br />&lt;property .../&gt;<br />&lt;/bean&gt;</pre>", "correct" : true, "explanation": ""},
+					{ "option" : "You schoule create a class that implements TaskEngine.", "correct" : false, "explanation": "The bean/class should implement the interface: TaskRunner<TaskModel> (with the methods run(...){} and handleError(...){})"},
+					{ "option" : "You should create a new item that extends from \"Task\" in the items.xml.", "correct" : false, "explanation": "In order to create an action only a spring bean should be created, not a new item."}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/task+Extension+-+Technical+Guide"]
+			},
+			{	
+				"uid" : "104006",
+				"category" : "Task engine",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "How do you schedule a time based actions?",
+				"answers": [
+				
+					{ "option" : "The java code below schedule a action and schedule it to start now:<pre class=\"java\">ModelService modeService = ...<br />TaskService taskService = ...<br /> <br />// create model<br />TaskModel task = modelService.create(TaskModel.class);<br /> <br />// configure it<br />task.setRunnerBean(\"MyRunner\"); // the action bean name<br />task.setExecutionTime( new Date() );  // the execution time - here asap<br /></pre>", "correct" : false, "explanation": "The above code is valid but it misses the trigger to schedule the action:<pre class=\"java\">// schedule<br />taskService.scheduleTask(task);</pre>"},
+					{ "option" : "It is possible to create a new task using impex.", "correct" : true, "explanation": "It is possible to create a new task using impex. However it will not be triggere automatically."}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/task+Extension+-+Technical+Guide"]
+			},
+			{	
+				"uid" : "104007",
+				"category" : "Task engine",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "How do you schedule a event based actions?",
+				"answers": [
+				
+					{ "option" : "Event based options are created in the same way as time based actions.", "correct" : true, "explanation": ""},
+					{ "option" : "Unlike time based actions you can not use impex to import the Task and TaskCondition.", "correct" : false, "explanation": "This is possible see the example below: <pre>INSERT_UPDATE Task;runnerBean[unique=true]<br />;myRunner<br /> <br />INSERT_UPDATE TaskCondition;uniqueID[unique=true];task(runnerBean)<br />;myEventArrived;myRunner<br /></pre>"},
+					{ "option" : "The action should be scheduled by calling the following method: taskService.scheduleTask(task);", "correct" : true, "explanation": ""},
+					{ "option" : "You need to fetch the TaskCondition model to trigger an event.", "correct" : false, "explanation": "You do not need to fetch any item: <pre class=\"java\">TaskService taskService = ...<br /> <br />// trigger the event<br />taskService.triggerEvent( \"MyEventArrived\" );</pre>"}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/task+Extension+-+Technical+Guide"]
+			},
+			{	
+				"uid" : "104008",
+				"category" : "Task engine",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which statements are true?",
+				"answers": [
+				
+					{ "option" : "A Task can have an expirationDate, a Taskcondition can not have an expirationDate.", "correct" : false, "explanation": "Both the items Task and TaskCondition can have an expiration date."},
+					{ "option" : "It is possible to pass an object to the task that will be serialized and stored in the database.", "correct" : true, "explanation": "This is done using the context, for example: <br /><br />At scheduling time: <br />task.setContext( new MyContext(...) );<br /><br />At runtime:<br />UserModel requiredUser = ...</br>task.setContextItem( requiredUser );<br /><br />In the run method of the action:<br />UserModel user = (UserModel)task.getContextItem();"},
+					{ "option" : "A task will remain in the database untill it has been cleaned up manually or by a cronjob.", "correct" : false, "explanation": "Once an action has been performed either successfully or even abnormally the backing task item is removed from the database."},
+					{ "option" : "It might be a good idea to extend the Task item model to store context data.", "correct" : true, "explanation": "However you can use getContextItem on the task, it might be interesting to extend the Task item with your own attributes because this is type safe."}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/task+Extension+-+Technical+Guide"]
+			},
+			{	
+				"uid" : "104009",
+				"category" : "Task engine",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "What should we do when the action couldn't be completed, for example because a webservice was down?",
+				"answers": [
+				
+					{ "option" : "You should create a new task for the action since the task will be removed from the database", "correct" : false, "explanation": ""},
+					{ "option" : "You should throw the proper exception and configure a delay on the exception", "correct" : true, "explanation":   " <pre class=\"java\"> if ( task.getRetry().intValue() <= MAX_RETRIES ) {<br />        RetryLaterException ex = new RetryLaterException(\"cannot perform\");<br />        ex.setDelay(24 * 60 * 60 * 1000 ); // delay for 24h<br />        throw ex;<br />     } else {<br />        throw new IllegalStateException(\"finally cannot perform after \"+task.getRetry()+\" retries\");<br />     }</pre>"}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/task+Extension+-+Technical+Guide"]
+			},
+			{	
+				"uid" : "104010",
+				"category" : "Task engine",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which of the following exceptions will be throw (after restarting the node) when a task couldn't be finished due to a system failure?",
+				"answers": [
+				
+					{ "option" : "TaskTimeoutException ", "correct" : false, "explanation": "This exception will be thrown when ExpirationDate has passed."},
+					{ "option" : "InvalidTaskStateError ", "correct" : true, "explanation":  ""},
+					{ "option" : "RetryLaterException  ", "correct" : false, "explanation":  ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/task+Extension+-+Technical+Guide"]
+			},
+			{	
+				"uid" : "104011",
+				"category" : "Task engine",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "What will happen when we trigger an non existing event (uniqueId)?",
+				"answers": [
+				
+					{ "option" : "An exception will be thrown.", "correct" : false, "explanation": ""},
+					{ "option" : "Nothing will happen. ", "correct" : false, "explanation":  ""},
+					{ "option" : "The event will be stored for an unlimited time and consumed immediatly when a task is scheduled with the uniqueId", "correct" : true, "explanation":  ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/task+Extension+-+Technical+Guide"]
+			},
+			
+
+			
+			
+			
+			{	
+				"uid" : "104002",
+				"category" : "Update System",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which statements concernign dynamic attributes are true.",
+				"answers": [
+					{ "option" : "It is possible to execute an update running system from the command line", "correct" : true, "explanation": "ant updatesystem -Dtenant=master"}
+					
+					
+					],
+				"explanation" : "",
+				"references" : ["https://wiki.hybris.com/display/release4/Dynamic+Attributes#DynamicAttributes-OverviewofDynamicAttributes"]
+			}
+]}

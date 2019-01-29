@@ -1,0 +1,1140 @@
+
+{
+"questions": [		
+	
+			{	
+				"uid" : "6020001",
+				"category" : "commerce_accelerator",
+				"subcategory" : "rule_engine",
+				"difficulty" : "",
+				"question" : "Statements",
+				"answers": [
+					{ "option" : "Hybris 6.7 uses Drools version 7.0 as rule engine", "correct" : true, "explanation": ""},
+					{ "option" : "The rule engine is used by the Promotion Engine of Hybris", "correct" : true, "explanation": ""},
+					{ "option" : "You can use the rule engine also for OMS.", "correct" : true, "explanation": "You can use it for Bundle rules, Order Management Services Warehouse and Sourcing rules, and OCM rules"},
+					{ "option" : "Only the latest rule is stored in Hybris", "correct" : false, "explanation": "Rule Engine includes a versioning and archiving of rules mechanism, which ensures all changes made to the DroolsRule Model are being reported."}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/e30ec2e429e84d22b9045b84c366ab76.html"]
+			},	
+			{	
+				"uid" : "6020002",
+				"category" : "commerce_accelerator",
+				"subcategory" : "rule_engine",
+				"difficulty" : "",
+				"question" : "Statements",
+				"answers": [
+					{ "option" : "In the promotin engine you can only deploy 1 rule module at the same time.", "correct" : false, "explanation": ""},
+					{ "option" : "It is not possible to preview rules", "correct" : false, "explanation": "Multiple Rule Module Support with enhanced workflow is supported. With thisRule module functionality has been enhanced to provide preview and staging as well as administration of Rule Modules. With the new multi modules functionality a retailer can review their rules or promotions in one environment and when satisfied with the results deploy to the storefront environment."},
+					{ "option" : "None of above", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/7c89c53f9367426dac048eaff83e6337.html", "https://help.hybris.com/6.7.0/hcd/e30ec2e429e84d22b9045b84c366ab76.html"]
+			},
+			{	
+				"uid" : "6020003",
+				"category" : "commerce_accelerator",
+				"subcategory" : "rule_engine",
+				"difficulty" : "",
+				"question" : "Which of the following extensions are part of the Rule engine?",
+				"answers": [
+					{ "option" : "droolsruleengine & droolsruleengineservices", "correct" : false, "explanation": "droolsruleengine does not exist."},
+					{ "option" : "ordercalculation", "correct" : true, "explanation": ""},
+					{ "option" : "rulebuilderbackoffice", "correct" : true, "explanation": ""},
+					{ "option" : "ruledefinitions & ruledefinitionsbackoffice ", "correct" : false, "explanation": "ruledefinitionsbackoffice does not exist"},
+					{ "option" : "ruleengine & ruleenginebackoffice", "correct" : true, "explanation": ""},
+					{ "option" : "ruleengineservices", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/c3266e47c52d4a20aa414fff1c389a13.html"]
+			},
+			{	
+				"uid" : "6020004",
+				"category" : "commerce_accelerator",
+				"subcategory" : "rule_engine",
+				"difficulty" : "",
+				"question" : "What is KIE Module and what is true about them?",
+				"answers": [
+					{ "option" : "It is a \"Knowledge is everything\" module", "correct" : true, "explanation": ""},
+					{ "option" : "It is something that contains knowledge definitions. Like promotion definitions.", "correct" : true, "explanation": ""},
+					{ "option" : "When the Storefront and the backend module are swapped, there will be a moment that there will be no active module.", "correct" : false, "explanation": "At some point, both the KIE module and the cloned module run in parallel.  Once the modification is finished, the system automatically exchanges the original KIE module for the cloned module with the changes you made."},
+					{ "option" : "The event RuleEngineModuleSwapEvent is published when modules have been swapped", "correct" : false, "explanation": "RuleEngineModuleSwapCompletedEvent"}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8e10878a9d8045b5bd0ccb853dfd9d3a.html"]
+			},
+			{	
+				"uid" : "6020005",
+				"category" : "commerce_accelerator",
+				"subcategory" : "rule_engine",
+				"difficulty" : "",
+				"question" : "Versioning of Source Rules",
+				"answers": [
+					{ "option" : "Each Source Rule is versioned starting with version 1.", "correct" : false, "explanation": "Each Source Rule is versioned starting with version 0."},
+					{ "option" : "When you modify a frozen (or published) version of the Source Rule, the Rule Engine creates an increment version.", "correct" : true, "explanation": ""},
+					{ "option" : "You can not modify a rule with status PUBLISHED", "correct" : false, "explanation": "When the rule has the PUBLISHED status, you can still modify this rule, but when you save the changes, a new version (an increment) is created."},
+					{ "option" : "You can not modify a rule with status PUBLISHED if there is also an UNPUBLISHED version of the same promotion", "correct" : true, "explanation": "When one of the rule versions has the UNPUBLISHED status, only that version can be modified. An attempt to modify any other version, including those versions with the PUBLISHED status, results in an error."}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/0bb55834dd794adda1080b652ccda134.html"]
+			},
+			{	
+				"uid" : "6021001",
+				"category" : "commerce_accelerator",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which functionalities are part of the basecommerce extension?",
+				"answers": [
+					{ "option" : "Order Splitting", "correct" : true, "explanation": ""},
+					{ "option" : "Store Locator Implementation", "correct" : true, "explanation": ""},
+					{ "option" : "Warehouse Integration", "correct" : true, "explanation": ""},
+					{ "option" : "Stock Service", "correct" : true, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+					
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8b6b014e86691014b35ce6b0469491d5.html"]
+			},
+			{	
+				"uid" : "6021002",
+				"category" : "commerce_accelerator",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Statements about deeplinks.",
+				"answers": [
+					{ "option" : "A deeplink template follows the velocity standards", "correct" : true, "explanation": "DeeplinkUrlRuleModel.destUrlTemplate"},
+					{ "option" : "DeeplinkUrlRuleModel.baseUrlPattern should match the base url/domain", "correct" : true, "explanation": ""},
+					{ "option" : "Deep link URL Servlet can only work with redirects.", "correct" : false, "explanation": "DeeplinkUrlRuleModel.useForward"},
+					{ "option" : "/mobile/product/$ctx.contextObject.code?campaign=$ctx.deeplinkUrl.code&catalog=$ctx.contextObject.catalogVersion.catalog.id&version=$ctx.contextObject.catalogVersion.version is a valid example of a baseUrlPattern", "correct" : false, "explanation": "destUrlTemplate"},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+					
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8ba9c697866910149aa9ec40e3834440.html"]
+			},
+			
+			{	
+				"uid" : "6021003",
+				"category" : "commerce_accelerator",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Statements about fraud detection.",
+				"answers": [
+					{ "option" : "The standard fraud detection relies on third party services", "correct" : false, "explanation": "The fraud functionality contains a standard fraud detection service which does not rely on third party service providers. Therefore it has to be seen as a first level checking facility at no additional cost but which is also unlikely to reach the accuracy of third party services. "},
+					{ "option" : "A custom third party fraud detection should implement FraudServiceProvider", "correct" : true, "explanation": ""},
+					{ "option" : "The item ProductOrderLimit can hold a config to determine a max amount of orders in a given time. For example > 3 orders per week triggers fraud dections", "correct" : false, "explanation": "It is related to a single product"},
+					{ "option" : "The WhiteListSymptom will increase the score with 500", "correct" : false, "explanation": "The whitlist will decrease the score with 500!"},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+					
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bc3f6f0866910149c509feeb6a460d3.html"]
+			},
+			{	
+				"uid" : "6021004",
+				"category" : "commerce_accelerator",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which of the following fraud detection symptons is a real implementation to validate that the email address is whitelisted.",
+				"answers": [
+					{ "option" : "BlackListSymptom", "correct" : false, "explanation": ""},
+					{ "option" : "WhiteListSymptom", "correct" : false, "explanation": "Mockup - based on a static email/userId list."},
+					{ "option" : "FirstTimeOrderSymptom", "correct" : false, "explanation": "Checks if user is a first timer."},
+					{ "option" : "DifferentAddressesSymptom", "correct" : false, "explanation": "Mockup - checks if address rules apply."},
+					{ "option" : "OrderThresholdSymptom", "correct" : false, "explanation": "Mockup - checks if a order value threshold was reached."},
+					{ "option" : "OrderEntriesSymptom", "correct" : false, "explanation": "Mockup - checks if product order limit apply (in the mockup:maxNumberPerOrder only). "},
+					{ "option" : "None of above", "correct" : true, "explanation": "All the symptons are sample/mock implementations."}
+					
+					
+				],
+				"explanation" : "whiteListSymptom => hardcoded list of email addresses",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bc3f6f0866910149c509feeb6a460d3.html"]
+			},
+			{	
+				"uid" : "6021005",
+				"category" : "commerce_accelerator",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Statements about orderhistory.",
+				"answers": [
+					{ "option" : "The OrderHistoryService.createHistorySnapshot(OrderModel) will create a copy of the orderModel", "correct" : true, "explanation": "The provided item type OrderHistoryEntry is intended to store historical information about each order processing action. It does not create a new version of the original order. Such entries belong to the original order and will be removed in case the original order is removed. "},
+					{ "option" : "If an order is removed all history date is removed as well.", "correct" : true, "explanation": ""},
+					{ "option" : "A snapshot order will have a different order code", "correct" : false, "explanation": "The attribute versionID is used"},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c20364786691014b8bbfa59fcc46504.html"]
+			},
+			{	
+				"uid" : "6021006",
+				"category" : "commerce_accelerator",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Statements about replenishment.",
+				"answers": [
+					{ "option" : "The createOrderFromCartCronJob runs on a dayly or hourly basis for all customers", "correct" : false, "explanation": "The service ScheduleOrderService creates an instance of this job when an order and schedules when it should be executed."},
+					{ "option" : "A customer can schedule a weekly order", "correct" : true, "explanation": ""},
+					{ "option" : "It is part of the basecommerce extension", "correct" : true, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c6da57a8669101486b0c9e902c307e4.html"]
+			},
+			{	
+				"uid" : "6021007",
+				"category" : "commerce_accelerator",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Statements about store locator.",
+				"answers": [
+					{ "option" : "The OpeningSchedule contains the opening and closing days of a point of service.", "correct" : true, "explanation": ""},
+					{ "option" : "GeoWebServiceWrapper hides all the communication to the third party geocoding services, for example Google Maps.", "correct" : true, "explanation": ""},
+					{ "option" : "The GeoWebServiceWrapper service interfaces use: GPS and DistanceAndRoute", "correct" : false, "explanation": "They return GPS and DistanceAndRoute. DistanceAndRoute getDistanceAndRoute(final GPS start, final Location dest) throws GeoServiceWrapperException;"},
+					{ "option" : "Google does not allow you to cache known locations", "correct" : false, "explanation": "you are permitted to \"cache\" known locations (such as store locations), as long as you do not store them for more than 30 days."},
+					{ "option" : "The basecommerce extension is delivered with a GoogleMaps implementation for the storelocator out-of-the box. ", "correct" : false, "explanation": "a mock implementation out-of-the box. This implementation does not trigger any external webservice call; instead, it returns pre-defined geolocations. These geolocations are unique for each country. For example, a geolocation in the United States will always return 40.7127, 74.0059, or in Germany, 52.514524, 13.35029. If no country can be found on the submitted address, or if the geocode is not configured for the submitted country, then a default geolocation is returned. "},
+					{ "option" : "The basecommerce extension come with a RouteService that can get the route and distance information between two points on the map. ", "correct" : true, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c64c8fa86691014b0b5847235dd5a02.html"]
+			},
+			{	
+				"uid" : "6021008",
+				"category" : "commerce_accelerator",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which service can give a location for an address?",
+				"answers": [
+					{ "option" : "LocationService ", "correct" : true, "explanation": ""},
+					{ "option" : "MapService ", "correct" : false, "explanation": ""},
+					{ "option" : "RouteService ", "correct" : false, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c7bd16f86691014b705b0ce26c260e8.html"]
+			},
+			{	
+				"uid" : "6021009",
+				"category" : "commerce_accelerator",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Statements about OCI.",
+				"answers": [
+					{ "option" : "It stands for Open Commerce Interface ", "correct" : false, "explanation": "Open Catalog Interface"},
+					{ "option" : "It enables you to create a connection from a SAP server to a web shop running SAP Commerce.  ", "correct" : true, "explanation": ""},
+					{ "option" : "It is an alternative for OCC ", "correct" : false, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c19517b866910149ac6d079b51626ee.html"]
+			},
+			{	
+				"uid" : "6021010",
+				"category" : "commerce_accelerator",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Statements .",
+				"answers": [
+					{ "option" : "The default merging strategy will empty the original cart", "correct" : true, "explanation": " CommerceAddToCartStrategy "},
+					{ "option" : "The default merging strategy will ignore the old cart.", "correct" : false, "explanation": ""},
+					{ "option" : "The default merging strategy will check stock", "correct" : true, "explanation": ""},
+					{ "option" : "None", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8b85a20586691014bacda05068f9c842.html"]
+			},
+			{	
+				"uid" : "6021011",
+				"category" : "commerce_accelerator",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which of the following can be used to index the name of a product in solr.",
+				"answers": [
+					{ "option" : "ProductAttributesValueResolver", "correct" : true, "explanation": ""},
+					{ "option" : "ProductClassificationAttributesValueResolver", "correct" : false, "explanation": ""},
+					{ "option" : "ProductImagesValueResolver", "correct" : false, "explanation": ""},
+					{ "option" : "ProductKeywordsValueResolver", "correct" : false, "explanation": ""},
+					{ "option" : "ProductPricesValueResolver", "correct" : false, "explanation": ""},
+					{ "option" : "ProductUrlsValueResolver", "correct" : false, "explanation": ""},
+					{ "option" : "ProductPromotionAttributesValueResolver", "correct" : false, "explanation": ""},
+					{ "option" : "None", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "The value resolvers are a more efficient replacement for the current value providers. ",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c7e13708669101482d580415fc88c6b.html"]
+			},
+			{	
+				"uid" : "6021012",
+				"category" : "commerce_accelerator",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Statements about the SAP Commerce Business Event extensions.",
+				"answers": [
+					{ "option" : "It contains logic for business processes.", "correct" : false, "explanation": ""},
+					{ "option" : "It usually works together with ActiveMQ and SAP Event Processor", "correct" : true, "explanation": ""},
+					{ "option" : "It is used to capture events like Product View, Add To Cart, Page View, ...", "correct" : true, "explanation": ""},
+					{ "option" : "It requires the hybrisAnalytics Addon", "correct" : true, "explanation": ""},
+					{ "option" : "The Piwie library is used to send asynchronous JavaScript events to the eventtrackingws AddOn. ", "correct" : false, "explanation": "Piwik library is used"},
+					{ "option" : "None", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8be7c5c48669101485bce9e74bda1fd5.html"]
+			},
+			{	
+				"uid" : "6021013",
+				"category" : "commerce_accelerator",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Statements about OCC",
+				"answers": [
+					{ "option" : "OCC stands for Omni Channel Commerce", "correct" : false, "explanation": "Omni Commerce Connect"},
+					{ "option" : "It is based on SOAP", "correct" : false, "explanation": "REST and the url is /rest"},
+					{ "option" : "OCC supports only XML", "correct" : false, "explanation": "JSON and XML"},
+					{ "option" : "By default OAuth 2.0 is used for authentication", "correct" : true, "explanation": ""},
+					{ "option" : "The commercewebservicescommons extension is the only extension in the OCC module that is not a template.", "correct" : true, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": "This extension contains web services cache control, data mapping, errors definitions and some other elements that do not fit into template extensions. "}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/002325de1d424e39b799f8acf1322f27.html"]
+			},
+			{	
+				"uid" : "6021014",
+				"category" : "commerce_accelerator",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "When using basic authentication on the roles ROLE_CLIENT or ROLE_TRUSTED_CLIENT should be assigned to the user.",
+				"answers": [
+					{ "option" : "Correct", "correct" : false, "explanation": ""},
+					{ "option" : "Incorrect", "correct" : true, "explanation": "Correct when using OAuth"}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c91f3a486691014b085fb11c44412ff.html"]
+			},
+			{	
+				"uid" : "6021015",
+				"category" : "commerce_accelerator",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Statements",
+				"answers": [
+					{ "option" : "OCC v1 and v2 are both stateless", "correct" : false, "explanation": ""},
+					{ "option" : "OCC v1 and v2 can both support XML", "correct" : true, "explanation": ""},
+					{ "option" : "OCC v1 and v2 use the same servlet", "correct" : false, "explanation": ""},
+					{ "option" : "OCC v1 and v2 use a different webcontext", "correct" : true, "explanation": ""},
+					{ "option" : "OCC v1 and v2 will have different media url's", "correct" : true, "explanation": ""},
+					{ "option" : "Incorrect", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c7cc31e866910148d97b208e1028e1a.html", "https://help.hybris.com/6.7.0/hcd/9c588acf1618437a811466c0f59cae02.html"]
+			},
+			{	
+				"uid" : "6021016",
+				"category" : "commerce_accelerator",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which of the following are valid url's for OCC v2",
+				"answers": [
+					{ "option" : "/{site}/customers", "correct" : false, "explanation": ""},
+					{ "option" : "/{site}/users/{userId}", "correct" : true, "explanation": ""},
+					{ "option" : "/{site}/users/{userId}/customergroups", "correct" : true, "explanation": ""},
+					{ "option" : "/{site}/users/{userId}/carts/{cartId}/deliverymodes", "correct" : true, "explanation": ""},
+					{ "option" : "/{site}/users/current/location", "correct" : false, "explanation": ""},
+					{ "option" : "/{site}/catalogs", "correct" : true, "explanation": ""},
+					{ "option" : "/{site}/orders/{code}", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c10b6f78669101492b5da52a09dbadf.html"]
+			},
+			{	
+				"uid" : "6021017",
+				"category" : "commerce_accelerator",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Statements concerning OCC",
+				"answers": [
+					{ "option" : "It is possible to map an attribute withouth any code change.", "correct" : true, "explanation": "In case you only need to map one single field to another with a different name you can use de.hybris.platform.webservicescommons.mapping.config.FieldMapper class or the fieldMapper abstract bean. To learn how, see the configuration in the dto-mappings-v2-spring.xml "},
+					{ "option" : "It is possible to define individual fields that should be returned.", "correct" : false, "explanation": "See: BASIC, FULL, DEFAULT"},
+					{ "option" : "WsDTO is data layer used by version 2 of the REST API in OCC.", "correct" : true, "explanation": ""},
+					{ "option" : "All WsDTO extend from AbstractWsDTO", "correct" : false, "explanation": "They do not extend anything."},
+					{ "option" : "OCC comes with unittest written in Groovy", "correct" : true, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c404c5886691014a48c88f4a49f9bf3.html", "https://help.hybris.com/6.7.0/hcd/8c921d1d86691014974694521521b7e6.html"]
+			},
+			{	
+				"uid" : "6021018",
+				"category" : "commerce_accelerator",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Statements",
+				"answers": [
+					{ "option" : "The yoccaddon extension template is a predefined extension that serves as a starting point for creating a new AddOn for Commerce Web Services. ", "correct" : true, "explanation": ""},
+					{ "option" : "The AddOn can not also extend the configuration for ehcache used in Commerce Web Services.", "correct" : false, "explanation": "The AddOn can also extend the configuration for ehcache used in Commerce Web Services."},
+					{ "option" : "The acceleratorwebservicesaddon AddOn extends the Omni Commerce Connect (OCC) API. ", "correct" : true, "explanation": ""},
+					{ "option" : "The cmsoccaddon AddOn allows you to query CMS page and component data using the OCC CMS REST API.", "correct" : true, "explanation": "The cmsoccaddon AddOn allows you to query CMS page and component data using the OCC CMS REST API. While SmartEdit provides an extensive amount of CMS REST API functionality with a focus on CMS management, the cmsoccaddon AddOn is meant purely for storefront consumption. "},
+					{ "option" : "None of above.", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c94a3bb8669101487ccb1f54d7ec5da.html", "https://help.hybris.com/6.7.0/hcd/d7fc343d6762433181e9e8af52a4c27a.html"]
+			},
+			{	
+				"uid" : "6021019",
+				"category" : "commerce_accelerator",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Statements",
+				"answers": [
+					{ "option" : "You need the template ycommercewebservices to customize the Commerce Web Services", "correct" : true, "explanation": ""},
+					{ "option" : "In order to integrate with AEM, you should use the addon aemoccaddon", "correct" : false, "explanation": ""},
+					{ "option" : "None of above.", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c18f1fd866910149377be41690122cc.html"]
+			},
+			{	
+				"uid" : "6021020",
+				"category" : "commerce_accelerator",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "What should you do if you want to add an extra attribute to a product and make it available via OCC v2?",
+				"answers": [
+				
+					{ "option" : "Create an addon with the template occaddon.", "correct" : true, "explanation": "yoccaddon"},
+					{ "option" : "Update the items.xml", "correct" : true, "explanation": ""},
+					{ "option" : "Update the [addonname]-beans.xml.", "correct" : true, "explanation": ""},
+					{ "option" : "Update the [addonname]-web-spring.xml", "correct" : true, "explanation": "fieldSetLevelMapping -> levelMapping -> ..."},
+					{ "option" : "Update the buildcallback.xml", "correct" : false, "explanation": ""},
+					{ "option" : "None of above.", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "In an AddOn for Commerce Web Services, there is also the possibility to override the existing calls. The only difference between extending and overriding the REST API is using the @RequestMappingOverride annotation. ",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c18f1fd866910149377be41690122cc.html"]
+			},
+			
+			{	
+				"uid" : "6021021",
+				"category" : "commerce_accelerator",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "The OCC depends on modules in the Web Services Commons Module.",
+				"answers": [
+					{ "option" : "Correct", "correct" : true, "explanation": ""},
+					{ "option" : "Incorrect", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/9a2e83823cb94add942d9fccc957d91b.html"]
+			},
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			{	
+				"uid" : "60220001",
+				"category" : "commerce_accelerator",
+				"subcategory" : "yforms",
+				"difficulty" : "",
+				"question" : "Statements about yforms",
+				"answers": [
+					{ "option" : "Web forms can be added to the storefront to guide customers through the purchase process. ", "correct" : true, "explanation": ""},
+					{ "option" : "yForms is a flexible and powerful third party web forms solution that integrated with SAP Commerce. ", "correct" : false, "explanation": "yForms is a flexible and powerful web forms solution that is tightly integrated with SAP Commerce. The module is built with the integration of Orbeon Forms Professional Edition and only works after you have successfully installed the Orbeon module on your machine."},
+					{ "option" : "It is intented for the selling of complex products and services.", "correct" : true, "explanation": ""},
+					{ "option" : "It is based on the W3C XForms standard and enables business users to create and manage large forms with complex validation and dependencies.", "correct" : true, "explanation": ""},
+					{ "option" : "The web-based Form Builder is completely integrated into the Backoffice", "correct" : true, "explanation": ""},
+					{ "option" : "Optional attachments, such as images, PDF files, and other file attachments, uploaded to the yForms are supported. ", "correct" : false, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c93448b866910148cd286c09ddd0a4c.html"]
+			},
+			{	
+				"uid" : "60220002",
+				"category" : "commerce_accelerator",
+				"subcategory" : "yforms",
+				"difficulty" : "",
+				"question" : "Statements about yforms",
+				"answers": [
+					{ "option" : "The yForms module uses the xyformsservices to provide the logic that supports the Data Retention Framework implemented in the Data Retention Framework", "correct" : true, "explanation": ""},
+					{ "option" : "The orbeonweb extension is deprecated", "correct" : false, "explanation": "Is is part of the yform module"},
+					{ "option" : "The orbeonweb depends on xyformsservices and acceleratorservices.", "correct" : true, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/4b39892e2a7347dd965868ddcc7fccea.html"]
+			},
+			{	
+				"uid" : "60220003",
+				"category" : "commerce_accelerator",
+				"subcategory" : "subscriptions",
+				"difficulty" : "",
+				"question" : "Statements about subscriptions.",
+				"answers": [
+					{ "option" : "A good example of an entitlement is: A subscription to Telenet Sports as addition to your digital TV subscription", "correct" : false, "explanation": "Entitlements are options that can be included in a product at no additional costs. These represent privileges that can be granted to a customer along with a purchased product. For example, it can be a permission to read a digital magazine on a tablet. "},
+					{ "option" : "A good example of an entitlement is: A permission to read a digital magazine on a tablet. ", "correct" : true, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bbac03386691014831dfa12ce60a5c9.html"]
+			},
+			{	
+				"uid" : "60220004",
+				"category" : "commerce_accelerator",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "Which of the following are CIS?",
+				"answers": [
+				
+					{ "option" : "Address Verification Service", "correct" : true, "explanation": ""},
+					{ "option" : "Shipping Service", "correct" : true, "explanation": ""},
+					{ "option" : "Localization Service ", "correct" : false, "explanation": ""},
+					{ "option" : "Tax Service", "correct" : true, "explanation": ""},
+					{ "option" : "Fraud Verification Service", "correct" : true, "explanation": ""},
+					{ "option" : "Warehouse Service", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "CIS = Commerce Infrastructure Services<br />For each service type, SAP Commerce provides a Maven archetype that can be used to generate the skeleton code for a custom service implementation. This custom service implementation can provide the entire service from scratch or it can delegate to a third-party service provider. ",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8b81f71a86691014b675f5d2cc32d762.html"]
+			},
+			{	
+				"uid" : "60220005",
+				"category" : "commerce_accelerator",
+				"subcategory" : "",
+				"difficulty" : "",
+				"question" : "What should you do to enable CIS?",
+				"answers": [
+				
+					{ "option" : "Add the extension cis to you localetextension.", "correct" : false, "explanation": "Extension cisclient"},
+					{ "option" : "You should add an addon for intregration with the accelerator", "correct" : true, "explanation": ""},
+					{ "option" : "You need Core+ to enable CIS", "correct" : false, "explanation": "Starting with the 6.3 release, you can use the cisclient extensions to interact with CIS services deployed on a CIS server without using the Core+ framework. This allows you to connect to any service which follows the CIS principles. "},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8b81f71a86691014b675f5d2cc32d762.html"]
+			},
+			
+			
+			
+			
+			
+			{	
+				"uid" : "60230001",
+				"category" : "commerce_accelerator",
+				"subcategory" : "rule_engine",
+				"difficulty" : "",
+				"question" : "Statements.",
+				"answers": [
+					{ "option" : "Rule Engine uses Drools version 7.0 as its backbone implementation.", "correct" : true, "explanation": ""},
+					{ "option" : "The rule egine is only intented for promotions.", "correct" : false, "explanation": "Rule Engine is built to be extensible and generic. Across SAP Commerce platform, you can use it for Bundle rules, Order Management Services Warehouse and Sourcing rules, and OCM rules. The perfect sample implementation is Promotion Engine, which allows businesses to create and manage promotions and runs on top of Rule Engine. "},
+					{ "option" : "Rule Engine includes a versioning and archiving of rules mechanism", "correct" : true, "explanation": ""},
+					{ "option" : "You can only have one Rule Module active at the same time", "correct" : false, "explanation": ""},
+					{ "option" : "Rule module synchronization is supported", "correct" : true, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/e30ec2e429e84d22b9045b84c366ab76.html"]
+			},
+			{	
+				"uid" : "60230002",
+				"category" : "commerce_accelerator",
+				"subcategory" : "rule_engine",
+				"difficulty" : "",
+				"question" : "The Rule Engine includes the following extensions:",
+				"answers": [
+				
+					{ "option" : "droolsruleengineservices", "correct" : true, "explanation": ""},
+					{ "option" : "ordercalculation", "correct" : true, "explanation": "refers to the in-memory order calculation. During the rule evaluation, the intermediate cart values or changes are not persisted, but only processed in-memory to optimize performance and avoid database operations. "},
+					{ "option" : "rulebuilderbackoffice", "correct" : true, "explanation": ""},
+					{ "option" : "ruledefinitions", "correct" : true, "explanation": ""},
+					{ "option" : "ruleengine", "correct" : true, "explanation": ""},
+					{ "option" : "ruleengineatddtests ", "correct" : true, "explanation": ""},
+					{ "option" : "atddengine ", "correct" : false, "explanation": "ATDD Module"},
+					{ "option" : "ruleenginebackoffice ", "correct" : true, "explanation": ""},
+					{ "option" : "ruleengineservices ", "correct" : true, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/e30ec2e429e84d22b9045b84c366ab76.html"]
+			},
+			{	
+				"uid" : "60230002b",
+				"category" : "commerce_accelerator",
+				"subcategory" : "rule_engine",
+				"difficulty" : "",
+				"question" : "Statements about KIE modules",
+				"answers": [
+					{ "option" : "It stands for 'Knowledge Integration Environment'", "correct" : false, "explanation": "Knowlegde is Everything"},
+					{ "option" : "It is possible to swap KIE modules to avoid delays.'", "correct" : true, "explanation": ""},
+					{ "option" : "When the modules have been swapped, an event is published to an event service. ", "correct" : true, "explanation": ""},
+					{ "option" : "At some point, both the KIE module and the cloned module run in parallel.", "correct" : true, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8e10878a9d8045b5bd0ccb853dfd9d3a.html"]
+			},
+			{	
+				"uid" : "60230003",
+				"category" : "commerce_accelerator",
+				"subcategory" : "rule_engine",
+				"difficulty" : "",
+				"question" : "Statements",
+				"answers": [
+					{ "option" : "The Rule Engine caches Rule Runtime Data (RRDs)", "correct" : true, "explanation": ""},
+					{ "option" : "Each Source Rule is versioned starting with version 1.", "correct" : false, "explanation": "Each Source Rule is versioned starting with version 0."},
+					{ "option" : "It is not possible to simply delete frozen Source Rules.", "correct" : true, "explanation": ""},
+					{ "option" : "When one of the rule versions has the UNPUBLISHED status, only that version can be modified. An attempt to modify any other version, including those versions with the PUBLISHED status, results in an error. ", "correct" : true, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/598394bba919460b85971010bb588f7d.html", "https://help.hybris.com/6.7.0/hcd/0bb55834dd794adda1080b652ccda134.html"]
+			},
+			
+			{	
+				"uid" : "60230003b",
+				"category" : "commerce_accelerator",
+				"subcategory" : "rule_engine",
+				"difficulty" : "",
+				"question" : "Statements",
+				"answers": [
+					{ "option" : "The Rule compilation process consist out of 3 phases: Source Code translation, Intermediate representation processing and Target code generation.", "correct" : true, "explanation": ""},
+					{ "option" : "Conditions are also known as the Right Hand Side (RHS)", "correct" : false, "explanation": "LHS"},
+					{ "option" : "By default all SourceRules are linked to a default RuleGroup: ruleengineservices.rulegroups.defaultRuleGroupCode", "correct" : true, "explanation": ""},
+					{ "option" : "If a RuleGroup is exclusive max 1 rule in the group can be executed", "correct" : true, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": "LHS"}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/598394bba919460b85971010bb588f7d.html", "https://help.hybris.com/6.7.0/hcd/0bb55834dd794adda1080b652ccda134.html", "https://help.hybris.com/6.7.0/hcd/a1c487c206cd4f08bf27ad12d5a282aa.html"]
+			},
+			
+			{	
+				"uid" : "60230004",
+				"category" : "commerce_accelerator",
+				"subcategory" : "rule_engine",
+				"difficulty" : "",
+				"question" : "Which of the following classes is responsable for generating the actual Drool Rule?",
+				"answers": [
+					{ "option" : "RuleTargetCodeGenerator", "correct" : true, "explanation": ""},
+					{ "option" : "RuleCompilerService", "correct" : false, "explanation": ""},
+					{ "option" : "RuleSourceCodeTranslator", "correct" : false, "explanation": ""},
+					{ "option" : "RuleIrProcessor", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/3127c8164f184c8aab9c35e89109dcca.html"]
+			},
+			{	
+				"uid" : "60230005",
+				"category" : "commerce_accelerator",
+				"subcategory" : "rule_engine",
+				"difficulty" : "",
+				"question" : "The Intermediate Representation (IR) is a data structure constructed from ...",
+				"answers": [
+					{ "option" : "conditions", "correct" : true, "explanation": ""},
+					{ "option" : "variables", "correct" : true, "explanation": ""},
+					{ "option" : "promotionresults", "correct" : false, "explanation": ""},
+					{ "option" : "actions", "correct" : true, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/5fafbc2d1a3d429682061af73ba7f511.html"]
+			},
+			{	
+				"uid" : "60230006",
+				"category" : "commerce_accelerator",
+				"subcategory" : "rule_engine",
+				"difficulty" : "",
+				"question" : "The variable 'productRaoVariable' is an example of ...<br /><br />String productRaoVariable = context.generateVariable(ProductRAO.class);<br /><br />RuleIrTypeCondition irCondition = new RuleIrTypeCondition();<br />irCondition.setVariable(productRaoVariable);",
+				"answers": [
+					{ "option" : "A local variable", "correct" : false, "explanation": ""},
+					{ "option" : "A global variable", "correct" : true, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/f2d8acba33784db4a60198e69f55ced6.html"]
+			},
+			{	
+				"uid" : "60230007",
+				"category" : "commerce_accelerator",
+				"subcategory" : "rule_engine",
+				"difficulty" : "",
+				"question" : "Which of the following Conditions might result in '$v1 := CartRAO(total >= new BigDecimal(100))?",
+				"answers": [
+					{ "option" : "RuleIrTrueCondition", "correct" : false, "explanation": "eval(true)"},
+					{ "option" : "RuleIrFalseCondition", "correct" : false, "explanation": "eval(false)"},
+					{ "option" : "RuleIrGroupCondition", "correct" : false, "explanation": "(<br />   eval(false)<br />   or<br />   eval(true)<br />)"},
+					{ "option" : "RuleIrExistsCondition", "correct" : false, "explanation": "exists (<br />    $v4 := ProductRAO()<br />)"},
+					{ "option" : "RuleIrNotCondition", "correct" : false, "explanation": "not (<br />    $v4 := ProductRAO()<br />)"},
+					{ "option" : "RuleIrTypeCondition ", "correct" : false, "explanation": "$v1 := CartRAO()"},
+					{ "option" : "RuleIrAttributeCondition ", "correct" : true, "explanation": "$v1 := CartRAO(total >= new BigDecimal(100))"},
+					{ "option" : "RuleIrAttributeRelCondition", "correct" : false, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/a989167a55b0481199f5a56da12c8552.html"]
+			},
+			{	
+				"uid" : "60230008",
+				"category" : "commerce_accelerator",
+				"subcategory" : "rule_engine",
+				"difficulty" : "",
+				"question" : "Which of the following classes/interfaces might be used at evaluation time of a promotion?",
+				"answers": [
+					{ "option" : "RuleConditionTranslator", "correct" : false, "explanation": ""},
+					{ "option" : "RuleActionTranslator", "correct" : false, "explanation": ""},
+					{ "option" : "CartRAO", "correct" : true, "explanation": ""},
+					{ "option" : "RuleIrAttributeCondition", "correct" : false, "explanation": ""},
+					{ "option" : "RuleGroupExecutionRRD", "correct" : false, "explanation": "=> Rule RunTime Data e.g.  maxAllowedRuns, currentRuns, ..."},
+					{ "option" : "RuleOrderPercentageDiscountExcludedProductsRAOAction", "correct" : true, "explanation": ""},
+					{ "option" : "DefaultCartRAOProvider", "correct" : true, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/a989167a55b0481199f5a56da12c8552.html"]
+			},
+			
+			{	
+				"uid" : "60230009",
+				"category" : "commerce_accelerator",
+				"subcategory" : "rule_engine",
+				"difficulty" : "",
+				"question" : "Which of the following validation (interfaces) would you use to validate a single parameter in a condition?",
+				"answers": [
+					{ "option" : "RuleParametersValidator", "correct" : false, "explanation": ""},
+					{ "option" : "RuleConditionValidator ", "correct" : false, "explanation": ""},
+					{ "option" : "RuleActionValidator", "correct" : false, "explanation": ""},
+					{ "option" : "RuleActionDefinitionParameter", "correct" : false, "explanation": ""},
+					{ "option" : " RuleConditionDefinitionParameter", "correct" : false, "explanation": ""},
+					{ "option" : "None of above", "correct" : true, "explanation": " RuleCompilerParameterValidator"}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/ecb956c01deb4a7c8d2b33084c0e3886.html"]
+			},
+			{	
+				"uid" : "60230010",
+				"category" : "commerce_accelerator",
+				"subcategory" : "rule_engine",
+				"difficulty" : "",
+				"question" : "Imagine you want to add a UserRao to the global context. What should you do?",
+				"answers": [
+					{ "option" : "Create a listener which implements RuleCompilerListener", "correct" : true, "explanation": "See PromotionRuleCompilerListener "},
+					{ "option" : "Implement a method named beforeCompile(...) ", "correct" : true, "explanation": ""},
+					{ "option" : "Implement RuleIrProcessor ", "correct" : false, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/9718a662b597494dbb401eb13170a506.html"]
+			},
+			{	
+				"uid" : "60230011",
+				"category" : "commerce_accelerator",
+				"subcategory" : "rule_engine",
+				"difficulty" : "",
+				"question" : "Rule Engine allows you to synchronize two modules of the same rule type. ",
+				"answers": [
+				
+					{ "option" : "Correct", "correct" : false, "explanation": ""},
+					{ "option" : "Incorrect", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "You have to configure the allowedTargets in the DroolsKIEModule.",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8e104262a3ae45b2a0193df137fca53c.html#loio8e104262a3ae45b2a0193df137fca53c"]
+			},
+			{	
+				"uid" : "60230012",
+				"category" : "commerce_accelerator",
+				"subcategory" : "rule_engine",
+				"difficulty" : "",
+				"question" : "You can manually write Drools rules and import these rules to the Rule Engine.",
+				"answers": [
+				
+					{ "option" : "Correct", "correct" : true, "explanation": ""},
+					{ "option" : "Incorrect", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/cdaa0f3fb13e41e3b6c382bcd6d88b15.html"]
+			},
+			{	
+				"uid" : "60230013",
+				"category" : "commerce_accelerator",
+				"subcategory" : "rule_engine",
+				"difficulty" : "",
+				"question" : "What should you do if you want to add a new RuleType?",
+				"answers": [
+				
+					{ "option" : "You should add a new RuleType via Impex", "correct" : false, "explanation": "items.xml -> enum"},
+					{ "option" : "The item RuleConditionDefinitionRuleTypeMapping contains the link between a Condition and Rule Group", "correct" : true, "explanation": ""},
+					{ "option" : "By default the following rulegroups exist: PROMOTION, STANDARD", "correct" : false, "explanation": "PROMOTION and DEFAULT"},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/6b425cbc499e484287b0d6418d9adbeb.html"]
+			},
+			{	
+				"uid" : "60240001",
+				"category" : "commerce_accelerator",
+				"subcategory" : "localization",
+				"difficulty" : "",
+				"question" : "Localization files that are send out should have a BOM (Byte Order Mark). Files that are reïmported should not have a BOM",
+				"answers": [
+					{ "option" : "Correct", "correct" : true, "explanation": ""},
+					{ "option" : "Incorrect", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8b76856086691014a125e8e6d7d36f59.html"]
+			},
+			
+			{	
+				"uid" : "60240002",
+				"category" : "commerce_accelerator",
+				"subcategory" : "localization",
+				"difficulty" : "",
+				"question" : "Localizations for cockpits are located in [extensionname]-locales_ isocode.properties ",
+				"answers": [
+					{ "option" : "Correct", "correct" : false, "explanation": ""},
+					{ "option" : "Incorrect", "correct" : true, "explanation": "i3-label_ languagetag.properties"}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8b76856086691014a125e8e6d7d36f59.html"]
+			},
+			{	
+				"uid" : "60240003",
+				"category" : "commerce_accelerator",
+				"subcategory" : "localization",
+				"difficulty" : "",
+				"question" : "You have to set the following to get fallback language working e.g. productModel.getDescription()<br />I18NService.setLocalizationFallbackEnabled",
+				"answers": [
+					{ "option" : "Correct", "correct" : true, "explanation": ""},
+					{ "option" : "Incorrect", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bfc204086691014a345f64b08505839.html"]
+			},
+			
+			{	
+				"uid" : "60240004",
+				"category" : "commerce_accelerator",
+				"subcategory" : "localization",
+				"difficulty" : "",
+				"question" : "In which file will you likely find: section.ldap.login=Login",
+				"answers": [
+					{ "option" : "i3-label.properties", "correct" : false, "explanation": "Cockpit i3 Files"},
+					{ "option" : "extension-locales_[languagetag].properties", "correct" : false, "explanation": "Type Driven Files"},
+					{ "option" : "locales_[languagetag].properties", "correct" : true, "explanation": "UI Component Driven Files"},
+					{ "option" : "extension-messages_[languagetag].properties", "correct" : false, "explanation": "Messages Files"},
+					{ "option" : "essentialdata_mcc_links_[languagetag].impex", "correct" : false, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8bfc204086691014a345f64b08505839.html"]
+			},
+			{	
+				"uid" : "60250001",
+				"category" : "commerce_accelerator",
+				"subcategory" : "addons",
+				"difficulty" : "",
+				"question" : "Statements addons.",
+				"answers": [
+					{ "option" : "AddOns extend the functionality of the SAP Commerce Accelerator. ", "correct" : true, "explanation": ""},
+					{ "option" : "It is possible to plug a new populator into an already existing converter", "correct" : true, "explanation": ""},
+					{ "option" : "It is not possible to add a new Controller.", "correct" : false, "explanation": ""},
+					{ "option" : "It is recommended that you put as much logic into your AddOns as possible", "correct" : true, "explanation": "We recommend that you put as much logic into your AddOns as possible. The advantage of this is that whenever you need to upgrade your Accelerator code base, you do not need to merge the changes manually. By having the logic put into the AddOns, you can build a library of self-contained, reusable components that you can use for your future projects. "},
+					{ "option" : "You should use yaddon to create a new addon", "correct" : true, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8adc7ca3866910148ddfe860464f0fc4.html"]
+			},
+			{	
+				"uid" : "60250002",
+				"category" : "commerce_accelerator",
+				"subcategory" : "addons",
+				"difficulty" : "",
+				"question" : "Statements addons.",
+				"answers": [
+					{ "option" : "The system uses the ant sync task to keep the contents of the acceleratoraddon up to date with the contents of counterpart storefront extensions. ", "correct" : true, "explanation": ""},
+					{ "option" : "This is a valid command to add addons:<br />ant addoninstall -Daddonnames=\"NewAddOn1,NewAddOn2\" -DaddonStorefront.yacceleratorstorefront=\"B2CStorefront1,B2CStorefront2\" -DaddonStorefront.yb2bacceleratorstorefront=\"B2BStorefront1,B2BStorefront2\"", "correct" : true, "explanation": ""},
+					{ "option" : "The addonuninstall tool can be used to remove an AddOn from the storefront. ", "correct" : true, "explanation": "ant addonuninstall -Daddonnames=\"AddOnName1,AddOnName2\" -DaddonStorefront.&lt;storefrontTemplateName&gt;=\"Storefront1,Storefront2\""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8adc7ca3866910148ddfe860464f0fc4.html"]
+			},
+			{	
+				"uid" : "60250003",
+				"category" : "commerce_accelerator",
+				"subcategory" : "addons",
+				"difficulty" : "",
+				"question" : "In which of the following scenario's would you use an addon?",
+				"answers": [
+			
+					{ "option" : "Customizing the Home Page", "correct" : true, "explanation": ""},
+					{ "option" : "Customizing the Product Details Pages", "correct" : true, "explanation": ""},
+					{ "option" : "Extending the product datamodel", "correct" : false, "explanation": ""},
+					{ "option" : "Overwriting an Existing Email Template", "correct" : true, "explanation": ""},
+					{ "option" : "Customizing the Product Results Page", "correct" : true, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8ad05d17866910148d06e408f617dd40.html"]
+			},
+			
+			{	
+				"uid" : "60260001",
+				"category" : "commerce_accelerator",
+				"subcategory" : "accelerator",
+				"difficulty" : "",
+				"question" : "Statements Accelerator.",
+				"answers": [
+			
+					{ "option" : "Hybris does not forsee patches for your webshop implemented with Accelerator", "correct" : true, "explanation": "SAP Commerce Commerce Accelerator is released as source and is implementation templates. Due to the template character of Accelerators and their need for intense customization, you cannot apply patches to customized Accelerator storefront templates. Therefore, we do not offer backports of bug fixes for Accelerator storefront templates for prior releases of Accelerator. You must maintain your Accelerator storefront template implementations on your own once you customize the template. "},
+					{ "option" : "SAP Commerce Accelerator is delivered partially as source code.", "correct" : false, "explanation": "AP Commerce Accelerator is delivered completely as source code."},
+					{ "option" : "Use extgen to generate copies of the Accelerator extensions, using your project's naming conventions. ", "correct" : false, "explanation": ". Use modulegen to generate copies of the Accelerator extensions, using your project's naming conventions. "},
+					{ "option" : "To access the sample storefronts, you must add a localhost mapping to your computer's hosts file", "correct" : true, "explanation": "There is an alternative shortcut approach of using a site parameter. However, this only allows you to visit one site in the same browser session."},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8adf4ab786691014be8bc2649d71e1bd.html"]
+			},
+			
+			{	
+				"uid" : "60260002",
+				"category" : "commerce_accelerator",
+				"subcategory" : "accelerator",
+				"difficulty" : "",
+				"question" : "Which of the following are part of the ServiceLayer?",
+				"answers": [
+					{ "option" : "Facades", "correct" : true, "explanation": ""},
+					{ "option" : "Services", "correct" : true, "explanation": ""},
+					{ "option" : "Data Access Objects", "correct" : true, "explanation": ""},
+					{ "option" : "JSP/JSTL", "correct" : false, "explanation": "Presentation Layer"},
+					{ "option" : "Media Servlet", "correct" : false, "explanation": "Presentation Layer"},
+					{ "option" : "Listeners", "correct" : false, "explanation": "Presentation Layer"},
+					{ "option" : "Interceptors", "correct" : false, "explanation": "Presentation Layer"},
+					{ "option" : "items.xml", "correct" : false, "explanation": "Persistence Layer"},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8af175d486691014b2b288856acd9bfc.html"]
+			},
+			{	
+				"uid" : "60260003",
+				"category" : "commerce_accelerator",
+				"subcategory" : "accelerator",
+				"difficulty" : "",
+				"question" : "Statements?",
+				"answers": [
+					{ "option" : "Captcha is standard added in Accelerator", "correct" : true, "explanation": "It is a addon"},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8abf6c48866910149c7989e25b9e7827.html"]
+			},
+			
+			{	
+				"uid" : "60260004",
+				"category" : "commerce_accelerator",
+				"subcategory" : "accelerator",
+				"difficulty" : "",
+				"question" : "Which of the following is an intermediate DTO?",
+				"answers": [
+					{ "option" : "AbstractOrderDto", "correct" : false, "explanation": ""},
+					{ "option" : "ProductData", "correct" : false, "explanation": ""},
+					{ "option" : "CommerceCartParameter", "correct" : true, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/478f616a46f84d668f8cd42c0259cdf0.html#loio41724d1449da4dc79456c7d336b19739"]
+			},
+			{	
+				"uid" : "60260005",
+				"category" : "commerce_accelerator",
+				"subcategory" : "accelerator",
+				"difficulty" : "",
+				"question" : "Statements",
+				"answers": [
+					{ "option" : "The consent framework only keeps track of the last change", "correct" : false, "explanation": "When a user gives consent, a consent record is created in the back end. The record captures both the business event and corresponding time information."},
+					{ "option" : "A basesite can have multiple consents.", "correct" : false, "explanation": "A basesite can have multiple consent templates."},
+					{ "option" : "When the terms and conditions of a consent template changes, a new consent template version can be created to reflect those changes. ", "correct" : true, "explanation": ""},
+					{ "option" : "Anonymous users can not give their consent", "correct" : false, "explanation": "ConsentTemplate.exposed => this attribute will make the consent available based on cookie/session"},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/720bd504fc364f42826d27fa4ab22839.html"]
+			},
+			{	
+				"uid" : "60260006",
+				"category" : "commerce_accelerator",
+				"subcategory" : "accelerator",
+				"difficulty" : "",
+				"question" : "What is the notificationaddon ?",
+				"answers": [
+				
+					{ "option" : "It does not exist.", "correct" : false, "explanation": ""},
+					{ "option" : "It contains features like such as back-in-stock notifications and price cut notifications", "correct" : false, "explanation": ""},
+					{ "option" : "It enables consumers to set preference channels", "correct" : true, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/dac37a00c66d47e08c2c681e647b5a4f.html"]
+			},
+			{	
+				"uid" : "60260007",
+				"category" : "commerce_accelerator",
+				"subcategory" : "accelerator",
+				"difficulty" : "",
+				"question" : "Hybris uses VariantCategory and VariantValueCategory to variate between variants.",
+				"answers": [
+					{ "option" : "Correct", "correct" : true, "explanation": "The variant should be of the type GenericVariantProduct"},
+					{ "option" : "Incorrect", "correct" : false, "explanation": ""}
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8ae3798c866910149204d455ffe16db5.html"]
+			},
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			{	
+				"uid" : "6029001",
+				"category" : "orders",
+				"subcategory" : "payment",
+				"difficulty" : "",
+				"question" : "The payment extension is an example of a paymentAdapter extension",
+				"answers": [
+					{ "option" : "Correct", "correct" : false, "explanation": ""},
+					{ "option" : "Incorrect", "correct" : true, "explanation": "The  cyberSource extension is an example of a payment adapter extension"}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c25f07586691014bc1fecf207503685.html"]
+			},
+			
+			{	
+				"uid" : "6029002",
+				"category" : "orders",
+				"subcategory" : "payment",
+				"difficulty" : "",
+				"question" : "What should you implement in a new payment adapter extension?",
+				"answers": [
+					{ "option" : "Payment Services", "correct" : false, "explanation": ""},
+					{ "option" : "Payment Methods", "correct" : false, "explanation": ""},
+					{ "option" : "Commands", "correct" : true, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c25f07586691014bc1fecf207503685.html"]
+			},
+			{	
+				"uid" : "6029003",
+				"category" : "orders",
+				"subcategory" : "payment",
+				"difficulty" : "",
+				"question" : "Which are existing commands?",
+				"answers": [
+					{ "option" : "CaptureCommand", "correct" : true, "explanation": ""},
+					{ "option" : "CreateSubscriptionCommand", "correct" : true, "explanation": ""},
+					{ "option" : "VoidCommand", "correct" : true, "explanation": ""},
+					{ "option" : "StandaloneRefundCommand", "correct" : true, "explanation": ""},
+					{ "option" : "IsApplicableCommand", "correct" : true, "explanation": ""},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c25f07586691014bc1fecf207503685.html"]
+			},
+			
+			{	
+				"uid" : "6029004",
+				"category" : "orders",
+				"subcategory" : "payment",
+				"difficulty" : "",
+				"question" : "Which describes: Authorized amount of money remains \"locked\" on card's account until it is captured or authorization is reversed (cancelled) or authorization is expired.",
+				"answers": [
+					{ "option" : "Capture", "correct" : false, "explanation": "the authorized amount of money is actually transferred from the card holder account to the merchant account. Capture operation requires a previous successful authorization that has not yet expired."},
+					{ "option" : "Refund", "correct" : false, "explanation": ""},
+					{ "option" : "StandaloneRefundCommand", "correct" : false, "explanation": ""},
+					{ "option" : "Authorization", "correct" : true, "explanation": ""},
+					{ "option" : "IsApplicable", "correct" : false, "explanation": "configuration that check if for specified arguments payment provider is applicable"},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c25f07586691014bc1fecf207503685.html"]
+			},
+			{	
+				"uid" : "6029005",
+				"category" : "orders",
+				"subcategory" : "payment",
+				"difficulty" : "",
+				"question" : "Which command is used to refund a part of the order?",
+				"answers": [
+					{ "option" : "Partial Capture", "correct" : false, "explanation": ""},
+					{ "option" : "Cancel", "correct" : false, "explanation": ""},
+					{ "option" : "Refund Standalone", "correct" : false, "explanation": "This method allows you to do refund without previous authorization. It takes card information as a parameter."},
+					{ "option" : "None of above", "correct" : true, "explanation": "Refund Follow On: This method performs refund of the part of payment."}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c25c3b9866910148d04b69636983d89.html"]
+			},
+			
+			{	
+				"uid" : "6029006",
+				"category" : "orders",
+				"subcategory" : "payment",
+				"difficulty" : "",
+				"question" : "Statements",
+				"answers": [
+					{ "option" : "An order can only have one PaymentTransaction", "correct" : false, "explanation": "It can have multiple => multiple credit cards for a single order"},
+					{ "option" : "A PaymentTransaction can only have one PaymentInfo", "correct" : true, "explanation": ""},
+					{ "option" : "A PaymentInfo can contain address data", "correct" : true, "explanation": ""},
+					{ "option" : "The PaymentInfo contains the amount and currency", "correct" : false, "explanation": "PaymentTransactionEntry contains amount and currency. PaymentTransactionEntry can now handle a RMA - Return Merchandise Authorization also known as Return Material Authorization. This is an unique identifier, generated by the payment service itself. "},
+					{ "option" : "None of above", "correct" : false, "explanation": ""}
+					
+				],
+				"explanation" : "",
+				"references" : ["https://help.hybris.com/6.7.0/hcd/8c25c3b9866910148d04b69636983d89.html"]
+			}
+]}
